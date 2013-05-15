@@ -1,0 +1,18 @@
+# HTML entities missing from htmlpty, computed on Sat Aug 25 16:09:25 MDT 2001 from
+# -r--r--r-- 1 beebe 9196 May 1 1995 /u/sy/beebe/src/htmlpty/htmlpty-1.01/DTD/html.dtd
+#
+-rw-rw-r-- 1 BODY	  FORM	       IGNORE	    NAMES	 SAMP
+-rw-r--r-- 1 BR		  GET	       IMAGE	    NEXTID	 SELECT
+Makefile     CDATA	  H1	       IMG	    OL		 STRONG
+0	     CHECKBOX	  H2	       IMPLIED	    OPTION	 SUBMIT
+1	     CITE	  H3	       INCLUDE	    P		 TEXT
+2	     CODE	  H4	       INPUT	    PASSWORD	 TEXTAREA
+34	     DD		  H5	       ISINDEX	    PCDATA	 TEXTSEARCH
+38	     DIR	  H6	       KBD	    PLAINTEXT	 TITLE
+60	     DL		  HEAD	       LI	    POST	 TT
+62	     DT		  HIDDEN       LINK	    PRE		 UL
+A	     DTD	  HR	       LISTING	    RADIO	 URN
+ADDRESS	     EM		  HTML	       MENU	    REL		 VAR
+B	     EN		  I	       META	    RESET	 VERSION
+BASE	     ENTITIES	  ID	       METHODS	    REV		 XMP
+BLOCKQUOTE   FIXED	  IETF	       NAME

@@ -1,0 +1,12 @@
+foo&nbsp;bar
+<BR>
+foo&nbsp;
+bar<BR>
+foo &nbsp;bar
+<BR>
+foo &nbsp;
+bar<BR>
+foo
+<!-- xxx -->
+&nbsp;<!-- xxx -->
+bar<BR>

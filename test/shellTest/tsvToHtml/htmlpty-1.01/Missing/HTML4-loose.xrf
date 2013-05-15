@@ -1,0 +1,23 @@
+# HTML entities missing from htmlpty, computed on Sat Aug 25 16:09:14 MDT 2001 from
+# -rw-r--r-- 1 beebe 45248 Nov 11 1997 /u/sy/beebe/src/htmlpty/htmlpty-1.01/DTD/HTML4-loose.dtd
+#
+-rw-rw-r-- 1 CDATA	  FILE	       IGNORE	    OL		 STYLE
+-rw-r--r-- 1 CENTER	  FIXED	       IMAGE	    OPTGROUP	 SUB
+Makefile     CHECKBOX	  FONT	       IMG	    OPTION	 SUBMIT
+0	     CITE	  FORM	       IMPLIED	    P		 SUP
+4	     CODE	  FRAME	       INPUT	    PARAM	 TABLE
+A	     COL	  FRAMESET     INS	    PASSWORD	 TBODY
+ABBR	     COLGROUP	  H1	       ISINDEX	    PCDATA	 TD
+ADDRESS	     DD		  H2	       KBD	    PRE		 TEXT
+APPLET	     DEL	  H3	       LABEL	    Q		 TEXTAREA
+AREA	     DFN	  H4	       LEGEND	    RADIO	 TFOOT
+B	     DIR	  H5	       LI	    RESET	 TH
+BASE	     DIV	  H6	       LINK	    S		 THEAD
+BASEFONT     DL		  HEAD	       MAP	    SAMP	 TITLE
+BDO	     DT		  HIDDEN       MENU	    SCRIPT	 TR
+BIG	     DTD	  HR	       META	    SELECT	 TT
+BLOCKQUOTE   EM		  HTML	       NAME	    SMALL	 U
+BODY	     EN		  I	       NOFRAMES	    SPAN	 UL
+BR	     ENTITIES	  ID	       NOSCRIPT	    STRIKE	 VAR
+BUTTON	     FIELDSET	  IFRAME       OBJECT	    STRONG	 W3C
+CAPTION

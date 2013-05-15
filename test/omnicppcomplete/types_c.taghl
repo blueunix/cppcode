@@ -1,0 +1,5 @@
+syn keyword CTagsStructure test_st
+syn keyword CTagsMember a c b tt bb
+syn keyword CTagsGlobalVariable me tee dis
+syn keyword CTagsClass pa test_jx
+

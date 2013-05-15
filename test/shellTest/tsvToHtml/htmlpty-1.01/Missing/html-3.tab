@@ -1,0 +1,26 @@
+# HTML entities missing from htmlpty, computed on Fri Nov 28 15:15:15 MST 1997 from
+# -r--r--r-- 1 beebe 45977 May 1 1995 /usr/local/lib/html-check/lib/html-3.dtd
+#
+-rw-rw-r-- 1 BQ		  FIG	       INS	    P		 SUB
+-rw-rw-r-- 1 BR		  FILE	       ISINDEX	    PASSWORD	 SUBMIT
+Makefile     BT		  FORM	       ITEM	    PCDATA	 SUP
+0	     CAPTION	  GET	       KBD	    PERSON	 T
+1	     CDATA	  H1	       LANG	    PLAINTEXT	 TAB
+3	     CHECKBOX	  H2	       LEFT	    POST	 TABLE
+A	     CHOOSE	  H3	       LH	    PRE		 TD
+ABBREV	     CITE	  H4	       LI	    Q		 TEXT
+ABOVE	     CODE	  H5	       LINK	    RADIO	 TEXTAREA
+ACRONYM	     CREDIT	  H6	       LISTING	    RANGE	 TEXTSEARCH
+ADDRESS	     DD		  HAT	       MATH	    RESET	 TH
+ARRAY	     DDOT	  HEAD	       MENU	    RIGHT	 TILDE
+ATOP	     DEL	  HIDDEN       META	    ROOT	 TITLE
+AU	     DFN	  HR	       NAME	    ROW		 TR
+AUDIO	     DIR	  HTML	       NAMES	    S		 TT
+B	     DIV	  I	       NEXTID	    SAMP	 U
+BAR	     DL		  IETF	       NOTE	    SCRIBBLE	 UL
+BASE	     DOT	  IGNORE       OF	    SELECT	 VAR
+BELOW	     DT		  IMAGE	       OL	    SMALL	 VEC
+BIG	     DTD	  IMG	       OPTION	    SQRT	 W3
+BLOCKQUOTE   EM		  IMPLIED      OVER	    STRONG	 W3O
+BODY	     EN		  INCLUDE      OVERLAY	    STYLE	 XMP
+BOX	     ENTITIES	  INPUT

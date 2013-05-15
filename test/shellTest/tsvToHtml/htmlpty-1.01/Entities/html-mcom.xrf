@@ -1,0 +1,19 @@
+# HTML entities in HTML grammar DTD, computed on Sat Aug 25 16:09:22 MDT 2001 from
+# -r--r--r-- 1 beebe 10838 Mar 23 1996 /u/sy/beebe/src/htmlpty/htmlpty-1.01/DTD/html-mcom.dtd
+#
+-rw-rw-r-- 1 BODY	  FONT	       IGNORE	    NAMES	 SAMP
+	     BR		  FORM	       IMAGE	    NEXTID	 SELECT
+1	     CDATA	  GET	       IMG	    NOBR	 STRONG
+169	     CENTER	  H1	       IMPLIED	    OL		 SUBMIT
+174	     CHECKBOX	  H2	       INCLUDE	    OPTION	 TEXT
+34	     CITE	  H3	       INPUT	    P		 TEXTAREA
+38	     CODE	  H4	       ISINDEX	    PASSWORD	 TEXTSEARCH
+60	     DD		  H5	       KBD	    PCDATA	 TITLE
+62	     DIR	  H6	       LI	    PLAINTEXT	 TT
+A	     DL		  HEAD	       LINK	    POST	 UL
+ADDRESS	     DT		  HIDDEN       LISTING	    PRE		 URN
+B	     DTD	  HR	       MENU	    RADIO	 VAR
+BASE	     EM		  HTML	       META	    REL		 VERSION
+BASEFONT     EN		  I	       METHODS	    RESET	 WBR
+BLINK	     ENTITIES	  ID	       NAME	    REV		 XMP
+BLOCKQUOTE   FIXED	  IETF

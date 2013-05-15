@@ -1,0 +1,4 @@
+#!/bin/sed -f
+#This two commands just works as "sed -e '1,5d' -e 's/test/good/g' "
+1,5d
+s/test/good/g

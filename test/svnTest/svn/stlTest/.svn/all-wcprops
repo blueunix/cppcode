@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/svn/!svn/ver/2/stlTest
+END
+objdumpresult
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/stlTest/objdumpresult
+END
+test
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/stlTest/test
+END
+stlTest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/stlTest/stlTest.cpp
+END
+re
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/2/stlTest/re
+END

@@ -1,0 +1,44 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+a	main.h	/^    int a;$/;"	m	class:pa	access:private
+a	main1.cpp	/^    int a;$/;"	m	class:test_jx	file:	access:private
+a	main1.cpp	/^  int a;$/;"	m	struct:omnitest	file:	access:public
+b	main.h	/^    int b;$/;"	m	class:pa	access:private
+b	main1.cpp	/^    int b;$/;"	m	class:test_jx	file:	access:private
+bb	main1.cpp	/^  int bb;$/;"	m	struct:test_st	file:	access:public
+c	main1.cpp	/^    char *c;$/;"	m	class:test_jx	file:	access:private
+c	main1.cpp	/^  int c;$/;"	m	struct:omnitest	file:	access:public
+dis	main1.cpp	/^ActiveDispatcher dis;$/;"	v
+omnitest	main1.cpp	/^struct omnitest$/;"	s	file:
+omnitest::a	main1.cpp	/^  int a;$/;"	m	struct:omnitest	file:	access:public
+omnitest::c	main1.cpp	/^  int c;$/;"	m	struct:omnitest	file:	access:public
+pa	main.h	/^        pa(int a,int b);$/;"	p	class:pa	access:public	signature:(int a,int b)
+pa	main.h	/^class pa {$/;"	c
+pa::a	main.h	/^    int a;$/;"	m	class:pa	access:private
+pa::b	main.h	/^    int b;$/;"	m	class:pa	access:private
+pa::pa	main.h	/^        pa(int a,int b);$/;"	p	class:pa	access:public	signature:(int a,int b)
+pa::~pa	main.h	/^        virtual ~pa();$/;"	p	class:pa	access:public	signature:()
+pop	main1.cpp	/^sdf.pop();$/;"	p	file:	signature:()
+sdf	main1.cpp	/^std::stack<int> sdf;$/;"	v
+start	main1.cpp	/^dis.start();$/;"	p	file:	signature:()
+swap	main1.cpp	/^me.swap(other);$/;"	p	file:	signature:(other)
+tee	main1.cpp	/^test_st tee;$/;"	v
+test_jx	main1.cpp	/^        test_jx(int a,int b,char* c);$/;"	p	class:test_jx	file:	access:public	signature:(int a,int b,char* c)
+test_jx	main1.cpp	/^class test_jx {$/;"	c	file:
+test_jx::a	main1.cpp	/^    int a;$/;"	m	class:test_jx	file:	access:private
+test_jx::b	main1.cpp	/^    int b;$/;"	m	class:test_jx	file:	access:private
+test_jx::c	main1.cpp	/^    char *c;$/;"	m	class:test_jx	file:	access:private
+test_jx::test_jx	main1.cpp	/^        test_jx(int a,int b,char* c);$/;"	p	class:test_jx	file:	access:public	signature:(int a,int b,char* c)
+test_jx::~test_jx	main1.cpp	/^        virtual ~test_jx();$/;"	p	class:test_jx	file:	access:public	signature:()
+test_st	main1.cpp	/^struct test_st$/;"	s	file:
+test_st::bb	main1.cpp	/^  int bb;$/;"	m	struct:test_st	file:	access:public
+test_st::tt	main1.cpp	/^  int tt;$/;"	m	struct:test_st	file:	access:public
+top	main1.cpp	/^sdf.top();$/;"	p	file:	signature:()
+tt	main1.cpp	/^  int tt;$/;"	m	struct:test_st	file:	access:public
+tttttt	main1.cpp	/^omnitest tttttt;$/;"	v
+~pa	main.h	/^        virtual ~pa();$/;"	p	class:pa	access:public	signature:()
+~test_jx	main1.cpp	/^        virtual ~test_jx();$/;"	p	class:test_jx	file:	access:public	signature:()

@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 25
+/svn/!svn/ver/2/shellTest
+END
+substitute.tab
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/shellTest/substitute.tab
+END
+shellTest.sh
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/shellTest/shellTest.sh
+END
+while.sh
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/2/shellTest/while.sh
+END
+wc.sh
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/2/shellTest/wc.sh
+END
+base.sh
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/shellTest/base.sh
+END
+substitute.sh
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/2/shellTest/substitute.sh
+END
+uniq.sh
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/shellTest/uniq.sh
+END
+tee.sh
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/2/shellTest/tee.sh
+END
+chessboard.sh
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/2/shellTest/chessboard.sh
+END
+forloop.sh
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/shellTest/forloop.sh
+END
+bc.sh
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/2/shellTest/bc.sh
+END
+getopts.sh
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/shellTest/getopts.sh
+END
+sort.sh
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/shellTest/sort.sh
+END
+cut.sh
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/2/shellTest/cut.sh
+END
+tab
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/shellTest/tab
+END
+nestedif.sh
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/shellTest/nestedif.sh
+END
+getopt.sh
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/shellTest/getopt.sh
+END
+last.list
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/shellTest/last.list
+END

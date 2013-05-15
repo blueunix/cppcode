@@ -1,0 +1,23 @@
+:14:HTML grammars do not permit an end tag for the tag name [AREA]; please consider deleting it
+:16:HTML grammars do not permit an end tag for the tag name [ATOP]; please consider deleting it
+:18:HTML grammars do not permit an end tag for the tag name [BASE]; please consider deleting it
+:20:HTML grammars do not permit an end tag for the tag name [BASEFONT]; please consider deleting it
+:22:HTML grammars do not permit an end tag for the tag name [BR]; please consider deleting it
+:24:HTML grammars do not permit an end tag for the tag name [CHOOSE]; please consider deleting it
+:26:HTML grammars do not permit an end tag for the tag name [COL]; please consider deleting it
+:28:HTML grammars do not permit an end tag for the tag name [FRAME]; please consider deleting it
+:30:HTML grammars do not permit an end tag for the tag name [HR]; please consider deleting it
+:32:HTML grammars do not permit an end tag for the tag name [IMG]; please consider deleting it
+:34:HTML grammars do not permit an end tag for the tag name [INPUT]; please consider deleting it
+:36:HTML grammars do not permit an end tag for the tag name [ISINDEX]; please consider deleting it
+:38:HTML grammars do not permit an end tag for the tag name [LEFT]; please consider deleting it
+:42:HTML grammars do not permit an end tag for the tag name [META]; please consider deleting it
+:44:HTML grammars do not permit an end tag for the tag name [NEXTID]; please consider deleting it
+:46:HTML grammars do not permit an end tag for the tag name [OVER]; please consider deleting it
+:48:HTML grammars do not permit an end tag for the tag name [OVERLAY]; please consider deleting it
+:50:HTML grammars do not permit an end tag for the tag name [PARAM]; please consider deleting it
+:52:HTML grammars do not permit an end tag for the tag name [RIGHT]; please consider deleting it
+:54:HTML grammars do not permit an end tag for the tag name [TAB]; please consider deleting it
+:56:HTML grammars do not permit an end tag for the tag name [WBR]; please consider deleting it
+:63:obsolete feature: nested anchor tags <A ...> ... <A ...> ... </A> ... </A>
+:69:</BODY> at level 0 should be at level 1

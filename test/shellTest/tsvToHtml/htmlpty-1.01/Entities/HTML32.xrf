@@ -1,0 +1,20 @@
+# HTML entities in HTML grammar DTD, computed on Sat Aug 25 16:09:11 MDT 2001 from
+# -r--r--r-- 1 beebe 20382 Jul 5 1997 /u/sy/beebe/src/htmlpty/htmlpty-1.01/DTD/HTML32.dtd
+#
+-rw-rw-r-- 1 BIG	  EM	       HTML	    OL		 STRONG
+	     BLOCKQUOTE	  EN	       I	    OPTION	 STYLE
+1	     BODY	  ENTITIES     IMAGE	    P		 SUB
+1986	     BR		  FILE	       IMG	    PARAM	 SUBMIT
+2	     CAPTION	  FIXED	       IMPLIED	    PASSWORD	 SUP
+3	     CDATA	  FONT	       INCLUDE	    PCDATA	 TABLE
+38	     CENTER	  FORM	       INPUT	    PLAINTEXT	 TEXT
+60	     CHECKBOX	  GET	       ISINDEX	    POST	 TEXTAREA
+62	     CITE	  H1	       ISO	    PRE		 TITLE
+8879	     CODE	  H2	       KBD	    RADIO	 TT
+A	     DD		  H3	       LI	    RESET	 U
+ADDRESS	     DFN	  H4	       LINK	    SAMP	 UL
+APPLET	     DIR	  H5	       LISTING	    SCRIPT	 VAR
+AREA	     DIV	  H6	       MAP	    SELECT	 VERSION
+B	     DL		  HEAD	       MENU	    SMALL	 W3C
+BASE	     DT		  HIDDEN       META	    STRIKE	 XMP
+BASEFONT     DTD	  HR	       NUMBER

@@ -1,0 +1,997 @@
+CannotContain:A                	A
+CannotContain:DIR              	BLOCKQUOTE DIR DL FORM ISINDEX LISTING MENU OL P PRE UL XMP
+CannotContain:FORM             	FORM
+CannotContain:MENU             	BLOCKQUOTE DIR DL FORM ISINDEX LISTING MENU OL P PRE UL XMP
+ContainedIn:#PCDATA            	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI OPTION P PRE SAMP STRONG TEXTAREA TITLE TT VAR
+ContainedIn:A                  	ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:ADDRESS            	BLOCKQUOTE BODY FORM
+ContainedIn:B                  	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:BASE               	HEAD
+ContainedIn:BLOCKQUOTE         	BLOCKQUOTE BODY DD FORM LI
+ContainedIn:BODY               	HTML
+ContainedIn:BR                 	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:CDATA              	LISTING PLAINTEXT XMP
+ContainedIn:CITE               	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:CODE               	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:DD                 	DL
+ContainedIn:DIR                	BLOCKQUOTE BODY DD FORM LI
+ContainedIn:DL                 	BLOCKQUOTE BODY DD FORM LI
+ContainedIn:DT                 	DL
+ContainedIn:EM                 	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:EMPTY              	BASE BR HR IMG INPUT ISINDEX LINK META NEXTID
+ContainedIn:FORM               	BLOCKQUOTE BODY DD LI
+ContainedIn:H1                 	A BLOCKQUOTE BODY FORM
+ContainedIn:H2                 	A BLOCKQUOTE BODY FORM
+ContainedIn:H3                 	A BLOCKQUOTE BODY FORM
+ContainedIn:H4                 	A BLOCKQUOTE BODY FORM
+ContainedIn:H5                 	A BLOCKQUOTE BODY FORM
+ContainedIn:H6                 	A BLOCKQUOTE BODY FORM
+ContainedIn:HEAD               	HTML
+ContainedIn:HR                 	BLOCKQUOTE BODY FORM PRE
+ContainedIn:I                  	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:IMG                	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P SAMP STRONG TT VAR
+ContainedIn:INPUT              	FORM
+ContainedIn:ISINDEX            	BLOCKQUOTE BODY DD FORM HEAD LI
+ContainedIn:KBD                	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:LI                 	DIR MENU OL UL
+ContainedIn:LINK               	HEAD
+ContainedIn:LISTING            	BLOCKQUOTE BODY DD FORM LI
+ContainedIn:MENU               	BLOCKQUOTE BODY DD FORM LI
+ContainedIn:META               	HEAD
+ContainedIn:NEXTID             	HEAD
+ContainedIn:OL                 	BLOCKQUOTE BODY DD FORM LI
+ContainedIn:OPTION             	SELECT
+ContainedIn:P                  	ADDRESS BLOCKQUOTE BODY DD FORM LI
+ContainedIn:PLAINTEXT          	HTML
+ContainedIn:PRE                	BLOCKQUOTE BODY DD FORM LI
+ContainedIn:SAMP               	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:SELECT             	FORM
+ContainedIn:STRONG             	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:TEXTAREA           	FORM
+ContainedIn:TITLE              	HEAD
+ContainedIn:TT                 	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:UL                 	BLOCKQUOTE BODY DD FORM LI
+ContainedIn:VAR                	A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE SAMP STRONG TT VAR
+ContainedIn:XMP                	BLOCKQUOTE BODY DD FORM LI
+Contains:A                     	#PCDATA B BR CITE CODE EM H1 H2 H3 H4 H5 H6 I IMG KBD SAMP STRONG TT VAR
+Contains:ADDRESS               	#PCDATA A B BR CITE CODE EM I IMG KBD P SAMP STRONG TT VAR
+Contains:B                     	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:BASE                  	EMPTY
+Contains:BLOCKQUOTE            	#PCDATA A ADDRESS B BLOCKQUOTE BR CITE CODE DIR DL EM FORM H1 H2 H3 H4 H5 H6 HR I IMG ISINDEX KBD LISTING MENU OL P PRE SAMP STRONG TT UL VAR XMP
+Contains:BODY                  	#PCDATA A ADDRESS B BLOCKQUOTE BR CITE CODE DIR DL EM FORM H1 H2 H3 H4 H5 H6 HR I IMG ISINDEX KBD LISTING MENU OL P PRE SAMP STRONG TT UL VAR XMP
+Contains:BR                    	EMPTY
+Contains:CITE                  	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:CODE                  	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:DD                    	#PCDATA A B BLOCKQUOTE BR CITE CODE DIR DL EM FORM I IMG ISINDEX KBD LISTING MENU OL P PRE SAMP STRONG TT UL VAR XMP
+Contains:DIR                   	LI
+Contains:DL                    	DD DT
+Contains:DT                    	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:EM                    	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:FORM                  	#PCDATA A ADDRESS B BLOCKQUOTE BR CITE CODE DIR DL EM H1 H2 H3 H4 H5 H6 HR I IMG INPUT ISINDEX KBD LISTING MENU OL P PRE SAMP SELECT STRONG TEXTAREA TT UL VAR XMP
+Contains:H1                    	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:H2                    	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:H3                    	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:H4                    	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:H5                    	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:H6                    	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:HEAD                  	BASE ISINDEX LINK META NEXTID TITLE
+Contains:HR                    	EMPTY
+Contains:HTML                  	BODY HEAD PLAINTEXT
+Contains:I                     	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:IMG                   	EMPTY
+Contains:INPUT                 	EMPTY
+Contains:ISINDEX               	EMPTY
+Contains:KBD                   	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:LI                    	#PCDATA A B BLOCKQUOTE BR CITE CODE DIR DL EM FORM I IMG ISINDEX KBD LISTING MENU OL P PRE SAMP STRONG TT UL VAR XMP
+Contains:LINK                  	EMPTY
+Contains:LISTING               	CDATA
+Contains:MENU                  	LI
+Contains:META                  	EMPTY
+Contains:NEXTID                	EMPTY
+Contains:OL                    	LI
+Contains:OPTION                	#PCDATA
+Contains:P                     	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:PLAINTEXT             	CDATA
+Contains:PRE                   	#PCDATA A B BR CITE CODE EM HR I KBD SAMP STRONG TT VAR
+Contains:SAMP                  	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:SELECT                	OPTION
+Contains:STRONG                	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:TEXTAREA              	#PCDATA
+Contains:TITLE                 	#PCDATA
+Contains:TT                    	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:UL                    	LI
+Contains:VAR                   	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+Contains:XMP                   	CDATA
+ELEMENT:%font                  	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+ELEMENT:%heading               	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+ELEMENT:%phrase                	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+ELEMENT:A                      	#PCDATA B BR CITE CODE EM H1 H2 H3 H4 H5 H6 I IMG KBD SAMP STRONG TT VAR
+ELEMENT:ADDRESS                	#PCDATA A B BR CITE CODE EM I IMG KBD P SAMP STRONG TT VAR
+ELEMENT:BASE                   	EMPTY
+ELEMENT:BLOCKQUOTE             	#PCDATA A ADDRESS B BLOCKQUOTE BR CITE CODE DIR DL EM FORM H1 H2 H3 H4 H5 H6 HR I IMG ISINDEX KBD LISTING MENU OL P PRE SAMP STRONG TT UL VAR XMP
+ELEMENT:BODY                   	#PCDATA A ADDRESS B BLOCKQUOTE BR CITE CODE DIR DL EM FORM H1 H2 H3 H4 H5 H6 HR I IMG ISINDEX KBD LISTING MENU OL P PRE SAMP STRONG TT UL VAR XMP
+ELEMENT:BR                     	EMPTY
+ELEMENT:DD                     	#PCDATA A B BLOCKQUOTE BR CITE CODE DIR DL EM FORM I IMG ISINDEX KBD LISTING MENU OL P PRE SAMP STRONG TT UL VAR XMP
+ELEMENT:DIR                    	LI
+ELEMENT:DL                     	DD DT
+ELEMENT:DT                     	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+ELEMENT:FORM                   	#PCDATA A ADDRESS B BLOCKQUOTE BR CITE CODE DIR DL EM H1 H2 H3 H4 H5 H6 HR I IMG INPUT ISINDEX KBD LISTING MENU OL P PRE SAMP SELECT STRONG TEXTAREA TT UL VAR XMP
+ELEMENT:HEAD                   	BASE ISINDEX LINK META NEXTID TITLE
+ELEMENT:HR                     	EMPTY
+ELEMENT:HTML                   	BODY HEAD PLAINTEXT
+ELEMENT:IMG                    	EMPTY
+ELEMENT:INPUT                  	EMPTY
+ELEMENT:ISINDEX                	EMPTY
+ELEMENT:LI                     	#PCDATA A B BLOCKQUOTE BR CITE CODE DIR DL EM FORM I IMG ISINDEX KBD LISTING MENU OL P PRE SAMP STRONG TT UL VAR XMP
+ELEMENT:LINK                   	EMPTY
+ELEMENT:LISTING                	CDATA
+ELEMENT:MENU                   	LI
+ELEMENT:META                   	EMPTY
+ELEMENT:NEXTID                 	EMPTY
+ELEMENT:OL                     	LI
+ELEMENT:OPTION                 	#PCDATA
+ELEMENT:P                      	#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+ELEMENT:PLAINTEXT              	CDATA
+ELEMENT:PRE                    	#PCDATA A B BR CITE CODE EM HR I KBD SAMP STRONG TT VAR
+ELEMENT:SELECT                 	OPTION
+ELEMENT:TEXTAREA               	#PCDATA
+ELEMENT:TITLE                  	#PCDATA
+ELEMENT:UL                     	LI
+ELEMENT:XMP                    	CDATA
+ENTITY:%A.content              	%heading %text
+ENTITY:%Content-Type           	CDATA
+ENTITY:%HTML.Deprecated        	IGNORE INCLUDE
+ENTITY:%HTML.Forms             	INCLUDE
+ENTITY:%HTML.Highlighting      	INCLUDE
+ENTITY:%HTML.Recommended       	IGNORE
+ENTITY:%HTTP-Method            	GET POST
+ENTITY:%InputType              	CHECKBOX HIDDEN IMAGE PASSWORD RADIO RESET SUBMIT TEXT
+ENTITY:%URI                    	CDATA
+ENTITY:%address.content        	%text P
+ENTITY:%block                  	%block.forms %list %preformatted BLOCKQUOTE DL P
+ENTITY:%block.forms            	FORM ISINDEX
+ENTITY:%body.content           	%block %heading %text ADDRESS HR
+ENTITY:%flow                   	%block %text
+ENTITY:%font                   	B I TT
+ENTITY:%head.content           	%head.link %head.nextid BASE ISINDEX META TITLE
+ENTITY:%head.link              	LINK
+ENTITY:%head.nextid            	NEXTID
+ENTITY:%heading                	H1 H2 H3 H4 H5 H6
+ENTITY:%html.content           	BODY HEAD PLAINTEXT
+ENTITY:%img.alt.default        	#IMPLIED
+ENTITY:%linkExtraAttributes    	#IMPLIED %linkType CDATA METHODS NAMES REL REV TITLE URN
+ENTITY:%linkName               	CDATA ID
+ENTITY:%linkType               	NAME
+ENTITY:%list                   	DIR MENU OL UL
+ENTITY:%literal                	CDATA
+ENTITY:%phrase                 	CITE CODE EM KBD SAMP STRONG VAR
+ENTITY:%pre.content            	#PCDATA %font %phrase A BR HR
+ENTITY:%preformatted           	LISTING PRE XMP
+ENTITY:%text                   	#PCDATA %font %phrase A BR IMG
+ENTITY:%version.attr           	#FIXED %HTML.Version CDATA VERSION
+ENTITY:amp                     	CDATA
+ENTITY:gt                      	CDATA
+ENTITY:lt                      	CDATA
+ENTITY:quot                    	CDATA
+ExpReqBEGIN:%font              	-
+ExpReqBEGIN:%heading           	-
+ExpReqBEGIN:%phrase            	-
+ExpReqBEGIN:A                  	-
+ExpReqBEGIN:ADDRESS            	-
+ExpReqBEGIN:B                  	-
+ExpReqBEGIN:BASE               	-
+ExpReqBEGIN:BLOCKQUOTE         	-
+ExpReqBEGIN:BODY               	O
+ExpReqBEGIN:BR                 	-
+ExpReqBEGIN:CITE               	-
+ExpReqBEGIN:CODE               	-
+ExpReqBEGIN:DD                 	-
+ExpReqBEGIN:DIR                	-
+ExpReqBEGIN:DL                 	-
+ExpReqBEGIN:DT                 	-
+ExpReqBEGIN:EM                 	-
+ExpReqBEGIN:FORM               	-
+ExpReqBEGIN:H1                 	-
+ExpReqBEGIN:H2                 	-
+ExpReqBEGIN:H3                 	-
+ExpReqBEGIN:H4                 	-
+ExpReqBEGIN:H5                 	-
+ExpReqBEGIN:H6                 	-
+ExpReqBEGIN:HEAD               	O
+ExpReqBEGIN:HR                 	-
+ExpReqBEGIN:HTML               	O
+ExpReqBEGIN:I                  	-
+ExpReqBEGIN:IMG                	-
+ExpReqBEGIN:INPUT              	-
+ExpReqBEGIN:ISINDEX            	-
+ExpReqBEGIN:KBD                	-
+ExpReqBEGIN:LI                 	-
+ExpReqBEGIN:LINK               	-
+ExpReqBEGIN:LISTING            	-
+ExpReqBEGIN:MENU               	-
+ExpReqBEGIN:META               	-
+ExpReqBEGIN:NEXTID             	-
+ExpReqBEGIN:OL                 	-
+ExpReqBEGIN:OPTION             	-
+ExpReqBEGIN:P                  	-
+ExpReqBEGIN:PLAINTEXT          	-
+ExpReqBEGIN:PRE                	-
+ExpReqBEGIN:SAMP               	-
+ExpReqBEGIN:SELECT             	-
+ExpReqBEGIN:STRONG             	-
+ExpReqBEGIN:TEXTAREA           	-
+ExpReqBEGIN:TITLE              	-
+ExpReqBEGIN:TT                 	-
+ExpReqBEGIN:UL                 	-
+ExpReqBEGIN:VAR                	-
+ExpReqBEGIN:XMP                	-
+ExpReqEND:%font                	-
+ExpReqEND:%heading             	-
+ExpReqEND:%phrase              	-
+ExpReqEND:A                    	-
+ExpReqEND:ADDRESS              	-
+ExpReqEND:B                    	-
+ExpReqEND:BASE                 	O
+ExpReqEND:BLOCKQUOTE           	-
+ExpReqEND:BODY                 	O
+ExpReqEND:BR                   	O
+ExpReqEND:CITE                 	-
+ExpReqEND:CODE                 	-
+ExpReqEND:DD                   	O
+ExpReqEND:DIR                  	-
+ExpReqEND:DL                   	-
+ExpReqEND:DT                   	O
+ExpReqEND:EM                   	-
+ExpReqEND:FORM                 	-
+ExpReqEND:H1                   	-
+ExpReqEND:H2                   	-
+ExpReqEND:H3                   	-
+ExpReqEND:H4                   	-
+ExpReqEND:H5                   	-
+ExpReqEND:H6                   	-
+ExpReqEND:HEAD                 	O
+ExpReqEND:HR                   	O
+ExpReqEND:HTML                 	O
+ExpReqEND:I                    	-
+ExpReqEND:IMG                  	O
+ExpReqEND:INPUT                	O
+ExpReqEND:ISINDEX              	O
+ExpReqEND:KBD                  	-
+ExpReqEND:LI                   	O
+ExpReqEND:LINK                 	O
+ExpReqEND:LISTING              	-
+ExpReqEND:MENU                 	-
+ExpReqEND:META                 	O
+ExpReqEND:NEXTID               	O
+ExpReqEND:OL                   	-
+ExpReqEND:OPTION               	O
+ExpReqEND:P                    	O
+ExpReqEND:PLAINTEXT            	O
+ExpReqEND:PRE                  	-
+ExpReqEND:SAMP                 	-
+ExpReqEND:SELECT               	-
+ExpReqEND:STRONG               	-
+ExpReqEND:TEXTAREA             	-
+ExpReqEND:TITLE                	-
+ExpReqEND:TT                   	-
+ExpReqEND:UL                   	-
+ExpReqEND:VAR                  	-
+ExpReqEND:XMP                  	-
+ReqBEGIN:%font                 	-
+ReqBEGIN:%heading              	-
+ReqBEGIN:%phrase               	-
+ReqBEGIN:A                     	-
+ReqBEGIN:ADDRESS               	-
+ReqBEGIN:BASE                  	-
+ReqBEGIN:BLOCKQUOTE            	-
+ReqBEGIN:BODY                  	O
+ReqBEGIN:BR                    	-
+ReqBEGIN:DD                    	-
+ReqBEGIN:DIR                   	-
+ReqBEGIN:DL                    	-
+ReqBEGIN:DT                    	-
+ReqBEGIN:FORM                  	-
+ReqBEGIN:HEAD                  	O
+ReqBEGIN:HR                    	-
+ReqBEGIN:HTML                  	O
+ReqBEGIN:IMG                   	-
+ReqBEGIN:INPUT                 	-
+ReqBEGIN:ISINDEX               	-
+ReqBEGIN:LI                    	-
+ReqBEGIN:LINK                  	-
+ReqBEGIN:LISTING               	-
+ReqBEGIN:MENU                  	-
+ReqBEGIN:META                  	-
+ReqBEGIN:NEXTID                	-
+ReqBEGIN:OL                    	-
+ReqBEGIN:OPTION                	-
+ReqBEGIN:P                     	-
+ReqBEGIN:PLAINTEXT             	-
+ReqBEGIN:PRE                   	-
+ReqBEGIN:SELECT                	-
+ReqBEGIN:TEXTAREA              	-
+ReqBEGIN:TITLE                 	-
+ReqBEGIN:UL                    	-
+ReqBEGIN:XMP                   	-
+ReqEND:%font                   	-
+ReqEND:%heading                	-
+ReqEND:%phrase                 	-
+ReqEND:A                       	-
+ReqEND:ADDRESS                 	-
+ReqEND:BASE                    	O
+ReqEND:BLOCKQUOTE              	-
+ReqEND:BODY                    	O
+ReqEND:BR                      	O
+ReqEND:DD                      	O
+ReqEND:DIR                     	-
+ReqEND:DL                      	-
+ReqEND:DT                      	O
+ReqEND:FORM                    	-
+ReqEND:HEAD                    	O
+ReqEND:HR                      	O
+ReqEND:HTML                    	O
+ReqEND:IMG                     	O
+ReqEND:INPUT                   	O
+ReqEND:ISINDEX                 	O
+ReqEND:LI                      	O
+ReqEND:LINK                    	O
+ReqEND:LISTING                 	-
+ReqEND:MENU                    	-
+ReqEND:META                    	O
+ReqEND:NEXTID                  	O
+ReqEND:OL                      	-
+ReqEND:OPTION                  	O
+ReqEND:P                       	O
+ReqEND:PLAINTEXT               	O
+ReqEND:PRE                     	-
+ReqEND:SELECT                  	-
+ReqEND:TEXTAREA                	-
+ReqEND:TITLE                   	-
+ReqEND:UL                      	-
+ReqEND:XMP                     	-
+.\"---------------------------------------------------------------------
+.B #PCDATA
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI OPTION P PRE SAMP STRONG TEXTAREA TITLE TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<A>" "\&" " .\|.\|. </A>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA B BR CITE CODE EM H1 H2 H3 H4 H5 H6 I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "cannot contain:"
+A
+.RE
+.\"---------------------------------------------------------------------
+.BR "<ADDRESS>" "\&" " .\|.\|. </ADDRESS>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY FORM
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD P SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<B>" "\&" " .\|.\|. </B>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<BASE>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+HEAD
+.RE
+.\"
+.RS
+.I "contains:"
+EMPTY
+.RE
+.\"---------------------------------------------------------------------
+.BR "<BLOCKQUOTE>" "\&" " .\|.\|. </BLOCKQUOTE>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD FORM LI
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A ADDRESS B BLOCKQUOTE BR CITE CODE DIR DL EM FORM H1 H2 H3 H4
+H5 H6 HR I IMG ISINDEX KBD LISTING MENU OL P PRE SAMP STRONG TT UL VAR
+XMP
+.RE
+.\"---------------------------------------------------------------------
+.BR "<BODY>" " \s-3optional\s0\&" " .\|.\|. </BODY>" " \s-3optional\s0\&" "\&"
+.\"
+.RS
+.I "contained in:"
+HTML
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A ADDRESS B BLOCKQUOTE BR CITE CODE DIR DL EM FORM H1 H2 H3 H4
+H5 H6 HR I IMG ISINDEX KBD LISTING MENU OL P PRE SAMP STRONG TT UL VAR
+XMP
+.RE
+.\"---------------------------------------------------------------------
+.BR "<BR>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+EMPTY
+.RE
+.\"---------------------------------------------------------------------
+.B CDATA
+.\"
+.RS
+.I "contained in:"
+LISTING PLAINTEXT XMP
+.RE
+.\"---------------------------------------------------------------------
+.BR "<CITE>" "\&" " .\|.\|. </CITE>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<CODE>" "\&" " .\|.\|. </CODE>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<DD>" "\&" " .\|.\|. </DD>" " \s-3optional\s0\&" "\&"
+.\"
+.RS
+.I "contained in:"
+DL
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BLOCKQUOTE BR CITE CODE DIR DL EM FORM I IMG ISINDEX KBD
+LISTING MENU OL P PRE SAMP STRONG TT UL VAR XMP
+.RE
+.\"---------------------------------------------------------------------
+.BR "<DIR>" "\&" " .\|.\|. </DIR>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD FORM LI
+.RE
+.\"
+.RS
+.I "contains:"
+LI
+.RE
+.\"
+.RS
+.I "cannot contain:"
+BLOCKQUOTE DIR DL FORM ISINDEX LISTING MENU OL P PRE UL XMP
+.RE
+.\"---------------------------------------------------------------------
+.BR "<DL>" "\&" " .\|.\|. </DL>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD FORM LI
+.RE
+.\"
+.RS
+.I "contains:"
+DD DT
+.RE
+.\"---------------------------------------------------------------------
+.BR "<DT>" "\&" " .\|.\|. </DT>" " \s-3optional\s0\&" "\&"
+.\"
+.RS
+.I "contained in:"
+DL
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<EM>" "\&" " .\|.\|. </EM>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.B EMPTY
+.\"
+.RS
+.I "contained in:"
+BASE BR HR IMG INPUT ISINDEX LINK META NEXTID
+.RE
+.\"---------------------------------------------------------------------
+.BR "<FORM>" "\&" " .\|.\|. </FORM>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD LI
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A ADDRESS B BLOCKQUOTE BR CITE CODE DIR DL EM H1 H2 H3 H4 H5 H6
+HR I IMG INPUT ISINDEX KBD LISTING MENU OL P PRE SAMP SELECT STRONG
+TEXTAREA TT UL VAR XMP
+.RE
+.\"
+.RS
+.I "cannot contain:"
+FORM
+.RE
+.\"---------------------------------------------------------------------
+.BR "<H1>" "\&" " .\|.\|. </H1>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A BLOCKQUOTE BODY FORM
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<H2>" "\&" " .\|.\|. </H2>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A BLOCKQUOTE BODY FORM
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<H3>" "\&" " .\|.\|. </H3>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A BLOCKQUOTE BODY FORM
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<H4>" "\&" " .\|.\|. </H4>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A BLOCKQUOTE BODY FORM
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<H5>" "\&" " .\|.\|. </H5>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A BLOCKQUOTE BODY FORM
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<H6>" "\&" " .\|.\|. </H6>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A BLOCKQUOTE BODY FORM
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<HEAD>" " \s-3optional\s0\&" " .\|.\|. </HEAD>" " \s-3optional\s0\&" "\&"
+.\"
+.RS
+.I "contained in:"
+HTML
+.RE
+.\"
+.RS
+.I "contains:"
+BASE ISINDEX LINK META NEXTID TITLE
+.RE
+.\"---------------------------------------------------------------------
+.BR "<HR>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY FORM PRE
+.RE
+.\"
+.RS
+.I "contains:"
+EMPTY
+.RE
+.\"---------------------------------------------------------------------
+.BR "<HTML>" " \s-3optional\s0\&" " .\|.\|. </HTML>" " \s-3optional\s0\&" "\&"
+.\"
+.RS
+.I "contains:"
+BODY HEAD PLAINTEXT
+.RE
+.\"---------------------------------------------------------------------
+.BR "<I>" "\&" " .\|.\|. </I>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<IMG>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+EMPTY
+.RE
+.\"---------------------------------------------------------------------
+.BR "<INPUT>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+FORM
+.RE
+.\"
+.RS
+.I "contains:"
+EMPTY
+.RE
+.\"---------------------------------------------------------------------
+.BR "<ISINDEX>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD FORM HEAD LI
+.RE
+.\"
+.RS
+.I "contains:"
+EMPTY
+.RE
+.\"---------------------------------------------------------------------
+.BR "<KBD>" "\&" " .\|.\|. </KBD>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<LI>" "\&" " .\|.\|. </LI>" " \s-3optional\s0\&" "\&"
+.\"
+.RS
+.I "contained in:"
+DIR MENU OL UL
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BLOCKQUOTE BR CITE CODE DIR DL EM FORM I IMG ISINDEX KBD
+LISTING MENU OL P PRE SAMP STRONG TT UL VAR XMP
+.RE
+.\"---------------------------------------------------------------------
+.BR "<LINK>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+HEAD
+.RE
+.\"
+.RS
+.I "contains:"
+EMPTY
+.RE
+.\"---------------------------------------------------------------------
+.BR "<LISTING>" "\&" " .\|.\|. </LISTING>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD FORM LI
+.RE
+.\"
+.RS
+.I "contains:"
+CDATA
+.RE
+.\"---------------------------------------------------------------------
+.BR "<MENU>" "\&" " .\|.\|. </MENU>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD FORM LI
+.RE
+.\"
+.RS
+.I "contains:"
+LI
+.RE
+.\"
+.RS
+.I "cannot contain:"
+BLOCKQUOTE DIR DL FORM ISINDEX LISTING MENU OL P PRE UL XMP
+.RE
+.\"---------------------------------------------------------------------
+.BR "<META>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+HEAD
+.RE
+.\"
+.RS
+.I "contains:"
+EMPTY
+.RE
+.\"---------------------------------------------------------------------
+.BR "<NEXTID>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+HEAD
+.RE
+.\"
+.RS
+.I "contains:"
+EMPTY
+.RE
+.\"---------------------------------------------------------------------
+.BR "<OL>" "\&" " .\|.\|. </OL>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD FORM LI
+.RE
+.\"
+.RS
+.I "contains:"
+LI
+.RE
+.\"---------------------------------------------------------------------
+.BR "<OPTION>" "\&" " .\|.\|. </OPTION>" " \s-3optional\s0\&" "\&"
+.\"
+.RS
+.I "contained in:"
+SELECT
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA
+.RE
+.\"---------------------------------------------------------------------
+.BR "<P>" "\&" " .\|.\|. </P>" " \s-3optional\s0\&" "\&"
+.\"
+.RS
+.I "contained in:"
+ADDRESS BLOCKQUOTE BODY DD FORM LI
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<PLAINTEXT>" "\&" " .\|.\|. </PLAINTEXT>" " \s-3optional\s0\&" "\&"
+.\"
+.RS
+.I "contained in:"
+HTML
+.RE
+.\"
+.RS
+.I "contains:"
+CDATA
+.RE
+.\"---------------------------------------------------------------------
+.BR "<PRE>" "\&" " .\|.\|. </PRE>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD FORM LI
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM HR I KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<SAMP>" "\&" " .\|.\|. </SAMP>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<SELECT>" "\&" " .\|.\|. </SELECT>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+FORM
+.RE
+.\"
+.RS
+.I "contains:"
+OPTION
+.RE
+.\"---------------------------------------------------------------------
+.BR "<STRONG>" "\&" " .\|.\|. </STRONG>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<TEXTAREA>" "\&" " .\|.\|. </TEXTAREA>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+FORM
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA
+.RE
+.\"---------------------------------------------------------------------
+.BR "<TITLE>" "\&" " .\|.\|. </TITLE>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+HEAD
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA
+.RE
+.\"---------------------------------------------------------------------
+.BR "<TT>" "\&" " .\|.\|. </TT>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<UL>" "\&" " .\|.\|. </UL>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD FORM LI
+.RE
+.\"
+.RS
+.I "contains:"
+LI
+.RE
+.\"---------------------------------------------------------------------
+.BR "<VAR>" "\&" " .\|.\|. </VAR>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+A ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT EM FORM H1 H2 H3 H4 H5 H6 I
+KBD LI P PRE SAMP STRONG TT VAR
+.RE
+.\"
+.RS
+.I "contains:"
+#PCDATA A B BR CITE CODE EM I IMG KBD SAMP STRONG TT VAR
+.RE
+.\"---------------------------------------------------------------------
+.BR "<XMP>" "\&" " .\|.\|. </XMP>" "\&" "\&"
+.\"
+.RS
+.I "contained in:"
+BLOCKQUOTE BODY DD FORM LI
+.RE
+.\"
+.RS
+.I "contains:"
+CDATA
+.RE

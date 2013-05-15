@@ -1,0 +1,424 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<!-- $Id: intro.src,v 1.13 1997/11/06 20:13:04 lehors Exp $ -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<TITLE>Introduction to HTML 4.0</TITLE>
+<LINK rel="previous" href="../about.html">
+<LINK rel="next" href="sgmltut.html">
+<LINK rel="contents" href="../cover.html#toc">
+<LINK rel="STYLESHEET" href="../style/default.css" type="text/css">
+</HEAD>
+<BODY>
+<div class="navbar">
+<center>&nbsp;<a href="../about.html">previous</a> &nbsp; <a href="sgmltut.html">next</a> &nbsp; <a href="../cover.html#toc">contents</a> &nbsp; <a href="../index/elements.html">elements</a> &nbsp; <a href="../index/attribs.html">attributes</a>
+</center><hr>
+</div>
+
+<H1 ALIGN="center"><a name="h-2">2</a> Introduction to HTML 4.0</H1>
+<div class="subtoc"><p><strong>Contents</strong>
+<ol>
+<li><a href="intro.html#h-2.1">What is the World Wide Web?</a>
+<ol>
+<li><a href="intro.html#h-2.1.1">Introduction to URLs</a>
+<li><a href="intro.html#h-2.1.2">Fragment identifiers</a>
+<li><a href="intro.html#h-2.1.3">Relative URLs</a>
+</ol>
+<li><a href="intro.html#h-2.2">What is HTML?</a>
+<ol>
+<li><a href="intro.html#h-2.2.1">A brief history of HTML</a>
+</ol>
+<li><a href="intro.html#h-2.3">HTML 4.0</a>
+<ol>
+<li><a href="intro.html#h-2.3.1">Internationalization</a>
+<li><a href="intro.html#h-2.3.2">Accessibility</a>
+<li><a href="intro.html#h-2.3.3">Tables</a>
+<li><a href="intro.html#h-2.3.4">Compound documents</a>
+<li><a href="intro.html#h-2.3.5">Style sheets</a>
+<li><a href="intro.html#h-2.3.6">Scripting</a>
+<li><a href="intro.html#h-2.3.7">Printing</a>
+</ol>
+<li><a href="intro.html#h-2.4">Designing documents with HTML 4.0</a>
+<ol>
+<li><a href="intro.html#h-2.4.1">Separate structure and presentation</a>
+<li><a href="intro.html#h-2.4.2">Consider universal accessibility to the Web</a>
+<li><a href="intro.html#h-2.4.3">Help user agents with incremental rendering</a>
+</ol>
+</ol>
+</div>
+<H2><a name="h-2.1">2.1</a> What is the World Wide Web?</h2>
+<p>The World Wide Web is a network of information resources. The Web
+relies on three mechanisms to make these resources readily available to
+the widest possible audience: 
+
+<ol>
+<li>A uniform naming scheme for locating resources on the Web (e.g., URLs).
+<li>Protocols, for access to named resources over the Web (e.g., HTTP).
+<li>Hypertext, for easy navigation among resources (e.g., HTML).
+</ol>
+
+<P>The ties between the three mechanisms are apparent throughout
+this specification. 
+
+<H3><a name="h-2.1.1">2.1.1</a> <a href="intro-urls">Introduction to URLs</a></H3>
+<p>Every resource available on the Web -- HTML document, image, video
+clip, program, etc. -- has an address that may be encoded by a 
+<dfn>Uniform Resource Locator</dfn>, or "URL".
+
+<P>URLs typically consist of three pieces:
+
+<ol>
+<li> The naming scheme of the mechanism used to access the resource. 
+<li> The name of the machine hosting the resource.
+<li> The name of the resource itself, given as a path.
+</ol>
+
+<P>Consider the URL that designates the current HTML specification:
+
+<pre>
+http://www.w3.org/TR/PR-html4/cover.html
+</pre>
+
+<P>This URL may be read as follows: There is a document available via
+the HTTP protocol (see <a rel="biblioentry"
+href="./references.html#ref-RFC2068">[RFC2068]</a>), residing on the
+machine www.w3.org, accessible via the path
+"/TR/PR-html4/cover.html". Other schemes you may see in HTML documents
+include "mailto" for email and "ftp" for FTP.
+
+<DIV class="example">
+<P>Here is another example of a URL. This one refers to
+a user's mailbox:</P>
+
+<PRE>
+<EM>...this is text...</EM>
+For all comments, please send email to 
+&lt;A href="mailto:joe@someplace.com"&gt;Joe Cool&lt;/A&gt;.
+</PRE>
+</DIV>
+
+
+<h3><a name="h-2.1.2">2.1.2</a> <a name="fragment-url">Fragment identifiers</a></h3>
+
+<P>Some URLs refer to a location within a resource.  This kind of URL
+ends with "#" followed by an anchor identifier (called the "fragment
+identifier"). For instance, here is a URL pointing to an anchor named
+<samp>section_2</samp>:</P>
+
+<pre class="example">
+http://somesite.com/html/top.html#section_2
+</pre>
+
+<h3><a name="h-2.1.3">2.1.3</a> <a name="relative-urls">Relative URLs</a></h3>
+
+<p>A <dfn>relative</dfn> URL doesn't contain any naming scheme
+information. Its path generally refers to a resource on the same
+machine as the current document. Relative URLs may contain relative
+path components (".." means one level up in the hierarchy defined by
+the path), and may contain fragment identifiers.
+
+<P>Relative URLs are <a
+href="../struct/links.html#resolving-relative-urls">resolved to full
+URLs</a> using a base URL. As an example of relative URL resolution,
+assume we have the base URL
+"http://www.acme.com/support/intro.html". The relative URL in the
+following markup for a hypertext link:</p>
+
+<pre>
+  &lt;A href="suppliers.html"&gt;Suppliers&lt;/A&gt;
+</pre>
+
+<p>would expand to the full URL "http://www.acme.com/support/suppliers.html",
+while the relative URL in the following markup for an image</p>
+
+<pre>
+  &lt;IMG src="../icons/logo.gif" alt="logo"&gt;
+</pre>
+
+<p>would expand to the full URL "http://www.acme.com/icons/logo.gif".
+
+<P>In HTML, URLs play a role in these situations:
+
+<ul>
+<li> linking to another document or resource,
+(see the <a href="../struct/links.html#edef-A"><samp class="einst">A</samp></a> and
+<a href="../struct/links.html#edef-LINK"><samp class="einst">LINK</samp></a> elements).
+
+<li> linking to an external style sheet or script (see the
+<a href="../struct/links.html#edef-LINK"><samp class="einst">LINK</samp></a> and
+<a href="../interact/scripts.html#edef-SCRIPT"><samp class="einst">SCRIPT</samp></a> elements).
+
+<li> images, objects and applets for inclusion in a page, (see the
+<a href="../struct/objects.html#edef-IMG"><samp class="einst">IMG</samp></a>, <a href="../struct/objects.html#edef-OBJECT"><samp class="einst">OBJECT</samp></a>,
+<a href="../struct/objects.html#edef-APPLET"><samp class="einst">APPLET</samp></a> and
+<a href="../interact/forms.html#edef-INPUT"><samp class="einst">INPUT</samp></a> elements).
+
+<li> image maps (see the <a href="../struct/objects.html#edef-MAP"><samp class="einst">MAP</samp></a>
+and <a href="../struct/objects.html#edef-AREA"><samp class="einst">AREA</samp></a> elements).
+
+<li> form submission (see <a href="../interact/forms.html#edef-FORM"><samp class="einst">FORM</samp></a>).
+
+<li> frames (see the <a href="../present/frames.html#edef-FRAME"><samp class="einst">FRAME</samp></a> and
+<a href="../present/frames.html#edef-IFRAME"><samp class="einst">IFRAME</samp></a> elements).
+
+<li> citing an external reference (see the
+<a href="../struct/text.html#edef-Q"><samp class="einst">Q</samp></a>, <a href="../struct/text.html#edef-BLOCKQUOTE"><samp class="einst">BLOCKQUOTE</samp></a>,
+<a href="../struct/text.html#edef-ins"><samp class="einst">INS</samp></a> and
+<a href="../struct/text.html#edef-del"><samp class="einst">DEL</samp></a> elements).
+
+<li> referring to metadata conventions describing a document
+(see the <a href="../struct/global.html#edef-HEAD"><samp class="einst">HEAD</samp></a> element).
+</ul>
+
+<P>Please consult the section on the <a
+href="../types.html#type-url">URL</a> type for more information about
+URLs.
+
+<H2><a name="h-2.2">2.2</a> What is HTML?</h2>
+<P> To publish information for global distribution, one needs a
+universally understood language, a kind of publishing mother tongue
+that all computers may potentially understand. The publishing language
+used by the World Wide Web is HTML (from HyperText Markup Language).
+
+<P>HTML gives authors the means to:
+
+<UL>
+<LI>Publish online documents with headings, text, tables, lists,
+photos, etc.
+
+<LI>Retrieve online information via hypertext links, at the click of a
+button.
+
+<LI>Design forms for conducting transactions with remote services, for
+use in searching for information, making reservations, ordering
+products, etc.
+
+<LI>Include spread-sheets, video clips, sound clips, and other
+applications directly in their documents.
+</UL>
+
+<H3><a name="h-2.2.1">2.2.1</a> A brief history of HTML</H3>
+<P> HTML was originally developed by Tim Berners-Lee while at
+CERN, and popularized by the Mosaic browser developed at NCSA.
+During the course of the 1990s it has blossomed with the explosive
+growth of the Web. During this time, HTML has been extended in a
+number of ways. The Web depends on Web page authors and vendors
+sharing the same conventions for HTML. This has motivated joint
+work on specifications for HTML.
+
+<P>HTML 2.0 (November 1995, see <a rel="biblioentry"
+href="../references.html#ref-RFC1866">[RFC1866]</a>) was developed
+under the aegis of the Internet Engineering Task Force (IETF) to
+codify common practice in late 1994. HTML+ (1993) and <a
+rel="biblioentry" href="../references.html#ref-HTML30">[HTML30]</a>
+(1995) proposed much richer versions of HTML. Despite never receiving
+consensus in standards discussions, these drafts led to the adoption
+of a range new features. The efforts of the World Wide Web
+Consortium's HTML working group to codify common practice in 1996
+resulted in HTML 3.2 (January 1997, see <a rel="biblioentry"
+href="../references.html#ref-HTML32">[HTML32]</a>). Changes from HTML
+3.2 are summarized in <a href="../appendix/changes.html">Appendix A</a>
+
+<P>Most people agree that HTML documents should work well across
+different browsers and platforms. Achieving interoperability lowers
+costs to content providers since they must develop only one version of
+a document. If the effort is not made, there is much greater risk
+that the Web will devolve into a proprietary world of incompatible
+formats, ultimately reducing the Web's commercial potential for all
+participants.
+
+<P>Each version of HTML has attempted to reflect greater consensus
+among industry players so that the investment made by content
+providers will not be wasted and that their documents will not become
+unreadable in a short period of time.
+
+<P>HTML has been developed with the vision that all manner of devices
+should be able to use information on the Web: PCs with graphics
+displays of varying resolution and color depths, cellular
+telephones, hand held devices, devices for speech for output and 
+input, computers with high or low bandwidth, and so on.</P>
+
+<H2><a name="h-2.3">2.3</a> HTML 4.0</H2>
+<P> HTML 4.0 extends HTML with mechanisms for style sheets, scripting,
+frames, embedding objects, improved support for right to left and mixed
+direction text, richer tables, and enhancements to forms, offering
+improved accessibility for people with disabilities.
+
+<H3><a name="h-2.3.1">2.3.1</a> Internationalization</H3>
+
+<P>This version of HTML has been designed with the help of experts in
+the field of internationalization, so that documents may be written in
+every language and be transported easily around the world. This has
+been accomplished by incorporating <a rel="biblioentry"
+href="../references.html#ref-RFC2070">[RFC2070]</a>, which deals with
+the internationalization of HTML.
+
+<P>One important step has been the adoption of the ISO/IEC:10646
+standard (see <a rel="biblioentry"
+href="../references.html#ref-ISO10646">[ISO10646]</a>) as the document
+character set for HTML. This is the world's most inclusive standard
+dealing with issues of the representation of international characters,
+text direction, punctuation, and other world language issues.
+
+<P>HTML now offers greater support for diverse human languages within
+a document. This allows for more effective indexing of documents for
+search engines, higher-quality typography, better text-to-speech
+conversion, correct hyphenation, etc.
+
+<H3><a name="h-2.3.2">2.3.2</a> Accessibility</H3>
+
+<P>As the Web community grows and its members diversify in their
+abilities and skills, it is crucial that the underlying
+technologies be appropriate to their specific needs. HTML
+has been designed to make Web pages more accessible to
+those with physical limitations. HTML 4.0 developments in
+the area of accessibility include:</P>
+
+<UL> 
+<LI>Encouraging the use of style sheets (rather than tables) to achieve
+layout effect.
+
+<LI>Making it easier to provided alternate (textual and aural)
+descriptions of images for non-visual browsers.
+
+<LI>Providing labels for form fields
+
+<LI>Providing labeled hierarchical groupings for form fields. 
+
+<LI>Providing the ability to associate a longer text description with an
+HTML element.
+</UL>
+
+<P>Authors who design pages with accessibility issues in mind will not 
+only receive the blessings of the accessibility community, but will
+benefit in other ways as well: well-designed HTML
+documents that distinguish structure and presentation will
+adapt more easily to new technologies.
+
+<H3><a name="h-2.3.3">2.3.3</a> Tables</H3>
+
+<P>The new table model in HTML is based on <a rel="biblioentry"
+href="../references.html#ref-RFC1942">[RFC1942]</a>.  Authors now
+have greater control over structure and layout (e.g., column groups).
+The ability of designers to recommend column widths
+allows user agents to display table data incrementally (as it arrives)
+rather than waiting for the entire table before
+rendering.
+
+<div class="note">
+<em><strong>Note.</strong> At the time of writing, some HTML authoring
+tools rely extensively on tables for formatting, which may easily
+cause accessibility problems.
+</em>
+</div>
+
+<H3><a name="h-2.3.4">2.3.4</a> Compound documents</H3>
+
+<P>HTML now offers a standard mechanism for embedding generic media
+objects and applications in HTML documents. The <a href="../struct/objects.html#edef-OBJECT"><samp
+class="einst">OBJECT</samp></a> element (together with its more specific
+ancestor elements <a href="../struct/objects.html#edef-IMG"><samp class="einst">IMG</samp></a> and <a href="../struct/objects.html#edef-APPLET"><samp
+class="einst">APPLET</samp></a>) provides a mechanism for including
+images, video, sound, mathematics, specialized applications, and other
+objects in a document. It also allows authors to specify a hierarchy
+of alternate renderings for user agents that don't support a specific
+rendering.
+
+<H3><a name="h-2.3.5">2.3.5</a> Style sheets</H3>
+
+<P>Style sheets simplify HTML markup and largely relieve HTML of the
+responsibilities of presentation. They give both authors and users
+control over the presentation of documents -- font
+information, alignment, colors, etc.
+
+<P>Style information can be specified for specific elements or
+groups of elements either within an HTML document or in 
+separate style sheets.
+
+<P>The mechanism for associating a style sheet with a document is
+independent of the style sheet language.
+
+<P>Before the advent of style sheets, authors had limited control over
+rendering.  HTML 3.2 included a number of attributes and elements
+offering control over alignment, font size, and text color. Authors
+also exploited tables and images as a means for laying out pages. The
+relatively long time it takes for users to upgrade their browsers
+means that these features will continue to be used for some
+time. However, since style sheets offer more powerful presentation
+mechanisms, the World Wide Web Consortium will eventually phase out
+many of HTML's presentation elements and attributes.  Throughout the
+specification elements and attributes at risk are marked as "<a
+href="../convent.html#deprecated">deprecated</a>".  They are usually
+accompanied by examples of how to achieve the same effects with
+other elements or style sheets.
+
+<p>This specification includes three Document Type Definitions (DTDs)
+that may be used to validate HTML 4.0 documents. One for use with
+framesets, a loose DTD for transitional documents and a strict DTD
+that excludes presentation elements and attributes.
+
+<H3><a name="h-2.3.6">2.3.6</a> Scripting</H3>
+
+<p>Through scripts, authors may create "smart forms" that react as users
+fill them out. Scripting allows designers to create dynamic Web pages, and
+to use HTML as a means to build networked applications. The mechanisms
+provided to associate HTML with scripts are independent of particular
+scripting languages.
+
+<H3><a name="h-2.3.7">2.3.7</a> Printing</H3>
+
+<P>Sometimes, authors will want to make it easy for users to print more
+than just the current document. When documents form part of a larger
+work, the relationships between them can be described using the HTML
+<a href="../struct/links.html#edef-LINK"><samp class="einst">LINK</samp></a> element or using W3C's Resource
+Description Language, see <a href="../references.html#ref-RDF">[RDF]</a>.
+
+<H2><a name="h-2.4">2.4</a> Designing documents with HTML 4.0</H2>
+
+<!-- I wish we could expand this -Ian -->
+
+<P>We recommend that authors and implementors observe the following
+general principles when working with HTML 4.0.
+
+<h3><a name="h-2.4.1">2.4.1</a> Separate structure and presentation</h3> 
+
+<P>HTML has its roots in SGML which has always been a language for the
+specification of structural markup. As HTML matures, more and more of
+its presentational elements and attributes are being replaced by other
+mechanisms, in particular style sheets. Experience has shown that
+separating the structure of a document from its presentational aspects
+reduces the cost of serving a wide range of platforms, media, etc., and
+facilitates document revisions.</p>
+
+<h3><a name="h-2.4.2">2.4.2</a> Consider universal accessibility to the Web</h3> 
+
+<P>To make the Web more accessible to everyone, notably those with
+disabilities, authors should consider how their documents may be
+rendered on a variety of platforms: speech-based browsers,
+braille-readers, etc. We do not recommend that designers limit their
+creativity, only that they consider alternate renderings in their
+design. HTML offers a number of mechanisms to this end (e.g., the
+<a href="../struct/objects.html#adef-alt"><samp class="ainst">alt</samp></a> attribute, the 
+<a href="../interact/forms.html#adef-accesskey"><samp class="ainst">accesskey</samp></a> attribute, etc.)
+
+<P>Furthermore, authors should keep in mind that their documents may
+be reaching a far-off audience with different computer
+configurations. In order for documents to be interpreted correctly,
+designers should include in their documents information about the
+natural language and direction of the text, how the document is
+encoded, and other issues related to internationalization.</p>
+
+<h3><a name="h-2.4.3">2.4.3</a> Help user agents with incremental rendering</h3> 
+
+<P>By carefully designing their tables and making use of new table
+features in HTML 4.0, designers can help user agents render documents
+more quickly. Authors can learn how to design tables for
+incremental rendering in the 
+definition of the <a href="../struct/tables.html#edef-TABLE"><samp class="einst">TABLE</samp></a> element. Implementors
+should consult the <a href="../appendix/notes.html#notes-tables">notes
+on tables</a> in the appendix for information on incremental algorithms.
+<div class="navbar">
+<hr><center><a href="../about.html">previous</a> &nbsp; <a href="sgmltut.html">next</a> &nbsp; <a href="../cover.html#toc">contents</a> &nbsp; <a href="../index/elements.html">elements</a> &nbsp; <a href="../index/attribs.html">attributes</a>
+</center></div>
+</BODY>
+</html>

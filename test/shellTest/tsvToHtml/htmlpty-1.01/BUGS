@@ -1,0 +1,21 @@
+%% /u/sy/beebe/src/htmlpty/htmlpty-1.00/BUGS, Fri Nov 28 14:38:13 1997
+%% Edit by Nelson H. F. Beebe <beebe@plot79.math.utah.edu>
+
+The DVI form of the manual page documentation has some deficiencies in
+line breaking in the SYNOPSIS section.  The reason is that neither I,
+nor a colleague who is a long-time troff expert, has found a way to
+format that section with automatic line breaking, in such a way that
+the code works with nroff, troff, and groff.  The explicit line breaks
+that are present in the
+
+.if n .ti ...
+.if t .ti ...
+
+conditionals assume normal ASCII output with fixed-width characters
+(nroff: .if n ...), or else Times fonts (troff: .if t ...).  
+
+The DVI file is created with Computer Modern fonts, which are
+available in every TeX implementation, but groff provides no way to
+change the fonts used in DVI output.  Changing fonts changes character
+widths, and that in turn invalidates the hard-coded line breaking
+decisions.

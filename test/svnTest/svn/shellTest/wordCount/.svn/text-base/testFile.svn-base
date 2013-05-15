@@ -1,0 +1,96 @@
+Getting Information About Files
+Now we are going to look at a couple of scripts that process the output of a UNIX command, ls. The following is a sample of the
+long listing produced by the command ls -l:[10]
+[10] Note that on a Berkeley 4.3BSD-derived UNIX system such as Ultrix or SunOS 4.1.x, ls -l produces an eight-
+column report; use ls -lg to get the same report format shown here.
+	$ ls -l
+This listing is a report in which data is presented in rows and columns. Each file is presented across a single row. The file listing
+consists of nine columns. The file's permissions appear in the first column, the size of the file in bytes in the fifth column, and the
+filename is found in the last column. Because one or more spaces separate the data in columns, we can treat each column as a field.
+In our first example, we're going to pipe the output of this command to an awk script that prints selected fields from the file listing.
+To do this, we'll create a shell script so that we can make the pipe transparent to the user. Thus, the structure of the shell script is:
+	ls -l $* | awk 'script'
+The $* variable is used by the shell and expands to all arguments passed from the command line. (We could use $1 here, which
+would pass the first argument, but passing all the arguments provides greater flexibility.) These arguments can be the names of files
+or directories or additional options to the ls command. If no arguments are specified, the "$*" will be empty and the current
+directory will be listed. Thus, the output of the ls command will be directed to awk, which will automatically read standard input,
+since no filenames have been given.
+We'd like our awk script to print the size and name of the file. That is, print field 5 ($5) and field 9 ($9).
+	ls -l $* | awk '{
+		print $5, "\t", $9
+	}'
+If we put the above lines in a file named fls and make that file executable, we can enter fls as a command.
+So what our program does is take the long listing and reduce it to two fields. Now, let's add new functionality to our report by
+producing some information that the ls -l listing does not provide. We add each file's size to a running total, to produce the total
+number of bytes used by all files in the listing. We can also keep track of the number of files and produce that total. There are two
+parts to adding this functionality. The first is to accumulate the totals for each input line. We create the variable sum to accumulate
+the size of files and the variable filenum to accumulate the number of files in the listing.
+{
+	sum += $5
+	++filenum
+	print $5, "\t", $9
+}
+The first expression uses the assignment operator +=. It adds the value of field 5 to the present value of the variable sum. The
+second expression increments the present value of the variable filenum. This variable is used as a counter, and each time the
+expression is evaluated, 1 is added to the count.
+The action we've written will be applied to all input lines. The totals that are accumulated in this action must be printed after awk has
+read all the input lines. Therefore, we write an action that is controlled by the END rule.
+
+END { print "Total: ", sum, "bytes (" filenum " files)" }
+
+We can also use the BEGIN rule to add column headings to the report.
+
+BEGIN { print "BYTES", "\t", "FILE" }
+
+Now we can put this script in an executable file named filesum and execute it as a single-word command.
+
+What's nice about this command is that it allows you to determine the size of all files in a directory or any group of files.
+While the basic mechanism works, there are a few problems to be taken care of. The first problem occurs when you list the entire
+directory using the ls -l command. The listing contains a line that specifies the total number of blocks in the directory. The partial
+listing (all files beginning with "c") in the previous example does not have this line. But the following line would be included in the
+output if the full directory was listed:
+
+The block total does not interest us because the program displays the total file size in bytes. Currently, filesum does not print this
+line; however, it does read this line and cause the filenum counter to be incremented.
+There is also a problem with this script in how it handles subdirectories. Look at the following line from an ls -l:
+
+	drwxrwxrwx 3 dale project 960 Feb 1 15:47 sed
+
+A "d" as the first character in column 1 (file permissions) indicates that the file is a subdirectory. The size of this file (960 bytes)
+does not indicate the size of files in that subdirectory and therefore, it is slightly misleading to add it to the file size totals. Also, it
+might be helpful to indicate that it is a directory.
+If you want to list the files in subdirectories, supply the -R (recursive) option on the command line. It will be passed to the ls
+command. However, the listing is slightly different as it identifies each directory. For instance, to identify the subdirectory old, the
+ls -lR listing produces a blank line followed by:
+	./old:
+Our script ignores that line and a blank line preceding it but nonetheless they increment the file counter. Fortunately, we can devise
+rules to handle these cases. Let's look at the revised, commented script:
+	ls -l $* | awk '
+	# filesum: list files and total size in bytes
+	# input: long listing produced by "ls -l"
+	#1 output column headers
+	BEGIN { print "BYTES", "\t", "FILE" }
+	#2 test for 9 fields; files begin with "-"
+	NF == 9 && /^-/ {
+	sum += $5
+	# accumulate size of file
+	++filenum
+	# count number of files
+	print $5, "\t", $9
+	# print size and filename
+	}
+	#3 test for 9 fields; directory begins with "d"
+	NF == 9 && /^d/ {
+	print "<dir>", "\t", $9 # print <dir> and name
+	}
+	#4 test for ls -lR line ./dir:
+	$1 ~ /^\..*:$/ {
+	print "\t" $0 # print that line preceded by tab
+	}
+	#5 once all is done,
+	END {
+	# print total file size and number of files
+	print "Total: ", sum, "bytes (" filenum " files)"
+	}'
+
+

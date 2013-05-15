@@ -1,0 +1,10 @@
+#include <stdio>
+int taskTodo(int charp);
+
+int main()
+{
+  int a = 8;
+  
+  taskToDo(a);
+
+}  

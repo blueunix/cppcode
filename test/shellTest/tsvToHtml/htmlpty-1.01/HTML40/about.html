@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<!-- $Id: about.src,v 1.46 1997/11/06 04:38:53 ian Exp $ -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<TITLE>About the HTML 4.0 Specification</TITLE>
+<LINK rel="previous" href="cover.html">
+<LINK rel="next" href="intro/intro.html">
+<LINK rel="contents" href="cover.html#toc">
+<LINK rel="STYLESHEET" href="style/default.css" type="text/css">
+</HEAD>
+<BODY>
+<div class="navbar">
+<center>&nbsp;<a href="cover.html">previous</a> &nbsp; <a href="intro/intro.html">next</a> &nbsp; <a href="cover.html#toc">contents</a> &nbsp; <a href="index/elements.html">elements</a> &nbsp; <a href="index/attribs.html">attributes</a>
+</center><hr>
+</div>
+
+<H1 align="center"><a name="h-1">1</a> <a name="about">About the HTML 4.0 Specification</a></H1>
+<div class="subtoc"><p><strong>Contents</strong>
+<ol>
+<li><a href="about.html#h-1.1">How the specification is organized</a>
+<li><a href="about.html#h-1.2">Document conventions</a>
+<ol>
+<li><a href="about.html#h-1.2.1">Elements and attributes</a>
+<li><a href="about.html#h-1.2.2">Notes and examples</a>
+</ol>
+<li><a href="about.html#h-1.3">Acknowledgments</a>
+</ol>
+</div>
+
+<h2><a name="h-1.1">1.1</a> How the specification is organized</h2>
+
+<p>This specification is divided into the following sections:
+
+<dl>
+<dt><Strong>Sections 2 and 3: Introduction to HTML 4.0</strong>
+<dd>The introduction describes HTMLs place in the scheme of the World
+Wide Web, provides a brief history of the development of HTML,
+highlights what can be done with HTML 4.0, and provides some design
+tips for developing good HTML habits.
+
+<P>The brief SGML tutorial gives readers some understanding of 
+HTML's relationship to SGML and gives summary information on how to
+read the HTML Document Type Declaration (DTD).
+</dd>
+
+<dt><strong>Sections 4 - 24: HTML 4.0 reference manual</strong>
+<dd>The bulk of the reference manual consists of the HTML language
+reference, which defines all elements and attributes of the language.
+
+<P>This document has been organized by topic rather than by the
+grammar of HTML. Topics are grouped into three categories: structure,
+presentation, and interactivity. Although it is not easy to divide
+HTML constructs perfectly into these three categories, the model
+reflects the designers' experience that separating a document's
+structure from its presentation produces more effective and
+maintainable documents.
+
+<P>The language reference consists of the following information:</P>
+
+<ul>
+
+<li><p>What <a href="charset.html#doc-char-set">characters</a> may
+appear in an HTML document.</P>
+
+<li><p>Basic <a href="types.html">data types</a> of an HTML document.</P>
+
+<li><p>Elements that govern the structure of an HTML
+document, including <a href="./struct/text.html">text</a>, <a
+href="./struct/lists.html">lists</a>, 
+<a href="./struct/tables.html">tables</a>, 
+<a href="./struct/links.html">links</a>, and 
+<a href="./struct/objects.html">included objects, images, and applets</a>.</P>
+
+<li><p>Elements that govern the presentation of an HTML document,
+including <a href="./present/styles.html">style sheets</a>, <a
+href="./present/graphics.html">fonts, colors, rules, and other visual
+presentation</a>, and <a href="./present/frames.html">frames for
+multi-windowed presentations</a>.</P>
+
+<li><p>Elements that govern interactivity with an HTML document,
+including  <a href="./interact/forms.html">forms for user input</a> and
+<a href="./interact/scripts.html">scripts for active documents</a>.</P>
+
+<li><p>The SGML formal definition of HTML: 
+<ul>
+<li>The <a
+href="./sgml/sgmldecl.html">SGML declaration of HTML</a>.
+<li>Three DTDs: <a href="./sgml/dtd.html">strict</a>,
+<a href="./sgml/loosedtd.html">loose</a>, and 
+<a href="./sgml/framesetdtd.html">frameset</a>.
+<li>The <a
+href="./sgml/entities.html">list of character references</a>.
+</ul>
+</ul>
+
+<dt><strong>Appendixes</strong>
+
+<dd>The first appendix contains information about <a
+href="appendix/changes.html">changes from HTML 3.2</a> to help authors
+and implementors with the transition to HTML 4.0. The second appendix
+contains <a href="appendix/notes.html">performance and implementation
+notes</a> and is primarily intended to help implementors create
+user agents for HTML 4.0.
+</dd>
+
+<dt><strong>References</strong>
+<dd>A list of normative and informative references.</dd>
+
+<dt><strong>Indexes</strong>
+
+<dd>Two indexes give readers rapid access to the definition of all <a
+href="./index/elements.html">elements</a> and <a
+href="./index/attribs.html">attributes</a> The indexes also
+summarize some key characteristics of each element and attribute.
+</dd>
+</dl>
+
+<h2><a name="h-1.2">1.2</a> Document conventions</H2>
+
+<P>This document has been written with two types of readers in mind:
+authors and implementors. We hope the specification will
+provide authors with the tools they need to write efficient,
+attractive, and accessible documents, without over-exposing them to
+HTML's implementation details. Implementors, however, should find all
+they need to build conforming user agents.
+
+<p>The specification may be approached in several ways:
+
+<ul>
+<li><P><strong>Read from beginning to end.</strong> The specification
+begins with a general presentation of HTML and becomes more and more
+technical and specific towards the end.
+
+<li><strong>Quick access to information.</strong> In order to get
+information about 
+syntax and semantics as quickly as possible, the online
+version of the specification includes the following
+features:
+
+<ol>
+<li>Every reference to an element or attribute is linked to
+its definition in the specification. Each element or attribute
+is defined in only one location.
+
+<li>Every page will include links to the indexes, so you will never be
+more than two links away from finding the definition of an <a
+href="index/elements.html">element</a> or <a
+href="index/attribs.html">attribute</a>.
+
+<li><p>The front pages of the three sections of the language reference
+manual extend the initial table of contents with more
+detail about each section.</P>
+
+</ol>
+</ul>
+
+<h3><a name="h-1.2.1">1.2.1</a> Elements and attributes</h3>
+
+<P> Element names are written in upper case letters (e.g.,
+BODY). Attribute names are written in lower case letters (e.g., lang,
+onsubmit). Recall that in HTML, element and attribute names are
+case-insensitive; the convention is meant to encourage readability.
+
+<p>Element and attribute names are marked within the source HTML for
+the specification and may be rendered specially by some user
+agents.
+
+<p>Each attribute definition specifies the type of its value. If
+the type allows a small set of possible values, the definition
+lists the set of values, separated by a bar (|).
+
+<P>After the type information, each attribute
+definition indicates the case-sensitivity of its values, between "[]"
+marks. See the section on <a href="types.html#case">case
+information</a> for details.
+
+<h3><a name="h-1.2.2">1.2.2</a> Notes and examples</h3>
+
+<P>Informative notes are emphasized to stand out from surrounding
+text and may be rendered specially by some user agents.
+
+<P>All examples illustrating deprecated usage are marked as "DEPRECATED
+EXAMPLE". Deprecated examples also include recommended alternate
+solutions. All examples that illustrates illegal usage are clearly
+marked as "ILLEGAL EXAMPLE".
+
+<P>Examples in the text conform to the <a href="sgml/dtd.html">strict
+document type declaration</a> unless otherwise indicated or unless the
+example in question refers to elements or attributes only defined by
+the <a href="sgml/loosedtd.html">loose document type declaration</a> or
+<a href="sgml/framesetdtd.html">frameset document type declaration</a>.
+For convenience, most of the examples in this 
+specification do not begin with the 
+<a href="struct/global.html#version-info">document type declaration</a> that
+is mandatory at the beginning of each HTML document.
+
+<P>Examples and notes are marked within the source HTML for the
+specification and some user agents may render them specially.
+
+<H2><a name="h-1.3">1.3</a> Acknowledgments</H2>
+
+<p>Thanks to everyone who has helped to author the working
+drafts that went into the HTML 4.0 specification, and all those who
+have sent suggestions and corrections. A particular thanks to
+T.V. Raman (Adobe) for his work on improving the accessibility of HTML
+forms for people with disabilities.
+
+<P>The authors of this specification, the members of the W3C HTML Working
+Group, deserve much applause for their diligent review of this document,
+their constructive comments, and their hard work: John D. Burger (MITRE),
+Steve Byrne (JavaSoft), Martin J. D&uuml;rst (University of Zurich), Daniel
+Glazman (Electricit&eacute; de France), Scott Isaacs (Microsoft), Murray Maloney
+(GRIF), Steven Pemberton (CWI), Jared Sorensen (Novell), Powell Smith
+(IBM), Robert Stevahn (HP), Ed Tecot (Microsoft), Jeffrey Veen (HotWired),
+Mike Wexler (Adobe), Misha Wolf (Reuters), and Lauren Wood (SoftQuad).
+
+<P>Thank you Dan Connolly (W3C) for thoughtful input and guidance as
+chairman of the HTML working group. Thank you Sally Khudairi (W3C) for
+your indispensable work on the press release.
+
+<P>Thanks to David M. Abrahamson and Roger Price for their careful
+reading of the specification and astute comments.
+
+<P>Of particular help from the W3C at Sophia-Antipolis were Janet
+Bertot, Bert Bos, Stephane Boyera, Daniel Dardailler, Yves Lafon,
+H&aring;kon Lie, Chris Lilley, and Colas Nahaboo from Bull.
+
+<p>Lastly, thanks to Tim Berners-Lee without whom none of this
+would have been possible.
+<div class="navbar">
+<hr><center><a href="cover.html">previous</a> &nbsp; <a href="intro/intro.html">next</a> &nbsp; <a href="cover.html#toc">contents</a> &nbsp; <a href="index/elements.html">elements</a> &nbsp; <a href="index/attribs.html">attributes</a>
+</center></div>
+</BODY>
+</html>

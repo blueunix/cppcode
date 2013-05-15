@@ -1,0 +1,34 @@
+<UL>
+    <LI>
+        <B>When is a Functional Program Not a Functional Program?</B>
+        <BR>
+        John Longley (University of Edinburgh, Scotland)
+    </LI>
+</UL>
+<OL>
+    <LI>
+        <B>When is a Functional Program Not a Functional Program?</B>
+        <BR>
+        John Longley (University of Edinburgh, Scotland)
+    </LI>
+</OL>
+<DL>
+    <DT>
+        dt-stuff
+    </DT>
+    <DD>
+        dd-stuff
+    </DD>
+    <DT>
+        more-dt-stuff
+    </DT>
+    <DD>
+        more-dd-stuff
+    </DD>
+</DL>
+<DD>
+<NOBR><a HREF="papers/FengPeng00/">
+    Accelerating Accurate B-spline Free-form Deformation of Polygonal Objects.</a>
+    Jieqing Feng and Qunsheng Peng.
+</NOBR>
+</DD>

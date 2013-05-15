@@ -1,0 +1,25 @@
+%% /u/sy/beebe/src/htmlpty/htmlpty-1.00/AUTHORS, Fri Nov  7 19:14:30 1997
+%% Edit by Nelson H. F. Beebe <beebe@plot79.math.utah.edu>
+
+html-pretty was written entirely by
+
+	Nelson H. F. Beebe
+	Center for Scientific Computing
+	University of Utah
+	Department of Mathematics, 105 JWB
+	155 S 1400 E RM 233
+	Salt Lake City, UT 84112-0090
+	USA
+	Email: beebe@math.utah.edu (Internet)
+	WWW URL: http://www.math.utah.edu/~beebe
+	Tel: +1 801 581-5254
+	FAX: +1 801 581-4148
+
+The install-sh and mkinstalldirs scripts are public-domain scripts
+from the Free Software Foundation's GNU software distributions.
+
+Support for automatic configuration on UNIX systems is provided by the
+configure script, which uses files created by the GNU autoheader and
+autoconf utilities.  None of these GNU utilities are required to build
+this software, but they ARE needed if you want to make changes to the
+configure.in file.

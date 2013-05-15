@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<HTML>
+    <HEAD>
+        <TITLE>
+            <!-- Please supply a descriptive title here -->
+        </TITLE>
+        <!-- Please supply a correct e-mail address here -->
+        <LINK REV="made" HREF="mailto:beebe@sunrise.math.utah.edu">
+    </HEAD>
+    <BODY>
+        <UL>
+            <LI>
+                the
+                <A NAME=5
+                    HREF="http://info.cern.ch/hypertext/WWW/Addressing/Addressing.html">
+                    URL (Uniform Resource Locator) specification
+                </A>
+            </LI>
+        </UL>
+        <A NAME=5 NAME=5 NAME=5 NAME=5 NAME=5 NAME=5 NAME=5 NAME=5
+            NAME=5 NAME=5 NAME=5 NAME=5 NAME=5
+            HREF="http://info.cern.ch/hypertext/WWW/Addressing/VeryLongAddressing.html">
+            anchored text
+        </A>
+    </BODY>
+</HTML>

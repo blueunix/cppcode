@@ -1,0 +1,129 @@
+/* config.hin.  Generated automatically from configure.in by autoheader.  */
+
+/* Define to empty if the keyword does not work.  */
+#undef const
+
+/* Define if you need to in order for stat and other things to work.  */
+#undef _POSIX_SOURCE
+
+/* Define to `unsigned' if <sys/types.h> doesn't define.  */
+#undef size_t
+
+/* Define if you have the ANSI C header files.  */
+#undef STDC_HEADERS
+
+/* Define if you have the strtok function.  */
+#undef HAVE_STRTOK
+
+/* Define if you have the <ctype.h> header file.  */
+#undef HAVE_CTYPE_H
+
+/* Define if you have the <fcntl.h> header file.  */
+#undef HAVE_FCNTL_H
+
+/* Define if you have the <io.h> header file.  */
+#undef HAVE_IO_H
+
+/* Define if you have the <jsys.h> header file.  */
+#undef HAVE_JSYS_H
+
+/* Define if you have the <libc.h> header file.  */
+#undef HAVE_LIBC_H
+
+/* Define if you have the <limits.h> header file.  */
+#undef HAVE_LIMITS_H
+
+/* Define if you have the <pwd.h> header file.  */
+#undef HAVE_PWD_H
+
+/* Define if you have the <stdio.h> header file.  */
+#undef HAVE_STDIO_H
+
+/* Define if you have the <stdlib.h> header file.  */
+#undef HAVE_STDLIB_H
+
+/* Define if you have the <string.h> header file.  */
+#undef HAVE_STRING_H
+
+/* Define if you have the <sys/types.h> header file.  */
+#undef HAVE_SYS_TYPES_H
+
+/* Define if you have the <sys/utsname.h> header file.  */
+#undef HAVE_SYS_UTSNAME_H
+
+/* Define if you have the <time.h> header file.  */
+#undef HAVE_TIME_H
+
+/* Define if you have the <unistd.h> header file.  */
+#undef HAVE_UNISTD_H
+
+/* Define cast of ctime() argument: const time_t* or long* */
+#undef CTIME_ARG_IS_TIME_T_POINTER
+
+#if defined(CTIME_ARG_IS_TIME_T_POINTER)
+#define CTIME_CAST	const time_t*
+#else
+#define CTIME_CAST	long*
+#endif
+
+/* Define if getlogin() is available */
+#undef HAVE_GETLOGIN
+
+/* Define if getlogin() is declared (in unistd.h) */
+#undef HAVE_GETLOGIN_DECL
+
+/* Define if getlogin() is a C++ function (else C) */
+#undef HAVE_GETLOGIN_IN_CPLUSPLUS
+
+/* Define if gethostname() is available */
+#undef HAVE_GETHOSTNAME
+
+/* Define if gethostname() is declared (in unistd.h??) */
+#undef HAVE_GETHOSTNAME_DECL
+
+/* Define if gethostname() is a C++ function (else C) */
+#undef HAVE_GETHOSTNAME_IN_CPLUSPLUS
+
+/* Define if getpwnam() is available */
+#undef HAVE_GETPWNAM
+
+/* Define if getpwnam() is declared (in unistd.h??) */
+#undef HAVE_GETPWNAM_DECL
+
+/* Define if getpwnam() is a C++ function (else C) */
+#undef HAVE_GETPWNAM_IN_CPLUSPLUS
+
+/* Define if getpwnam() is available */
+#undef HAVE_GETPWUID
+
+/* Define if getpwnam() is declared (in unistd.h??) */
+#undef HAVE_GETPWUID_DECL
+
+/* Define if getpwnam() is a C++ function (else C) */
+#undef HAVE_GETPWUID_IN_CPLUSPLUS
+
+/* Define if getgetuid() is available */
+#undef HAVE_GETUID
+
+/* Define if getuid() is declared (in unistd.h??) */
+#undef HAVE_GETUID_DECL
+
+/* Define if getuid() is a C++ function (else C) */
+#undef HAVE_GETUID_IN_CPLUSPLUS
+
+/* Define if compiler supports ANSI/ISO Standard C function prototypes */
+#undef HAVE_STDC_PROTOTYPES
+
+/* Define if void* pointers are supported */
+#undef HAVE_VOIDP
+
+/* Define with program name as a string literal */
+#undef PACKAGE
+
+/* Define if the compiler accepts ANSI/ISO Standard C */
+#undef STDC
+
+/* Define with program version number as a string literal */
+#undef VERSION
+
+#include <confix.h>		/* fixups for config.h errors (mostly for C++) */

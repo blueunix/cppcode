@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/11/sedTest/passTest
+END
+pass.bak
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/11/sedTest/passTest/pass.bak
+END
+pass
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/11/sedTest/passTest/pass
+END
+passmerge
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/11/sedTest/passTest/passmerge
+END

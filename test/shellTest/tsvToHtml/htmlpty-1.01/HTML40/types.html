@@ -1,0 +1,699 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<!-- $Id: types.src,v 1.69 1997/11/10 17:28:34 ian Exp $ -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<TITLE>Basic HTML data types</TITLE>
+<LINK rel="previous" href="charset.html">
+<LINK rel="next" href="struct/global.html">
+<LINK rel="contents" href="cover.html#toc">
+<LINK rel="STYLESHEET" href="style/default.css" type="text/css">
+</HEAD>
+
+<BODY>
+<div class="navbar">
+<center>&nbsp;<a href="charset.html">previous</a> &nbsp; <a href="struct/global.html">next</a> &nbsp; <a href="cover.html#toc">contents</a> &nbsp; <a href="index/elements.html">elements</a> &nbsp; <a href="index/attribs.html">attributes</a>
+</center><hr>
+</div>
+
+<H1 align="center"><a name="h-6">6</a> Basic HTML data
+ types<!-- Character data, colors, lengths, URLs, content types, etc.--></H1>
+<div class="subtoc"><p><strong>Contents</strong>
+<ol>
+<li><a href="types.html#h-6.1">Case information</a>
+<li><a href="types.html#h-6.2">SGML basic types</a>
+<li><a href="types.html#h-6.3">Text strings</a>
+<li><a href="types.html#h-6.4">URLs</a>
+<li><a href="types.html#h-6.5">Colors</a>
+<ol>
+<li><a href="types.html#h-6.5.1">Notes on using colors</a>
+</ol>
+<li><a href="types.html#h-6.6">Lengths</a>
+<li><a href="types.html#h-6.7">Content types (MIME types)</a>
+<li><a href="types.html#h-6.8">Language codes</a>
+<li><a href="types.html#h-6.9">Character encodings</a>
+<li><a href="types.html#h-6.10">Single characters</a>
+<li><a href="types.html#h-6.11">Dates and times</a>
+<li><a href="types.html#h-6.12">Link types</a>
+<li><a href="types.html#h-6.13">Media descriptors</a>
+<li><a href="types.html#h-6.14">Script data</a>
+<li><a href="types.html#h-6.15">Frame target names</a>
+</ol>
+</div>
+
+<P>This section of the specification describes the basic data types
+that may appear as an element's content or an attribute's value. 
+
+<P>For introductory information about reading the HTML DTD,
+please consult the <a href="./intro/sgmltut.html">SGML
+tutorial</a>. 
+
+<H2><a name="h-6.1">6.1</a> <a name="case">Case information</a></H2>
+
+<P>Each attribute definition includes information about
+the case-sensitivity of its values. The case information is
+presented with the following keys:<P>
+
+<dl>
+<dt><strong><a name="case-sensitive">CS</a></strong>
+<dd>The value is case-sensitive (i.e., user agents interpret
+"a" and "A" differently).</dd>
+<dt><strong><a name="case-insensitive">CI</a></strong>
+<dd>The value is case-insensitive (i.e., user agents interpret
+"a" and "A" as the same).</dd>
+<dt><strong><a name="case-neutral">CN</a></strong>
+<dd>The value is not subject to case changes, e.g.,
+because it is a number or a character from the
+document character set.</dd>
+<dt><strong><a name="case-attribute">CA</a></strong>
+<dd>The element or attribute definition itself gives case information.</dd>
+<dt><strong><a name="see-type-for-case">CT</a></strong>
+<dd>Consult the type definition for details about case-sensitivity.</dd>
+</dl>
+
+<P>If an attribute value is a list, the keys apply to every value
+in the list, unless otherwise indicated.
+
+<h2><a name="h-6.2">6.2</a> SGML basic types</h2>
+
+<P>The <a href="./sgml/dtd.html">document type declaration</a>
+specifies the syntax of HTML element content and attribute values
+using SGML tokens (e.g., PCDATA, CDATA, NAME, ID, etc.).  Information
+on what these tokens mean and how user agents should interpret them
+may be found in <a rel="biblioentry"
+href="./references.html#ref-GOLD90">[GOLD90]</a>.
+
+<P>The following is a summary of key information:
+
+<ul>
+<li><a name="type-cdata"><strong>CDATA</strong></a> is a sequence of
+characters from the document character set and may include character
+entities. User agents should interpret attribute values as follows:
+
+<ul>
+<li>Replace character entities with characters,
+<li>Ignore line feeds,
+<li>Replace each carriage return or tab with a single space.
+</ul>
+
+<P>User agents may ignore leading and trailing white space in CDATA
+attribute values (e.g., "&nbsp;&nbsp;&nbsp;myval&nbsp;&nbsp;&nbsp;"
+may be interpreted as "myval"). Authors should not declare attribute
+values with leading or trailing white space.
+
+<P>For some HTML 4.0 attributes with CDATA attribute values, 
+the specification imposes further constraints on the set of legal
+values for the attribute that may not be expressed by the DTD.
+
+<p>Although the <a href="present/styles.html#edef-STYLE"><samp class="einst">STYLE</samp></a> and <a href="interact/scripts.html#edef-SCRIPT"><samp
+class="einst">SCRIPT</samp></a> elements use CDATA for their data model, for
+these elements, CDATA must be handled differently by user agents. Markup
+and entities must be treated as raw text and passed to the application
+as is. The first occurrence of the character sequence "&lt;/" (end-tag
+open delimiter) is treated as terminating the end of the element's
+content. In valid documents, this would be the end tag for the element.
+
+<li><a name="type-id"><strong>ID</strong></a> and <a
+name="type-name"><strong>NAME</strong></a> tokens must begin with a
+letter ([A-Za-z]) and may be followed by any number of letters, digits
+([0-9]), hyphens ("-"), underscores ("_"), colons (":"), and periods (".").
+
+<li><a name="type-idref"><strong>IDREF</strong></a> and 
+<a name="type-idrefs"><strong>IDREFS</strong></a> are references to
+ID tokens defined by other attributes. IDREF is a single token and
+IDREFS is a space-separated list of tokens.
+
+<li><a name="type-number"><strong>NUMBER</strong></a> tokens must
+contain at least one digit ([0-9]).
+</ul>
+
+<h2><a name="h-6.3">6.3</a> <a name="type-text">Text strings</a></h2> 
+
+<P>A number of attributes (<a href="../sgml/dtd.html#Text">%Text;</a>
+in the DTD) take text that is meant to be "human readable".  For
+introductory about attributes, please consult the <a
+href="intro/sgmltut.html#attributes">tutorial discussion of
+attributes</a>.
+
+<h2><a name="h-6.4">6.4</a> <a name="type-url">URLs</a></h2>
+
+<P>This specification uses the term URL for the general case of
+resource identifiers called "URI" in <a rel="biblioentry"
+href="./references.html#ref-RFC1630">[RFC1630]</a>, including the term
+"URL" as defined in <a rel="biblioentry"
+href="./references.html#ref-RFC1738">[RFC1738]</a> and <a
+rel="biblioentry" href="./references.html#ref-RFC1808">[RFC1808]</a>,
+and the term "URN" as defined in <a rel="biblioentry"
+href="./references.html#ref-RFC2141">[RFC2141]</a>.
+
+<P>URLs are represented in the DTD by the parameter entity <a
+href="sgml/loosedtd.html#URL">%URL</a>.
+
+<P>URLs in general are case-sensitive. There may be URLs, or parts of
+URLs, where case doesn't matter (e.g., machine names), but identifying
+these may not be easy. Users should always consider that URLs are
+case-sensitive.
+
+<P>Relative URLs are resolved to full URLs using a base URL. <a
+rel="biblioentry" href="./references.html#ref-RFC1808">[RFC1808]</a>
+defines the normative algorithm for this process. For more information
+about base URLs, please consult the section on <a
+href="links.html#base-url">base URLs</a> in the chapter on <a
+href="struct/links.html">links</a>.
+
+<P>Please consult the appendix for information about <a
+href="appendix/notes.html#urls">representing non-ASCII characters in
+URLs</a>.
+
+<h2><a name="h-6.5">6.5</a> <a name="type-color">Colors</a></h2>
+
+<P>The attribute value type "color" (<a
+href="sgml/loosedtd.html#Color">%Color</a>) refers to color
+definitions as specified in <a rel="biblioentry"
+href="./references.html#ref-SRGB">[SRGB]</a>. A color value may either
+be a hexadecimal number (prefixed by a hash mark) or one of the
+following sixteen color names. The color names are <a
+			href="#case-insensitive">case-insensitive</a>.</P>
+
+<table align="center" width="80%" border="0" cellspacing="10" cellpadding="0">
+<caption><b>Color names and sRGB values</b><br></caption>
+<tr><td width="16"><img alt="" src="images/black.gif"><td>Black  = "#000000"
+  <td width="16"><img alt="" src="images/green.gif"><td>Green  = "#008000"<br></tr>
+<tr><td width="16"><img alt="" src="images/silver.gif"><td>Silver = "#C0C0C0"
+  <td width="16"><img alt="" src="images/lime.gif"><td>Lime   = "#00FF00"<br></tr>
+<tr><td width="16"><img alt="" src="images/gray.gif"><td>Gray   = "#808080"
+  <td width="16"><img alt="" src="images/olive.gif"><td>Olive  = "#808000"<br></tr>
+<tr><td width="16"><img alt="" src="images/white.gif"><td>White  = "#FFFFFF"
+  <td width="16"><img alt="" src="images/yellow.gif"><td>Yellow = "#FFFF00"<br></tr>
+<tr><td width="16"><img alt="" src="images/maroon.gif"><td>Maroon = "#800000"
+  <td width="16"><img alt="" src="images/navy.gif"><td>Navy   = "#000080"<br></tr>
+<tr><td width="16"><img alt="" src="images/red.gif"><td>Red    = "#FF0000"
+  <td width="16"><img alt="" src="images/blue.gif"><td>Blue   = "#0000FF"<br></tr>
+<tr><td width="16"><img alt="" src="images/purple.gif"><td>Purple = "#800080"
+  <td width="16"><img alt="" src="images/teal.gif"><td>Teal   = "#008080"<br></tr>
+<tr><td width="16"><img alt="" src="images/fuchsia.gif"><td>Fuchsia  = "#FF00FF"
+  <td width="16"><img alt="" src="images/aqua.gif"><td>Aqua   = "#00FFFF"<br></tr>
+</table>
+
+<P>Thus, the color values "#800080" and "Purple" both refer to the color
+purple. 
+
+<h3><a name="h-6.5.1">6.5.1</a> Notes on using colors</h3>
+
+<P>Although colors can add significant amounts of information to
+document and make them more readable, please consider the following
+guidelines when including color in your documents:
+
+<ul>
+
+<li>The use of HTML elements and attributes for specifying color is <a
+href="./convent.html#deprecated">deprecated</a>. You are encouraged to
+use <a href="./present/styles.html">style sheets</a> instead.
+
+<li> Don't use color combinations that cause problems for people with
+color blindness in its various forms.
+
+<li> If you use a background image or set the background color, then
+be sure to set the various text colors as well. 
+
+<li> Colors specified with the <a href="struct/global.html#edef-BODY"><samp class="einst">BODY</samp></a> and
+<a href="present/graphics.html#edef-FONT"><samp class="einst">FONT</samp></a> elements and <a href="present/graphics.html#adef-bgcolor"><samp
+class="ainst">bgcolor</samp></a> on tables look different on different
+platforms (e.g., workstations, Macs, Windows, and LCD panels
+vs. CRTs), so you shouldn't rely entirely on a specific effect. In the
+future, support for the <a rel="biblioentry"
+href="./references.html#ref-SRGB">[SRGB]</a> color model together with
+ICC color profiles should mitigate this problem.
+
+<li> When practical, adopt common conventions to minimize user confusion.
+</ul>
+
+<H2><a name="h-6.6">6.6</a> Lengths</H2>
+
+<P>HTML specifies three types of length values for
+attributes:
+
+<ol>
+<li><a name="type-pixels"><strong>Pixel</strong></a>: The
+value (<a href="sgml/dtd.html#Pixels">%Pixels</a> in the DTD)
+is integer that represents the number of pixels of the canvas (screen,
+paper). Thus, the value "50" means fifty pixels. 
+For normative information about the definition of a pixel, please
+consult <a rel="biblioentry"
+href="./references.html#ref-CSS1">[CSS1]</a>.
+<li><a name="type-length"><strong>Length</strong></a>: 
+The value (<a href="sgml/dtd.html#Length">%Length</a> in the DTD)
+may be either a %Pixel; or a percentage of the available 
+horizontal or vertical space. Thus, the value "50%" means half of the
+available space.
+<li><a name="type-multi-length"><strong>MultiLength</strong></a>:
+The value (<a href="sgml/dtd.html#MultiLength">%MultiLength</a> in
+the DTD) may be a %Length; or a <dfn>relative length</dfn>.
+A relative length has the form "i*", where "i" is an integer.
+When allotting space among elements competing for that
+space, user agents allot 
+pixel and percentage lengths first, then divide up remaining 
+available space among 
+relative lengths. Each relative length
+receives a portion of the available space that is proportional 
+to the integer preceding the "*". The value "*" is
+equivalent to "1*". Thus, if 60 pixels of space are available
+after the user agent allots pixel and percentage space,
+and the competing relative lengths are 1*, 2*, and 3*,
+the 1* will be alloted 10 pixels, the 2* will
+be alloted 20 pixels, and the 3* will be alloted
+30 pixels.
+</ol>
+
+<P>Length values are <a href="#case-neutral">case-neutral</a>
+
+<H2><a name="h-6.7">6.7</a> <a name="type-content-type">Content types (MIME types)</a></H2> 
+
+<div class="note"><P>
+<em><strong>Note.</strong>
+A <em>media type</em> (defined in <a rel="biblioentry"
+href="references.html#ref-RFC2045">[RFC2045]</a> and <a
+rel="biblioentry" href="references.html#ref-RFC2046">[RFC2046]</a>)
+specifies the nature of a linked resource. This specification employs
+the term <em>content type</em> rather than <em>media type</em> 
+in accordance with current usage.
+</em>
+</div>
+
+<P>This type is represented in the DTD by <a
+href="sgml/dtd.html#ContentType">%ContentType</a>.
+
+<P>Content types are case-insensitive.
+
+<P>Examples of content types include "text/html", "image/png",
+"image/gif", "video/mpeg", "audio/basic", "text/tcl",
+"text/javascript", and "text/vbscript". For the current list of
+registered MIME types, please consult <a rel="biblioentry"
+href="./references.html#ref-MIMETYPES">[MIMETYPES].</a>
+
+<div class="note"><P>
+<em><strong>Note.</strong>
+The content type "text/css", while not current
+registered with IANA, should be used when the linked resource is a <a
+rel="biblioentry" href="./references.html#ref-CSS1">[CSS1]</a> style
+sheet.
+</em>
+</div>
+
+<H2><a name="h-6.8">6.8</a> <a name="type-langcode">Language codes</a></H2>
+
+<P>The value of attributes whose type is a language code (<a
+href="sgml/dtd.html#LanguageCode">%LanguageCode</a> in the DTD) refers
+to a language code as specified by <a rel="biblioentry"
+href="../references.html#ref-RFC1766">[RFC1766]</a>. For information
+on specifying language codes in HTML, please consult the section on <a
+href="struct/dirlang.html#langcodes">language codes</a>.  Whitespace
+is not allowed within the language-code.
+
+<H2><a name="h-6.9">6.9</a> <a name="type-charset">Character encodings</a></H2>
+
+<P>The "charset" attributes (<a
+href="sgml/dtd.html#Charset">%Charset</a> in the DTD) refer to a
+character encoding as described in the section on <a
+href="./charsets.html#encodings">character encodings</a>.  Values must
+be strings (e.g., "euc-jp") from the IANA registry (see <a rel="biblioentry"
+href="./references.html#ref-CHARSETS">[CHARSETS]</a> for a complete
+list). Names for character encodings are case-insensitive.
+
+<P>User agents must follow the steps set out in the section on <a
+href="charset.html#spec-char-encoding">specifying character
+encodings</a> in order to determine the character encoding of an
+external resource.
+
+<H2><a name="h-6.10">6.10</a> <a name="type-character">Single characters</a></H2>
+
+<P>Certain attributes call for single character from the <a
+href="charset.html#doc-char-set">document character set</a>. These
+attributes take the <a href="sgml/dtd.html#Character">%Character</a>
+type in the DTD.
+
+<P>Single characters may be specified with character references (e.g.,
+"&amp;amp;").
+
+<H2><a name="h-6.11">6.11</a> <a name="type-datetime">Dates and times</a></H2>
+
+<P><A rel="biblioentry" href="../references.html#ref-ISO8601">
+[ISO8601]</A> allows many options and variations in the representation
+of dates and times. The current specification uses one of the formats
+described in the profile <a rel="biblioentry"
+href="../references.html#ref-DATETIME">[DATETIME]</a> for its
+definition of legal date/time strings (<a
+href="sgml/dtd.html#Datetime">%Datetime</a> in the DTD).
+
+<P>The format is:</P>
+
+<PRE>
+  YYYY-MM-DDThh:mm:ssTZD
+</PRE>
+
+where: 
+
+<PRE>
+     YYYY = four-digit year
+     MM   = two-digit month (01=January, etc.)
+     DD   = two-digit day of month (01 through 31)
+     hh   = two digits of hour (00 through 23) (am/pm NOT allowed)
+     mm   = two digits of minute (00 through 59)
+     ss   = two digits of second (00 through 59)
+     TZD  = time zone designator
+</PRE>
+
+<P>The time zone designator is one of:</P>
+
+<DL>
+<DT><SAMP>Z</SAMP></DT>
+
+<DD>indicates UTC (Coordinated Universal Time). The "Z" must be
+upper case.</DD>
+
+<DT><SAMP>+hh:mm</SAMP></DT>
+
+<DD>indicates that the time is a local time which is <SAMP>hh</SAMP> hours
+and <SAMP>mm</SAMP> minutes ahead of UTC. </DD>
+
+<DT><SAMP>-hh:mm</SAMP></DT>
+
+<DD>indicates that the time is a local time which is <SAMP>hh</SAMP> hours
+and <SAMP>mm</SAMP> minutes behind UTC.</DD>
+</DL>
+
+<P>Exactly the components shown here must be present, with exactly
+this punctuation. Note that the <SAMP>"T"</SAMP> appears literally in
+the string (it must be upper case), to indicate the beginning of the
+time element, as specified in <A rel="biblioentry" href=
+"../references.html#ref-ISO8601">[ISO8601]</A></P>
+
+<P>If a generating application does not know the time to the
+second, it may use the value "00" for the seconds (and minutes and
+hours if necessary).</P>
+
+<div class="note"><P>
+<em><strong>Note.</strong>
+<a rel="biblioentry" href="../references.html#ref-DATETIME">[DATETIME]</a>
+does not address the issue of leap seconds.
+</em>
+</div>
+
+<H2><a name="h-6.12">6.12</a> <A name="type-links">Link types</A></H2>
+
+<P>Authors may use the following recognized link types, listed here
+with their conventional interpretations. These are defined as being
+case-insensitive, i.e., "Alternate" has the same meaning as
+"alternate". In the DTD, <a href="sgml/dtd.html#LinkTypes">%LinkTypes</a>
+refers to a space-separated list of link types.
+White space characters are not permitted within link types. 
+</P>
+
+<P>User agents, search engines, etc. may interpret these link types
+in a variety of ways. For example, user agents may provide access
+to linked documents through a navigation bar.</P>
+
+<DL>
+<DT><EM>Alternate</EM></DT>
+
+<DD>Designates substitute versions for the document in which the link
+occurs. When used together with the <a href="struct/dirlang.html#adef-lang"><SAMP class="ainst">lang</SAMP></a>
+attribute, it implies a translated version of the document.  When used
+together with the <a href="present/styles.html#adef-media"><SAMP class="ainst">media</SAMP></a> attribute, it implies a
+version designed for a different medium (or media). </DD>
+
+<DT><EM>Stylesheet</EM></DT>
+
+<DD>Refers to an external style sheet. See the section on <A href=
+"../present/styles.html#style-external">external style sheets</A>
+for details. This is used together with the link type "Alternate"
+for user-selectable alternate style sheets. 
+</DD>
+
+<DT><EM>Start</EM></DT>
+
+<DD>Refers to the first document in a collection of documents. This
+link type tells search engines which document is considered by the
+author to be the starting point of the collection. </DD>
+
+<DT><EM>Next</EM></DT>
+
+<DD>Refers to the next document in an linear sequence of documents.
+User agents may choose to preload the "next" document, to reduce
+the perceived load time. </DD>
+
+<DT><EM>Prev</EM></DT>
+
+<DD>Refers to the previous document in an ordered series of documents.
+Some user agents also support the synonym <EM>Previous</EM>.</DD>
+
+<DT><EM>Contents</EM></DT>
+
+<DD>Refers to a document serving as a table of contents.
+Some user agents also support the synonym <em>ToC</em> (from
+"Table of Contents").</DD>
+
+<DT><EM>Index</EM></DT>
+
+<DD>Refers to a document providing an index for the current
+document. </DD>
+
+<DT><EM>Glossary</EM></DT>
+
+<DD>Refers to a document providing a glossary of terms that pertain
+to the current document. </DD>
+
+<DT><EM>Copyright</EM></DT>
+
+<DD>Refers to a copyright statement for the current document. </DD>
+
+<DT><EM>Chapter</EM></DT>
+
+<DD>Refers to a document serving as a chapter in a collection of
+documents. </DD>
+
+<DT><EM>Section</EM></DT>
+
+<DD>Refers to a document serving as a section in a collection of
+documents. </DD>
+
+<DT><EM>Subsection</EM></DT>
+
+<DD>Refers to a document serving as a subsection in a collection of
+documents. </DD>
+
+<DT><EM>Appendix</EM></DT>
+
+<DD>Refers to a document serving as an appendix in a collection of
+documents. </DD>
+
+<DT><EM>Help</EM></DT>
+
+<DD>Refers to a document offering help (more information, links to
+other sources information, etc.) </DD>
+
+<DT><EM>Bookmark</EM></DT>
+
+<DD>Refers to a bookmark. A bookmark is a link to a key entry point
+within an extended document. The <a href="struct/global.html#adef-title"><SAMP class="ainst">title</SAMP></a>
+attribute may be used, for example, to label the bookmark. Note that
+several bookmarks may be defined in each document.</DD>
+</DL>
+
+<P>Authors may wish to define additional link types not described
+in this specification. If they do so, they should use a <A href=
+"./global.html#profiles">profile</A> to cite the conventions used
+to define the link types. Please see the <a href="struct/global.html#adef-profile"><SAMP class="ainst">profile</SAMP></a> attribute of the <a href="struct/global.html#edef-HEAD"><SAMP class="einst">HEAD</SAMP></a>
+element for more details.</P>
+
+<P>For further discussions about link types, please consult the
+section on <a href="struct/links.html">links in HTML documents</a>.
+
+<H2><a name="h-6.13">6.13</a> <a name="type-media-descriptors">Media descriptors</a></H2>
+
+<P>The following is a list of recognized media descriptors 
+(<a href="sgml/dtd.html#MediaDesc">%MediaDesc</a> in the DTD).
+
+<dl>
+<dt>screen
+<dd>Intended primarily for non-paged computer screens,
+but also applicable to printed and projected presentations.
+
+<dt>tty
+<dd>Intended for media using a fixed-pitch character
+  grid, such as teletypes, terminals, or portable devices with limited
+  display capabilities.
+
+<dt>tv
+<dd>Intended for television-type devices (low resolution, color,
+  limited scrollability).
+
+<dt>projection
+<dd>Intended for projectors.
+
+<dt>handheld
+<dd>Intended for handheld devices (small screen, monochrome,
+  bitmapped graphics, limited bandwidth).
+
+<dt>print
+<dd>Intended for paged, opaque
+  material and for documents viewed on screen in print preview mode.
+
+<dt>braille
+<dd>Intended for braille tactile feedback devices.
+
+<dt>aural
+<dd>Intended for speech synthesizers.
+
+<dt>all
+<dd>Suitable for all devices.
+</dl>
+
+<P>Future versions of HTML may introduce new values and may allow
+parameterized values.  To facilitate the introduction of these
+extensions, user agents conforming to this specification must be able
+to parse the <a href="present/styles.html#adef-media"><samp class="ainst">media</samp></a> attribute value as
+follows:</P>
+
+<ol>
+<li>Comma characters (Unicode decimal 44) are used to break the
+<a href="present/styles.html#adef-media"><samp class="ainst">media</samp></a> attribute value into a list of entries, e.g.:
+
+<pre>
+media="screen, 3d-glasses, print and resolution > 90dpi"
+</pre>
+
+<p>is mapped to:
+
+<pre>
+"screen"
+"3d-glasses"
+"print and resolution > 90dpi"
+</pre>
+
+<li>Each entry is truncated just before the first character that
+isn't a US ASCII letter [a-zA-Z] (Unicode decimal 65-90, 97-122),
+digit [0-9] (Unicode hex 30-39), or hyphen (45).
+In the example, this gives:
+
+<pre>
+"screen"
+"3d-glasses"
+"print"
+</pre>
+
+<li>A case-sensitive match is then made with the set of media types
+defined above. User agents may ignore entries that don't match. In the
+example we are left with <tt>screen</tt> and <tt>print</tt>.
+</ol>
+
+<div class="note"><p> <em><strong>Note.</strong> Style sheets may
+include media-dependent variations within them (e.g., the CSS
+<em>@media</em> construct). In such cases it may be appropriate to use
+"<a href="present/styles.html#adef-media"><samp class="ainst">media</samp></a>=all".</em>
+</div>
+
+<H2><a name="h-6.14">6.14</a> <a name="type-script">Script data</a></H2>
+
+<P>The content of the <a href="interact/scripts.html#edef-SCRIPT"><SAMP CLASS="einst">SCRIPT</SAMP></a> element 
+and the value of intrinsic event attributes is script
+data (indicated by <a href="sgml/dtd.html#Script">%Script;</a>
+in the <a href="./sgml/dtd.html">DTD</a>).
+As such, this data must not be evaluated by the user agent as
+HTML markup. The user agent must pass it on as data to a script
+engine. The case-sensitivity of script data depends on the
+scripting language.</P>
+
+<P>HTML parsers must be able to recognize script data as beginning
+immediately after the start tag and ending as soon as the ETAGO
+("&lt;/") delimiters are followed by a name character ([a-zA-Z]).
+The script data does not necessarily end with the &lt;/SCRIPT&gt;
+end tag, but is terminated by any "&lt;/" followed by a name
+character.</P>
+
+<P>Consequently, any HTML markup that is meant to be sent to a
+script engine (which may do whatever it wants with the markup) must
+be "escaped" so as not to confuse the HTML parser. Designers of
+each scripting language should recommend language-specific support
+for resolving this issue.</P>
+
+<DIV CLASS="illegal-example">
+<P><SPAN CLASS="example-title">ILLEGAL EXAMPLE:</SPAN><BR>
+The following code is invalid due the to presence of the
+"&lt;/" characters found, as part of "&lt;/EM&gt;", inside the <a href="interact/scripts.html#edef-SCRIPT"><SAMP
+CLASS="einst">SCRIPT</SAMP></a> element:</P>
+
+<PRE>
+    &lt;SCRIPT type="text/javascript"&gt;
+      document.write ("&lt;EM&gt;This won't work&lt;/EM&gt;")
+    &lt;/SCRIPT&gt;
+</PRE>
+
+<P>A conforming parser must treat the "&lt;/" characters as the end
+of script data, which is clearly not what the author intended.</P>
+</DIV>
+
+<DIV CLASS="example">
+<P>In JavaScript, this code can be expressed legally by ensuring
+that the apparent ETAGO delimiter does not appear immediately
+before an SGML name start character:</P>
+
+<PRE>
+    &lt;SCRIPT type="text/javascript"&gt;
+      document.write ("&lt;EM&gt;This will work&lt;\/EM&gt;")
+    &lt;/SCRIPT&gt;
+</PRE>
+
+<P>In Tcl, one may accomplish this as follows:</P>
+
+<PRE>
+    &lt;SCRIPT type="text/tcl"&gt;
+      document write "&lt;EM&gt;This will work&lt;\/EM&gt;"
+    &lt;/SCRIPT&gt;
+</PRE>
+
+<P>In VBScript, the problem may be avoided with the <TT>Chr()</TT>
+function:</P>
+
+<PRE>
+    "&lt;EM&gt;This will work&lt;" &amp; Chr(47) &amp; "EM&gt;"
+</PRE>
+
+</DIV>
+<!-- " -->
+
+<h2><a name="h-6.15">6.15</a> <a name="type-frame-target">Frame target names</a></h2>
+
+<p>Except for the reserved names listed below, frame target names (<a
+href="sgml/dtd.html#FrameTarget">%FrameTarget;</a> in the DTD) must
+begin with an alphabetic character (a-zA-Z). User agents should ignore
+all other target names.
+
+<p>The following target names are reserved and have special meanings.
+
+<DL>
+<DT><samp>_blank</samp>
+<DD>The user agent should load the designated document in a new,
+unnamed window.
+
+<DT><samp>_self</samp>
+<DD>The user agent should load the document in the same frame as the
+element that refers to this target. 
+
+<DT><samp>_parent</samp>
+<DD>The user agent should load the document into the immediate <a href="present/frames.html#edef-FRAMESET"><samp
+class="einst">FRAMESET</samp></a> parent of the current frame. This value
+is equivalent to <tt>_self</tt> if the current frame has no parent.
+
+<DT><samp>_top</samp>
+<DD>The user agent should load the document into the full, original
+window (thus cancelling all other frames). This value is equivalent to
+<tt>_self</tt> if the current frame has no parent.
+</DL>  
+
+<div class="navbar">
+<hr><center><a href="charset.html">previous</a> &nbsp; <a href="struct/global.html">next</a> &nbsp; <a href="cover.html#toc">contents</a> &nbsp; <a href="index/elements.html">elements</a> &nbsp; <a href="index/attribs.html">attributes</a>
+</center></div>
+</BODY>
+</html>
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/svn/!svn/ver/2/lexTest
+END
+file
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/lexTest/file
+END
+lexTest
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/2/lexTest/lexTest
+END
+lex.yy.c
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/2/lexTest/lex.yy.c
+END
+lex1
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/lexTest/lex1
+END
+result
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/lexTest/result
+END

@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- $Id: schnewempday_s.html,v 2.1 1996/12/03 16:50:37 cps0 Exp $ -->
+<!-- This test file for html-pretty was contributed by Cary Scofield (cps0@gte.com) -->
+<!-- Thanks, Cary! -->
+
+<HTML>
+    <HEAD>
+        <TITLE>
+            Empty Normal Schedule for Monday
+        </TITLE>
+        <!-- Please supply a correct e-mail address here -->
+        <LINK REV="made" HREF="mailto:beebe@plot79.math.utah.edu">
+    </HEAD>
+    <BODY BGCOLOR="#ffffff">
+        <FORM METHOD="POST" ACTION="/cgi-bin/sam">
+            <INPUT NAME="SCRIPT" TYPE=HIDDEN VALUE="schnew_s.html">
+            <INPUT NAME="Token" TYPE=HIDDEN VALUE="$token$">
+            <TABLE>
+                <TR>
+                    <TH ROWSPAN=2>
+                        <A HREF="/cgi-bin/sam/Token=$token$=_g_hdr">
+                            <IMG SRC="/images/hdr.gif" ISMAP BORDER=0
+                                WIDTH=164 HEIGHT=100 ALT="Main Menu">
+                        </A>
+                    </TH>
+                    <TD>
+                        <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=_g_forward">
+                            <IMG SRC="/images/forward.gif" BORDER=0
+                                WIDTH=78 HEIGHT=47 ALT="Call Forw">
+                        </A>
+                    </TD>
+                    <TD>
+                        <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=_g_speednum">
+                            <IMG SRC="/images/speednum.gif" BORDER=0
+                                WIDTH=78 HEIGHT=47 ALT="Speed Nums">
+                        </A>
+                    </TD>
+                    <TD>
+                        <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=_g_options">
+                            <IMG SRC="/images/options.gif" BORDER=0
+                                WIDTH=78 HEIGHT=47 ALT="Options">
+                        </A>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>
+                        <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=_g_sched">
+                            <IMG SRC="/images/sched.gif" BORDER=0
+                                WIDTH=78 HEIGHT=47 ALT="Sched">
+                        </A>
+                    </TD>
+                    <TD>
+                        <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=_g_acclist">
+                            <IMG SRC="/images/acclist.gif" BORDER=0
+                                WIDTH=78 HEIGHT=47 ALT="Accept List">
+                        </A>
+                    </TD>
+                    <TD>
+                        <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=_g_callcode">
+                            <IMG SRC="/images/callcode.gif" BORDER=0
+                                WIDTH=78 HEIGHT=47 ALT="Caller Codes">
+                        </A>
+                    </TD>
+                </TR>
+            </TABLE>
+            <HR>
+            <H3>
+                Empty Normal Schedule for Monday
+            </H3>
+            <P>
+                Your Normal Schedule for Monday is empty. You may
+                <A HREF="#SchTable">
+                    add
+                </A>
+                a new time period below.
+                Or to start with a different day, press on the &quot;
+                Select a Day&quot; box, choose a different day, and then
+                press the &quot;Change Day&quot; button:
+            </P>
+            <DL>
+                <DD>
+                    To change day:
+                    <SELECT NAME="day">
+                        <OPTION selected>
+                            Select a Day
+                        </OPTION>
+                        <OPTION>
+                            Tuesday
+                        </OPTION>
+                        <OPTION>
+                            Wednesday
+                        </OPTION>
+                        <OPTION>
+                            Thursday
+                        </OPTION>
+                        <OPTION>
+                            Friday
+                        </OPTION>
+                        <OPTION>
+                            Saturday
+                        </OPTION>
+                        <OPTION>
+                            Sunday
+                        </OPTION>
+                    </SELECT>
+                    <INPUT NAME="ChangeDay" TYPE=submit VALUE="Change
+                        Day">
+                </DD>
+            </DL>
+            Access to your
+            <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=otherSched">
+                Alternate Schedule
+            </A>
+            is also available. You may
+            <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=display">
+                display
+            </A>
+            your entire Normal Schedule. If you wish, you may
+            <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=new5">
+                add more than one time period
+            </A>
+            at a time.<BR>
+            <BR>
+            <A NAME="SchTable">
+            </A>
+            <TABLE WIDTH="100%" Border>
+                <TR>
+                    <TD COLSPAN=4 ALIGN=center>
+                        <B>Empty Normal Schedule for Monday</B>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD NoWrap WIDTH="5%" ALIGN=center VALIGN=middle>
+                    </TD>
+                    <TD NoWrap WIDTH="30%" ALIGN=center VALIGN=middle>
+                        Start Time
+                    </TD>
+                    <TD NoWrap WIDTH="30%" ALIGN=center VALIGN=middle>
+                        End Time
+                    </TD>
+                    <TD NoWrap WIDTH="35%" ALIGN=center VALIGN=middle>
+                        Forwarding Number
+                    </TD>
+                </TR>
+                <TR>
+                    <TD ALIGN="center" VALIGN=middle WIDTH="5%">
+                        Enter<BR>
+                        a new<BR>
+                        time<BR>
+                        period:
+                    </TD>
+                    <TD ALIGN="center" VALIGN=middle WIDTH="30%">
+                        <TABLE>
+                            <TR>
+                                <TD>
+                                    <INPUT NAME="StartTime" VALUE=""
+                                        MAXLENGTH=5 SIZE="5">
+                                </TD>
+                                <TD>
+                                    <INPUT NAME="StartAMPM" TYPE=radio
+                                        VALUE="AM" checked>
+                                    am<BR>
+                                    <INPUT NAME="StartAMPM" TYPE=radio
+                                        VALUE="PM">
+                                    pm
+                                </TD>
+                            </TR>
+                        </TABLE>
+                    </TD>
+                    <TD ALIGN="center" VALIGN="middle" WIDTH="30%"
+                        MAXLENGTH=5 SIZE="5">
+                        <SELECT NAME="EndDay" >
+                            <OPTION selected>
+                                Mon
+                            </OPTION>
+                            <OPTION>
+                                Tues
+                            </OPTION>
+                            <OPTION>
+                                Wed
+                            </OPTION>
+                            <OPTION>
+                                Thu
+                            </OPTION>
+                            <OPTION>
+                                Fri
+                            </OPTION>
+                            <OPTION>
+                                Sat
+                            </OPTION>
+                            <OPTION>
+                                Sun
+                            </OPTION>
+                        </SELECT>
+                        <BR>
+                        <TABLE>
+                            <TR>
+                                <TD>
+                                    <INPUT NAME="EndTime" VALUE=""
+                                        MAXLENGTH=5 SIZE="5">
+                                </TD>
+                                <TD>
+                                    <INPUT NAME="EndAMPM" TYPE=radio
+                                        VALUE="AM" checked>
+                                    am<BR>
+                                    <INPUT NAME="EndAMPM" TYPE=radio
+                                        VALUE="PM">
+                                    pm
+                                </TD>
+                            </TR>
+                        </TABLE>
+                    </TD>
+                    <TD ALIGN="center" VALIGN=middle WIDTH="35%">
+                        Select an option:<BR>
+                        <SELECT NAME="method" >
+                            <OPTION>
+                                None
+                            </OPTION>
+                            <OPTION>
+                                Speed Number 1
+                            </OPTION>
+                            <OPTION>
+                                Speed Number 2
+                            </OPTION>
+                            <OPTION>
+                                Speed Number 3
+                            </OPTION>
+                            <OPTION>
+                                Voicemail
+                            </OPTION>
+                        </SELECT>
+                        <BR>
+                        <BR>
+                        Or enter a number:<BR>
+                        <INPUT NAME="NewDN" VALUE="" MAXLENGTH=25
+                            SIZE="15">
+                    </TD>
+                </TR>
+            </TABLE>
+            <BR>
+            <INPUT NAME="Add" TYPE=Submit VALUE="Add Time">
+            <INPUT NAME="Clear" TYPE=Reset VALUE="Clear Time">
+            <INPUT NAME="Copy" TYPE=Submit VALUE="Copy Time">
+            <BR>
+            <BR>
+            <HR>
+            <TABLE>
+                <TR>
+                    <TD>
+                        <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=_g_icr"
+                            >
+                            <IMG SRC="/images/icr.gif" BORDER=0 WIDTH=64
+                                HEIGHT=46 ALT="INC">
+                        </A>
+                    </TD>
+                    <TD>
+                        <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=_g_hr"
+                            >
+                            <IMG SRC="/images/hr.gif" BORDER=0 WIDTH=64
+                                HEIGHT=46 ALT="Help">
+                        </A>
+                    </TD>
+                    <TD>
+                        <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=_g_cr"
+                            >
+                            <IMG SRC="/images/cr.gif" BORDER=0 WIDTH=64
+                                HEIGHT=46 ALT="Com-ments">
+                        </A>
+                    </TD>
+                    <TD>
+                        <A HREF="/cgi-bin/sam?Token=$token$=Monday=1=2=_g_lr"
+                            >
+                            <IMG SRC="/images/lr.gif" BORDER=0 WIDTH=64
+                                HEIGHT=46 ALT="Log-out">
+                        </A>
+                    </TD>
+                </TR>
+            </TABLE>
+            <BR>
+            <ADDRESS>
+                GTE's Advanced Intelligent Network Services<BR>
+                Web-based Interactive Service Environment<BR>
+                GTE Telephone Operations &amp;#169 1996<BR>
+                Last Revised:  09/12/96<BR>
+            </ADDRESS>
+            <INPUT NAME="currDay" TYPE=HIDDEN VALUE="Monday" >
+            <INPUT NAME="schedNum" TYPE=HIDDEN VALUE="1" >
+            <INPUT NAME="pageType" TYPE=HIDDEN VALUE="2" >
+        </FORM>
+    </BODY>
+</HTML>

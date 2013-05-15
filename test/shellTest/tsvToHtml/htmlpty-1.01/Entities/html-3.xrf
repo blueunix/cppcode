@@ -1,0 +1,26 @@
+# HTML entities in HTML grammar DTD, computed on Sat Aug 25 16:09:20 MDT 2001 from
+# -r--r--r-- 1 beebe 45977 May 1 1995 /u/sy/beebe/src/htmlpty/htmlpty-1.01/DTD/html-3.dtd
+#
+-rw-rw-r-- 1 BR		  FILE	       INS	    P		 SUB
+	     BT		  FORM	       ISINDEX	    PASSWORD	 SUBMIT
+0	     CAPTION	  GET	       ITEM	    PCDATA	 SUP
+1	     CDATA	  H1	       KBD	    PERSON	 T
+3	     CHECKBOX	  H2	       LANG	    PLAINTEXT	 TAB
+A	     CHOOSE	  H3	       LEFT	    POST	 TABLE
+ABBREV	     CITE	  H4	       LH	    PRE		 TD
+ABOVE	     CODE	  H5	       LI	    Q		 TEXT
+ACRONYM	     CREDIT	  H6	       LINK	    RADIO	 TEXTAREA
+ADDRESS	     DD		  HAT	       LISTING	    RANGE	 TEXTSEARCH
+ARRAY	     DDOT	  HEAD	       MATH	    RESET	 TH
+ATOP	     DEL	  HIDDEN       MENU	    RIGHT	 TILDE
+AU	     DFN	  HR	       META	    ROOT	 TITLE
+AUDIO	     DIR	  HTML	       NAME	    ROW		 TR
+B	     DIV	  I	       NAMES	    S		 TT
+BAR	     DL		  IETF	       NEXTID	    SAMP	 U
+BASE	     DOT	  IGNORE       NOTE	    SCRIBBLE	 UL
+BELOW	     DT		  IMAGE	       OF	    SELECT	 VAR
+BIG	     DTD	  IMG	       OL	    SMALL	 VEC
+BLOCKQUOTE   EM		  IMPLIED      OPTION	    SQRT	 W3
+BODY	     EN		  INCLUDE      OVER	    STRONG	 W3O
+BOX	     ENTITIES	  INPUT	       OVERLAY	    STYLE	 XMP
+BQ	     FIG

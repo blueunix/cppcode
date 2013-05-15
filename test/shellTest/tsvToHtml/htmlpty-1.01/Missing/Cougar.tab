@@ -1,0 +1,24 @@
+# HTML entities missing from htmlpty, computed on Fri Nov 28 15:14:53 MST 1997 from
+# -r--r--r-- 1 beebe 33505 Dec 11 1996 /usr/local/lib/html-check/lib/Cougar.dtd
+#
+-rw-rw-r-- 1 8207	  CITE	       H4	    MAP		 SELECT
+-rw-rw-r-- 1 8211	  CODE	       H5	    MENU	 SMALL
+Makefile     8212	  DD	       H6	    META	 SPAN
+1	     8482	  DFN	       HEAD	    NAME	 STRONG
+160	     8879	  DIR	       HIDDEN	    OBJECT	 STYLE
+169	     A		  DIV	       HR	    OL		 SUB
+173	     ADDRESS	  DL	       HTML	    OPTION	 SUBMIT
+174	     APPLET	  DT	       I	    P		 SUP
+1766	     AREA	  DTD	       ID	    PASSWORD	 TABLE
+1986	     B		  EM	       IMAGE	    PCDATA	 TEXT
+19960712     BASE	  EN	       IMG	    PLAINTEXT	 TEXTAREA
+34	     BASEFONT	  ENTITIES     IMPLIED	    POST	 TEXTFLOW
+38	     BDO	  FIELDSET     INCLUDE	    PRE		 TITLE
+60	     BIG	  FILE	       INPUT	    Q		 TT
+62	     BLOCKQUOTE	  FIXED	       ISINDEX	    RADIO	 U
+8194	     BODY	  FONT	       ISO	    RESET	 UL
+8195	     BR		  FORM	       KBD	    RFC		 VAR
+8201	     BUTTON	  GET	       LABEL	    S		 VERSION
+8204	     CDATA	  H1	       LI	    SAMP	 W3C
+8205	     CENTER	  H2	       LINK	    SCRIPT	 XMP
+8206	     CHECKBOX	  H3	       LISTING

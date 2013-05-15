@@ -1,0 +1,500 @@
+%% html-pretty version 1.00 date [01-Nov-1997]
+%% This is the HTML 3.0 style grammar, represented as the
+%% base 2.0 grammar, followed by 3.0 extensions.
+%% [04-Dec-1997]
+
+%% Uncomment the next line to clear all existing rules, or leave it as a
+%% comment to preserve them:
+default            :
+
+public             : "-//IETF//DTD HTML//EN//3.0"
+
+body               : BODY
+
+doctype            : !DOCTYPE
+
+font               : B BIG CODE DFN EM I KBD Q REV SAMP SMALL STRONG TT U VAR
+
+head               : HEAD
+
+html               : HTML
+
+line-break         : BR
+
+link               : LINK
+
+list               : DIR MENU
+
+list               : DL OL UL
+
+list-header        : LH
+
+list-item          : DD DT LI
+
+pair               : A ABBREV ABSTRACT ADDED ADDRESS ARG AROW ARRAY AU \
+                     BLOCKQUOTE BQ CAPTION CITE CMD DIV1 DIV2 DIV3 DIV4 DIV5 \
+                     DIV6 FIG FN FOOTNOTE FORM HIDE LANG MARGIN MATH MESSAGE \
+                     NOTE OPTION PERSON QUOTE REMOVED SELECT TABLE TEXTAREA
+
+paragraph          : P
+
+plaintext          : PLAINTEXT
+
+section            : H1 H2 H3 H4 H5 H6
+
+short              : ITEM
+
+standalone         : CHANGED HR IMG INPUT RENDER STYLES
+
+standalone-nocheck : BASE ISINDEX META
+
+standalone-nocheck : NEXTID             %% %HTML.Deprecated
+
+title              : TITLE
+
+verbatim           : LISTING PRE XMP
+
+%-----------------------------------------------------------------------
+% HTML 3.0 additions
+
+font               : BT T
+
+math               : ATOP CHOOSE LEFT OF OVER RIGHT TAB
+
+math-pair          : ABOVE BAR BELOW BOX DDOT DOT HAT ROOT ROW SQRT \
+                     TILDE VEC
+
+math-pair          : SUB SUP
+
+pair               : CREDIT DEL INS
+
+standalone-nocheck : OVERLAY STYLE
+
+%% This is the contained-in tag relationships file,
+%% prepared from Entities/html-3.tab by cittable.awk.
+%% [27-Nov-1997]
+
+CannotContain[A]          : A
+
+CannotContain[DIR]        : BLOCKQUOTE BQ DIR DL FIG FORM ISINDEX \
+                            LISTING MENU NOTE OL P PRE TABLE UL XMP
+
+CannotContain[FIG]        : FIG IMG
+
+CannotContain[FORM]       : FORM
+
+CannotContain[MATH]       : A ABBREV ACRONYM AU BIG BR CITE CODE DEL \
+                            DFN EM I IMG INS KBD LANG MATH PERSON Q S \
+                            SAMP SMALL STRONG TAB TT U VAR
+
+CannotContain[MENU]       : BLOCKQUOTE BQ DIR DL FIG FORM ISINDEX \
+                            LISTING MENU NOTE OL P PRE TABLE UL XMP
+
+CannotContain[PRE]        : BIG IMG MATH SMALL SUB SUP TAB
+
+CannotContain[SELECT]     : INPUT SELECT TEXTAREA
+
+CannotContain[TEXTAREA]   : INPUT SELECT TEXTAREA
+
+ContainedIn[#PCDATA]      : A ABBREV ABOVE ACRONYM ADDRESS AU B BAR \
+                            BELOW BIG BLOCKQUOTE BODY BOX BQ BT \
+                            CAPTION CITE CODE CREDIT DD DDOT DEL DFN \
+                            DIV DOT DT EM FIG FORM H1 H2 H3 H4 H5 H6 \
+                            HAT I INS ITEM KBD LANG LH LI MATH NOTE OF \
+                            OPTION P PERSON PRE Q ROOT S SAMP SMALL \
+                            SQRT STRONG STYLE SUB SUP T TD TEXTAREA TH \
+                            TILDE TITLE TT U VAR VEC
+
+ContainedIn[A]            : ABBREV ACRONYM ADDRESS AU B BIG BLOCKQUOTE \
+                            BODY BQ CAPTION CITE CODE CREDIT DD DEL \
+                            DFN DIV DT EM FIG FORM H1 H2 H3 H4 H5 H6 I \
+                            INS KBD LANG LH LI NOTE P PERSON PRE Q S \
+                            SAMP SMALL STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[ABBREV]       : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[ABOVE]        : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[ACRONYM]      : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[ADDRESS]      : BLOCKQUOTE BODY BQ DIV FIG FORM NOTE TD TH
+
+ContainedIn[ARRAY]        : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[ATOP]         : BOX
+
+ContainedIn[AU]           : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[B]            : A ABBREV ABOVE ACRONYM ADDRESS AU B BAR \
+                            BELOW BIG BLOCKQUOTE BODY BOX BQ BT \
+                            CAPTION CITE CODE CREDIT DD DDOT DEL DFN \
+                            DIV DOT DT EM FIG FORM H1 H2 H3 H4 H5 H6 \
+                            HAT I INS ITEM KBD LANG LH LI MATH NOTE OF \
+                            P PERSON PRE Q ROOT S SAMP SMALL SQRT \
+                            STRONG SUB SUP T TD TH TILDE TT U VAR VEC
+
+ContainedIn[BAR]          : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[BASE]         : HEAD
+
+ContainedIn[BELOW]        : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[BIG]          : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON Q S SAMP SMALL STRONG SUB SUP TD TH \
+                            TT U VAR
+
+ContainedIn[BLOCKQUOTE]   : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[BODY]         : HTML
+
+ContainedIn[BOX]          : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[BQ]           : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[BR]           : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[BT]           : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[CAPTION]      : FIG TABLE
+
+ContainedIn[CDATA]        : LISTING PLAINTEXT XMP
+
+ContainedIn[CHOOSE]       : BOX
+
+ContainedIn[CITE]         : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[CODE]         : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[CREDIT]       : BLOCKQUOTE BQ FIG
+
+ContainedIn[DD]           : DL
+
+ContainedIn[DDOT]         : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[DEL]          : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[DFN]          : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[DIR]          : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[DIV]          : BLOCKQUOTE BODY BQ DIV FIG FORM NOTE TD TH
+
+ContainedIn[DL]           : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[DOT]          : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[DT]           : DL
+
+ContainedIn[EM]           : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[EMPTY]        : ATOP BASE BR CHOOSE HR IMG INPUT ISINDEX \
+                            LEFT LINK META NEXTID OVER OVERLAY RIGHT \
+                            TAB
+
+ContainedIn[FIG]          : BLOCKQUOTE BODY BQ DD DIV FORM LI NOTE TD \
+                            TH
+
+ContainedIn[FORM]         : BLOCKQUOTE BODY BQ DD DIV FIG LI NOTE TD \
+                            TH
+
+ContainedIn[H1]           : A BLOCKQUOTE BODY BQ DIV FIG FORM NOTE TD \
+                            TH
+
+ContainedIn[H2]           : A BLOCKQUOTE BODY BQ DIV FIG FORM NOTE TD \
+                            TH
+
+ContainedIn[H3]           : A BLOCKQUOTE BODY BQ DIV FIG FORM NOTE TD \
+                            TH
+
+ContainedIn[H4]           : A BLOCKQUOTE BODY BQ DIV FIG FORM NOTE TD \
+                            TH
+
+ContainedIn[H5]           : A BLOCKQUOTE BODY BQ DIV FIG FORM NOTE TD \
+                            TH
+
+ContainedIn[H6]           : A BLOCKQUOTE BODY BQ DIV FIG FORM NOTE TD \
+                            TH
+
+ContainedIn[HAT]          : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[HEAD]         : HTML
+
+ContainedIn[HR]           : BLOCKQUOTE BODY BQ DIV FIG FORM NOTE TD TH
+
+ContainedIn[I]            : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[IMG]          : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FORM H1 H2 H3 \
+                            H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON Q S SAMP SMALL STRONG SUB SUP TD TH \
+                            TT U VAR
+
+ContainedIn[INPUT]        : FORM
+
+ContainedIn[INS]          : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[ISINDEX]      : BLOCKQUOTE BODY BQ DD DIV FIG FORM HEAD LI \
+                            NOTE TD TH
+
+ContainedIn[ITEM]         : ROW
+
+ContainedIn[KBD]          : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[LANG]         : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[LEFT]         : BOX
+
+ContainedIn[LH]           : DL OL UL
+
+ContainedIn[LI]           : DIR MENU OL UL
+
+ContainedIn[LINK]         : HEAD
+
+ContainedIn[LISTING]      : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[MATH]         : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON Q S SAMP SMALL STRONG SUB SUP TD TH \
+                            TT U VAR
+
+ContainedIn[MENU]         : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[META]         : HEAD
+
+ContainedIn[NEXTID]       : HEAD
+
+ContainedIn[NOTE]         : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[OF]           : ROOT
+
+ContainedIn[OL]           : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[OPTION]       : SELECT
+
+ContainedIn[OVER]         : BOX
+
+ContainedIn[OVERLAY]      : FIG
+
+ContainedIn[P]            : ADDRESS BLOCKQUOTE BODY BQ DD DIV FIG FORM \
+                            LI NOTE TD TH
+
+ContainedIn[PERSON]       : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[PRE]          : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[Q]            : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[RIGHT]        : BOX
+
+ContainedIn[ROOT]         : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[ROW]          : ARRAY
+
+ContainedIn[S]            : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[SAMP]         : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[SELECT]       : FORM
+
+ContainedIn[SMALL]        : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON Q S SAMP SMALL STRONG SUB SUP TD TH \
+                            TT U VAR
+
+ContainedIn[SQRT]         : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[STRONG]       : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[STYLE]        : HEAD
+
+ContainedIn[SUB]          : A ABBREV ABOVE ACRONYM ADDRESS AU B BAR \
+                            BELOW BIG BLOCKQUOTE BODY BOX BQ BT \
+                            CAPTION CITE CODE CREDIT DD DDOT DEL DFN \
+                            DIV DOT DT EM FIG FORM H1 H2 H3 H4 H5 H6 \
+                            HAT I INS ITEM KBD LANG LH LI MATH NOTE OF \
+                            P PERSON Q ROOT S SAMP SMALL SQRT STRONG \
+                            SUB SUP T TD TH TILDE TT U VAR VEC
+
+ContainedIn[SUP]          : A ABBREV ABOVE ACRONYM ADDRESS AU B BAR \
+                            BELOW BIG BLOCKQUOTE BODY BOX BQ BT \
+                            CAPTION CITE CODE CREDIT DD DDOT DEL DFN \
+                            DIV DOT DT EM FIG FORM H1 H2 H3 H4 H5 H6 \
+                            HAT I INS ITEM KBD LANG LH LI MATH NOTE OF \
+                            P PERSON Q ROOT S SAMP SMALL SQRT STRONG \
+                            SUB SUP T TD TH TILDE TT U VAR VEC
+
+ContainedIn[T]            : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[TAB]          : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON Q S SAMP SMALL STRONG SUB SUP TD TH \
+                            TT U VAR
+
+ContainedIn[TABLE]        : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[TD]           : TR
+
+ContainedIn[TEXTAREA]     : FORM
+
+ContainedIn[TH]           : TR
+
+ContainedIn[TILDE]        : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[TITLE]        : HEAD
+
+ContainedIn[TR]           : TABLE
+
+ContainedIn[TT]           : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[U]            : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[UL]           : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+ContainedIn[VAR]          : A ABBREV ACRONYM ADDRESS AU B BIG \
+                            BLOCKQUOTE BODY BQ CAPTION CITE CODE \
+                            CREDIT DD DEL DFN DIV DT EM FIG FORM H1 H2 \
+                            H3 H4 H5 H6 I INS KBD LANG LH LI NOTE P \
+                            PERSON PRE Q S SAMP SMALL STRONG SUB SUP \
+                            TD TH TT U VAR
+
+ContainedIn[VEC]          : ABOVE BAR BELOW BOX BT DDOT DOT HAT ITEM \
+                            MATH OF ROOT SQRT T TILDE VEC
+
+ContainedIn[XMP]          : BLOCKQUOTE BODY BQ DD DIV FIG FORM LI NOTE \
+                            TD TH
+
+%-------------------------------[The End]-------------------------------

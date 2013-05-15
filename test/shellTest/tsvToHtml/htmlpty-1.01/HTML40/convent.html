@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<!-- $Id: convent.src,v 1.42 1997/11/10 17:27:56 ian Exp $ -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<TITLE>Conformance: requirements and recommendations</TITLE>
+<LINK rel="previous" href="intro/sgmltut.html">
+<LINK rel="next" href="charset.html">
+<LINK rel="contents" href="cover.html#toc">
+<LINK rel="STYLESHEET" href="style/default.css" type="text/css">
+</HEAD>
+<BODY>
+<div class="navbar">
+<center>&nbsp;<a href="intro/sgmltut.html">previous</a> &nbsp; <a href="charset.html">next</a> &nbsp; <a href="cover.html#toc">contents</a> &nbsp; <a href="index/elements.html">elements</a> &nbsp; <a href="index/attribs.html">attributes</a>
+</center><hr>
+</div>
+
+<H1 align="center"><a name="h-4">4</a> <a name="convent">Conformance: requirements
+and recommendations</a></H1>
+<div class="subtoc"><p><strong>Contents</strong>
+<ol>
+<li><a href="convent.html#h-4.1">Definitions</a>
+<li><a href="convent.html#h-4.2">SGML</a>
+<li><a href="convent.html#h-4.3">The text/html content type</a>
+</ol>
+</div>
+
+<p> In this section, we begin the specification of HTML 4.0,
+starting with the contract between authors, documents, users, and user
+agents. 
+
+<P>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in <a rel="biblioentry"
+href="./references.html#ref-RFC2119">[RFC2119]</a>.  However, for
+readability, these words do not appear in all upper case letters in
+this specification.
+
+<P>At times, the authors of this specification recommend good practice
+for authors and user agents.  These recommendations are not normative
+and conformance with this specification does not depend on their
+realization. These recommendations contain the expression "We
+recommend ...", "This specification recommends ...", or some similar
+wording.
+
+<H2><a name="h-4.1">4.1</a> Definitions</H2>
+
+<dl>
+<dt><dfn><strong>HTML document</strong></dfn>
+<dd>An HTML document is an SGML document that meets
+the constraints of this specification.
+
+<dt><dfn><strong>Author</strong></dfn>
+<dd>An author is a person or program that
+writes or generates HTML documents.
+
+<dt><dfn><strong>User</strong></dfn> 
+<dd>A user is a person who interacts with a user agent to view, hear,
+or otherwise use a rendered HTML document.</dd>
+
+<dt><dfn><strong>HTML user agent</strong></dfn>
+<dd>An HTML user agent is any device that
+interprets HTML documents. User agents include visual browsers
+(text-only and graphical), non-visual browsers (audio, Braille), search
+robots, proxies, etc. 
+
+<P>A <em>conforming user agent</em> for HTML 4.0 is one that observes
+the mandatory conditions ("must") set forth in this specification,
+including the following points:
+
+<ul>
+<li>A user agent should avoid imposing arbitrary length limits on
+attribute value literals (see the section on capacities in the <a
+href="sgml/sgmldecl.html">SGML Declaration</a>). For introductory
+information on SGML attributes, please consult the section on <a
+href="../intro/sgmltut.html#attrib-defs">attribute definitions</a>.
+
+<li>A user agent must ensure that rendering is unchanged by the
+presence or absence of start tags and end tags when the HTML DTD
+indicates these are optional. See the section on <a
+href="../intro/sgmltut.html#element-defs">element definitions</a> for
+introductory information on SGML elements.
+</ul>
+</dd>
+
+<dt><dfn><strong>Error conditions</strong></dfn>
+<DD>This specification does not define how conforming user agents
+handle general error conditions, including how user agents
+behave when they encounter elements, 
+attributes, attribute values, or
+entities not specified in this document. 
+
+<P>However, to facilitate experimentation and interoperability between
+implementations of various versions of HTML, we recommend the
+following behavior:</P>
+
+<ul>
+<li>If a user agent encounters an element it does not recognize,
+it should try to render the element's content.
+<li>If a user agent encounters an attribute it does not recognize,
+it should ignore the entire attribute specification (i.e., the attribute
+and its value).
+<li>If a user agent encounters an attribute value it doesn't recognize,
+it should use the default attribute value.
+<li>If it encounters an undeclared entity, the entity should be
+treated as character data.
+</ul>
+
+<P>We also recommend that user agents provide support for notifying
+the user of such errors.
+
+<P>Since user agents may vary in how they handle error conditions,
+authors and users must not rely on specific error recovery behavior.
+
+<dt><a name="deprecated"><dfn><strong>Deprecated</strong></dfn></a>
+<dd>A deprecated element or attribute is one
+that has been outdated by newer constructs. Deprecated elements are
+defined in the reference manual in appropriate locations, but are
+clearly marked as deprecated. Deprecated elements may become obsolete in
+future versions of HTML. 
+
+<P>User agents should continue to support deprecated elements for
+reasons of backward compatibility.
+
+<p>Definitions of elements and attributes clearly indicate which are
+<a href="#deprecated">deprecated</a>. 
+
+<P>This specification includes examples that illustrate how to avoid
+using deprecated elements. In most cases these depend on user agent
+support for style sheets. In general, authors should use style sheets
+to achieve stylistic and formatting effects rather than HTML
+presentational attributes. HTML presentational attributes have been
+deprecated when style sheet alternatives exist (see, for example, <a
+rel="biblioentry" href="../references.html#ref-CSS1">[CSS1]</a>).
+</dd>
+
+<dt><dfn><strong>Obsolete</strong></dfn>
+<dd>An obsolete element or attribute is one
+for which there is no guarantee of support by a user agent. Obsolete
+elements are no longer defined in the specification, but are listed for
+historical purposes in the <a href="appendix/changes.html">changes
+section</a> of the reference manual.
+</dd>
+</dl>
+
+
+<H2><a name="h-4.2">4.2</a> <a name="sgmlconvent">SGML</a></H2>
+
+<P>HTML 4.0 is an SGML application conforming to International
+Standard ISO 8879 -- <dfn>Standard Generalized Markup Language</dfn>
+SGML (defined in <a rel="biblioentry"
+href="../references.html#ref-ISO8879">[ISO8879]</a>). 
+
+<p>Comments appearing in the <a href="./sgml/dtd.html">HTML 4.0 DTD</a>
+have no normative value; they are informative only. 
+
+<P>User agents must not render SGML processing instructions (e.g.,
+&lt;?full volume&gt;) or comments. For more information about this
+and other SGML features that may be legal in HTML but aren't widely
+supported by HTML user agents, please consult the section on <a
+href="appendix/notes.html#sgmlfeatures">SGML features with limited
+support.</a>
+
+<H2><a name="h-4.3">4.3</a> <a name="text-html">The text/html content type</a></H2>
+
+<P>HTML documents are sent over the Internet as a sequence of bytes
+accompanied by encoding information (described in the section on <a
+href="charset.html#encodings">character encodings</a>).  The structure
+of the transmission, termed a <a name="message-entity"><em>message
+entity</em></a>, is defined in <a rel="biblioentry"
+href="./references.html#ref-RFC2045">[RFC2045]</a>) and <a
+rel="biblioentry" href="references.html#ref-RFC2068">[RFC2068]</a>.  A
+message entity with a <a href="types.html#type-content-type">content
+type</a> of "text/html" represents an HTML document.
+
+<P>The content type for HTML documents is defined as follows:
+
+<dl>
+<dt><em>Content type name</em>
+<dd>text</dd>
+<dt><em>Content subtype name</em>
+<dd>html</dd>
+<dt><em>Required parameters</em>
+<dd>none</dd>
+<dt><em>Optional parameters</em>
+<dd>charset</dd>
+<dt><em>Encoding considerations</em>
+<dd>any encoding is allowed</dd>
+<dt><em>Security considerations</em>
+<dd>See the <a href="appendix/notes.html#notes-security">notes on
+security</a></dd>
+</dl>
+
+<P>The optional parameter "charset" refers to the <a
+href="charset.html#encodings">character encoding</a> used to represent
+the HTML document as a sequence of bytes. Legal values for this
+parameter are defined in the section on <a
+href="charset.html#encodings">character encodings</a>. Although this
+parameter is optional, we recommend that it always be present.
+
+<div class="note"><P> 
+<em><strong>Note.</strong> The relationship
+between this specification's encoding of <a
+href="struct/text.html#line-breaks">line breaks</a> and <a
+rel="biblioentry" href="./references.html#ref-RFC2045">[RFC2045]</a>,
+section 2.10 is not yet clear. The editors expect to review this
+relationship during the Proposed Recommendation review phase.
+</em>
+</div>
+
+<!-- This used to be here, but I think it's
+better described immediately below -IJ
+
+           The charset parameter (as defined in section 7.1.1 of
+            RFC 1521[MIME]) may be given to specify the character
+            encoding scheme used to represent the HTML document as a
+            sequence of octets. The default value is outside the
+            scope of this specification; but for example, the
+            default is `US-ASCII' in the context of MIME mail, and
+            `ISO-8859-1' in the context of HTTP [HTTP].
+
+-->
+
+<div class="navbar">
+<hr><center><a href="intro/sgmltut.html">previous</a> &nbsp; <a href="charset.html">next</a> &nbsp; <a href="cover.html#toc">contents</a> &nbsp; <a href="index/elements.html">elements</a> &nbsp; <a href="index/attribs.html">attributes</a>
+</center></div>
+</BODY>
+</html>

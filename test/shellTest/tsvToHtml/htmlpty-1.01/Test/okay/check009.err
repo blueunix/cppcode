@@ -1,0 +1,14 @@
+:81:illegal extra <BODY> tag
+:81:<BODY> at level 2 should be at level 1
+:83:</BODY> at level 2 should be at level 1
+:167:illegal extra <HEAD> tag
+:167:<HEAD> at level 2 should be at level 1
+:169:</HEAD> at level 2 should be at level 1
+:175:illegal extra <HTML> tag
+:175:<HTML> at level 2 should be at level 0
+:177:</HTML> at level 2 should be at level 0
+:209:HTML grammars do not permit an end tag for the tag name [OVERLAY]; please consider deleting it
+:235:illegal extra <TITLE> tag
+:649:<PLAINTEXT> is abberant HTML and is strongly deprecated; use <PRE>...</PRE> instead
+:655:</PLAINTEXT> is treated as ordinary text: PLAINTEXT environment continues to end-of-file
+:658:unclosed tags in tag nest: line:opentag = 421:LINK 2:BODY 1:HTML

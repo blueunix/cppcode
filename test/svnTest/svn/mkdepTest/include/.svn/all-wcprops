@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/mkdepTest/include
+END
+f1.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/mkdepTest/include/f1.h
+END
+f2.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/mkdepTest/include/f2.h
+END

@@ -1,0 +1,359 @@
+%% html-pretty version 1.00 date [11-Nov-1997]
+%% This is the contained-in tag relationships file,
+%% prepared from Entities/Cougar.tab by cittable.awk.
+%% [25-Aug-2001]
+
+CannotContain[A]          : A
+
+CannotContain[DIR]        : BLOCKQUOTE CENTER DIR DIV DL FIELDSET FORM \
+                            HR ISINDEX LISTING MENU OL P PRE TABLE UL \
+                            XMP
+
+CannotContain[FORM]       : FORM
+
+CannotContain[LABEL]      : LABEL
+
+CannotContain[MENU]       : BLOCKQUOTE CENTER DIR DIV DL FIELDSET FORM \
+                            HR ISINDEX LISTING MENU OL P PRE TABLE UL \
+                            XMP
+
+CannotContain[PRE]        : BIG FONT IMG SMALL SUB SUP
+
+CannotContain[TITLE]      : LINK META SCRIPT STYLE
+
+ContainedIn[#PCDATA]      : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT OPTION P PRE Q S SAMP \
+                            SMALL SPAN STRONG SUB SUP TD TEXTAREA \
+                            TEXTFLOW TH TITLE TT U VAR
+
+ContainedIn[A]            : ADDRESS B BDO BIG BLOCKQUOTE BODY CAPTION \
+                            CENTER CITE CODE DD DFN DIV DT EM FIELDSET \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LABEL LI \
+                            OBJECT P PRE Q S SAMP SMALL SPAN STRONG \
+                            SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[ADDRESS]      : BLOCKQUOTE BODY CENTER DIV FIELDSET FORM \
+                            OBJECT TD TH
+
+ContainedIn[APPLET]       : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[AREA]         : MAP
+
+ContainedIn[B]            : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[BASE]         : HEAD
+
+ContainedIn[BASEFONT]     : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[BDO]          : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[BIG]          : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[BLOCKQUOTE]   : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[BODY]         : HTML
+
+ContainedIn[BR]           : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[CAPTION]      : FIELDSET TABLE
+
+ContainedIn[CDATA]        : LISTING PLAINTEXT SCRIPT STYLE XMP
+
+ContainedIn[CENTER]       : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[CITE]         : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[CODE]         : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[COL]          : COLGROUP TABLE
+
+ContainedIn[COLGROUP]     : TABLE
+
+ContainedIn[DD]           : DL
+
+ContainedIn[DFN]          : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[DIR]          : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[DIV]          : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[DL]           : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[DT]           : DL
+
+ContainedIn[EM]           : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[EMPTY]        : AREA BASE BASEFONT BR COL HR IMG INPUT \
+                            ISINDEX LINK META PARAM
+
+ContainedIn[FIELDSET]     : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[FONT]         : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[FORM]         : BLOCKQUOTE BODY CENTER DD DIV FIELDSET LI \
+                            OBJECT TD TH
+
+ContainedIn[H1]           : BLOCKQUOTE BODY CENTER DIV FIELDSET FORM \
+                            OBJECT TD TH
+
+ContainedIn[H2]           : BLOCKQUOTE BODY CENTER DIV FIELDSET FORM \
+                            OBJECT TD TH
+
+ContainedIn[H3]           : BLOCKQUOTE BODY CENTER DIV FIELDSET FORM \
+                            OBJECT TD TH
+
+ContainedIn[H4]           : BLOCKQUOTE BODY CENTER DIV FIELDSET FORM \
+                            OBJECT TD TH
+
+ContainedIn[H5]           : BLOCKQUOTE BODY CENTER DIV FIELDSET FORM \
+                            OBJECT TD TH
+
+ContainedIn[H6]           : BLOCKQUOTE BODY CENTER DIV FIELDSET FORM \
+                            OBJECT TD TH
+
+ContainedIn[HEAD]         : HTML
+
+ContainedIn[HR]           : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[I]            : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[IMG]          : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[INPUT]        : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[ISINDEX]      : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM HEAD LI OBJECT TD TH
+
+ContainedIn[KBD]          : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[LABEL]        : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LI OBJECT P PRE Q S SAMP SMALL SPAN STRONG \
+                            SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[LI]           : DIR MENU OL UL
+
+ContainedIn[LINK]         : HEAD
+
+ContainedIn[LISTING]      : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[MAP]          : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[MENU]         : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[META]         : HEAD
+
+ContainedIn[OBJECT]       : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[OL]           : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[OPTION]       : SELECT
+
+ContainedIn[P]            : ADDRESS BLOCKQUOTE BODY CENTER DD DIV \
+                            FIELDSET FORM LI OBJECT TD TH
+
+ContainedIn[PARAM]        : APPLET OBJECT
+
+ContainedIn[PLAINTEXT]    : HTML
+
+ContainedIn[PRE]          : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[Q]            : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[S]            : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[SAMP]         : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[SCRIPT]       : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 HEAD \
+                            I KBD LABEL LI OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRONG SUB SUP TD TEXTFLOW TH TT U \
+                            VAR
+
+ContainedIn[SELECT]       : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[SMALL]        : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[SPAN]         : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[STRONG]       : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[STYLE]        : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 HEAD \
+                            I KBD LABEL LI OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRONG SUB SUP TD TEXTFLOW TH TT U \
+                            VAR
+
+ContainedIn[SUB]          : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[SUP]          : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[TABLE]        : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[TBODY]        : TABLE
+
+ContainedIn[TD]           : TR
+
+ContainedIn[TEXTAREA]     : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[TEXTFLOW]     : APPLET
+
+ContainedIn[TFOOT]        : TABLE
+
+ContainedIn[TH]           : TR
+
+ContainedIn[THEAD]        : TABLE
+
+ContainedIn[TITLE]        : HEAD
+
+ContainedIn[TR]           : TBODY TFOOT THEAD
+
+ContainedIn[TT]           : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[U]            : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[UL]           : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+
+ContainedIn[VAR]          : A ADDRESS B BDO BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FIELDSET FONT FORM H1 H2 H3 H4 H5 H6 I KBD \
+                            LABEL LI OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRONG SUB SUP TD TEXTFLOW TH TT U VAR
+
+ContainedIn[XMP]          : BLOCKQUOTE BODY CENTER DD DIV FIELDSET \
+                            FORM LI OBJECT TD TH
+

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/14/shellTest/tagCount
+END
+array_elem.html
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/14/shellTest/tagCount/array_elem.html
+END
+tagCount.sh
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/14/shellTest/tagCount/tagCount.sh
+END
+testFile.xml
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/14/shellTest/tagCount/testFile.xml
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 21
+/svn/!svn/ver/2/test1
+END
+test1.c
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/test1/test1.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/test1/main.c
+END
+target
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/test1/target
+END
+test1.h
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/test1/test1.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/test1/Makefile
+END

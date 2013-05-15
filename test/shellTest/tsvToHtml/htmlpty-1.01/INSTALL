@@ -1,0 +1,913 @@
+%% /u/sy/beebe/src/htmlpty/htmlpty-1.00/INSTALL, Fri Nov 28 13:56:40 1997
+%% Edit by Nelson H. F. Beebe <beebe@plot79.math.utah.edu>
+
+==================
+QUICK INSTALLATION
+==================
+
+You can build and install html-pretty on UNIX systems with little
+difficulty, using the GNU standard incantation
+
+    ./configure && make all check install
+
+On systems with unusual compiler names (e.g., HAL SPARC64/OS_2.4.5),
+you may need to specify a C and C++ compiler to use; see the CC= and
+CCC= options to env in the example below.
+
+NB: you can safely ignore this warning [your line number may differ]:
+
+	flex  -t htmlpty.l | sed -e '/^# *line/d' > htmlpty.c
+	"htmlpty.l", line 620: warning, rule cannot be matched
+
+That rule is there intentionally, to avoid losing output in the event
+earlier rules fail to match all possible input patterns.
+
+If you want to repeat the process in the same directory, but for a
+different architecture, first do
+
+    make distclean
+
+to restore the directory to the state of a fresh distribution, then
+repeat the configure and make steps as before.
+
+If the builds, checks, and installs were successful, you can stop
+reading now!
+
+			 --------------------
+
+The configure script will create Makefile from Makefile.in, and
+config.h from config.hin, an essential step before make and compilers
+can be used.
+
+There are no top-level Makefile and config.h files included in a new
+distribution, since configure is expected to generate them.  However,
+for safety, there are backup copies of Makefile, config.h, configure,
+and htmlpty.c in the Backup subdirectory; they were prepared on a Sun
+Solaris 2.5 system.  You can use copies of them should you experience
+problems with configure, or if you are porting the software to a
+non-UNIX system that does not have a POSIX- or UNIX-like shell
+(several non-UNIX systems have such shells, including IBM PC DOS, IBM
+VM/CMS, and Microsoft Windows NT).
+
+If you wish to use a particular C and/or C++ compiler and optimization
+level, do it like this:
+
+    env CC=..C-compiler.. CCC=..C++-compiler.. ./configure && \
+	make OPT='-optlevel' all check install
+
+or if your system lacks the env command
+
+    sh/ksh/bash shell:
+    CC=..C-compiler.. CCC=..C++-compiler.. ./configure && \
+	make OPT='-optlevel' all check install
+
+    csh/tcsh shell:
+    setenv CC ..C-compiler..
+    setenv CCC ..C++-compiler..
+    ./configure && make OPT='-optlevel' all check install
+
+You do not need to rerun configure if you only change optimization
+levels, but you should do if you change other compiler options, since
+they may affect the visibility of symbols and declarations in system
+header files, and that in turn may require (automated) changes to the
+config.h file.
+
+In the Makefile, you may want to change the definitions of the BINDIR
+and MANDIR installation directories; the distribution version uses the
+Free Software Foundation's standards of /usr/local/bin and
+/usr/local/man, which avoids contaminating any vendor-provided
+directories.  This is readily done on the make command-line, like
+this:
+
+     make prefix=/some/other/place targets
+
+or, better, at configure time, like this:
+
+     ./configure --prefix=/some/other/place
+
+
+====================
+INSTALLATION DETAILS
+====================
+
+The Makefile contains about 60 convenience targets for picking
+particular compilers and optimization levels on different UNIX
+systems.  If you use them, be sure to run configure first with CC set
+to choose the appropriate compiler.
+
+In the Makefile, read carefully the comments on the merits of choosing
+lex or flex; flex is the default for the reasons stated there, but lex
+can be used on SOME, but not all, UNIX systems.  Although flex
+usuually produces faster lexical analyzers than lex, for html-pretty
+1.00, the lex version is slightly faster.  However, because the lex
+version has problems with some characters in the range 128..255 on
+some systems, flex is still the default lexical analyzer generator.
+
+On HP 9000/7xx HP-UX 10.01 systems, and possibly others, it is
+necessary to force yytext to be an array rather than a pointer; this
+is done by adding -DYYCHAR_ARRAY to the compilation options, e.g.
+
+	make XCFLAGS=-DYYCHAR_ARRAY
+
+Because some lex implementations allocate peculiar sizes for yytext[],
+html-pretty checks at startup that the expected size matches the
+actual size, and if they differ, it quits immediately with a message
+like this:
+
+**********************************************************************
+** FATAL ERROR: This program has inconsistent array sizes:
+**      YYLMAX = 8192
+**      sizeof(yytext) = 0
+** You must correct the lex-generated code and rebuild the program.
+** The Makefile has a sed filter step that should correct the error.
+** Did you override this by running lex manually?
+**********************************************************************
+
+As the message notes, the installation procedure tries to correct such
+abberrations, but may not succeed on all systems.
+
+In the Makefile, pick the appropriate definition of HOST, or if
+neither works (highly unlikely in the Internet world), you can specify
+it on the make command line with something like
+
+	make HOST=-D\"foo.bar.baz\"
+
+Then just type
+
+	make
+
+On Sun Solaris 2.x, with the default vendor C compiler, you may need
+to type
+
+	make CC='cc -Xc'
+
+because flex-generated code otherwise defines const to an empty string
+after including some system header files, and before including others.
+The result is function prototype name conflicts for names declared in
+multiple header files (e.g. rename()).  The -Xc option requests strict
+Standard C compilation, and avoids the problem.
+
+On some systems (e.g. HP-UX with c89), you may need to add
+-D_POSIX_SOURCE in order to get the utsname structures visible.
+
+html-pretty has been successfully built and tested on these systems:
+
+DECstation 3100		ULTRIX 4.3		cc, lcc, gcc, g++
+DEC Alpha 3000/400	OSF/1 2.0		cc, c89, gcc
+DEC Alpha 3000/300LX	OSF/1 3.0		cc, c89, gcc, g++
+HALstation 385		SPARC64/OS_2.4.5	hcc, FCC
+HP 9000/735		HP-UX 9.0.5		cc, c89, CC, gcc, g++
+IBM PC			MS DOS 5.0		tcc (2.0 and 3.0)
+IBM RS/6000		AIX 3.2.5		cc, xlC, gcc, g++
+MIPS RC6280		RISCos 2.1.1AC		cc
+NeXT Turbostation	Mach 3.0		cc, lcc, gcc, g++
+Sun SPARCstation	SunOS 4.1.3		cc, lcc, gcc, g++
+Sun SPARCstation	Solaris 2.3 and 2.4	cc, CC, lcc, gcc, g++
+Silicon Graphics Indigo	IRIX 5.3, 6.2, 6.4	cc, c89, CC, gcc, g++
+
+With flex 2.5.1, all systems passed, and the same hold for the more
+recent flex 2.5.4.  If you get failures in check005 at the characters
+in 128..255 with flex, you probably have an older version and should
+upgrade (flex sources are on
+ftp://prep.ai.mit.edu/pub/gnu/flex*.tar.gz, and on the many sites that
+mirror the Free Software Foundation archive); flex 2.3 is one such
+failing version.
+
+With lex, some implementations lose characters with values in the
+range 128..255 on check005.in.
+
+On other systems, please try a C++ compiler if you have one, because
+it is more likely to catch problems than C compilers do.
+flex-generated code is C++ compatible, but some vendor lex
+implementations are still in the old K&R C mold, instead of conforming
+to 1989 ANSI/ISO Standard C, and produce C code that cannot be
+compiled with C++ compilers.
+
+To build, check, and install html-pretty, just use the conventional
+GNU standard incantation:
+
+	./configure && make all check install
+
+Installation will not happen if any of the validation checks fail.  In
+the current release, configure is a dummy script, but it may do more
+in later releases.
+
+It you want to change the default compiler optimization level, set the
+variable OPT on the command line.  Other compiler flags can be
+supplied with the XCFLAGS variable.  For example
+
+	make OPT=-O3 XCFLAGS=-Xc all check install
+
+If you need additional libraries, you can add a LIBS value on the make
+command line, e.g., I found that compilation with gprof profiling with
+C++ on Sun Solaris 2.5 needed this:
+
+	make OPT=-pg LIBS=-ldl
+
+Should you want to remove an installed version, just do
+
+	make uninstall
+
+When you finish, do
+
+	make clean
+
+to remove intermediate files, leaving the executable, or
+
+	make distclean
+
+to reduce everything to the state of the original distribution.
+
+If you do
+
+	make maintainer-clean
+
+[but please do NOT!]  you will also remove the bootstrap htmlpty.c
+file, which needs lex or flex to be rebuilt, the ASCII, HTML, PDF, and
+PostScript forms of the manual pages, which need man2ps, man2html,
+groff/nroff, and Adobe Acrobat Distiller to recreate, and the
+configure and config.hin files, which need GNU autoconf and autoheader
+to recreate.
+
+
+==================================
+EFFICIENCY ISSUES FOR HTMLPTY 0.11
+==================================
+
+lex (and flex)-generated lexical analyzers are generally quite
+efficient, and this one is no exception.  With version 0.11 of
+htmlpty, on a large test file of 78,300 lines (2.4MB), made by
+concatenating all of the .html files on my home file system, the flex
+version of html-pretty took only 10.72 sec (7306 lines/sec, 269K input
+bytes/sec) on an entry-level Sun SPARCstation LX workstation, with the
+code compiled at the highest optimization level (-xO4) with the Sun
+Solaris 2.4 native C compiler.  This optimization level results in
+inlining of short functions, of which there are many in this program.
+
+A more general result is the ratio of html-pretty's run time with that
+of a simple program which copies the same file with the loop
+
+	while ((c = getchar()) != EOF)
+            putchar(c);
+
+so that every input character is input and output individually.  The
+copy loop ran in 3.21 sec, and the time ratio is 3.34.  The output
+file size is 3.3MB, so adjusting for the total number of bytes input
+and output, this ratio can be further scaled down by (2399316 +
+3295133)/(2 * 2399316) = 0.69, to a value of 2.29.
+
+Line profiling with Sun tcov revealed hot spots inside the
+flex-generated code, about which one can do nothing, and in the
+copy_verbatim() routine, which is called a lot because the test file
+has a lot of <PRE> ... </PRE> environments.
+
+CPU time profiling with gprof gave this flat profile; note that
+_read() and _write() together account for about 45% of the CPU time.
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls  ms/call  ms/call  name
+ 27.05      7.41     7.41      594    12.47    12.47  _read
+ 18.33     12.43     5.02      813     6.17     6.17  _write
+ 10.55     15.32     2.89        1  2890.00 24003.83  yylex
+  8.80     17.73     2.41      659     3.66    13.24  copy_verbatim
+  8.54     20.07     2.34   112354     0.02     0.03  out_string
+  6.28     21.79     1.72                             _mcount
+  3.58     22.77     0.98                             oldarc
+  3.36     23.69     0.92   423743     0.00     0.00  .mul
+  2.34     24.33     0.64    28719     0.02     0.06  line_end
+  2.26     24.95     0.62    53771     0.01     0.01  _memccpy
+  1.53     25.37     0.42   261034     0.00     0.00  strchr
+  1.28     25.72     0.35    70858     0.00     0.01  blank
+  0.91     25.97     0.25    53273     0.00     0.07  fputs
+  0.91     26.22     0.25    27228     0.01     0.01  normalize_tag
+  0.62     26.39     0.17                             done
+  0.51     26.53     0.14    84749     0.00     0.04  out_yytext
+  0.51     26.67     0.14     8387     0.02     0.20  list_item
+  0.37     26.77     0.10     9998     0.01     0.17  pair
+  0.37     26.87     0.10        8    12.50    12.50  _open
+  0.33     26.96     0.09      608     0.15     0.15  memcpy
+  0.26     27.03     0.07   108476     0.00     0.00  _thr_main_stub
+  0.26     27.10     0.07    54999     0.00     0.00  _realbufend
+  0.26     27.17     0.07    53327     0.00     0.00  out_blank
+  0.15     27.21     0.04    12875     0.00     0.00  toupper
+  0.11     27.24     0.03    55004     0.00     0.00  _rw_rdlock_stub
+  0.11     27.27     0.03     3848     0.01     0.06  font
+  0.07     27.29     0.02     2158     0.01     0.31  paragraph
+...
+
+and this hierarchical profile (function whose names begin with
+underscore are library routines):
+
+granularity: each sample hit covers 4 byte(s) for 0.04% of 25.67 seconds
+
+index % time    self  children    called     name
+[1]     95.3    0.00   24.46       1         main [1]
+[2]     95.3    0.00   24.46                 _start [2]
+[3]     93.5    2.89   21.11       1         yylex [3]
+[4]     34.1    0.01    8.75     664         verbatim [4]
+[5]     34.0    2.41    6.32     659         copy_verbatim [5]
+[6]     29.1    0.00    7.46     307         fread [6]
+[7]     28.9    7.41    0.00     594         _read [7]
+[8]     28.8    0.01    7.37     590         __filbuf [8]
+[9]     27.9    0.00    7.17     295         yy_get_next_buffer [9]
+[10]    19.6    5.02    0.00     813         _write [10]
+[11]    19.4    0.01    4.97     804         _xflsbuf [11]
+[12]    15.4    0.25    3.71   53273         fputs [12]
+[13]    15.3    2.34    1.58  112354         out_string [13]
+[14]    12.1    0.14    2.96   84749         out_yytext [14]
+[15]     8.0    0.00    2.05     332         __flsbuf [15]
+[16]     6.9    0.64    1.14   28719         line_end [16]
+[17]     6.7    0.14    1.57    8387         list_item [17]
+[18]     6.6    0.10    1.59    9998         pair [18]
+[19]     3.8    0.98    0.00                 oldarc [19]
+[20]     3.6    0.92    0.00  423743         .mul [20]
+[21]     2.6    0.02    0.66    2158         paragraph [21]
+[22]     2.6    0.35    0.32   70858         blank [22]
+[23]     2.4    0.62    0.00   53771         _memccpy [23]
+[24]     1.8    0.00    0.46       1         out_banner [24]
+[25]     1.6    0.42    0.00  261034         strchr [25]
+[28]     1.3    0.25    0.09   27228         normalize_tag [28]
+[30]     0.9    0.03    0.20    3848         font [30]
+[31]     0.7    0.17    0.00                 done [31]
+[34]     0.4    0.09    0.00     608         memcpy [34]
+[35]     0.3    0.01    0.06     423         begin_list [35]
+[36]     0.3    0.07    0.00   53327         out_blank [36]
+[38]     0.3    0.01    0.05     425         standalone [38]
+[40]     0.2    0.02    0.03     426         out_newline [40]
+[46]     0.2    0.04    0.00   12875         toupper [46]
+[47]     0.1    0.00    0.04       2         fopen [47]
+[50]     0.1    0.01    0.02     158         line_break [50]
+[52]     0.1    0.00    0.03      27         fgets [52]
+[53]     0.1    0.00    0.02       1         ctime [53]
+...
+
+flex offers options for improved scanner efficiency, notably,
+uncompressed tables, and fullword, instead of halfword, storage.  Here
+is a comparison of the relative run times on a Sun SPARCstation LX
+with the native Solaris 2.4 C compiler, using the 2.4MB test file
+noted above:
+
+		------------------------------------
+		LFLAGS			-----OPT----
+					-g	-xO4
+		------------------------------------
+		(slow)			2.42	1.23
+		(fast) -Ca -Cf		2.21	1.00
+		------------------------------------
+
+The tradeoff is that the fast scanner has 3.65 times as many lines of
+C code, 4.10 times as many bytes of C code, and the executable is 6.28
+times larger.  Compilation of the slow scanner with optimization took
+4 minutes, and of the fast scanner, 6 minutes.
+
+However, use of the fast scanner uncovered two problems:
+
+	(a) in function yy_try_NUL_trans(), the generated code
+	was missing a variable declaration:
+		register char *yy_cp = yy_c_buf_p; /* BUG: lost with -Cf -Ca */
+	This is a flex 2.5.1 bug that will be reported to the flex author.
+
+	(b) "make check" failed in check005: three lines with
+	characters in 128..255 are missing a blank preceding those
+	characters.
+
+Thus, I will not use the fast scanner options until these problems are
+fixed.
+
+[08-Nov-1997]: Under flex version 2.5.4, I repeated this experiment,
+this time on a faster Sun UltraSPARC 2170 using the native Solaris
+2.5.1 C++ compiler.
+
+The compilation and link time for "make all" with OPT=-g was 13.05sec,
+and with OPT=-O4, 185.58 sec, 14.22 times longer.
+
+The htmlpty.c file was 6231 lines and 179583 bytes long with the fast
+flex options -Ca -Cf, compared to 5220 lines and 130535 bytes without.
+
+The executable size for the fast flex version with OPT=-O4 was 395440
+bytes (382280 bytes stripped of symbols) compared with 425984 bytes
+(391632 bytes stripped of symbols) with OPT=-g.
+
+Although bug (a) above has disappeared, the "make check" failed as
+before in (b) above in check005; all other checks passed.  Thus, the
+fast flex options should still not be used.
+
+
+==================================
+EFFICIENCY ISSUES FOR HTMLPTY 1.00
+==================================
+
+During the development of version 1.00, considerable attention was
+given to improving the efficiency of the program.  Because it does
+much more than earlier versions, it is not as fast (compared to the
+cpchar program, it runs ?.?? times slower), but I believe the code is
+now acceptably fast, and further changes to the code are not likely to
+make much difference.
+
+In particular, I was concerned about the efficiency of low-level I/O
+routines, and the linear search through tag tables, called from
+do_tag() -> check_tag_nesting() -> search() when the
+-check-tag-nesting option has been specified.  
+
+Hash table searches are used elsewhere in the program for class/tag
+lookups, and could be used by check_tag_nesting() as well, at the cost
+of some additional complexity in table allocation, generation, and
+freeing.  Fortunately, this does not seem to be necessary, thanks to
+some rather simple optimizations that avoid unnecessary strxxx()
+library function calls. One of them, a 3-line change in table.c in
+function get_name_by_style() and struct Style, reduced execution time
+by 40%.
+
+The low-level I/O routines have been rewritten to replace the old
+double buffered scheme (old output + current line) with a new single
+buffered approach that uses two variables, big_last_verbatim_position
+and big_newline_position, to track the buffer positions of two
+critical fenceposts.  This optimization also reduced complexity,
+making the time-critical dputc() function a candidate for inlining:
+every output character goes through that function.
+
+With C++ compilation, several short functions are now compiled inline
+(they are identified by the INLINE attribute, which is defined in
+common.h to expand to inline in C++ compilation, and to an empty
+string in C compilation).
+
+Profiling with prof, gprof, pixie, pixstats, and tcov on several
+architectures now shows that the time critical code section is the
+yy_match loop in yylex(), and the yy_get_next_buffer() function, which
+together account for 40% to 70% of the run time, depending on the
+architecture.  Since they are part of the flex-generated code, nothing
+can be readily done to improve them, short of changing to a faster
+lexical analyzer, but as far as I'm aware, no one so far has claimed
+to improve on flex.
+
+Here is a sample profile, from a DEC Alpha 2100/5-250 OSF/1 3.2
+system, using a 5MB test file made by concatenating all of the HMTL
+files in the Web tree at http://www.math.utah.edu/, running the
+program like this;
+
+pixie htmlpty
+htmlpty.pixie -indent 0 -logfile /dev/null <test-file >/dev/null
+pixstats htmlpty
+
+    cycles %cycles  cum%     instrs  c/i      calls     c/call name
+ 401335489  24.3%  24.3%  401335489  1.0        680     590199 yy_get_next_buffer__Xv
+ 289269893  17.5%  41.8%  289269893  1.0          1  289269893 yylex__Xv
+ 186740484  11.3%  53.1%  186740484  1.0    5328755         35 dputc__Xi
+ 103959911   6.3%  59.3%  103959911  1.0    2735657         38 yyinput__Xv
+  59729355   3.6%  63.0%   59729355  1.0     421340        142 out_string__XPCc
+  56872936   3.4%  66.4%   56872936  1.0    2829934         20 out_char__Xi
+  56729130   3.4%  69.8%   56729130  1.0    3781942         15 __iswctype_sb
+  44619727   2.7%  72.5%   44619727  1.0    1962533         23 strncmp
+  44589019   2.7%  75.2%   44589019  1.0     185581        240 normalize_tag__XPc
+  38082936   2.3%  77.5%   38082936  1.0    1081174         35 NLstrchr
+  34056501   2.1%  79.6%   34056501  1.0        948      35925 copy_verbatim__Xv
+  25740013   1.6%  81.1%   25740013  1.0    1980001         13 isspace
+  23601100   1.4%  82.6%   23601100  1.0     887103         27 strcmp
+  20878692   1.3%  83.8%   20878692  1.0     123129        170 memcpy
+  18787220   1.1%  85.0%   18787220  1.0    1342541         14 last_char__Xi
+  18543783   1.1%  86.1%   18543783  1.0      48003        386 paragraph_contains__XPCc
+  18113750   1.1%  87.2%   18113750  1.0    1811375         10 indentation_size__Xv
+...
+
+When the same experiment is repeated, this time adding the
+-check-tag-nesting option, the profile looks like this:
+
+    cycles %cycles  cum%     instrs  c/i      calls     c/call name
+ 401335489  18.6%  18.6%  401335489  1.0        680     590199 yy_get_next_buffer__Xv
+ 289269893  13.4%  32.0%  289269893  1.0          1  289269893 yylex__Xv
+ 207404011   9.6%  41.7%  207404011  1.0      92374       2245 get_name_by_style__XPCc
+ 186740484   8.7%  50.3%  186740484  1.0    5328755         35 dputc__Xi
+ 129298105   6.0%  56.3%  129298105  1.0     184240        702 _doprnt
+ 103959911   4.8%  61.1%  103959911  1.0    2735657         38 yyinput__Xv
+  70219906   3.3%  64.4%   70219906  1.0    2335227         30 strcmp
+  69497989   3.2%  67.6%   69497989  1.0    3008303         23 strncmp
+  59729355   2.8%  70.4%   59729355  1.0     421340        142 out_string__XPCc
+  56872936   2.6%  73.0%   56872936  1.0    2829934         20 out_char__Xi
+  56730540   2.6%  75.7%   56730540  1.0    3782036         15 __iswctype_sb
+  55964230   2.6%  78.2%   55964230  1.0      52281       1070 search__XPCcPCc
+  48358354   2.2%  80.5%   48358354  1.0     958937         50 memcpy
+  44589019   2.1%  82.6%   44589019  1.0     185581        240 normalize_tag__XPc
+  38082936   1.8%  84.3%   38082936  1.0    1081174         35 NLstrchr
+  34056501   1.6%  85.9%   34056501  1.0        948      35925 copy_verbatim__Xv
+  25740065   1.2%  87.1%   25740065  1.0    1980005         13 isspace
+
+This option seems to add about 10% to the execution time, but still,
+the time attributed to strcmp() and strncmp() is still less than 7%.
+
+Here is a another sample profile, also from pixie, but for the program
+running on an SGI Challenge L system running IRIX 5.3:
+
+Procedures ordered by execution time:
+    cycles %cycles  cum%     instrs  cycles   calls     cycles procedure
+                                     /inst               /call
+2063493343  59.1%  59.1% 2063493343    1.0      680    3034549 yy_get_next_buffer__Fv
+ 349231336  10.0%  69.1%  349231336    1.0        1  349231336 yylex__Fv
+ 181381967   5.2%  74.3%  174277699    1.0   421340        430 out_string__FPCc
+ 136797681   3.9%  78.2%  136797681    1.0  2735657         50 yyinput__Fv
+ 102750980   2.9%  81.2%  102750980    1.0  2498820         41 out_verbatim_char__Fi
+  61240202   1.8%  82.9%   61240202    1.0      948      64599 copy_verbatim__Fv
+  61100974   1.8%  84.7%   61100974    1.0   185581        329 normalize_tag__FPc
+  49604130   1.4%  86.1%   49604130    1.0    48003       1033 paragraph_contains__FPCc
+  38372206   1.1%  87.2%   38372206    1.0  1962571         20 strncmp
+  38183748   1.1%  88.3%   38183748    1.0  1081059         35 strchr
+  37590583   1.1%  89.4%   30311767    1.2   227463        165 hash_lookup__FPCcP10Hash_Table
+  35579988   1.0%  90.4%   35579988    1.0   585204         61 trim_line__Fi
+
+On this machine, the lexical analyzer is using about 73% of the time.
+
+From a Sun SPARCstation LX running Solaris 2.5, here is part of the
+flat profile produced by gprof, using a 13MB test file formed from
+all of the HTML files on my home system:
+
+granularity: each sample hit covers 2 byte(s) for 0.00% of 1071.27 seconds
+
+   %  cumulative    self              self    total          
+ time   seconds   seconds    calls  ms/call  ms/call name    
+ 68.1     729.23   729.23     1635   446.01   459.94  yy_get_next_buffer [4]
+  5.1     783.52    54.30 22060617     0.00     0.00  dputc [9]
+  5.0     836.82    53.30                            _mcount (615)
+  4.7     887.06    50.24     2843    17.67    17.67  _write [15]
+  2.8     917.23    30.17                            oldarc [19]
+  2.1     939.76    22.53     1636    13.77    13.77  _read [22]
+  2.0     961.68    21.92 11225462     0.00     0.06  input [5]
+  2.0     982.86    21.18                            next [23]
+  0.9     992.24     9.38                            done [27]
+  0.7     999.83     7.59 11419666     0.00     0.00  out_char [28]
+  0.7    1007.02     7.19        1  7190.15 945357.77  yylex [3]
+  0.5    1012.33     5.31                            _moncontrol [34]
+  0.4    1016.21     3.88    86155     0.05     0.05  _memcpy [35]
+  0.4    1020.00     3.79      107    35.42  1241.25  complex_markup_declaration [8]
+  0.3    1023.38     3.39 10640950     0.00     0.01  out_verbatim_char [12]
+  0.3    1026.67     3.29      678     4.85   804.24  copy_verbatim [7]
+  0.3    1029.46     2.79                            chainloop [42]
+  0.3    1032.20     2.74      274     9.98    10.37  doctype [41]
+  0.3    1034.93     2.73   346694     0.01     0.01  normalize_tag [36]
+  0.2    1036.69     1.76  1027598     0.00     0.00  strchr [48]
+  0.2    1038.33     1.65  1483003     0.00     0.00  indentation_size [43]
+  0.2    1039.95     1.62   276567     0.01     0.24  out_string [10]
+
+Clearly, on all three systems, I/O is the chief consumer of CPU time.
+
+To that end, I made some additional changes in the code to reduce the
+number of system calls for I/O, by redimensioning the big_buffer[]
+array from MAXBUF to MAXBIGBUF, and then adding calls in main() to
+setvbuf() (when available) to allocate input and output buffers, also
+of size MAXBIGBUF (default: max(16384,MAXBUF)).
+
+Experiments on DEC Alpha 2100-5/250 OSF/1 3.2 HP 9000/735 HP-UX 10.01,
+NeXT Mach 3.3, SGI Challenge L IRIX 5.3, and Sun Solaris 2.5 systems
+with MAXBIGBUF values of 2048, 4096, 16384, 65536, 262144, and 1048576
+showed little change in run times with a 5MB test input file. The HP
+system had the largest reduction, only about 5%, as MAXBIGBUF
+increased.
+
+I also made additional experiments with function inlining: choosing
+the top 15 time consumers from profiles (blank(), copy_verbatim(),
+dputc(), indentation_size(), last_char(), normalize_tag(),
+out_blank(), out_char(), out_string(), out_verbatim_char(),
+out_verbatim_string(), out_yytext(), trim_line(), yyinput(), and
+yylook()) and asking the C++ compiler to inline them reduced execution
+time by 37% on Sun systems.  I have therefore added INLINE directives
+to the definitions and declarations of those functions (except
+yyinput() and yylook(), which are in lex/flex-generated code).
+
+With the current version (SC4.0) of the Sun Solaris C++ compiler,
+inline directives do not seem to cause function inlining, but an
+explicit (but horrid) option
+
+-xinline=__0FGyylookv,__0FHyyinputv,__0FFdputci,__0FKout_stringPCc,__0FJlast_chari,strncmp,strchr,__0FIout_chari,__0FQindentation_sizev,__0FNnormalize_tagPc,__0FRout_verbatim_chari,strcmp,_memcpy,__0FKout_yytextv,__0FNcopy_verbatimv,__0FFblankv,__0FJout_blankv,__0FJtrim_linei,__0FTout_verbatim_stringPCc
+
+did so.
+
+One optimization that looked promising, but actually made the program
+run slightly slower, was to add additional patterns for the commonest
+tags (I chose the top 73 from a frequency-ordered list of all of the
+tags used in the Web tree at http://www.math.utah.edu/), and then have
+an action that cached the formatting function, e.g.,
+
+{BEGINPAIR}{B}{I}{G}{ENDTAG}			{ DO_TAG2("BIG") }
+
+(DO_TAG2() is still defined in htmlpty.l), instead of looking it up
+each time as do_tag() does.  Even though this greatly reduced the
+number of calls to get_action_by_name(), it appears that the
+additional complexity in the lexical analyzer made up for that gain,
+and resulted in a slower program.
+
+Because lex does not run a preprocessor, there is no way to retain
+those 73 patterns in the source file, but I have saved them in my
+development directory for possible future work.  The rest of the
+required support code is retained in htmlpty.l and table.c inside a
+
+#if defined(TAG_CACHE)
+...
+#endif /* defined(TAG_CACHE) */
+
+preprocessor conditional.
+
+
+===================
+IBM PC INSTALLATION
+===================
+
+Up to version 0.08, html-pretty built without problems under Turbo C
+2.0 and 3.0, and passed the validation suite.
+
+With version 0.09, the lex/flex-generated jump tables are larger, and
+the nasty Intel segmented memory architecture rears its ugly head, and
+it took me several hours of work to get a working version for IBM PC
+DOS.  I tried Microsoft C 5.0, 5.1, and 6.0, and Turbo C 2.0 and 3.0.
+I also have Microsoft C 7.0, but it will not run under SunPC.
+
+Compilation under Microsoft C 6.0 requires addition of -Dconst= ,
+because of an error in the compiler: it thinks that once an array is
+declared of type const char *, then you cannot assign to it!
+
+lex-generated htmlpty.c compiles with Microsoft C 5.0, 5.1, and 6.0,
+but gives incorrect output.
+
+The flex-generated htmlpty.c won't compile with Microsoft C 5.0, 5.1,
+6.0, or Turbo C 2.0 or 3.0 -- four complain about data group > 64K,
+even in the compact and huge memory models; Microsoft C 6.0 just
+produces this:
+
+htmlpty.c
+htmlpty.c(4781) : fatal error C1001: Internal Compiler Error
+                (compiler file '@(#)regMD.c:1.100', line 3837)
+                Contact Microsoft Product Support Services
+
+I then modified the flex-generated htmlpty.c to incorporate the huge
+attribute on two arrays:
+
+	static yyconst short int huge yy_nxt[15842] =
+	static yyconst short huge yy_chk[15842] =
+
+Microsoft C 5.0 and 5.1 compile in the huge model, but htmlpty goes
+into an infinite loop.  Microsoft C 6.0 produces the above fatal
+internal error message.
+
+tcc 2.0 won't compile at all: it seems to permit the huge attribute
+only on pointers, not on array objects.
+
+tcc 3.0 will compile the code in the compact and huge memory models,
+provided that -Dconst= is used to eliminate some apparent type
+conflict errors.  I don't understand what is happening here: running
+the tcc cpp (C preprocessor) on the code shows that yyconst expands to
+const through most of the code, then expands to an empty string in the
+rest, without ever having been redefined!
+
+The resulting executable from the tcc 3.0 compilation runs, and passes
+the validation suite.
+
+I then tried the lex-generated htmlpty.c, adding the huge attribute to
+these three lines:
+
+	int huge yyvstop[] = {
+	struct yywork { YYTYPE verify, advance; } huge yycrank[] = {
+	struct yysvf huge yysvec[] = {
+
+This compiled and linked with tcc 3.0, but the output is incorrect.
+
+Conclusion: the only workable compiler that I have for building
+html-pretty on the IBM PC is Turbo C 3.0.
+
+Trapping of the warning and error messages sent to stderr requires the
+Microsoft errout executable; it is used in the pccheck.bat script.
+
+For version 1.00, I prepared PC/config.h by hand and got a successful
+build with Turbo C 3.0.  All but one of the validation tests passed.
+The single failure is check016, whose nested style files seem to
+exhaust PC memory, causing it to hang completely without getting a
+failure return from fopen().  By experiment, I found that if I
+replaced the line
+
+-stylefile check016.st4
+
+in check016.st3 by
+
+-print-stylefile
+
+then the test would produce the expected results.  I don't have time
+or patience to pursue a workaround for this, but the limitation does
+not seem serious anyway, since style files nested deeper than two
+levels are unlikely to be necessary in practice, and relatively
+trivial to avoid.
+
+The batch file Test/docheck.bat can be used to run the checks.  PC DOS
+lacks an adequate file difference utility, so I ran the difference
+tests on a UNIX system using a simple csh/tcsh loop:
+
+	foreach f (*.out *.err)
+		echo ========== $f
+		diff $f okay/$f
+	end	
+
+Before running this loop, it may be necessary to change test file line
+terminators to either DOS CR-LF or UNIX LF conventions, perhaps using
+the dos2ux/ux2dos utilities available at
+
+	ftp://ftp.math.utah.edu/pub/misc/dosmacux-x.y.*
+
+Perhaps some PC installer will be able to build the program under
+newer compilers that avoid the obnoxious 64K segment limit, and send
+me a .exe file and a .bat file to build that program, for
+incorporation in later releases.
+
+
+======================
+TESTING AND VALIDATION
+======================
+
+While successful passing of the validation suite with "make check"
+gives confidence in the correct operation of the program, it is
+helpful to test the program further with coverage analyzers (such as
+Sun's tcov), profilers (such as prof, gprof, and pixie), and debuggers
+with memory leak detection and pointer access checking (such as Sun's
+dbx 3.1).  Also, testing against dozens of C and C++ compilers, with
+maximal warnings requested, and runs with lint, helps to weed out
+errors that unnecessarily limit portability.
+
+------------------
+Memory utilization
+------------------
+
+Runs under dbx show no memory leaks, and only one kind of pointer
+violation, rui (read-from-uninitialized memory) errors, which arise in
+access to data returned by getpwnam(), and in access to the lex/flex
+yytext[] buffer, and which, as far as I can see, are bogus, since the
+returned data is valid, and can be displayed by the debugger, but
+which the debugger complains about when the program tries to access
+it.
+
+	% dbx htmlpty
+	(dbx) check -all
+	(dbx) suppress rui
+	(dbx) run test/check005.in >/dev/null
+	(dbx) ...prettyprinter warnings...
+	Checking for memory leaks...
+	Leak Summary:
+		actual leaks:         0  total size:       0 bytes
+		possible leaks:       0  total size:       0 bytes
+
+	Blocks in use Summary:
+		blocks in use:      304  total size:   26108 bytes
+
+	execution completed, exit code is 0
+
+Setting a breakpoint at the final return in main(), and requesting a
+memory usage report produces:
+
+	 4286       return ((g_errors > 0) ? EXIT_FAILURE : EXIT_SUCCESS);
+	(dbx) showmemuse -n 999 -a
+	Checking for memory use...
+
+	Blocks in use (biu) report:
+
+	  Total   % of   Num of    Avg     Allocation trace
+	  Size     All   Blocks    Block
+				   Size
+	========= ====== ======  ======== =======================================
+	     8200 90.37%      1      8200  _findbuf < _doprnt < printf < generate_style_file < main
+	      592  6.52%      1       592  calloc < _tzload < _ltzset_u < localtime_u < ctime < generate_style_file < main
+	      148  1.63%      1       148  calloc < _tzload < _ltzset_u < localtime_u < ctime < generate_style_file < main
+	       36  0.39%      1        36  calloc < _tzload < _ltzset_u < localtime_u < ctime < generate_style_file < main
+	       36  0.39%      1        36  calloc < _tzload < _ltzset_u < localtime_u < ctime < generate_style_file < main
+	       36  0.39%      1        36  strdup < _tzload < _ltzset_u < localtime_u < ctime < generate_style_file < main
+	       13  0.14%      1        13  calloc < _tzload < _ltzset_u < localtime_u < ctime < generate_style_file < main
+	       12  0.13%      1        12  tzcpy < getzname < _ltzset_u < localtime_u < ctime < generate_style_file < main
+
+	Blocks in use Summary:
+		blocks in use:        8  total size:    9073 bytes
+
+The only unfreed memory left is that allocated by Sun library
+routines, findbuf() and tzload(), neither of which are under user
+control.
+
+
+----------------
+Input Robustness
+----------------
+
+The fuzz package, described in the paper
+
+@String{j-CACM                  = "Communications of the ACM"}
+
+@Article{Miller:1990:SRU,
+  author =       "Barton P. Miller and Lars Fredriksen and Bryan So",
+  title =        "Study of the Reliability of {UNIX} Utilities",
+  journal =      j-CACM,
+  volume =       "33",
+  number =       "12",
+  pages =        "33--44",
+  month =        dec,
+  year =         "1990",
+  CODEN =        "CACMA2",
+  ISSN =         "0001-0782",
+  bibdate =      "Wed Aug 31 17:57:41 1994",
+  acknowledgement = ack-nhfb,
+}
+
+and followed up in 1995 with a revisit in a technical report available
+at ftp://ftp.cs.wisc.edu/par-distr-sys/fuzz, has also been applied.
+
+The fuzz package, which essentially feeds random garbage to a
+program's input stream, has turned up bugs in numerous UNIX utilities,
+and was able to make many of them core dump, and in at least one case,
+was able to crash the entire operating system.
+
+Despite wide availability of the fuzz package after the 1990 paper,
+five years later, many of the same bugs were found in commercial UNIX
+systems; the system that fared the best in the fuzz tests was the Free
+Software Foundation's GNU system.
+
+The fuzz tests found no problems in this program, when run this way
+
+    cd /u/sy/beebe/src/fuzz/fuzz-1995-basic/src/fuzz/script1
+    ln /u/sy/beebe/src/htmlpty/htmlpty-1.00/htmlpty ..
+
+    ./run.stdin ../htmlpty
+
+	../htmlpty < t1 >& /dev/null
+	../htmlpty < t2 >& /dev/null
+	../htmlpty < t3 >& /dev/null
+	../htmlpty < t4 >& /dev/null
+	../htmlpty < t5 >& /dev/null
+	../htmlpty < t6 >& /dev/null
+	../htmlpty < t7 >& /dev/null
+	../htmlpty < t8 >& /dev/null
+	../htmlpty < t9 >& /dev/null
+	../htmlpty < t10 >& /dev/null
+	../htmlpty < t11 >& /dev/null
+	../htmlpty < t12 >& /dev/null
+
+    ./run.file ../htmlpty
+
+	../htmlpty t1 >& /dev/null
+	../htmlpty t2 >& /dev/null
+	../htmlpty t3 >& /dev/null
+	../htmlpty t4 >& /dev/null
+	../htmlpty t5 >& /dev/null
+	../htmlpty t6 >& /dev/null
+	../htmlpty t7 >& /dev/null
+	../htmlpty t8 >& /dev/null
+	../htmlpty t9 >& /dev/null
+	../htmlpty t10 >& /dev/null
+	../htmlpty t11 >& /dev/null
+	../htmlpty t12 >& /dev/null
+
+    cd ../script2
+
+    ./run.stdin ../htmlpty
+
+	../htmlpty < t1 >& /dev/null
+	../htmlpty < t2 >& /dev/null
+	../htmlpty < t3 >& /dev/null
+	../htmlpty < t4 >& /dev/null
+	../htmlpty < t5 >& /dev/null
+	../htmlpty < t6 >& /dev/null
+	../htmlpty < t7 >& /dev/null
+	../htmlpty < t8 >& /dev/null
+	../htmlpty < t9 >& /dev/null
+	../htmlpty < t10 >& /dev/null
+	../htmlpty < t11 >& /dev/null
+	../htmlpty < t12 >& /dev/null
+
+    ./run.file ../htmlpty
+
+	../htmlpty t1 >& /dev/null
+	../htmlpty t2 >& /dev/null
+	../htmlpty t3 >& /dev/null
+	../htmlpty t4 >& /dev/null
+	../htmlpty t5 >& /dev/null
+	../htmlpty t6 >& /dev/null
+	../htmlpty t7 >& /dev/null
+	../htmlpty t8 >& /dev/null
+	../htmlpty t9 >& /dev/null
+	../htmlpty t10 >& /dev/null
+	../htmlpty t11 >& /dev/null
+	../htmlpty t12 >& /dev/null
+
+    rm -f ../htmlpty
+
+===============
+PROBLEM SYSTEMS
+===============
+
+On a HALstation, 
+
+	uname -a
+	SunOS hal 5.4 SPARC64/OS_2.4.5 sun4H sparc 
+
+building with the Fujitsu C++ compiler like this
+
+	env CC=FCC ./configure && make all check
+
+produces successful compilations, and all but a single check pass.
+The failure is in check005, and it happens at all optimization levels,
+including -g.  Each time, the Test/check005.out file has binary
+garbage in it.  I was unable to debug this with either gdb or fdb:
+gdb cannot usefully find symbols to print, such as big_next_position,
+and fdb aborts immediately on startup.
+
+Changing from FCC to hcc, the HAL C/C++ compiler, produces a
+successful build and test.

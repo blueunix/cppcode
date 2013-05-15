@@ -1,0 +1,12 @@
+# HTML entities in HTML grammar DTD, computed on Sat Aug 25 16:09:13 MDT 2001 from
+# -rw-r--r-- 1 beebe 1081 Nov 11 1997 /u/sy/beebe/src/htmlpty/htmlpty-1.01/DTD/HTML4-frameset.dtd
+-rw-rw-r-- 1 beebe 38503 Aug 25 16:06 Makefile
+#
+
+0
+4
+DTD
+EN
+HTML
+INCLUDE
+W3C

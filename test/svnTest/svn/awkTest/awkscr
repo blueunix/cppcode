@@ -1,0 +1,32 @@
+#!/usr/bin/awk -f
+BEGIN{
+  FS="[:\t, ]"
+  numOfBlank=0
+  print "Begin"  
+}
+
+/^$/ {
+  #print "This is a blank line"  
+ numOfBlank++
+}
+
+
+/1?(-| )?\(?[0-9]+\)?( |-)?[0-9]+-[0-9]+/ {
+  print "This is a telephone number"
+  }
+
+/[0-9]+/ {
+  print "this is a number"
+  }
+
+/[A-Za-z]+/ {
+  print "This is a string"
+  }
+
+
+
+
+END{
+  print "The num of blank line is " numOfBlank
+  print "End"
+}

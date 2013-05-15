@@ -1,0 +1,147 @@
+%% html-pretty version 1.00 date [11-Nov-1997]
+%% This is the contained-in tag relationships file,
+%% prepared from Entities/html.tab by cittable.awk.
+%% [25-Aug-2001]
+
+CannotContain[A]          : A
+
+CannotContain[DIR]        : BLOCKQUOTE DIR DL FORM ISINDEX LISTING \
+                            MENU OL P PRE UL XMP
+
+CannotContain[FORM]       : FORM
+
+CannotContain[MENU]       : BLOCKQUOTE DIR DL FORM ISINDEX LISTING \
+                            MENU OL P PRE UL XMP
+
+ContainedIn[#PCDATA]      : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI \
+                            OPTION P PRE SAMP STRONG TEXTAREA TITLE TT \
+                            VAR
+
+ContainedIn[A]            : ADDRESS B BLOCKQUOTE BODY CITE CODE DD DT \
+                            EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP STRONG TT VAR
+
+ContainedIn[ADDRESS]      : BLOCKQUOTE BODY FORM
+
+ContainedIn[B]            : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[BASE]         : HEAD
+
+ContainedIn[BLOCKQUOTE]   : BLOCKQUOTE BODY DD FORM LI
+
+ContainedIn[BODY]         : HTML
+
+ContainedIn[BR]           : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[CDATA]        : LISTING PLAINTEXT XMP
+
+ContainedIn[CITE]         : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[CODE]         : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[DD]           : DL
+
+ContainedIn[DIR]          : BLOCKQUOTE BODY DD FORM LI
+
+ContainedIn[DL]           : BLOCKQUOTE BODY DD FORM LI
+
+ContainedIn[DT]           : DL
+
+ContainedIn[EM]           : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[EMPTY]        : BASE BR HR IMG INPUT ISINDEX LINK META \
+                            NEXTID
+
+ContainedIn[FORM]         : BLOCKQUOTE BODY DD LI
+
+ContainedIn[H1]           : A BLOCKQUOTE BODY FORM
+
+ContainedIn[H2]           : A BLOCKQUOTE BODY FORM
+
+ContainedIn[H3]           : A BLOCKQUOTE BODY FORM
+
+ContainedIn[H4]           : A BLOCKQUOTE BODY FORM
+
+ContainedIn[H5]           : A BLOCKQUOTE BODY FORM
+
+ContainedIn[H6]           : A BLOCKQUOTE BODY FORM
+
+ContainedIn[HEAD]         : HTML
+
+ContainedIn[HR]           : BLOCKQUOTE BODY FORM PRE
+
+ContainedIn[I]            : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[IMG]          : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            SAMP STRONG TT VAR
+
+ContainedIn[INPUT]        : FORM
+
+ContainedIn[ISINDEX]      : BLOCKQUOTE BODY DD FORM HEAD LI
+
+ContainedIn[KBD]          : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[LI]           : DIR MENU OL UL
+
+ContainedIn[LINK]         : HEAD
+
+ContainedIn[LISTING]      : BLOCKQUOTE BODY DD FORM LI
+
+ContainedIn[MENU]         : BLOCKQUOTE BODY DD FORM LI
+
+ContainedIn[META]         : HEAD
+
+ContainedIn[NEXTID]       : HEAD
+
+ContainedIn[OL]           : BLOCKQUOTE BODY DD FORM LI
+
+ContainedIn[OPTION]       : SELECT
+
+ContainedIn[P]            : ADDRESS BLOCKQUOTE BODY DD FORM LI
+
+ContainedIn[PLAINTEXT]    : HTML
+
+ContainedIn[PRE]          : BLOCKQUOTE BODY DD FORM LI
+
+ContainedIn[SAMP]         : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[SELECT]       : FORM
+
+ContainedIn[STRONG]       : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[TEXTAREA]     : FORM
+
+ContainedIn[TITLE]        : HEAD
+
+ContainedIn[TT]           : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[UL]           : BLOCKQUOTE BODY DD FORM LI
+
+ContainedIn[VAR]          : A ADDRESS B BLOCKQUOTE BODY CITE CODE DD \
+                            DT EM FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            PRE SAMP STRONG TT VAR
+
+ContainedIn[XMP]          : BLOCKQUOTE BODY DD FORM LI
+

@@ -1,0 +1,5 @@
+# HTML entities missing from htmlpty, computed on Fri Nov 28 15:15:10 MST 1997 from
+# -r--r--r-- 1 beebe 687 May 1 1995 /usr/local/lib/html-check/lib/html-1.dtd
+#
+-rw-rw-r-- 1 Makefile	  1	       DTD	    HTML	 IGNORE
+-rw-rw-r-- 1 0		  2	       EN	    IETF

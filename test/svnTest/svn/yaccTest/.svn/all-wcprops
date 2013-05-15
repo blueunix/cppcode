@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 24
+/svn/!svn/ver/2/yaccTest
+END
+file
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/yaccTest/file
+END
+yaccTest
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/yaccTest/yaccTest
+END
+yyobj
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/yaccTest/yyobj
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/yaccTest/makefile
+END
+y.tab.c
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/2/yaccTest/y.tab.c
+END

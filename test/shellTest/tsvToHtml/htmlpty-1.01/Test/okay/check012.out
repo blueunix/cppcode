@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<!--Third tortuous nested comment test: up to 10-fold nesting with embedded hyphens-->
+<!-------->
+<!----<!-------->
+<HTML>
+    <HEAD>
+        <TITLE>
+            <!-- Please supply a descriptive title here -->
+        </TITLE>
+        <!-- Please supply a correct e-mail address here -->
+        <LINK REV="made" HREF="mailto:beebe@sunrise.math.utah.edu">
+    </HEAD>
+    <BODY>
+        ----&gt;
+<!----<!----<!-------->
+        ----&gt;----&gt;
+<!----<!----<!----<!-------->
+        ----&gt;----&gt;----&gt;
+<!----<!----<!----<!----<!-------->
+        ----&gt;----&gt;----&gt;----&gt;
+<!----<!----<!----<!----<!----<!-------->
+        ----&gt;----&gt;----&gt;----&gt;----&gt;
+<!----<!----<!----<!----<!----<!----<!-------->
+        ----&gt;----&gt;----&gt;----&gt;----&gt;----&gt;
+<!----<!----<!----<!----<!----<!----<!----<!-------->
+        ----&gt;----&gt;----&gt;----&gt;----&gt;----&gt;----&gt;
+<!----<!----<!----<!----<!----<!----<!----<!----<!-------->
+        ----&gt;----&gt;----&gt;----&gt;----&gt;----&gt;----&gt;----&gt;
+<!----<!----<!----<!----<!----<!----<!----<!----<!----<!-------->
+        ----&gt;----&gt;----&gt;----&gt;----&gt;----&gt;----&gt;----&gt;
+        ----&gt;
+    </BODY>
+</HTML>

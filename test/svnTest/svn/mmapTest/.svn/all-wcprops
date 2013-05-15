@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 24
+/svn/!svn/ver/2/mmapTest
+END
+a.out
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/mmapTest/a.out
+END
+dstFile.txt
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/mmapTest/dstFile.txt
+END
+mmapFile.txt
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/mmapTest/mmapFile.txt
+END
+mmapTest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/mmapTest/mmapTest.cpp
+END

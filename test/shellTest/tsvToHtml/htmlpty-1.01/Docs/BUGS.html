@@ -1,0 +1,48 @@
+<!-- -*-html-*- -->
+<!-- /u/sy/beebe/src/htmlpty/htmlpty-1.00/Docs/BUGS.html, Wed Dec  3 21:59:59 1997 -->
+<!-- Edit by Nelson H. F. Beebe <beebe@sunrise.math.utah.edu> -->
+<!-- BUGS -->
+<!-- Prettyprinted by html-pretty flex version 1.00 [29-Nov-1997] -->
+<!-- on Wed Dec  3 21:45:11 1997 -->
+<!-- for Nelson H. F. Beebe (beebe@sunrise.math.utah.edu) -->
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+    <HEAD>
+        <TITLE>
+            Bugs in html-pretty distribution
+        </TITLE>
+        <LINK REV="made" HREF="mailto:beebe@math.utah.edu">
+    </HEAD>
+    <BODY>
+        <H1>
+            Bugs in html-pretty distribution
+        </H1>
+        <P>
+            The DVI form of the manual page documentation has some
+            deficiencies in line breaking in the <STRONG>SYNOPSIS
+            </STRONG> section.  The reason is that neither I, nor a
+            colleague who is a long-time <SAMP>troff</SAMP> expert, has
+            found a way to format that section with automatic line
+            breaking, in such a way that the code works with <SAMP>
+            nroff</SAMP>, <SAMP>troff</SAMP>, and <SAMP>groff</SAMP>.
+            The explicit line breaks that are present in the
+        </P>
+<PRE>
+.if n .ti ...
+.if t .ti ...
+</PRE>
+        <P>
+            conditionals assume normal ASCII output with fixed-width
+            characters (<SAMP>nroff</SAMP>: <KBD>.if n ...</KBD>), or
+            else Times fonts (<SAMP>troff</SAMP>: <KBD>.if t ...</KBD>).
+        </P>
+        <P>
+            The DVI file is created with Computer Modern fonts, which
+            are available in every TeX implementation, but
+            <SAMP>groff</SAMP> provides no way to change the fonts
+            used in DVI output.  Changing fonts changes character
+            widths, and that in turn invalidates the hard-coded line
+            breaking decisions.
+        </P>
+    </BODY>
+</HTML>

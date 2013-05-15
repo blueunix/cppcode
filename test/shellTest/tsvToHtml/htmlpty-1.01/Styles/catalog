@@ -1,0 +1,43 @@
+% This is the html-pretty style file catalog.
+% 
+% Each line consists of two tokens (a grammar level, and a filename in
+% this directory), separated by whitespace, after comments, beginning
+% with a percent, and running to end-of-line, are stripped.
+% 
+% The style files MUST be in the same directory as the catalog file,
+% since the path of the catalog file will be prefixed to the filenames
+% below to make a full filename.
+% 
+% This indirect mapping of grammar levels to style files enhances
+% customizability and portability, and removes the need for end users
+% to know anything about the names or locations of the style files.
+% All they need specify is the grammar level.
+% 
+% SGML files are also located by SGML parsers at run-time using a
+% similar catalog.
+%
+% [01-Dec-1997]
+
+% Please keep this list alphabetically ordered: the levels are
+% displayed in an error message when an unknown level is requested.
+
+all	html-all.sty	% 1.0 + 2.0 + 3.0 + 3.2 + 4.0
+
+cougar	cougar.sty	% Draft version of 12 July 1996
+
+dtd	dtd.sty		% for additional declarations and tags in DTD files
+
+% 1.0	html-10.sty	% This is too old to be of interest
+
+2	html-20.sty	% Version of 23 September 1994
+2.0	html-20.sty	% Version of 23 September 1994
+
+3	html-30.sty	% Version of 13 March 1995
+3.0	html-30.sty	% Version of 13 March 1995
+
+3.2	html-32.sty	% Version of 14 January 1997
+
+4	html-40.sty	% Draft version of 8 July 1997
+4.0	html-40.sty	% Draft version of 8 July 1997
+
+%-------------------------------[The End]-------------------------------

@@ -1,0 +1,142 @@
+<!-- url-primer-080693.html -->
+<TITLE>A Beginner's Guide to URLs</TITLE>
+<H1>A Beginner's Guide to URLs</H1>
+
+What's a URL?  A URL is a <b>Uniform Resource Locator</b>.  Think of
+it as a networked extension of the standard <i>filename</i> concept:
+not only can you point to a file in a directory, but that file and
+that directory can exist on any machine on the network, can be served
+via any of several different methods, and might not even be something
+as simple as a file: URLs can also point to queries, documents stored
+deep within databases, the results of a <i>finger</i> or <i>archie</i>
+command, or whatever.  <P>
+
+Since the URL concept really pretty simple ("if it's out there, we can
+point at it"), this beginner's guide is just a quick walk through some
+of the more common URL types and should allow you to be creating and
+understanding URLs in a variety of contexts very quickly.  <P>
+
+<H2>File URLs</H2>
+
+Suppose there is a document called "foobar.txt"; it sits on an
+anonymous ftp server called "ftp.yoyodyne.com" in directory
+"/pub/files".  The URL for this file is then:  <P>
+
+<PRE>
+    file://ftp.yoyodyne.com/pub/files/foobar.txt
+</PRE>
+
+The toplevel directory of this FTP server is simply:  <P>
+
+<PRE>
+    file://ftp.yoyodyne.com/
+</PRE>
+
+The "pub" directory of this FTP server is then:  <P>
+
+<PRE>
+    file://ftp.yoyodyne.com/pub
+</PRE>
+
+That's all there is to it.  <P>
+
+<H2>Gopher URLs</H2>
+
+Gopher URLs are a little more complicated than file URLs, since Gopher
+servers are a little tricker to deal with than FTP servers.  To visit
+a particular gopher server (say, the gopher server on
+gopher.yoyodyne.com), use this URL:  <P>
+
+<PRE>
+    gopher://gopher.yoyodyne.com/
+</PRE>
+
+Some gopher servers may reside on unusual network ports on their host
+machines.  (The default gopher port number is 70.)  If you know that
+the gopher server on the machine "gopher.banzai.edu" is on port 1234
+instead of port 70, then the corresponding URL would be:  <P>
+
+<PRE>
+    gopher://gopher.banzai.edu:1234/
+</PRE>
+
+<H2>News URLs</H2>
+
+To point to a Usenet newsgroup (say, "rec.gardening"), the URL is
+simply:  <P>
+
+<PRE>
+    news:rec.gardening
+</PRE>
+
+Currently, network clients like <A NAME=1
+HREF="http://www.ncsa.uiuc.edu/SDG/Software/Mosaic/Docs/help-about.html">NCSA
+Mosaic</A> don't allow you to specify a news server like you would
+normally expect (e.g.,
+<code>news://news.yoyodyne.com/rec.gardening</code>); this may be
+coming down the road but in the meantime you will have to specify your
+local news server via some other method.  The most common method is to
+set the environment variable <code>NNTPSERVER</code> to the name of
+your news server before you start Mosaic.  <P>
+
+<H2>HTTP URLs</H2>
+
+HTTP stands for HyperText Transport Protocol.  HTTP servers are
+commonly used for serving hypertext documents, as HTTP is an extremely
+low-overhead protocol that capitalizes on the fact that navigation
+information can be embedded in such documents directly and thus the
+protocol itself doesn't have to support full navigation features like
+the FTP and Gopher protocols do.  <P>
+
+A file called "foobar.html" on HTTP server "www.yoyodyne.com" in
+directory "/pub/files" corresponds to this URL:  <P>
+
+<PRE>
+    http://www.yoyodyne.com/pub/files/foobar.html
+</PRE>
+
+The default HTTP network port is 80; if a HTTP server resides on a
+different network port (say, port 1234 on www.yoyodyne.com), then the
+URL becomes:
+
+<PRE>
+    http://www.yoyodyne.com:1234/pub/files/foobar.html
+</PRE>
+
+<H2>Partial URLs</H2>
+
+Once you are viewing a document located somewhere on the network (say,
+the document <code>http://www.yoyodyne.com/pub/afile.html</code>), you
+can use a <i>partial</i>, or <i>relative</i>, URL to point to another
+file in the same directory, on the same machine, being served by the
+same server software.  For example, if another file exists in that
+same directory called "anotherfile.html", then
+<code>anotherfile.html</code> is a valid partial URL at that point.
+<P>
+
+This provides an easy way to build sets of hypertext documents.  If a
+set of hypertext documents are sitting in a common directory, they can
+refer to one another (i.e., be hyperlinked) by just their filenames --
+<i>however</i> a reader got to one of the documents, a jump can be
+made to any other document in the same directory by merely using the
+other document's filename as the partial URL at that point.  The
+additional information (access method, hostname, port number,
+directory name, etc.) will be <i>assumed</i> based on the URL used to
+reach the first document.  <P>
+
+<H2>Other URLs</H2>
+
+Many other URLs are possible, but we've covered the most common ones
+you might have to construct by hand.  At the top of each Mosaic
+document viewing window is a text field called "Document URL"; if you
+watch the contents of that as you navigate through information on the
+network, you'll get to observe how URLs are put together for many
+different types of information.  <P>
+
+The current IETF URL spec is <A NAME=3
+HREF="file://info.cern.ch/pub/ietf/url4.txt">here</A>; more
+information on URLs can be found <A NAME=2
+HREF="http://info.cern.ch/hypertext/WWW/Addressing/Addressing.html">here</A>.
+<P>
+
+<ADDRESS> marca@ncsa.uiuc.edu  </ADDRESS>

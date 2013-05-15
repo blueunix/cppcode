@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 24
+/svn/!svn/ver/2/helpTest
+END
+a.out
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/helpTest/a.out
+END
+helpTest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/helpTest/helpTest.cpp
+END

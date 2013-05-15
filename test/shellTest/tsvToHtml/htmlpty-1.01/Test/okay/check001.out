@@ -1,0 +1,211 @@
+<!-- -*-html-*- -->
+<!-- index.html -->
+<!-- Prettyprinted by html-pretty.awk version 0.02 [09-Apr-1995] -->
+<!-- on Sun Apr 9 11:19:36 MDT 1995 -->
+<!-- for Nelson H. F. Beebe (beebe@sunrise) -->
+<!-- {!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" -->
+<!-- [ {!ENTITY % HTML Recommended "INCLUDE"} ] } -->
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN">
+
+<HTML>
+    <HEAD>
+        <TITLE>
+            Nelson H. F. Beebe's Home Page
+        </TITLE>
+        <!-- Please supply a correct e-mail address here -->
+        <LINK REV="made" HREF="mailto:beebe@plot79.math.utah.edu">
+    </HEAD>
+    <BODY>
+        <H1>
+            Nelson H. F. Beebe's Home Page
+        </H1>
+        <NOTE CLASS=CAUTION>
+            You are not supposed to be looking at this home page yet.
+            I'm still working on it, sigh...  But everything here so far
+            should work anyway.  A 30-bit 600dpi color scanner should be
+            here soon, so I'll be able to create some images.
+        </NOTE>
+        <FIG SRC="images/smallcatinhat.gif" ALIGN="right">
+        </FIG>
+        <P>
+            If you find a broken hypertext link, or notice any other
+            problem, please notify the author:
+        </P>
+        <ADDRESS>
+            Nelson H. F. Beebe<BR>
+            Center for Scientific Computing<BR>
+            Department of Mathematics<BR>
+            University of Utah<BR>
+            Salt Lake City, UT 84112<BR>
+            USA<BR>
+            Email:  beebe@math.utah.edu (Internet)<BR>
+            Tel:  +1 801 581 5254<BR>
+            FAX:  +1 801 581 4148
+        </ADDRESS>
+        <P>
+            If your WWW viewer doesn't show an image on this page, then
+            it does not recognize the FIG tag in HTML 3.0.  Click
+            <A HREF="images/smallcatinhat.gif">
+                here
+            </A>
+            to see what you're missing, or get the
+            <A HREF="http://www.w3.org/hypertext/WWW/Arena">
+                arena
+            </A>
+            viewer, or version 2.5 or later of the
+            <A HREF="ftp://ftp.ncsa.uiuc.edu/Web/Mosaic">
+                xmosaic
+            </A>
+            viewer.
+        </P>
+        <H2>
+            <A HREF="bibliographies.html">
+                Bibliography collections and support software
+            </A>
+        </H2>
+        <H2>
+            Simple (and free!) HTML/SGML software tools
+        </H2>
+        <UL>
+            <LI>
+                <A HREF="dehtml">
+                    <STRONG>dehtml</STRONG>:
+                </A>
+                HTML command stripper (e.g. prior to spell checking).
+            </LI>
+            <LI>
+                <A HREF="html-pretty.awk">
+                    HTML prettyprinter:
+                </A>
+                To see sample output of the prettyprinter, turn on <EM>
+                View Source</EM> in your WWW client viewer to show how
+                this page is formatted.
+            </LI>
+            <LI>
+                <A HREF="indextohtml.awk">
+                    FTP index file to HTML converter:
+                </A>
+                To see sample output of the converter, click on
+                <A HREF="test01.index">
+                    test01.index
+                </A>
+                to see the original index, and then click on
+                <A HREF="test01.html">
+                    test01.html
+                </A>
+                to see what the formatted result looks like from your
+                WWW client.  Turn on <EM>View Source</EM> in your WWW
+                client viewer to show what the raw HTML code looks like.
+            </LI>
+            <LI>
+                UNIX
+                <A HREF="Makefile">
+                    Makefile
+                </A>
+                for maintaining a personal <EM>public_html</EM>
+                directory.
+            </LI>
+        </UL>
+        <H2>
+            Standardized library catalogs
+        </H2>
+        <UL>
+            <LI>
+                <A HREF="http://www.nlm.nih.gov/">
+                    HyperDOC:  The National Library of Medicine (NLM)
+                </A>
+            </LI>
+            <LI>
+                <A HREF="http://www.cac.washington.edu/willow/interface.html">
+                    Willow user interface
+                </A>
+            </LI>
+        </UL>
+        <H2>
+            PostScript Type 1 fonts
+        </H2>
+        <UL>
+            <LH>
+                Freely-distributable fonts
+            </LH>
+            <LI>
+                <A HREF="http://cuiwww.unige.ch/InternetFontBrowser">
+                    Internet font browser
+                </A>
+            </LI>
+        </UL>
+        <UL>
+            <LH>
+                Commercial licensed fonts
+            </LH>
+            <LI>
+                <A HREF="fonts/adobe.html">
+                    Adobe
+                </A>
+            </LI>
+            <LI>
+                <A HREF="fonts/bitstream.html">
+                    Bitstream
+                </A>
+            </LI>
+            <LI>
+                <A HREF="fonts/monotype.html">
+                    Monotype
+                </A>
+            </LI>
+            <LI>
+                <A HREF="http://www.yandy.com/">
+                    Y&amp;Y
+                </A>
+                -- specialists in products that optimize the performance
+                of the TeX typesetting system
+            </LI>
+        </UL>
+        <H2>
+            New WWW client programs
+        </H2>
+        <UL>
+            <LI>
+                <A HREF="http://java.sun.com/">
+                    Sun Microsystems' HotJava client for <EM>interactive
+                    </EM> WEB nodes
+                </A>
+            </LI>
+            <LI>
+                <A HREF="http://www.w3.org/hypertext/WWW/Arena">
+                    Arena:  experimental HTML 3.0 client
+                </A>
+            </LI>
+        </UL>
+        <HR>
+        <H2>
+            Links to other stuff
+        </H2>
+        <UL>
+            <LI>
+                <A HREF="http://glimpse.cs.arizona.edu:1994/bib">
+                    Glimpse:  fast exact and approximate string
+                    searching in files
+                </A>
+            </LI>
+            <LI>
+                <A HREF="http://www.cs.cornell.edu/Info/People/raman/aster/demo.html">
+                    Mathematics for computer-generated spoken documents
+                </A>
+            </LI>
+            <LI>
+                <A HREF="ftp://ftp.math.utah.edu/">
+                    University of Utah Mathematics Department FTP
+                    archive
+                </A>
+            </LI>
+            <LI>
+                <A HREF="http://www.math.utah.edu/">
+                    Department of Mathematics, University of Utah
+                </A>
+            </LI>
+        </UL>
+        <HR>
+    </BODY>
+</HTML>

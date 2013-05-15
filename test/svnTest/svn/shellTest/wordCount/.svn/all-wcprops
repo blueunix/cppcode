@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/14/shellTest/wordCount
+END
+testFile
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/14/shellTest/wordCount/testFile
+END
+testFile2
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/14/shellTest/wordCount/testFile2
+END
+wordCount.sh
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/14/shellTest/wordCount/wordCount.sh
+END

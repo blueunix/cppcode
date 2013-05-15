@@ -1,0 +1,20 @@
+# HTML entities missing from htmlpty, computed on Sat Aug 25 16:09:12 MDT 2001 from
+# -r--r--r-- 1 beebe 20382 Jul 5 1997 /u/sy/beebe/src/htmlpty/htmlpty-1.01/DTD/HTML32.dtd
+#
+-rw-rw-r-- 1 BASEFONT	  DTD	       HR	    NUMBER	 STRONG
+-rw-r--r-- 1 BIG	  EM	       HTML	    OL		 STYLE
+Makefile     BLOCKQUOTE	  EN	       I	    OPTION	 SUB
+1	     BODY	  ENTITIES     IMAGE	    P		 SUBMIT
+1986	     BR		  FILE	       IMG	    PARAM	 SUP
+2	     CAPTION	  FIXED	       IMPLIED	    PASSWORD	 TABLE
+3	     CDATA	  FONT	       INCLUDE	    PCDATA	 TEXT
+38	     CENTER	  FORM	       INPUT	    PLAINTEXT	 TEXTAREA
+60	     CHECKBOX	  GET	       ISINDEX	    POST	 TITLE
+62	     CITE	  H1	       ISO	    PRE		 TT
+8879	     CODE	  H2	       KBD	    RADIO	 U
+A	     DD		  H3	       LI	    RESET	 UL
+ADDRESS	     DFN	  H4	       LINK	    SAMP	 VAR
+APPLET	     DIR	  H5	       LISTING	    SCRIPT	 VERSION
+AREA	     DIV	  H6	       MAP	    SELECT	 W3C
+B	     DL		  HEAD	       MENU	    SMALL	 XMP
+BASE	     DT		  HIDDEN       META	    STRIKE

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/11/sedTest/wCmdTest
+END
+sedCmd
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/11/sedTest/wCmdTest/sedCmd
+END
+file1
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/11/sedTest/wCmdTest/file1
+END
+fileToBeWrite
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/11/sedTest/wCmdTest/fileToBeWrite
+END

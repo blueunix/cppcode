@@ -1,0 +1,187 @@
+%% html-pretty version 1.00 date [11-Nov-1997]
+%% This is the contained-in tag relationships file,
+%% prepared from Entities/html-mcom.tab by cittable.awk.
+%% [25-Aug-2001]
+
+CannotContain[A]          : A
+
+CannotContain[DIR]        : BLOCKQUOTE CENTER DIR DL FORM ISINDEX \
+                            LISTING MENU OL P PRE UL XMP
+
+CannotContain[FORM]       : FORM
+
+CannotContain[MENU]       : BLOCKQUOTE CENTER DIR DL FORM ISINDEX \
+                            LISTING MENU OL P PRE UL XMP
+
+ContainedIn[#PCDATA]      : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR OPTION P PRE SAMP \
+                            STRONG TEXTAREA TITLE TT VAR
+
+ContainedIn[A]            : ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[ADDRESS]      : BLOCKQUOTE BODY CENTER FORM
+
+ContainedIn[ANY]          : BASEFONT
+
+ContainedIn[B]            : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[BASE]         : HEAD
+
+ContainedIn[BASEFONT]     : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P SAMP STRONG TT VAR
+
+ContainedIn[BLINK]        : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[BLOCKQUOTE]   : BLOCKQUOTE BODY CENTER DD FORM LI
+
+ContainedIn[BODY]         : HTML
+
+ContainedIn[BR]           : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[CDATA]        : LISTING PLAINTEXT XMP
+
+ContainedIn[CENTER]       : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P SAMP STRONG TT VAR
+
+ContainedIn[CITE]         : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[CODE]         : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[DD]           : DL
+
+ContainedIn[DIR]          : BLOCKQUOTE BODY CENTER DD FORM LI
+
+ContainedIn[DL]           : BLOCKQUOTE BODY CENTER DD FORM LI
+
+ContainedIn[DT]           : DL
+
+ContainedIn[EM]           : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[EMPTY]        : BASE BR HR IMG INPUT ISINDEX LINK META \
+                            NEXTID WBR
+
+ContainedIn[FONT]         : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[FORM]         : BLOCKQUOTE BODY CENTER DD LI
+
+ContainedIn[H1]           : A BLOCKQUOTE BODY CENTER FORM
+
+ContainedIn[H2]           : A BLOCKQUOTE BODY CENTER FORM
+
+ContainedIn[H3]           : A BLOCKQUOTE BODY CENTER FORM
+
+ContainedIn[H4]           : A BLOCKQUOTE BODY CENTER FORM
+
+ContainedIn[H5]           : A BLOCKQUOTE BODY CENTER FORM
+
+ContainedIn[H6]           : A BLOCKQUOTE BODY CENTER FORM
+
+ContainedIn[HEAD]         : HTML
+
+ContainedIn[HR]           : BLOCKQUOTE BODY CENTER FORM PRE
+
+ContainedIn[I]            : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[IMG]          : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P SAMP STRONG TT VAR
+
+ContainedIn[INPUT]        : FORM
+
+ContainedIn[ISINDEX]      : BLOCKQUOTE BODY CENTER DD FORM HEAD LI
+
+ContainedIn[KBD]          : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[LI]           : DIR MENU OL UL
+
+ContainedIn[LINK]         : HEAD
+
+ContainedIn[LISTING]      : BLOCKQUOTE BODY CENTER DD FORM LI
+
+ContainedIn[MENU]         : BLOCKQUOTE BODY CENTER DD FORM LI
+
+ContainedIn[META]         : HEAD
+
+ContainedIn[NEXTID]       : HEAD
+
+ContainedIn[NOBR]         : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P SAMP STRONG TT VAR
+
+ContainedIn[OL]           : BLOCKQUOTE BODY CENTER DD FORM LI
+
+ContainedIn[OPTION]       : SELECT
+
+ContainedIn[P]            : ADDRESS BLOCKQUOTE BODY CENTER DD FORM LI
+
+ContainedIn[PLAINTEXT]    : HTML
+
+ContainedIn[PRE]          : BLOCKQUOTE BODY CENTER DD FORM LI
+
+ContainedIn[SAMP]         : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[SELECT]       : FORM
+
+ContainedIn[STRONG]       : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[TEXTAREA]     : FORM
+
+ContainedIn[TITLE]        : HEAD
+
+ContainedIn[TT]           : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[UL]           : BLOCKQUOTE BODY CENTER DD FORM LI
+
+ContainedIn[VAR]          : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P PRE SAMP STRONG TT \
+                            VAR
+
+ContainedIn[WBR]          : A ADDRESS B BLINK BLOCKQUOTE BODY CENTER \
+                            CITE CODE DD DT EM FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I KBD LI NOBR P SAMP STRONG TT VAR
+
+ContainedIn[XMP]          : BLOCKQUOTE BODY CENTER DD FORM LI
+

@@ -1,0 +1,20 @@
+# HTML entities in HTML grammar DTD, computed on Sat Aug 25 16:09:15 MDT 2001 from
+# -rw-r--r-- 1 beebe 35464 Nov 11 1997 /u/sy/beebe/src/htmlpty/htmlpty-1.01/DTD/HTML4-strict.dtd
+#
+-rw-rw-r-- 1 CDATA	  FILE	       IMG	    P		 SUBMIT
+	     CHECKBOX	  FIXED	       IMPLIED	    PARAM	 SUP
+0	     CITE	  FORM	       INPUT	    PASSWORD	 TABLE
+4	     CODE	  H1	       INS	    PCDATA	 TBODY
+A	     COL	  H2	       KBD	    PRE		 TD
+ABBR	     COLGROUP	  H3	       LABEL	    Q		 TEXT
+ADDRESS	     DD		  H4	       LEGEND	    RADIO	 TEXTAREA
+AREA	     DEL	  H5	       LI	    RESET	 TFOOT
+B	     DFN	  H6	       LINK	    SAMP	 TH
+BASE	     DIV	  HEAD	       MAP	    SCRIPT	 THEAD
+BDO	     DL		  HIDDEN       META	    SELECT	 TITLE
+BIG	     DT		  HR	       NAME	    SMALL	 TR
+BLOCKQUOTE   DTD	  HTML	       NOSCRIPT	    SPAN	 TT
+BODY	     EM		  I	       OBJECT	    STRONG	 UL
+BR	     EN		  ID	       OL	    STYLE	 VAR
+BUTTON	     ENTITIES	  IGNORE       OPTGROUP	    SUB		 W3C
+CAPTION	     FIELDSET	  IMAGE	       OPTION

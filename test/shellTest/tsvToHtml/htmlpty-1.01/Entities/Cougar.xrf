@@ -1,0 +1,24 @@
+# HTML entities in HTML grammar DTD, computed on Sat Aug 25 16:09:10 MDT 2001 from
+# -r--r--r-- 1 beebe 33505 Dec 11 1996 /u/sy/beebe/src/htmlpty/htmlpty-1.01/DTD/Cougar.dtd
+#
+-rw-rw-r-- 1 8211	  CODE	       H5	    MAP		 SELECT
+	     8212	  DD	       H6	    MENU	 SMALL
+1	     8482	  DFN	       HEAD	    META	 SPAN
+160	     8879	  DIR	       HIDDEN	    NAME	 STRONG
+169	     A		  DIV	       HR	    OBJECT	 STYLE
+173	     ADDRESS	  DL	       HTML	    OL		 SUB
+174	     APPLET	  DT	       I	    OPTION	 SUBMIT
+1766	     AREA	  DTD	       ID	    P		 SUP
+1986	     B		  EM	       IMAGE	    PASSWORD	 TABLE
+19960712     BASE	  EN	       IMG	    PCDATA	 TEXT
+34	     BASEFONT	  ENTITIES     IMPLIED	    PLAINTEXT	 TEXTAREA
+38	     BDO	  FIELDSET     INCLUDE	    POST	 TEXTFLOW
+60	     BIG	  FILE	       INPUT	    PRE		 TITLE
+62	     BLOCKQUOTE	  FIXED	       ISINDEX	    Q		 TT
+8194	     BODY	  FONT	       ISO	    RADIO	 U
+8195	     BR		  FORM	       KBD	    RESET	 UL
+8201	     BUTTON	  GET	       LABEL	    RFC		 VAR
+8204	     CDATA	  H1	       LI	    S		 VERSION
+8205	     CENTER	  H2	       LINK	    SAMP	 W3C
+8206	     CHECKBOX	  H3	       LISTING	    SCRIPT	 XMP
+8207	     CITE	  H4

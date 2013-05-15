@@ -1,0 +1,20 @@
+# HTML entities missing from htmlpty, computed on Fri Nov 28 15:15:03 MST 1997 from
+# -rw-r--r-- 1 beebe 35464 Nov 11 14:12 /usr/local/lib/html-check/lib/HTML4-strict.dtd
+#
+-rw-rw-r-- 1 CAPTION	  FIELDSET     IMAGE	    OPTION	 SUBMIT
+-rw-rw-r-- 1 CDATA	  FILE	       IMG	    P		 SUP
+Makefile     CHECKBOX	  FIXED	       IMPLIED	    PARAM	 TABLE
+0	     CITE	  FORM	       INPUT	    PASSWORD	 TBODY
+4	     CODE	  H1	       INS	    PCDATA	 TD
+A	     COL	  H2	       KBD	    PRE		 TEXT
+ABBR	     COLGROUP	  H3	       LABEL	    Q		 TEXTAREA
+ADDRESS	     DD		  H4	       LEGEND	    RADIO	 TFOOT
+AREA	     DEL	  H5	       LI	    RESET	 TH
+B	     DFN	  H6	       LINK	    SAMP	 THEAD
+BASE	     DIV	  HEAD	       MAP	    SCRIPT	 TITLE
+BDO	     DL		  HIDDEN       META	    SELECT	 TR
+BIG	     DT		  HR	       NAME	    SMALL	 TT
+BLOCKQUOTE   DTD	  HTML	       NOSCRIPT	    SPAN	 UL
+BODY	     EM		  I	       OBJECT	    STRONG	 VAR
+BR	     EN		  ID	       OL	    STYLE	 W3C
+BUTTON	     ENTITIES	  IGNORE       OPTGROUP	    SUB

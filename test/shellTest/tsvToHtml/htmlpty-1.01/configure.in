@@ -1,0 +1,360 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(htmlpty.l)
+AC_CONFIG_HEADER(config.h:config.hin)
+
+PACKAGE=htmlpty
+AC_SUBST(PACKAGE)
+AC_DEFINE_UNQUOTED(PACKAGE, "$PACKAGE")
+
+VERSION=1.01
+AC_SUBST(VERSION)
+AC_DEFINE_UNQUOTED(VERSION, "$VERSION")
+
+AC_PROG_MAKE_SET
+
+AC_ARG_PROGRAM
+
+dnl Checks for programs.
+AC_PROG_CC
+dnl OMIT (prevents builds on systems without a C++ compiler): AC_PROG_CXX
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_CHECK_PROGS(AWK,gawk nawk mawk awk)
+AC_CHECK_PROGS(CAT,cat)
+AC_CHECK_PROGS(CHECKSUM,checksum cat)
+AC_CHECK_PROGS(CHMOD,chmod)
+AC_CHECK_PROG(COL,col,col -x -b)
+AC_CHECK_PROG(COL,cat)
+
+AC_CHECK_PROG(CP,scp,scp -p)
+AC_CHECK_PROG(CP,rcp,rcp -p)
+AC_CHECK_PROG(CP,cp,cp)
+
+AC_CHECK_PROGS(DEROFF,deroff cat)
+AC_CHECK_PROGS(DIFF,diff)
+AC_CHECK_PROGS(DISTILL,distill true)
+AC_CHECK_PROGS(DW,dw true)
+AC_CHECK_PROGS(EXPAND,expand cat)
+AC_CHECK_PROGS(FIND,find)
+AC_CHECK_PROGS(GREP,grep)
+AC_CHECK_PROGS(GROFF,groff true)
+AC_CHECK_PROGS(GZIP,gzip)
+AC_CHECK_PROGS(HTMLCHECK,html-ncheck html-check true)
+AC_CHECK_PROGS(ISPELL,ispell true)
+AC_CHECK_PROGS(LEX,flex lex)
+AC_CHECK_PROGS(LN,ln)
+AC_CHECK_PROGS(LS,ls)
+AC_CHECK_PROG(MKDIR,mkdir,mkdir -p)
+AC_CHECK_PROGS(MPACK,mpack)
+AC_CHECK_PROGS(MV,mv)
+AC_CHECK_PROG(NROFF,groff,groff -Tascii)
+AC_CHECK_PROG(NROFF,nroff,nroff)
+AC_CHECK_PROGS(SED,sed)
+AC_CHECK_PROGS(SHAR,shar)
+AC_CHECK_PROGS(SORT,sort)
+AC_CHECK_PROGS(SPELL,spell)
+AC_CHECK_PROGS(TAR,gnutar gtar tar)
+AC_CHECK_PROGS(TEE,tee)
+AC_CHECK_PROGS(TOUCH,touch)
+AC_CHECK_PROGS(TR,tr)
+AC_CHECK_PROGS(TRUE,true)
+AC_CHECK_PROGS(UNZIP,unzip)
+AC_CHECK_PROGS(UUENCODE,uue uuencode)
+AC_CHECK_PROGS(ZIP,zip)
+AC_CHECK_PROGS(ZOO,zoo)
+
+dnl Checks for libraries.
+dnl These tests for -ll and -l are borrowed from bibparse-1.04:
+
+LEX="$ac_cv_prog_LEX"
+dnl GNU/Linux has a unique /usr/bin/yacc, distinct from
+dnl /usr/bin/bison, but its /usr/bin/lex is just a symlink to
+dnl /usr/bin/flex.  Unfortunately, on older such systems, they forgot
+dnl that /usr/lib/libl.a should then be a symlink to /usr/lib/libfl.a,
+dnl so -ll doesn't exist.  We therefore have to try both -ll and -lfl,
+dnl sigh...
+if test "xx$LEX" = "xxlex"
+then
+    if test "xx$cc_lang" = "xxC++"
+    then
+	AC_MSG_CHECKING(for lex/flex library)
+	SAVELIBS="$LIBS"
+	LIBS="$SAVELIBS -ll"
+	AC_TRY_LINK(,,LL=-ll,
+		[LIBS="$SAVELIBS -lfl"
+		AC_TRY_LINK(,,LL=-lfl,LL=)])
+	LIBS="$SAVELIBS $LL"
+	AC_MSG_RESULT($LL)
+    else
+	AC_CHECK_LIB(l,yywrap,,AC_CHECK_LIB(fl,yywrap))
+    fi
+else
+    LDFLAGS="-L/usr/local/lib $LDFLAGS"
+    if test "xx$cc_lang" = "xxC++"
+    then
+	AC_MSG_CHECKING(for flex library)
+	SAVELIBS="$LIBS"
+	LIBS="$SAVELIBS -lfl"
+	AC_TRY_LINK(,,LL=-lfl,LL=)
+	LIBS="$SAVELIBS $LL"
+	AC_MSG_RESULT($LL)
+    else
+	AC_CHECK_LIB(fl,yywrap)
+    fi
+fi
+
+dnl If flex is used, we MUST have the -l (lex compatibility) flag set,
+dnl and if lex is really flex, we still need it.
+dnl
+dnl The construction of this test is tricky: originally, I just used
+dnl	echo %% >conftest.l
+dnl     if lex -l conftest.l 2>/dev/null 1>&2
+dnl	...
+dnl to create a minimal lex file and run lex on it.
+dnl
+dnl However, on SGI IRIX 5.x and 6.x systems, instead of causing an
+dnl error, the undocumented -l switch causes lex to hang in an input
+dnl wait indefinitely.  The solution adopted below is to pipe the
+dnl input to lex, which avoids the hang.
+dnl
+dnl On HP HP-UX 10.01 systems, lex will complain about an unrecognized
+dnl -l argument, but that is just a warning, and otherwise causes no
+dnl problems.
+dnl
+dnl Unfortunately, that test breaks on IBM AIX 4.2 systems, whose lex
+dnl writes an error message "0: Warning: 1285-300 The l flag is not
+dnl valid."  onto stdout, instead of stderr, preventing compilation!
+dnl Argh....  Thus, we need another test for that system first,
+dnl sigh...
+dnl 
+dnl All of this grief happens because the GNU/Linux people botched
+dnl their job in the first place!  Compatible programs should be
+dnl compatible!
+
+if test "xx$LEX" = "xxflex"
+then
+    LEX="flex -l"
+elif test "xx$LEX" = "xxlex"
+then
+    if test "xx`uname -s`" = "xxAIX"
+    then
+	true
+    elif echo %% | lex -l 2>/dev/null 1>&2
+    then
+	LEX="lex -l"
+    fi
+    rm -f lex.yy.c 2>/dev/null
+fi
+
+dnl Checks for Standard C/C++ function declarations.
+AC_MSG_CHECKING(for Standard C/C++ function declarations)
+AC_TRY_COMPILE([void foo(void){}
+int bar(int x, float y, char z){return 1;}], ,
+  [AC_MSG_RESULT(yes)
+    AC_DEFINE(STDC)],
+    AC_MSG_RESULT(no))
+
+dnl Checks for void* pointer support
+AC_MSG_CHECKING(for void* pointer support)
+AC_TRY_COMPILE(,[char *p = (char*)(void*)"x";],
+  [AC_MSG_RESULT(yes)
+    AC_DEFINE(HAVE_VOIDP)],
+    [AC_MSG_RESULT(no)])
+
+dnl Checks for header files.
+AC_HEADER_STDC
+
+dnl Checks for Standard C/C++ prototype support
+AC_MSG_CHECKING(for Standard C/C++ prototype support)
+AC_TRY_COMPILE(,
+	[ extern int foo(int a, float b, char *c, double d); ],
+	[AC_MSG_RESULT(yes)
+	    AC_DEFINE(HAVE_STDC_PROTOTYPES)],
+	[AC_MSG_RESULT(no)])
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_TYPE_SIZE_T
+
+dnl Checks for header files
+AC_CHECK_HEADERS(ctype.h fcntl.h io.h jsys.h libc.h  \
+		limits.h pwd.h stdio.h stdlib.h string.h \
+		sys/types.h sys/utsname.h time.h unistd.h)
+
+dnl Checks for library functions.
+AC_CHECK_FUNCS(strtok)
+AC_PROG_GCC_TRADITIONAL
+dnl Remove -g from CFLAGS if we are compiling with lcc because it
+dnl produces bad debug symbol tables on Sun Solaris 2.x.
+if test "$CC" = "lcc"
+then
+    CFLAGS="`echo $CFLAGS | sed -e 's/-g //g' -e 's/ -g$//g' -e 's/^-g$//'`"
+fi
+
+dnl Checks for ctime() argument type
+AC_MSG_CHECKING(for argument type of ctime())
+AC_TRY_COMPILE([#include <time.h>],
+	[ char *p; p = ctime((const time_t *)0);],
+	[AC_MSG_RESULT(const time_t *)
+	    AC_DEFINE(CTIME_ARG_IS_TIME_T_POINTER)],
+	[AC_MSG_RESULT(long *)])
+
+dnl Checks for gethostname() declaration
+AC_MSG_CHECKING(for gethostname() declaration)
+AC_EGREP_CPP(gethostname,[#include <unistd.h>],
+  [AC_MSG_RESULT(yes)
+    AC_DEFINE(HAVE_GETHOSTNAME)
+    AC_DEFINE(HAVE_GETHOSTNAME_DECL)],
+    AC_MSG_RESULT(no))	
+
+dnl Checks for gethostname() language: C or C++
+AC_MSG_CHECKING(for gethostname() language: C or C++)
+AC_TRY_LINK([int gethostname(char *,int);],
+  [(void)gethostname((char*)0,0);],
+  [AC_MSG_RESULT(C++)
+    AC_DEFINE(HAVE_GETHOSTNAME)
+    AC_DEFINE(HAVE_GETHOSTNAME_IN_CPLUSPLUS)],
+    AC_MSG_RESULT(C))	
+
+dnl Checks for gethostname() language: C or C++
+AC_MSG_CHECKING(for gethostname() language: C or C++)
+AC_TRY_LINK([#include <unistd.h>],
+  [(void)gethostname((char*)0,0);],
+  [AC_MSG_RESULT(C++)
+    AC_DEFINE(HAVE_GETHOSTNAME)
+    AC_DEFINE(HAVE_GETHOSTNAME_IN_CPLUSPLUS)],
+    AC_MSG_RESULT(C))	
+
+dnl Checks for getlogin() declaration (e.g. NeXT has it only in POSIX environment)
+AC_MSG_CHECKING(for getlogin() declaration)
+AC_EGREP_CPP(getlogin,[#include <unistd.h>],
+  [AC_MSG_RESULT(yes)
+    AC_DEFINE(HAVE_GETLOGIN)
+    AC_DEFINE(HAVE_GETLOGIN_DECL)],
+    AC_MSG_RESULT(no))	
+
+dnl Checks for getlogin() language: C or C++
+AC_MSG_CHECKING(for getlogin() language: C or C++)
+AC_TRY_LINK([char *getlogin(void);],
+  [(void)getlogin();],
+  [AC_MSG_RESULT(C++)
+    AC_DEFINE(HAVE_GETLOGIN)
+    AC_DEFINE(HAVE_GETLOGIN_IN_CPLUSPLUS)],
+    AC_MSG_RESULT(C))	
+
+dnl Checks for getpwnam() declaration
+AC_MSG_CHECKING(for getpwnam() declaration)
+AC_EGREP_CPP(getpwnam,[#include <pwd.h>],
+  [AC_MSG_RESULT(yes)
+    AC_DEFINE(HAVE_GETPWNAM)
+    AC_DEFINE(HAVE_GETPWNAM_DECL)],
+    AC_MSG_RESULT(no))	
+
+dnl Checks for getpwnam() language: C or C++
+AC_MSG_CHECKING(for getpwnam() language: C or C++)
+AC_TRY_LINK([#include <pwd.h>
+struct passwd *getpwnam(const char*);],
+  [(void)getpwnam((void*)0);],
+  [AC_MSG_RESULT(C++)
+    AC_DEFINE(HAVE_GETPWNAM)
+    AC_DEFINE(HAVE_GETPWNAM_IN_CPLUSPLUS)],
+    AC_MSG_RESULT(C))	
+
+dnl Checks for getpwnam() language: C or C++
+AC_MSG_CHECKING(for getpwnam() language: C or C++)
+AC_TRY_LINK([#include <pwd.h>],
+  [(void)getpwnam((void*)0);],
+  [AC_MSG_RESULT(C++)
+    AC_DEFINE(HAVE_GETPWNAM)],
+    AC_MSG_RESULT(C))	
+
+dnl Checks for getpwuid() declaration
+AC_MSG_CHECKING(for getpwuid() declaration)
+AC_EGREP_CPP(getpwuid,[#include <pwd.h>],
+  [AC_MSG_RESULT(yes)
+    AC_DEFINE(HAVE_GETPWUID)
+    AC_DEFINE(HAVE_GETPWUID_DECL)],
+    AC_MSG_RESULT(no))	
+
+dnl Checks for getpwuid() language: C or C++
+AC_MSG_CHECKING(for getpwuid() language: C or C++)
+AC_TRY_LINK([#include <pwd.h>
+struct passwd *getpwuid(uid_t);],
+  [(void)getpwuid(0);],
+  [AC_MSG_RESULT(C++)
+    AC_DEFINE(HAVE_GETPWUID)
+    AC_DEFINE(HAVE_GETPWUID_IN_CPLUSPLUS)],
+    AC_MSG_RESULT(C))	
+
+dnl Checks for getpwuid() language: C or C++
+AC_MSG_CHECKING(for getpwuid() language: C or C++)
+AC_TRY_LINK([#include <pwd.h>],
+  [(void)getpwuid(0);],
+  [AC_MSG_RESULT(C++)
+    AC_DEFINE(HAVE_GETPWUID)],
+    AC_MSG_RESULT(C))	
+
+dnl Checks for getuid() declaration
+AC_MSG_CHECKING(for getuid() declaration)
+AC_EGREP_CPP(getuid,[#include <unistd.h>],
+  [AC_MSG_RESULT(yes)
+    AC_DEFINE(HAVE_GETUID)
+    AC_DEFINE(HAVE_GETUID_DECL)],
+    AC_MSG_RESULT(no))	
+
+dnl Checks for getuid() language: C or C++
+AC_MSG_CHECKING(for getuid() language: C or C++)
+AC_TRY_LINK([char *getuid(void);],
+  [(void)getuid();],
+  [AC_MSG_RESULT(C++)
+    AC_DEFINE(HAVE_GETUID)
+    AC_DEFINE(HAVE_GETUID_IN_CPLUSPLUS)],
+    AC_MSG_RESULT(C))	
+
+dnl Checks for getuid() language: C or C++
+AC_MSG_CHECKING(for getuid() language: C or C++)
+AC_TRY_LINK([#include <unistd.h>],
+  [(void)getuid();],
+  [AC_MSG_RESULT(C++)
+    AC_DEFINE(HAVE_GETUID)
+    AC_DEFINE(HAVE_GETUID_IN_CPLUSPLUS)],
+    AC_MSG_RESULT(C))	
+
+dnl Checks for needing _POSIX_SOURCE to expose struct utsname in <sys/utsname.h>
+AC_MSG_CHECKING(for struct utsname)
+AC_TRY_COMPILE([#include <sys/utsname.h>],
+	[struct utsname uts;],
+	[uts="yes"],
+	[uts="no"])
+
+AC_MSG_RESULT($uts)
+
+if test $uts = "no"
+then
+	AC_MSG_CHECKING(if _POSIX_SOURCE needed for struct utsname)
+	AC_TRY_COMPILE([#define _POSIX_SOURCE 1
+	#include <sys/utsname.h>],
+		[struct utsname uts;],
+		[uts="yes"],
+		[uts="no"])
+		AC_MSG_RESULT($uts)
+		if test $uts = "yes"
+		then
+			AC_DEFINE(_POSIX_SOURCE)
+		fi
+fi
+
+if test $uts = "yes" -a -d /NextLibrary
+then
+	AC_MSG_CHECKING(if -posix needed on NeXT for uname())
+	CFLAGS=-posix
+	AC_TRY_LINK([#define _POSIX_SOURCE 1
+	#include <stdio.h>
+	#include <sys/utsname.h>],
+		[struct utsname uts; (void)uname((struct utsname *)NULL);],
+		[uts="yes"; CFLAGS=-posix],
+		[uts="no"; unset CFLAGS])
+		AC_MSG_RESULT($uts)
+fi
+
+AC_OUTPUT(Makefile)

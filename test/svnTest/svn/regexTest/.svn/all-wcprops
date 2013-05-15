@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 25
+/svn/!svn/ver/2/regexTest
+END
+file
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/regexTest/file
+END
+.nfs0000000000e5043b00000028
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/regexTest/.nfs0000000000e5043b00000028
+END
+a.out
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/2/regexTest/a.out
+END
+regexTest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/2/regexTest/regexTest.cpp
+END

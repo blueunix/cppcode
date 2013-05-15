@@ -1,0 +1,645 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<!-- $Id: sgmltut.src,v 1.48 1997/11/10 17:32:08 ian Exp $ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>On SGML and HTML</title>
+<LINK rel="previous" href="intro.html">
+<LINK rel="next" href="../convent.html">
+<LINK rel="contents" href="../cover.html#toc">
+<LINK rel="STYLESHEET" href="../style/default.css" type="text/css">
+</head>
+<body>
+<div class="navbar">
+<center>&nbsp;<a href="intro.html">previous</a> &nbsp; <a href="../convent.html">next</a> &nbsp; <a href="../cover.html#toc">contents</a> &nbsp; <a href="../index/elements.html">elements</a> &nbsp; <a href="../index/attribs.html">attributes</a>
+</center><hr>
+</div>
+
+<h1 align="center"><a name="h-3">3</a> On SGML and HTML</h1>
+<div class="subtoc"><p><strong>Contents</strong>
+<ol>
+<li><a href="sgmltut.html#h-3.1">Introduction to SGML</a>
+<li><a href="sgmltut.html#h-3.2">SGML constructs used in HTML</a>
+<ol>
+<li><a href="sgmltut.html#h-3.2.1">Elements</a>
+<li><a href="sgmltut.html#h-3.2.2">Attributes</a>
+<li><a href="sgmltut.html#h-3.2.3">Entities</a>
+<li><a href="sgmltut.html#h-3.2.4">Comments</a>
+</ol>
+<li><a href="sgmltut.html#h-3.3">How to read the HTML DTD</a>
+<ol>
+<li><a href="sgmltut.html#h-3.3.1">DTD Comments</a>
+<li><a href="sgmltut.html#h-3.3.2">Parameter entity definitions</a>
+<li><a href="sgmltut.html#h-3.3.3">Element declarations</a>
+<li><a href="sgmltut.html#h-3.3.4">Attribute definitions</a>
+</ol>
+</ol>
+</div>
+
+<P>This section of the document introduces SGML and discusses its
+relationship to HTML. A complete discussion of SGML is left to the
+SGML standard (see <a rel="biblioentry"
+href="../references.html#ref-ISO8879">[ISO8879]</a>). 
+
+<h2><a name="h-3.1">3.1</a> <a>Introduction to SGML</a></h2>
+
+<P>SGML is a system for defining markup languages.  Authors "mark up"
+their documents by representing structural, presentational, and
+semantic information alongside content. HTML is one example of a
+markup language. Here is an example of an HTML document:
+
+<div class="example"><P>
+<PRE>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"&gt;
+&lt;HTML&gt;
+   &lt;HEAD&gt;
+      &lt;TITLE&gt;My first HTML document&lt;/TITLE&gt;
+   &lt;/HEAD&gt;
+   &lt;BODY&gt;
+      &lt;P&gt;Hello world!
+   &lt;/BODY&gt;
+&lt;/HTML&gt;
+</PRE>
+
+<P>An HTML document is divided into a head section (here, between
+&lt;HEAD&gt; and &lt;/HEAD&gt;) and a body (here, between 
+&lt;BODY&gt; and &lt;/BODY&gt;). The title of the document
+appears in the head, and the bulk of the document appears in the
+body. This document body contains just one paragraph, marked
+up with &lt;P&gt;.
+</div>
+
+<P>Each markup language defined in SGML is called an <em>SGML
+application</em>. An SGML application is generally characterized by:
+
+<ol>
+<li><a href="../sgml/sgmldecl.html">An SGML declaration</a>. 
+The SGML declaration specifies which characters and delimiters 
+may appear in the application. 
+
+<li><a href="../sgml/dtd.html">A document type declaration
+(DTD)</a>. The DTD defines the syntax of markup constructs. The DTD
+may include additional definitions such as <a
+href="#character-entities">character entity references</a>.
+
+<li>A specification that describes the semantics to be ascribed to
+the markup. This specification also imposes syntax restrictions that
+cannot be expressed within the DTD.
+
+<li>Document instances containing data (content) and markup.
+Each instance contains a reference to the DTD to be used to
+interpret it.
+</ol>
+
+<p>The HTML 4.0 specification includes an <a
+href="../sgml/sgmldecl.html">SGML declaration</a>, three document type
+declarations (see the section on <a href="../struct/global.html">HTML
+version information</a> for a description of the three), and a list of
+<a href="#character-entities">character references</a>.
+
+<h2><a name="h-3.2">3.2</a> <a>SGML constructs used in HTML</a></h2>
+
+<P>The following sections introduce SGML constructs that are used in
+HTML.
+
+<P>The appendix lists some <a
+href="../appendix/notes.html#sgmlfeatures">SGML features</a> that are
+not widely supported by HTML tools and user agents and should be
+avoided.
+
+<h3><a name="h-3.2.1">3.2.1</a> Elements</h3>
+
+<p>An SGML <a href="../sgml/dtd.html">document type
+definition</a> declares element types that represent structures or
+desired behavior. HTML includes element types that represent
+paragraphs, hypertext links, lists, tables, images, etc.
+
+<P>Each element type declaration generally describes three parts: a
+start tag, content, and an end tag.
+
+<p>The element's name appears in the start tag
+(written <samp>&lt;element-name&gt;</samp>) and the end tag
+(written <samp>&lt;/element-name&gt;</samp>); note the 
+slash before the element name in the end tag. For example, 
+the start and end tags of the <a href="../struct/lists.html#edef-UL"><samp class="einst">UL</samp></a> element 
+type delimit the items in a list:
+
+<div class="example"><P>
+<PRE>
+&lt;UL&gt;
+&lt;LI&gt;&lt;P&gt;<em>...list item 1...</em>
+&lt;LI&gt;&lt;P&gt;<em>...list item 2...</em>
+&lt;/UL&gt;
+</PRE>
+</div>
+
+<p>Some HTML element types allow authors to omit end tags (e.g., the
+<a href="../struct/text.html#edef-P"><samp class="einst">P</samp></a> and <a href="../struct/lists.html#edef-LI"><samp class="einst">LI</samp></a> element
+types).  A few element types also allow the start tags to be omitted;
+for example, <a href="../struct/global.html#edef-HEAD"><samp class="einst">HEAD</samp></a> and <a href="../struct/global.html#edef-BODY"><samp
+class="einst">BODY</samp></a>. The HTML DTD indicates for each element
+type whether the start tag and end tag are required.
+
+<p>Some HTML element types have no content. For example, the line
+break element <a href="../struct/text.html#edef-BR"><samp class="einst">BR</samp></a> has no content; its only
+role is to terminate a line of text. Such "empty" elements never have
+end tags.  The <a href="../sgml/dtd.html">document type definition</a>
+and the text of the specification indicate whether an element type is
+empty (has no content) or, if it can have content, what is considered
+legal content.
+
+<P>Element names are always case-insensitive.
+
+<div class="note"><P> 
+<em><strong>Elements are not tags.</strong> Some
+people refer to elements as tags (e.g., "the P
+tag"). Remember that the element is one thing, and the tag (be it
+start or end tag) is another. For instance, the HEAD element is always
+present, even though both start and end HEAD tags may be missing in
+the markup.</em>
+</div>
+
+<P>All the element types declared in this specification are listed in
+the <a href="../index/elements.html">element index</a>.
+
+<h3><a name="h-3.2.2">3.2.2</a> <a name="attributes">Attributes</a></h3>
+
+<p>Elements may have associated properties, called
+<dfn>attributes</dfn>, which may have values (by default, or set by
+authors or scripts).  Attribute/value pairs appear before the final
+"&gt;" of an element's start tag. Any number of (legal) attribute
+value pairs, separated by spaces, may appear in an element's start
+tag. They may appear in any order.</P>
+
+<div class="example"><P>
+In this example, the <a href="../struct/global.html#adef-id"><samp class="ainst-H1">id</samp></a> attribute is
+set for an <a href="../struct/global.html#edef-H1"><samp class="einst">H1</samp></a> element:
+<pre>
+&lt;H1 id="section1"&gt;
+This is an identified heading thanks to the id attribute
+&lt;/H1&gt; 
+</pre>
+</div>
+
+<p>By default, SGML requires that all attribute values be delimited
+using either double quotation marks (ASCII decimal 34) or single
+quotation marks (ASCII decimal 39). Single quote marks can be included
+within the attribute value when the value is delimited by double quote
+marks, and vice versa. Authors may also use <a
+href="character-entities">numeric character references</a> to
+represent double quotes (&amp;#34;) and single quotes (&amp;#39;). For
+double quotes authors can also use the <a
+href="character-entities">character entity reference</a> &amp;quot;.
+
+<P>In certain cases, authors may specify the value of an attribute
+without any quotation marks. The attribute value may only contain
+letters (a-z and A-Z), digits (0-9), hyphens (ASCII decimal 45), and
+periods (ASCII decimal 46). We recommend using quotation marks even
+when it is possible to eliminate them.
+
+<P>Attribute names are always case-insensitive.
+
+<P>Attribute values are generally case-insensitive. The definition of
+each attribute in the reference manual indicates whether its value is 
+case-insensitive.</p>
+
+<P>All the attributes defined by this specification are listed
+in the <a href="../index/attribs.html">attribute index</a>.
+
+<h3><a name="h-3.2.3">3.2.3</a> <a name="character-entities">Entities</a></h3> 
+
+<p>Character references are numeric or symbolic names for characters
+that may be included in an HTML document. They are useful for
+referring to rarely used characters, or those that authoring tools
+make it difficult or impossible to enter.  You will see character
+entities throughout this document; they begin with a "&amp;" sign and
+end with a semi-colon (;). Some common examples include:
+
+<ul>
+<li>"&amp;lt;" represents the &lt; sign.
+<li>"&amp;gt;" represents the &gt; sign.
+<li>"&amp;quot;" represents the " mark.
+<li>"&amp;#229;" (in decimal) represents the letter "a" with a small
+  circle above it.
+<li>"&amp;#1048;" (in decimal) represents the Cyrillic capital letter "I".
+<li>"&amp;#x6C34;" (in hexadecimal) represents the Chinese character
+  for water.
+</ul>
+
+<P>We discuss <a href="../charset.html#entities">HTML character
+entities</a> in detail later in the section on the <a
+href="../charset.html">HTML document character set</a>. The
+specification also contains a <a href="../sgml/entities.html">list of
+character references</a> that may appear in HTML 4.0 documents.
+
+<h3><a name="h-3.2.4">3.2.4</a> Comments</h3>
+<p>HTML comments have the following syntax:
+
+<pre>    
+&lt;!-- this is a comment --&gt;
+&lt;!-- and so is this one,
+    which occupies more than one line --&gt;
+</pre>
+
+<p>White space is not permitted between the markup declaration open
+delimiter("&lt;!") and the comment open delimiter ("--"), but is
+permitted between the comment close delimiter ("--") and the markup
+declaration close delimiter ("&gt;"). A common error is to include a
+string of hyphens ("---") within a comment. Authors should avoid
+putting two or more adjacent hyphens inside comments.
+
+<P>Information that appears between comments has no special meaning
+(e.g., <a href="#character-entities">character references </a> are not
+interpreted as such).
+
+<h2><a name="h-3.3">3.3</a> <a name="howtodtd">How to read the HTML DTD</a></h2>
+
+<p>Each element and attribute declaration in this specification is
+accompanied by its <a href="../sgml/dtd.html">document type
+definition</a> fragment. We have chosen to include the DTD fragments
+in the specification rather than seek a more approachable, but longer
+and less precise means of describing an element's properties. The
+following tutorial should allow readers unfamiliar with SGML to read
+the DTD and understand the technical details of the HTML
+specification.
+
+<h3><a name="h-3.3.1">3.3.1</a> DTD Comments</h3>
+
+<p>In DTDs, comments may spread over one or more lines. In the DTD,
+comments are delimited by a pair of "--" marks, e.g. 
+
+<pre>&lt;!ELEMENT PARAM - O EMPTY       -- named property value --&gt;</pre>
+
+Here, the comment "named property value" explains the use of the <a href="../struct/objects.html#edef-PARAM"><samp
+class="einst">PARAM</samp></a> element type. Comments in the DTD
+are informative only.
+
+<h3><a name="h-3.3.2">3.3.2</a> Parameter entity definitions</h3>
+
+<p>The <a href="../sgml/dtd.html">HTML DTD</a> begins with a series of
+parameter entity definitions.  A <dfn>parameter entity
+definition</dfn> defines a kind of macro that may be referenced and
+expanded elsewhere in the DTD. These macros may not appear in HTML
+documents, only in the DTD. Other types of macros, called <a
+href="#character-entities">character references</a>, may be used in
+the text of an HTML document or within attribute values.
+
+<P>When the parameter entity is referred to by name in the DTD, it is
+expanded into a string.
+
+<P>A parameter entity definition begins with the keyword <tt>&lt;!ENTITY %</tt>
+followed by the entity name, the quoted string the entity
+expands to, and finally a closing <tt>&gt;</tt>. The following example
+defines the string that the <tt>%font</tt> entity will expand to.
+
+<div class="dtd-example"><P>
+<tt>
+&lt;!ENTITY % font "TT | I | B | U | S | BIG | SMALL"&gt;
+</tt>
+</div>
+
+<P>The string the parameter entity expands to may contain other
+parameter entity names. These names are expanded recursively. In the
+following example, the <tt>%inline</tt> parameter entity is defined to
+include the <tt>%font</tt>, <tt>%phrase</tt>, <tt>%special</tt> and
+<tt>%formctrl</tt> parameter entities.
+
+
+<div class="dtd-example"><P>
+<tt>&lt;!ENTITY % inline "#PCDATA | %font | %phrase
+| %special | %formctrl"&gt;</tt>
+</div>
+
+<P>You will encounter two DTD entities frequently in the <a
+href="../sgml/dtd.html">HTML DTD</a>: %block and %inline. They are
+used when the content model includes <a
+href="../struct/global.html#block-inline">block-level and inline
+elements</a>, respectively (defined in the section on the <a
+href="../struct/global.html">global structure of an HTML
+document</a>).
+
+<h3><a name="h-3.3.3">3.3.3</a> <a name="element-defs">Element declarations</a></h3>
+
+<p>The bulk of the HTML DTD consists of the declarations of element
+types and their attributes. The &lt;!ELEMENT keyword begins a
+declaration and the &gt; character ends it.  Between these are
+specified:
+
+<ol>
+<li>The element's name.
+<li>Whether the element's end tag is optional. Two hyphens that appear
+after the element name mean that the start and end tags are
+mandatory. One hyphen followed by the letter "O" 
+indicates that the end tag can be omitted. A pair of letter
+"O"s indicate that both the start and end tags can be omitted.
+   
+<li>The element's content, if any. The allowed content for an element
+is called its <dfn>content model</dfn>. Element types that are designed to
+have no content are called <em>empty</em> elements.  The content model
+for such element types is declared using the keyword "EMPTY". 
+</ol>
+
+<div class="dtd-example"><P>
+In this example:
+<pre>
+    &lt;!ELEMENT UL - - (LI)+&gt;
+</pre>
+<ul>
+<li>The element type being declared is <strong>UL</strong>.
+<li>The two hyphens indicate that both the start tag &lt;UL&gt; and the end tag
+&lt;/UL&gt; for this element type are required.
+<li>The content model for this element type is declared to be "at least one LI
+element". Below, we explain how to specify content models.
+</ul>
+</div>
+
+<div class="dtd-example"><P>
+This example illustrates the declaration of an empty element type:
+<pre>
+    &lt;!ELEMENT IMG - O EMPTY&gt;
+</pre>
+<ul>
+<li>The element type being declared is <strong>IMG</strong>.
+
+<li>The hyphen and the following "O" indicate that the end tag
+can be omitted, but together with the content model "EMPTY", this
+is strengthened to the rule that the end tag <b>must</b> be omitted.
+<!-- a piece of SGML weirdness! -->
+
+<li>The "EMPTY" keyword means that instances of
+this type must not have content.
+</ul>
+</div>
+
+<h4>Content model definitions<a name="h-3.3.3.1">&nbsp;</a></h4>
+
+<P>The content model describes what may be contained by an
+instance of an element type. Content definitions may include:
+
+<ul>
+<li>The names of allowed or forbidden element types (e.g., the <a href="../struct/lists.html#edef-UL"><samp
+class="einst">UL</samp></a> element contains instances of the <a href="../struct/lists.html#edef-LI"><samp
+class="einst">LI</samp></a> element type, and the <a href="../struct/text.html#edef-P"><samp class="einst">P</samp></a>
+element type may not contain other <a href="../struct/text.html#edef-P"><samp class="einst">P</samp></a> elements).
+
+<li>DTD entities (e.g., the <a href="../interact/forms.html#edef-LABEL"><samp class="einst">LABEL</samp></a> element
+contains instances of the %inline parameter entity).
+
+<li>Document text (indicated by the SGML construct "#PCDATA").  Text
+may contain <a href="../charset.html#entities">character
+references</a>. Recall that these begin with &amp; and end with a
+semicolon (e.g., "Herg&amp;eacute;'s adventures of Tintin" contains
+the character entity reference for the "e acute" character).
+</ul>
+
+<p>The content model uses the following syntax to define what markup
+an element may contain:
+
+<dl>
+<dt><strong>( ... )</strong>
+<dd>Specifies a group.
+<dt><strong>A | B</strong>
+<dd>Either A or B must occur but not both.
+<dt><strong>A , B</strong>
+<dd>Both A and B must occur in that order.
+<dt><strong>A & B</strong>
+<dd>Both A and B must occur, but may do so in any order.
+<dt><strong>A?</strong>
+<dd>A can occur zero or one times
+<dt><strong>A*</strong>
+<dd>A can occur zero or more times
+<dt><strong>A+</strong>
+<dd>A can occur one or more times
+</dl>
+
+
+<div class="dtd-example"><P>
+Here are some examples from the HTML DTD:
+<dl>
+<dt><tt class="example">&lt;!ELEMENT SELECT - - (OPTION+)&gt;</tt>
+<dd><P>The <a href="../interact/forms.html#edef-SELECT"><samp class="einst">SELECT</samp></a> element must contain one or
+more <a href="../interact/forms.html#edef-OPTION"><samp class="einst">OPTION</samp></a> elements.</P>
+<dt><tt class="example">&lt;!ELEMENT DL    - -  (DT|DD)+&gt;</tt>
+<dd><P>The <a href="../struct/lists.html#edef-DL"><samp class="einst">DL</samp></a> element must contain one or
+more <a href="../struct/lists.html#edef-DT"><samp class="einst">DT</samp></a> or <a href="../struct/lists.html#edef-DD"><samp class="einst">DD</samp></a>
+elements in any order.</P>
+<dt><tt class="example">&lt;!ELEMENT OPTION - O (#PCDATA)*&gt;</tt>
+<dd><P>The <a href="../interact/forms.html#edef-OPTION"><samp class="einst">OPTION</samp></a> element may only contain
+text and entities, such as &amp;amp; -- this is indicated by the SGML
+data type #PCDATA.</P>
+</dl>
+</div>
+
+<p>A few HTML element types use an additional SGML feature to exclude
+elements from content model. Excluded elements are preceded by
+a hyphen. Explicit exclusions override permitted elements.
+
+<div class="dtd-example"><P>
+In this example, the <tt>-(A)</tt> signifies that the element <a href="../struct/links.html#edef-A"><samp
+class="einst">A</samp></a> cannot appear in another <a href="../struct/links.html#edef-A"><samp
+class="einst">A</samp></a> element (i.e., anchors may not be nested). 
+
+<pre>
+   &lt;!ELEMENT A - - (%inline)* -(A)&gt;
+</pre>
+
+<p>Note that the <a href="../struct/links.html#edef-A"><samp class="einst">A</samp></a> element type is part
+of the DTD parameter entity <tt>%inline</tt>, but is excluded explicitly
+because of <tt>-(A)</tt>.
+
+<P>Similarly, the following element type declaration for <a href="../interact/forms.html#edef-FORM"><samp
+class="einst">FORM</samp></a> prohibits nested forms:
+
+<pre>
+   &lt;!ELEMENT FORM - - %block -(FORM)&gt;
+</pre>
+</div>
+
+
+<h3><a name="h-3.3.4">3.3.4</a> <a name="attrib-defs">Attribute definitions</a></h3>
+
+<p>The &lt;!ATTLIST keyword begins the definition of attributes that an
+element may take. It is followed by the name of the element in question, a
+list of attribute definitions, and a closing &gt;. An attribute definition
+is a triplet that defines:
+
+<ul>
+<li>The name of an attribute.
+
+<li>The type of the attribute's value or an explicit set of 
+possible values. Values defined explicitly by the DTD are
+case-insensitive. Please consult the section 
+on <a href="../types.html">basic HTML data types</a> for more
+information about attribute value types.
+<!-- note that this is according to the SGML spec, but doesn't
+take into account problems with Unicode, avoided here because
+HTML sticks to ASCII -->
+
+<li>Whether the default value of the attribute is implicit (keyword
+"#IMPLIED"), in which case the default value must be supplied by the
+user agent (in some cases via inheritance from parent elements); always
+required (keyword "#REQUIRED"); or fixed to the given value (keyword
+"#FIXED"). Some attributes explicitly specify a default value for the
+attribute.
+</ul>
+
+<div class="dtd-example"><P>
+In this example, the <a href="../struct/objects.html#adef-name-MAP"><samp class="ainst-MAP">name</samp></a>
+attribute is defined for the <a href="../struct/objects.html#edef-MAP"><samp class="einst">MAP</samp></a>
+element. The attribute is optional for this element.
+
+<pre>
+&lt;!ATTLIST MAP
+  name        CDATA     #IMPLIED
+  &gt;
+</pre>
+
+<P>The type of values permitted for the attribute is given as CDATA,
+an SGML data type. CDATA is text that may contain <a
+href="../charset.html#entities">character references</a>. 
+</div>
+
+<P>For more information about "CDATA", "NAME", "ID", and other data
+types, please consult the section on <a href="../types.html">HTML data
+types</a>.
+
+
+<div class="dtd-example"><P>
+The following examples illustrate several attribute definitions:
+<pre>
+rowspan     NUMBER     1         -- number of rows spanned by cell --
+http-equiv  NAME       #IMPLIED  -- HTTP response header name  --
+id          ID         #IMPLIED  -- document-wide unique id -- 
+valign      (top|middle|bottom|baseline) #IMPLIED
+</pre>
+
+<P>The <tt>rowspan</tt> attribute requires values of type NUMBER. The
+default value is given explicitly as "1". The optional
+<tt>http-equiv</tt> attribute requires values of type NAME. The
+optional <tt>id</tt> attribute requires values of type ID. The
+optional <tt>valign</tt> attribute is constrained to take
+values from the set {top, middle, bottom, baseline}. 
+</div>
+
+<h4>DTD entities in attribute definitions<a name="h-3.3.4.1">&nbsp;</a></h4>
+<P>Attribute definitions may also contain parameter entity references.
+
+<div class="dtd-example"><P>
+In this example, we see that the attribute definition list for the <a href="../struct/links.html#edef-LINK"><samp
+class="einst">LINK</samp></a> element begins with the %attrs parameter entity. 
+
+<div class="dtd-fragment">
+<pre class="dtd-fragment">
+&lt;!ELEMENT <a href="../struct/links.html#edef-LINK"><samp class="einst">LINK</samp></a> - O EMPTY -- a media-independent link --&gt;
+&lt;!ATTLIST LINK
+  <a href="../sgml/loosedtd.html#attrs">%attrs;</a>                          -- <a href="../sgml/loosedtd.html#coreattrs">%coreattrs</a>, <a href="../sgml/loosedtd.html#i18n">%i18n</a>, <a href="../sgml/loosedtd.html#events">%events</a> --
+  <a href="../struct/links.html#adef-charset"><samp class="ainst-LINK">charset</samp></a>     <a href="../sgml/loosedtd.html#Charset">%Charset;</a>   #IMPLIED -- char encoding of linked resource --
+  <a href="../struct/links.html#adef-href"><samp class="ainst-LINK">href</samp></a>        <a href="../sgml/loosedtd.html#URL">%URL;</a>       #IMPLIED -- URL for linked resource --
+  <a href="../struct/links.html#adef-hreflang"><samp class="ainst-LINK">hreflang</samp></a> <a href="../sgml/loosedtd.html#LanguageCode">%LanguageCode;</a> #IMPLIED -- language code --
+  <a href="../struct/links.html#adef-type-A"><samp class="ainst-A">type</samp></a>      <a href="../sgml/loosedtd.html#ContentType">%ContentType;</a> #IMPLIED -- advisory content type --
+  <a href="../struct/links.html#adef-rel"><samp class="ainst-LINK">rel</samp></a>         <a href="../sgml/loosedtd.html#LinkTypes">%LinkTypes;</a> #IMPLIED -- forward link types --
+  <a href="../struct/links.html#adef-rev"><samp class="ainst-LINK">rev</samp></a>         <a href="../sgml/loosedtd.html#LinkTypes">%LinkTypes;</a> #IMPLIED -- reverse link types --
+  <a href="../present/styles.html#adef-media"><samp class="ainst-LINK">media</samp></a>       <a href="../sgml/loosedtd.html#MediaDesc">%MediaDesc;</a> #IMPLIED -- for rendering on these media --
+  <a href="../present/frames.html#adef-target"><samp class="ainst-A">target</samp></a>   <a href="../sgml/loosedtd.html#FrameTarget">%FrameTarget;</a>     #IMPLIED -- render in this frame --
+  &gt;
+</pre>
+</div>
+<p><em>Start tag: <strong>required</strong>, End tag: <strong>forbidden</strong></em></p>
+
+<p>The %attrs parameter entity is defined as follows:
+
+<div class="dtd-fragment">
+<pre class="dtd-fragment">
+&lt;!ENTITY % attrs "<a href="../sgml/loosedtd.html#coreattrs">%coreattrs;</a> <a href="../sgml/loosedtd.html#i18n">%i18n;</a> <a href="../sgml/loosedtd.html#events">%events;</a>"&gt;
+</pre>
+</div>
+
+<P>The %coreattrs parameter entity in the %attrs definition expands as follows:
+
+
+<div class="dtd-fragment">
+<pre class="dtd-fragment">
+&lt;!ENTITY % coreattrs
+ "<a href="../struct/global.html#adef-id"><samp class="ainst">id</samp></a>          <a href="../types.html#type-id">ID</a>         #IMPLIED  -- document-wide unique id --
+  <a href="../struct/global.html#adef-class"><samp class="ainst">class</samp></a>       <a href="../types.html#type-cdata">CDATA</a>      #IMPLIED  -- space separated list of classes --
+  <a href="../present/styles.html#adef-style"><samp class="ainst">style</samp></a>       <a href="../types.html#type-cdata">CDATA</a>      #IMPLIED  -- associated style info --
+  <a href="../struct/global.html#adef-title"><samp class="ainst">title</samp></a>       <a href="../sgml/loosedtd.html#Text">%Text;</a>     #IMPLIED  -- advisory title/amplification --"
+  &gt;
+</pre>
+</div>
+</div>
+
+<P>The %attrs parameter entity has been defined for convenience since these
+attributes are defined for most HTML element types.
+
+<div class="dtd-example">
+<P>Similarly, the DTD defines the %URL parameter entity as expanding into the
+string "CDATA". 
+
+<div class="dtd-fragment">
+<pre class="dtd-fragment">
+&lt;!ENTITY % URL "<a href="../types.html#type-cdata">CDATA</a>"
+    -- a Uniform Resource Locator,
+       see <a rel="biblioentry" href="../references.html#ref-RFC1808">[RFC1808]</a> and <a rel="biblioentry" href="../references.html#ref-RFC1738">[RFC1738]</a>
+    --&gt;
+</pre>
+</div>
+</div>
+
+<P>As this example illustrates, the parameter entity %URL provides readers of
+the DTD with more information as to the type of data expected for an
+attribute. Similar entities have been defined for %Color,
+%Charset, %Length, %Pixels, etc.
+
+<h4>Boolean attributes<a name="h-3.3.4.2">&nbsp;</a></h4>
+
+<p>Some attributes play the role of boolean variables (e.g., the <a href="../interact/forms.html#adef-selected"><samp
+class="ainst-OPTION">selected</samp></a> attribute for the <a href="../interact/forms.html#edef-OPTION"><samp
+class="einst">OPTION</samp></a> element). Their appearance in the start
+tag of an element implies that the value of the attribute is
+"true". Their absence implies a value of "false".
+
+<P>Boolean attributes may legally take a single value: the name of the
+attribute itself (e.g., <tt>selected="selected"</tt>).
+
+<div class="dtd-example"><P>
+This example defines the <a href="../interact/forms.html#adef-selected"><samp
+class="ainst-OPTION">selected</samp></a> attribute to be a boolean attribute.
+
+<pre>
+selected     (selected)  #IMPLIED  -- reduced inter-item spacing --
+</pre>
+
+<P>The attribute is set to "true" by appearing in the element's
+start tag:
+
+<pre>
+&lt;OPTION selected="selected"&gt;
+<em>...contents...</em>
+&lt;OPTION&gt;
+</pre>
+</div>
+
+<P>In HTML, boolean attributes may be appear in "minimized form" --
+the attribute's <strong>value</strong> appears alone in the element's
+start tag. Thus, <a href="../interact/forms.html#adef-selected"><samp class="ainst-OPTION">selected</samp></a> may
+be set by writing:
+
+<pre>
+&lt;OPTION selected&gt;
+</pre>
+
+<p>instead of:
+
+<pre>
+&lt;OPTION selected="selected"&gt;
+</pre>
+
+<P>Authors should be aware than many user agents
+<strong>only</strong> recognize the minimized form of boolean
+attributes and not the full form.
+<div class="navbar">
+<hr><center><a href="intro.html">previous</a> &nbsp; <a href="../convent.html">next</a> &nbsp; <a href="../cover.html#toc">contents</a> &nbsp; <a href="../index/elements.html">elements</a> &nbsp; <a href="../index/attribs.html">attributes</a>
+</center></div>
+</body>
+</html>

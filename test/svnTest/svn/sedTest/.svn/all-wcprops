@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/svn/!svn/ver/2/sedTest
+END
+file
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/sedTest/file
+END
+sedd
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/sedTest/sedd
+END
+file1
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/sedTest/file1
+END

@@ -1,0 +1,89 @@
+	-- catalog: SGML Open style entity catalog for HTML --
+	-- $Id: catalog,v 1.1 1994/10/07 21:35:07 connolly Exp $ --
+	-- well that $id is messed up now cos I edited the file! --
+
+	-- ISO latin 1 entity set for HTML -- =
+PUBLIC	"-//IETF//ENTITIES Added Latin 1 for HTML//EN"	html-latin.sgml
+
+        -- fake HTMLicons reference --
+PUBLIC	"-//IETF//ENTITIES icons for HTML//EN"          html-icons.sgml
+
+        -- fake HTMLmath reference --
+PUBLIC  "-//IETF//ENTITIES Math and Greek for HTML//EN"  html-math.sgml
+
+	-- Ways to refer to Level 3: most general to most specific --
+PUBLIC  "-//IETF//DTD HTML//EN//3.0"		html-3.dtd
+PUBLIC  "-//W3O//DTD W3 HTML 3.0//EN//"         html-3.dtd
+PUBLIC  "-//IETF//DTD HTML 3.0//EN"             html-3.dtd
+PUBLIC  "-//IETF//DTD HTML 3.0//EN//"           html-3.dtd
+PUBLIC  "-//IETF//DTD HTML Level 3//EN"		html-3.dtd
+PUBLIC  "-//IETF//DTD HTML Level 3//EN//3.0"	html-3.dtd
+
+	-- Ways to refer to strict Level 3: most general to most specific --
+PUBLIC  "-//IETF//DTD HTML Strict//EN//3.0"		html-3s.dtd
+PUBLIC  "-//W3O//DTD W3 HTML Strict 3.0//EN//" 		html-3s.dtd
+PUBLIC  "-//IETF//DTD HTML Strict Level 3//EN"		html-3s.dtd
+PUBLIC  "-//IETF//DTD HTML Strict Level 3//EN//3.0"	html-3s.dtd
+
+	-- Ways to refer to Level 2: most general to most specific --
+PUBLIC  "HTML"					html.dtd
+PUBLIC  "-//IETF//DTD HTML//EN"			html.dtd
+PUBLIC  "-//IETF//DTD HTML//EN//2.0"		html.dtd
+PUBLIC  "-//IETF//DTD HTML 2.0//EN"		html.dtd
+PUBLIC  "-//IETF//DTD HTML Level 2//EN"		html.dtd
+PUBLIC  "-//IETF//DTD HTML Level 2//EN//2.0"	html.dtd
+
+
+	-- Ways to refer to Level 1: most general to most specific --
+PUBLIC  "-//IETF//DTD HTML Level 1//EN"		html-1.dtd
+PUBLIC  "-//IETF//DTD HTML Level 1//EN//2.0"	html-1.dtd
+
+	-- Ways to refer to Level 0: most general to most specific --
+PUBLIC  "-//IETF//DTD HTML Level 0//EN"		html-0.dtd
+PUBLIC  "-//IETF//DTD HTML Level 0//EN//2.0"	html-0.dtd
+
+	-- Ways to refer to Strict Level 2 --
+PUBLIC  "-//IETF//DTD HTML Strict//EN"			html-s.dtd
+PUBLIC  "-//IETF//DTD HTML Strict//EN//2.0"		html-s.dtd
+PUBLIC  "-//IETF//DTD HTML Strict Level 2//EN"		html-s.dtd
+PUBLIC  "-//IETF//DTD HTML Strict Level 2//EN//2.0"	html-s.dtd
+
+	-- Ways to refer to Strict Level 1 --
+PUBLIC  "-//IETF//DTD HTML Strict Level 1//EN"		html-1s.dtd
+PUBLIC  "-//IETF//DTD HTML Strict Level 1//EN//2.0"	html-1s.dtd
+
+	-- Ways to refer to Strict Level 0 --
+PUBLIC  "-//IETF//DTD HTML Strict Level 0//EN"		html-0s.dtd
+PUBLIC  "-//IETF//DTD HTML Strict Level 0//EN//2.0"	html-0s.dtd
+
+	-- Ways to refer to Netscape extensions HTML --
+PUBLIC "-//Netscape Comm. Corp.//DTD HTML//EN"		html-mcom.dtd
+
+	-- Added at the suggestion of James Clark <jjc@jclark.com> --
+	-- so that spam -p doesn't output the contents of html.decl --
+SGMLDECL html.decl
+
+	-- Added [11-Dec-1996] for HTML 3.2 support --
+	-- See http://www.w3.org/pub/WWW/MarkUp/Wilbur/ for details --
+PUBLIC "-//W3C//DTD HTML 3.2 Draft 19960821//EN" HTML32.dtd
+PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN" HTML32.dtd
+PUBLIC "-//W3C//DTD HTML 3.2 Final//EN" HTML32.dtd
+PUBLIC "-//W3C//DTD HTML 3.2//EN" HTML32.dtd
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN//HTML" ISOlat1.ent
+
+	-- Added [11-Dec-1996] for experimental Cougar --
+	-- (HTML 3.2 follow-on with HTML 3.0 features) --
+
+PUBLIC "-//W3C//DTD HTML Experimental 19960712//EN"	Cougar.dtd
+
+	-- Added [27-Oct-1997] for experimental HTML 4.0 --
+	-- see http://www.w3.org/TR/WD-html40/html40.tgz --
+	-- for these entries, their files, and extensive --
+	-- documentation on HTML 4.0 --
+PUBLIC "-//W3C//DTD HTML 4.0//EN" HTML4-strict.dtd
+PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" HTML4-loose.dtd
+PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN" HTML4-frameset.dtd
+PUBLIC "-//W3C//ENTITIES Full Latin 1//EN//HTML" ISOlat1.ent
+PUBLIC "-//W3C//ENTITIES Latin1//EN//HTML" ISOlat1.ent
+PUBLIC "-//W3C//ENTITIES Special//EN//HTML" HTMLmisc.ent
+PUBLIC "-//W3C//ENTITIES Symbols//EN//HTML" HTMLsym.ent

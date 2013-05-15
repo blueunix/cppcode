@@ -1,0 +1,51 @@
+<!--Comment test for embedded white space before end tag -->
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<HTML>
+    <HEAD>
+        <TITLE>
+            <!-- Please supply a descriptive title here -->
+        </TITLE>
+        <!-- Please supply a correct e-mail address here -->
+        <LINK REV="made" HREF="mailto:USERNAME@HOSTNAME">
+    </HEAD>
+    <BODY>
+        <H1>
+            Simple comment tests
+        </H1>
+        <P>
+            line 1<!-- comment 1 -->
+            lines 2--5
+<!-- multiline 
+				comment
+			        that spans
+				4 lines -->
+            line 6<!-- one space before close delimiter -->
+            line 7<!-- two spaces before close delimiter -->
+            line 8<!-- newline before close delimiter -->
+            line 10<!-- otherspace before close delimiter -->
+        </P>
+        <H1>
+            Complex comment tests
+        </H1>
+        <P>
+            line 1
+<!-- <>  comment 1 -->
+            lines 2--5
+<!-- <>  multiline 
+				comment
+			        that spans
+				4 lines -->
+            line 6
+<!-- <>  one space before close delimiter -- >
+            line 7
+<!-- <>  two spaces before close delimiter --  >
+            line 8
+<!-- <>  newline before close delimiter --
+		  >
+            line 10
+<!-- <>  otherspace before close delimiter --		>
+        </P>
+    </BODY>
+</HTML>

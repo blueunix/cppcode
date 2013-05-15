@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/2/strOpTest2
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/strOpTest2/main.c
+END
+a.out
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/2/strOpTest2/a.out
+END
+strOpTest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/strOpTest2/strOpTest.cpp
+END
+strOpTest.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/strOpTest2/strOpTest.h
+END

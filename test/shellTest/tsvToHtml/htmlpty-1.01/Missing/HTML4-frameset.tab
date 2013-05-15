@@ -1,0 +1,5 @@
+# HTML entities missing from htmlpty, computed on Fri Nov 28 15:14:58 MST 1997 from
+# -rw-r--r-- 1 beebe 1081 Nov 11 14:12 /usr/local/lib/html-check/lib/HTML4-frameset.dtd
+#
+-rw-rw-r-- 1 Makefile	  4	       EN	    INCLUDE	 W3C
+-rw-rw-r-- 1 0		  DTD	       HTML

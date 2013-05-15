@@ -1,0 +1,380 @@
+<!-- -*-html-*- -->
+<!-- /u/sy/beebe/src/htmlpty/htmlpty-1.00/Docs/README-AWK.html, Wed Dec  3 22:26:48 1997 -->
+<!-- Edit by Nelson H. F. Beebe <beebe@sunrise.math.utah.edu> -->
+<!-- README-AWK -->
+<!-- Prettyprinted by html-pretty flex version 1.00 [29-Nov-1997] -->
+<!-- on Wed Dec  3 21:45:14 1997 -->
+<!-- for Nelson H. F. Beebe (beebe@sunrise.math.utah.edu) -->
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+    <HEAD>
+        <TITLE>
+            Notes about awk implementations
+        </TITLE>
+        <LINK REV="made" HREF="mailto:beebe@math.utah.edu">
+    </HEAD>
+    <BODY>
+        <H1>
+            Notes about <SAMP>awk</SAMP> implementations
+        </H1>
+        <P>
+            These notes provide some information about <SAMP>awk</SAMP>,
+            in case you are unfamiliar with it, or want to learn more
+            about it.
+        </P>
+        <P>
+            I use the <SAMP>awk</SAMP> programming language for
+            implementing many of my software tools (I have written more
+            than 114,000 lines of awk code as of [09-Nov-1996]), and I
+            use it in teaching as an example of a little language that
+            every computer user who does text processing can benefit
+            from learning.
+        </P>
+        <P>
+            While <SAMP>awk</SAMP> is an interpreted language which
+            suffers a runtime performance penalty compared to natively
+            compiled languages such as Ada, C, C++, Fortran, and Pascal,
+            for many text processing problems it is almost perfect.  A C
+            implementation of my <SAMP>bibcheck</SAMP> utility ran 3.5
+            times faster than the <SAMP>awk</SAMP> version, but took
+            22.4 times as many lines of code!  And, of course, the
+            <SAMP>awk</SAMP> version was much easier to write, and
+            required very little debugging.
+        </P>
+        <P>
+            <SAMP>awk</SAMP> is a POSIX standard, though I don't yet
+            have on hand the POSIX <SAMP>awk</SAMP> language
+            description.  This means that you can expect your computer
+            vendor to provide it, and that it should be widely available
+            for a long time.
+        </P>
+        <P>
+            <SAMP>awk</SAMP> is a clean simple language, with few
+            blemishes.  This is in stark contrast to <SAMP>perl</SAMP>,
+            which I find so ugly that I refuse to learn it, even though
+            I deeply appreciate what it is trying to do.
+        </P>
+        <P>
+            The official description of <SAMP>awk</SAMP> is found in the
+            book
+        </P>
+<PRE>
+@String{pub-AW                  = &quot;Ad{\-d}i{\-s}on-Wes{\-l}ey&quot;}
+@String{pub-AW:adr              = &quot;Reading, MA, USA&quot;}
+
+@Book{Aho:1987:APL,
+  author =       &quot;Alfred V. Aho and Brian W. Kernighan and Peter J.
+                 Weinberger&quot;,
+  title =        &quot;The {AWK} Programming Language&quot;,
+  publisher =    pub-AW,
+  address =      pub-AW:adr,
+  pages =        &quot;x + 210&quot;,
+  year =         &quot;1988&quot;,
+  ISBN =         &quot;0-201-07981-X&quot;,
+  LCCN =         &quot;QA76.73.A95 A35 1988&quot;,
+  bibdate =      &quot;Tue Dec 14 22:33:46 1993&quot;,
+}
+</PRE>
+        <P>
+            Another book which you may find useful (though I much prefer
+            the above one) is
+        </P>
+<PRE>
+@String{pub-ORA                 = &quot;O'Reilly \&amp; {Associates, Inc.}&quot;}
+@String{pub-ORA:adr             = &quot;981 Chestnut Street, Newton, MA 02164, USA&quot;}
+
+@Book{Dougherty:SA91,
+  author =       &quot;Dale Dougherty&quot;,
+  title =        &quot;sed {\&amp;} awk&quot;,
+  publisher =    pub-ORA,
+  address =      pub-ORA:adr,
+  pages =        &quot;xxii + 394&quot;,
+  year =         &quot;1991&quot;,
+  ISBN =         &quot;0-937175-59-5&quot;,
+  LCCN =         &quot;QA76.76.U84 D69 1991&quot;,
+}
+</PRE>
+        This has since appeared in an extensively-revised second
+        edition, which I have not yet seen:
+<PRE>
+@Book{Dougherty:1997:SA,
+  author =       &quot;Dale Dougherty and Arnold Robbins&quot;,
+  title =        &quot;{\tt sed} and {\tt awk}&quot;,
+  publisher =    pub-ORA,
+  address =      pub-ORA:adr,
+  edition =      &quot;Second&quot;,
+  pages =        &quot;420&quot;,
+  month =        feb,
+  year =         &quot;1997&quot;,
+  ISBN =         &quot;1-56592-225-5&quot;,
+  LCCN =         &quot;&quot;,
+  bibdate =      &quot;Fri Jan 31 08:21:40 1997&quot;,
+  bibsource =    &quot;ftp://ftp.ora.com/pub/products/catalogs/book.catalog&quot;,
+  price =        &quot;US\$29.95&quot;,
+  acknowledgement = ack-nhfb,
+}
+</PRE>
+        <P>
+            There is also a recent one (based on the GNU
+            <SAMP>awk</SAMP> implementation):
+        </P>
+<PRE>
+@String{pub-SSC                 = &quot;Specialized Systems Consultants&quot;}
+@String{pub-SSC:adr             = &quot;P.O. Box 55549, Seattle, WA 98155&quot;}
+
+@Book{Robbins:1996:EAP,
+  author =       &quot;Arnold Robbins&quot;,
+  title =        &quot;Effective {AWK} Programming&quot;,
+  publisher =    pub-SSC,
+  address =      pub-SSC:adr,
+  year =         &quot;1996&quot;,
+  URL =          &quot;http://www.ssc.com/ssc/eap/&quot;,
+  ISBN =         &quot;0-916151-88-3&quot;,
+  LCCN =         &quot;&quot;,
+  acknowledgement = ack-nhfb,
+  pages =        &quot;321&quot;,
+  price =        &quot;US\$27.00&quot;,
+  bibdate =      &quot;Fri Jun 14 17:24:04 1996&quot;,
+  libnote =      &quot;Not yet in my library.&quot;,
+}
+</PRE>
+        This too has appeared in a second edition, although in this
+        case, the changes are modest:
+<PRE>
+@Book{Robbins:1997:EAP,
+  author =       &quot;Arnold Robbins&quot;,
+  title =        &quot;Effective {AWK} Programming&quot;,
+  publisher =    pub-SSC,
+  address =      pub-SSC:adr,
+  edition =      &quot;Second&quot;,
+  year =         &quot;1997&quot;,
+  URL =          &quot;http://www.ssc.com/ssc/eap/&quot;,
+  ISBN =         &quot;1-57831-000-8&quot;,
+  LCCN =         &quot;&quot;,
+  acknowledgement = ack-nhfb,
+  pages =        &quot;322&quot;,
+  price =        &quot;US\$27.00&quot;,
+  bibdate =      &quot;Wed Nov 13 15:05:01 1996&quot;,
+}
+</PRE>
+        <P>
+            Both of these correspond exactly to an online version of
+            the <SAMP>gawk</SAMP> documentation distributed with in
+            <SAMP>TeXinfo</SAMP> form, but a printed book is more
+            comfortable to read, and easier to augment with your own
+            notes.
+        </P>
+        <P>
+            Some other publications on, and suppliers of,
+            <SAMP>awk</SAMP> are:
+        </P>
+<PRE>
+@String{j-SUNEXPERT             = &quot;SunExpert&quot;}
+
+@Article{Collinson:awk,
+  author =       &quot;Peter Collinson&quot;,
+  title =        &quot;Awk&quot;,
+  journal =      j-SUNEXPERT,
+  volume =       &quot;2&quot;,
+  number =       &quot;1&quot;,
+  pages =        &quot;33--36&quot;,
+  month =        jan,
+  year =         &quot;1991&quot;,
+}
+
+@String{pub-FSF                 = &quot;{Free Software Foundation}&quot;}
+@String{pub-FSF:adr             = &quot;675 Mass Ave, Cambridge, MA 02139,
+                                  USA, Tel: (617) 876-3296&quot;}
+
+@Misc{FSF:gawk,
+  key =          &quot;GAWK&quot;,
+  title =        &quot;The {GAWK} Manual&quot;,
+  howpublished = pub-FSF # &quot; &quot; # pub-FSF:adr,
+  year =         &quot;1987&quot;,
+  note =         &quot;Also available via ANONYMOUS FTP to
+                 \path|prep.ai.mit.edu|. See also \cite{Aho:APL87}.&quot;,
+}
+
+@Misc{MKS:awk,
+  author =       &quot;{Mortice Kern Systems, Inc.}&quot;,
+  title =        &quot;{MKSAWK}&quot;,
+  year =         &quot;1987&quot;,
+  note =         &quot;35 King Street North, Waterloo, Ontario, Canada, Tel:
+                 (519) 884-2251. See also \cite{Aho:APL87}.&quot;,
+}
+
+@Misc{ONW:awk,
+  author =       &quot;{OpenNetwork}&quot;,
+  title =        &quot;{The Berkeley Utilities}&quot;,
+  year =         &quot;1991&quot;,
+  note =         &quot;215 Berkeley Place, Brooklyn, NY 11217, USA, Tel:
+                 (718) 398-3838.&quot;,
+  altnote =      &quot;See ad on p. 108 of April 1991 UNIX Review.&quot;,
+}
+
+@Misc{Polytron:polyawk,
+  author =       &quot;Polytron Corporation&quot;,
+  title =        &quot;{Poly{\-}AWK}&quot;,
+  year =         &quot;1987&quot;,
+  note =         &quot;170 NW 167th Place, Beaverton, OR 97006. See also
+                 \cite{Aho:APL87}.&quot;,
+}
+
+@String{j-SPE                   = &quot;Soft{\-}ware\emdash Prac{\-}tice
+                                  and Experience&quot;}
+
+@Article{VanWyk:awk,
+  author =       &quot;Christopher J. Van Wyk&quot;,
+  title =        &quot;{AWK} as Glue for Programs&quot;,
+  journal =      j-SPE,
+  volume =       &quot;16&quot;,
+  number =       &quot;4&quot;,
+  pages =        &quot;369--388&quot;,
+  month =        apr,
+  year =         &quot;1986&quot;,
+}
+</PRE>
+        <P>
+            These entries are all taken from
+        </P>
+<PRE>
+        ftp://ftp.math.utah.edu/pub/tex/bib/index.html#master
+</PRE>
+        <P>
+            which records books in my library, and other selected
+            references; by the time you read this, there may be more
+            <SAMP>awk</SAMP> -related entries in that bibliography.
+        </P>
+        <P>
+            At the time that the Aho, Kernighan, and Weinberger book
+            appeared, <SAMP>awk</SAMP> was only available in UNIX
+            systems, and it took a few years for UNIX vendors to
+            incorporate the new, and much enhanced, version of the
+            language described in the book.  Most UNIX vendors retain
+            the name <SAMP>awk</SAMP> for the old original function-less
+            language from 1978, and call the 1987 one <SAMP>nawk</SAMP>
+            (for `new <SAMP>awk</SAMP> ').  An important exception is
+            IBM, which supplies the new implementation on RS/6000 AIX
+            systems, but calls it just <SAMP>awk</SAMP>.
+        </P>
+        <P>
+            Unfortunately, several vendors have not kept up with Brian
+            Kernighan's further development of <SAMP>awk</SAMP>, with
+            the result that some <SAMP>nawk</SAMP> implementations lack
+            features that were added after the 1987 book was published,
+            notably the <SAMP>ENVIRON[]</SAMP> array for access to
+            environment variables.  Also, some of the vendor
+            implementations have not incorporated bug fixes which
+            Kernighan introduced.
+        </P>
+        <P>
+            Fortunately, this situation has improved through three
+            important developments:
+        </P>
+        <OL>
+            <LI>
+                Arnold Robbin's <SAMP>gawk</SAMP>, the GNU Project
+                implementation of <SAMP>awk</SAMP>, available at
+<PRE>
+                ftp://prep.ai.mit.edu/pub/gnu/gawk-x.yy.tar.gz
+</PRE>
+                <P>
+                    The <SAMP>gawk</SAMP> distribution includes ports
+                    for the Amiga, the IBM PC, the Atari, and for DEC
+                    OpenVMS.
+                </P>
+            </LI>
+            <LI>
+                Brian Kernighan's <SAMP>awk</SAMP> has been released
+                by AT&amp;T Bell Labs, and is available at
+<PRE>
+                http://cm.bell-labs.com/who/bwk/awk.sh
+</PRE>
+            </LI>
+            <LI>
+                Mike Brennan's <SAMP>mawk</SAMP>, available at
+<PRE>
+                ftp://ftp.whidbey.net/pub/brennan/mawkx.y.z.tar.gz
+</PRE>
+            </LI>
+        </OL>
+        <P>
+            Besides these freely-distributable (for non-commercial
+            purposes, as detailed in licenses included with their
+            distributions), there are commercially-supported versions of
+            <SAMP>awk</SAMP> for the IBM PC world and other machines,
+            recorded in the BibTeX entries above.
+        </P>
+        <P>
+            Robbins, Kernighan, and Brennan are in contact with one
+            another, so their implementations support the same features,
+            although <SAMP>gawk</SAMP> has added a number of
+            (well-documented) extensions that the others have not yet
+            incorporated.  With a few exceptions, I've tried hard in my
+            <SAMP>awk</SAMP> programs to stick to the standard language
+            as documented in the 1987 book.
+        </P>
+        <OL>
+            <LI>
+                <SAMP>gawk</SAMP> and recent AT&amp;T <SAMP>awk</SAMP>
+                have the <CODE>IGNORECASE</CODE> extension, which I
+                only rarely use.  That feature is difficult to
+                simulate in a portable <SAMP>awk</SAMP> program.
+            </LI>
+            <LI>
+                <SAMP>gawk</SAMP> and <SAMP>mawk</SAMP> have
+                <CODE>toupper()</CODE> and <CODE>tolower()</CODE> for
+                efficient lettercase conversion; it is possible to
+                implement these in <SAMP>awk</SAMP> itself, but only
+                very inefficiently
+            </LI>
+            <LI>
+                <SAMP>gawk</SAMP>, <SAMP>mawk</SAMP>, and recent AT
+                &amp;T <SAMP>awk</SAMP> support the
+                <CODE>ENVIRON[]</CODE> array for efficient access to
+                environment variables.
+            </LI>
+            <LI>
+                <SAMP>gawk</SAMP>, <SAMP>mawk</SAMP>, and recent AT
+                &amp;T <SAMP>awk</SAMP> support the names
+                <SAMP>/dev/stderr</SAMP> and <SAMP>/dev/stdout</SAMP>
+                for the standard UNIX devices (which sadly, UNIX never
+                got around to giving names), and <SAMP>gawk</SAMP> and
+                AT &amp;T <SAMP>awk</SAMP> support
+                <SAMP>/dev/stdin</SAMP>.  The alternative to
+                <SAMP>/dev/stderr</SAMP> is <SAMP>/dev/tty</SAMP>
+                (except it fails if the process is running without a
+                controlling terminal, which happens for batch jobs,
+                and for background processes), or a horrid contortion
+                to invoke the shell and <SAMP>cat</SAMP>.  Since any
+                realistic program will require the ability to write
+                error messages, use of <SAMP>/dev/stderr</SAMP> is the
+                one feature that is likely to cause portability
+                problems.
+            </LI>
+            <LI>
+                Only <SAMP>gawk</SAMP> is 8-bit clean, and capable of
+                processing all 256 8-bit byte values, including NUL,
+                and accepting 8-bit characters in regular expression
+                (regexp) patterns. Recent AT&amp;T <SAMP>awk</SAMP>
+                loses NUL during processing (because it uses C-style
+                strings internally, which reserve NUL for a string
+                terminator), and it rejects characters 128..255 in
+                regexp patterns. <SAMP> mawk</SAMP> gets thoroughly
+                confused by NUL in its input stream, and terminates;
+                it handles the other 255 byte values (1..255)
+                correctly, at least for I/O.
+            </LI>
+        </OL>
+        <P>
+            For further discussion of <SAMP>awk</SAMP> implementation
+            differences and language evolution, see the
+        </P>
+<PRE>
+        (gawk.info)Language History
+</PRE>
+        <P>
+            node in the GNU Emacs <I>info</I> system.
+        </P>
+    </BODY>
+</HTML>

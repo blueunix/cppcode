@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/svn/!svn/ver/2/gdbTest
+END
+a.out
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/gdbTest/a.out
+END
+gdbTest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/gdbTest/gdbTest.cpp
+END
+a.txt
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/gdbTest/a.txt
+END

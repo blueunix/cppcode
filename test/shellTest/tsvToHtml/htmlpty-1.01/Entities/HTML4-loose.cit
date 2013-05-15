@@ -1,0 +1,461 @@
+%% html-pretty version 1.00 date [11-Nov-1997]
+%% This is the contained-in tag relationships file,
+%% prepared from Entities/HTML4-loose.tab by cittable.awk.
+%% [25-Aug-2001]
+
+CannotContain[A]          : A
+
+CannotContain[BUTTON]     : A BUTTON FIELDSET FORM IFRAME INPUT \
+                            ISINDEX LABEL SELECT TEXTAREA
+
+CannotContain[DIR]        : ADDRESS BLOCKQUOTE CENTER DIR DIV DL \
+                            FIELDSET FORM H1 H2 H3 H4 H5 H6 HR ISINDEX \
+                            MENU NOFRAMES NOSCRIPT OL P PRE TABLE UL
+
+CannotContain[FORM]       : FORM
+
+CannotContain[LABEL]      : LABEL
+
+CannotContain[MENU]       : ADDRESS BLOCKQUOTE CENTER DIR DIV DL \
+                            FIELDSET FORM H1 H2 H3 H4 H5 H6 HR ISINDEX \
+                            MENU NOFRAMES NOSCRIPT OL P PRE TABLE UL
+
+CannotContain[NOFRAMES]   : #PCDATA A ABBR ADDRESS APPLET B BASEFONT \
+                            BDO BIG BLOCKQUOTE BR BUTTON CENTER CITE \
+                            CODE DFN DIR DIV DL EM FIELDSET FONT FORM \
+                            H1 H2 H3 H4 H5 H6 HR I IFRAME IMG INPUT \
+                            ISINDEX KBD LABEL MAP MENU NOFRAMES \
+                            NOSCRIPT OBJECT OL P PRE Q S SAMP SCRIPT \
+                            SELECT SMALL SPAN STRIKE STRONG SUB SUP \
+                            TABLE TEXTAREA TT U UL VAR
+
+CannotContain[PRE]        : APPLET BASEFONT BIG FONT IMG OBJECT SMALL \
+                            SUB SUP
+
+CannotContain[TITLE]      : LINK META SCRIPT STYLE
+
+ContainedIn[#PCDATA]      : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT OPTION P PRE Q S SAMP \
+                            SMALL SPAN STRIKE STRONG SUB SUP TD \
+                            TEXTAREA TH TITLE TT U VAR
+
+ContainedIn[A]            : ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY CAPTION CENTER CITE CODE DD DEL DFN \
+                            DIV DT EM FIELDSET FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I IFRAME INS KBD LABEL LEGEND LI \
+                            NOSCRIPT OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[ABBR]         : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[ADDRESS]      : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[APPLET]       : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[AREA]         : MAP
+
+ContainedIn[B]            : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[BASE]         : HEAD
+
+ContainedIn[BASEFONT]     : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[BDO]          : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[BIG]          : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[BLOCKQUOTE]   : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[BODY]         : HTML NOFRAMES
+
+ContainedIn[BR]           : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[BUTTON]       : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY CAPTION CENTER CITE CODE DD DEL DFN \
+                            DIV DT EM FIELDSET FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I IFRAME INS KBD LABEL LEGEND LI \
+                            NOSCRIPT OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[CAPTION]      : TABLE
+
+ContainedIn[CDATA]        : SCRIPT STYLE
+
+ContainedIn[CENTER]       : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[CITE]         : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[CODE]         : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[COL]          : COLGROUP TABLE
+
+ContainedIn[COLGROUP]     : TABLE
+
+ContainedIn[DD]           : DL
+
+ContainedIn[DEL]          : BODY
+
+ContainedIn[DFN]          : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[DIR]          : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[DIV]          : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[DL]           : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[DT]           : DL
+
+ContainedIn[EM]           : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[EMPTY]        : AREA BASE BASEFONT BR COL FRAME HR IMG \
+                            INPUT ISINDEX LINK META PARAM
+
+ContainedIn[FIELDSET]     : APPLET BLOCKQUOTE BODY CENTER DD DEL DIV \
+                            FIELDSET FORM IFRAME INS LI NOSCRIPT \
+                            OBJECT TD TH
+
+ContainedIn[FONT]         : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[FORM]         : APPLET BLOCKQUOTE BODY CENTER DD DEL DIV \
+                            FIELDSET IFRAME INS LI NOSCRIPT OBJECT TD \
+                            TH
+
+ContainedIn[FRAME]        : FRAMESET
+
+ContainedIn[FRAMESET]     : FRAMESET HTML
+
+ContainedIn[H1]           : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[H2]           : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[H3]           : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[H4]           : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[H5]           : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[H6]           : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[HEAD]         : HTML
+
+ContainedIn[HR]           : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[I]            : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[IFRAME]       : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY CAPTION CENTER CITE CODE DD DEL DFN \
+                            DIV DT EM FIELDSET FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I IFRAME INS KBD LABEL LEGEND LI \
+                            NOSCRIPT OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[IMG]          : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[INPUT]        : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY CAPTION CENTER CITE CODE DD DEL DFN \
+                            DIV DT EM FIELDSET FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I IFRAME INS KBD LABEL LEGEND LI \
+                            NOSCRIPT OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[INS]          : BODY
+
+ContainedIn[ISINDEX]      : APPLET BLOCKQUOTE BODY CENTER DD DEL DIV \
+                            FIELDSET FORM HEAD IFRAME INS LI NOSCRIPT \
+                            OBJECT TD TH
+
+ContainedIn[KBD]          : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[LABEL]        : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY CAPTION CENTER CITE CODE DD DEL DFN \
+                            DIV DT EM FIELDSET FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I IFRAME INS KBD LEGEND LI NOSCRIPT \
+                            OBJECT P PRE Q S SAMP SMALL SPAN STRIKE \
+                            STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[LEGEND]       : FIELDSET
+
+ContainedIn[LI]           : DIR MENU OL UL
+
+ContainedIn[LINK]         : HEAD
+
+ContainedIn[MAP]          : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[MENU]         : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[META]         : HEAD
+
+ContainedIn[NOFRAMES]     : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM FRAMESET IFRAME INS \
+                            LI NOSCRIPT OBJECT TD TH
+
+ContainedIn[NOSCRIPT]     : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[OBJECT]       : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[OL]           : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[OPTGROUP]     : OPTGROUP SELECT
+
+ContainedIn[OPTION]       : OPTGROUP SELECT
+
+ContainedIn[P]            : ADDRESS APPLET BLOCKQUOTE BODY BUTTON \
+                            CENTER DD DEL DIV FIELDSET FORM IFRAME INS \
+                            LI NOSCRIPT OBJECT TD TH
+
+ContainedIn[PARAM]        : APPLET OBJECT
+
+ContainedIn[PRE]          : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[Q]            : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[S]            : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[SAMP]         : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[SCRIPT]       : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 HEAD I IFRAME INS KBD LABEL \
+                            LEGEND LI NOSCRIPT OBJECT P PRE Q S SAMP \
+                            SMALL SPAN STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[SELECT]       : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY CAPTION CENTER CITE CODE DD DEL DFN \
+                            DIV DT EM FIELDSET FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I IFRAME INS KBD LABEL LEGEND LI \
+                            NOSCRIPT OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[SMALL]        : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[SPAN]         : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[STRIKE]       : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[STRONG]       : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[STYLE]        : HEAD
+
+ContainedIn[SUB]          : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[SUP]          : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[TABLE]        : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[TBODY]        : TABLE
+
+ContainedIn[TD]           : TR
+
+ContainedIn[TEXTAREA]     : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY CAPTION CENTER CITE CODE DD DEL DFN \
+                            DIV DT EM FIELDSET FONT FORM H1 H2 H3 H4 \
+                            H5 H6 I IFRAME INS KBD LABEL LEGEND LI \
+                            NOSCRIPT OBJECT P PRE Q S SAMP SMALL SPAN \
+                            STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[TFOOT]        : TABLE
+
+ContainedIn[TH]           : TR
+
+ContainedIn[THEAD]        : TABLE
+
+ContainedIn[TITLE]        : HEAD
+
+ContainedIn[TR]           : TBODY TFOOT THEAD
+
+ContainedIn[TT]           : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[U]            : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+
+ContainedIn[UL]           : APPLET BLOCKQUOTE BODY BUTTON CENTER DD \
+                            DEL DIV FIELDSET FORM IFRAME INS LI \
+                            NOSCRIPT OBJECT TD TH
+
+ContainedIn[VAR]          : A ABBR ADDRESS APPLET B BDO BIG BLOCKQUOTE \
+                            BODY BUTTON CAPTION CENTER CITE CODE DD \
+                            DEL DFN DIV DT EM FIELDSET FONT FORM H1 H2 \
+                            H3 H4 H5 H6 I IFRAME INS KBD LABEL LEGEND \
+                            LI NOSCRIPT OBJECT P PRE Q S SAMP SMALL \
+                            SPAN STRIKE STRONG SUB SUP TD TH TT U VAR
+

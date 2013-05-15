@@ -1,0 +1,77 @@
+<!-- -*-html-*- -->
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.0 Transitional//EN" >
+
+<HTML>
+    <HEAD>
+        <TITLE>
+        </TITLE>
+        <LINK REV="made" HREF="mailto:beebe@plot79.math.utah.edu">
+    </HEAD>
+    <BODY>
+        <AREA>
+        this is forbidden AREA content
+    </AREA>
+<ATOP> this is forbidden ATOP content </ATOP>
+<BASE>
+this is forbidden BASE content
+</BASE>
+<BASEFONT>
+this is forbidden BASEFONT content
+</BASEFONT>
+<BR>
+this is forbidden BR content</BR>
+<CHOOSE> this is forbidden CHOOSE content </CHOOSE>
+<COL>
+this is forbidden COL content
+</COL>
+<FRAME>
+this is forbidden FRAME content
+</FRAME>
+<HR>
+this is forbidden HR content
+</HR>
+<IMG>
+this is forbidden IMG content
+</IMG>
+<INPUT>
+this is forbidden INPUT content
+</INPUT>
+<ISINDEX>
+this is forbidden ISINDEX content
+</ISINDEX>
+<LEFT> this is forbidden LEFT content </LEFT>
+<LINK>
+this is forbidden LINK content
+</LINK>
+<META>
+this is forbidden META content
+</META>
+<NEXTID>
+this is forbidden NEXTID content
+</NEXTID>
+<OVER> this is forbidden OVER content </OVER>
+<OVERLAY>
+this is forbidden OVERLAY content
+</OVERLAY>
+<PARAM>
+this is forbidden PARAM content
+</PARAM>
+<RIGHT> this is forbidden RIGHT content </RIGHT>
+<TAB> this is forbidden TAB content </TAB>
+<WBR>
+this is forbidden WBR content
+</WBR>
+<P>
+    Nested anchors became illegal at grammar level 3.2, so we should see
+    a warning for this:
+    <A HREF="outer">
+        outer
+        <A HREF="inner">
+            inner
+        </A>
+        and outer again
+    </A>
+</P>
+</BODY>
+</HTML>

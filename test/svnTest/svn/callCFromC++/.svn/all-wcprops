@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/callCFromC++
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/callCFromC++/main.cpp
+END
+a.out
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/2/callCFromC++/a.out
+END
+Cfunction.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/callCFromC++/Cfunction.c
+END
+Cfunction.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/callCFromC++/Cfunction.h
+END

@@ -1,0 +1,946 @@
+<!-- html-primer-080693.html -->
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN">
+<HEAD>
+<TITLE>A Beginner's Guide to HTML</TITLE>
+</HEAD>
+<BODY>
+<H1>A Beginner's Guide to HTML</H1>
+
+This is a primer for producing documents
+in HTML, the markup language used by the World Wide Web.
+
+<UL>
+<LI> <A NAME=14 HREF="#Acronyms">Acronym expansion 
+     - the World Wide Web alphabet soup</A>
+<LI> <A NAME=15 HREF="#MinimalHTML">The minimal HTML document</A>
+     <UL>
+     <LI><A HREF="#Titles">Titles</A>
+     <LI><A HREF="#Headings">Headings</A>
+     <LI> <A HREF="#Paragraphs">Paragraphs</A>  
+     </UL>
+<LI> <A NAME=18 HREF="#Links">Linking to other documents</A>
+<UL>
+<LI> <A NAME=19 HREF="#URL">Uniform Resource Locator (URL)</A>
+<LI> <A NAME=20 HREF="#NamedAnchorOther">Anchors to specific sections
+     in other documents</A>
+<LI> <A NAME=21 HREF="#NamedAnchorSame">Anchors to specific sections
+     in the same document</A>
+</UL>
+
+<LI> <A NAME=22 HREF="#MoreTags">Additional markup tags</A>
+<UL>
+<LI> <A NAME=23 HREF="#Lists">Lists</A>
+<UL>
+<LI><A NAME=24 HREF="#UnnumberedLists">Unnumbered lists</A>
+<LI><A NAME=25 HREF="#NumberedLists">Numbered lists</A>
+<LI> <A NAME=26 HREF="#DescriptiveLists">Descriptive lists</A>
+<LI> <A NAME=27 HREF="#NestedLists">Nested Lists</A>
+</UL>
+
+<LI> <A NAME=28 HREF="#Preformatted">Preformatted text</A>
+<LI> <A NAME=29 HREF="#Blockquote">Extended quotes</A>
+<LI> <A NAME=30 HREF="#CharFormat">Character formatting</A>
+<LI> <A NAME=31 HREF="#SpecialChar">Special characters</A>
+</UL>
+
+<LI> <A NAME=32 HREF="#InlineImage">Inline images</A>
+<LI> <A NAME=33 HREF="#ExternalImage">External images</A>
+<LI> <A NAME=34 HREF="#Troubleshooting">Troubleshooting</A>
+<LI> <A NAME=35 HREF="#ExtendedExample">A longer example</A>
+<LI> <A NAME=36 HREF="#MoreInfo">For more information</A>
+</UL>
+
+<A NAME="Introduction">
+<H2>Introduction</H2>
+</A>
+
+<A NAME="Acronyms">
+<H3>Acronym expansion</H3>
+</A>
+
+<DL>
+<DT> <I>WWW</I>
+<DD> World Wide Web
+<DT> <I>SGML</I>
+<DD> Standard Generalized Markup Language - This is perhaps best be
+     thought of as a programming language for style sheets.
+<DT> <I>DTD</I>
+<DD> Document Type Definition - This is a specific implementation 
+     of document description using SGML.
+     One way to think about this is: Fortran is to a computer program as
+     SGML is to a DTD. 
+<DT> <I>HTML</I>
+<DD> HyperText Markup Language - HTML is a SGML DTD. In practical terms,
+     HTML is a collection of styles used to define the various components
+     of a World Wide Web document.
+<DT> 
+<DD> 
+</DL>
+
+<A NAME="NotCovered">
+<H3>What this primer doesn't cover</H3>
+</A>
+
+This primer assumes that you have:
+<UL>
+<LI> at least a passing knowledge of how to use NCSA
+     Mosaic or other WWW browser 
+<LI> a general understanding of how World Wide Web servers
+     and client browsers work and
+<LI> access to a World Wide Web server for
+     which you would now like to produce HTML documents
+</UL>
+
+<A NAME="CreatingHTML">
+<H3>Creating HTML documents</H3>
+</A>
+
+HTML documents are in plain text format and can be created using any
+text editor (e.g., Emacs or vi on Unix machines). 
+A couple of WWW browsers (tkWWW for X Window System machines and
+CERN's WWW browser for the NeXT) do include rudimentary HTML editors
+in a WYSIWYG environment, and you may want to try one of them first
+before delving into the details of HTML.  <P>
+
+<blockquote>
+<i>
+You can preview documents in progress with NCSA Mosaic (and some other
+WWW browers). 
+Open the document using the Open Local option under the <b>File</b> menu. 
+Use the Filters,
+Directories, and Files fields to locate the document or
+enter the path and name of the document in the 
+Name of Local Document to Open field. Press OK.
+</i>
+
+<P>
+If you see
+edits you want to make, enter them in the source file. Save the changes.
+Return to NCSA Mosaic and press the <b>Reload</b> button on the
+bottom menu. The edits are reflected in the on-screen display.
+</P>
+
+</blockquote>
+
+<A NAME="MinimalHTML">
+<H2>The minimal HTML document</H2>
+</A>
+
+Here is a barebones example of HTML:  <P>
+____________________________________________________________________
+<PRE>
+  &lt;TITLE>The simplest HTML example&lt;/TITLE>
+
+  &lt;H1>This is a level one heading&lt;/H1>
+
+  Welcome to the world of HTML.  
+  This is one paragraph.&lt;P>
+
+  And this is a second.&lt;P>
+</PRE>
+____________________________________________________________________
+<p>
+<A NAME=10 HREF="/General/Internet/WWW/MinimalHTML.html">Click here</A> to see the formatted
+version of the example.
+<p>
+
+HTML uses <dfn>tags</dfn> to tell the World Web viewer how to display
+the text. The above example uses 
+
+<UL>
+<LI> the <code>&lt;TITLE></code> tag (which
+has a correspondinging <code>&lt;/TITLE></code> tag), which specifies
+the title of the document,
+<LI>the <code>&lt;H1></code> header tag
+(with corresponding <code>&lt;/H1></code>), and
+<LI>the <code>&lt;P></code> end-of-paragraph tag.
+</UL>
+
+HTML tags consist of a left angular bracket (<code>&lt;</code>), known
+as a ``less than'' symbol to mathematicians, followed by some text
+(called the <dfn>directive</dfn>) and closed
+by a right angular bracket (<code>></code>). 
+Tags are usually paired, e.g. <code>&lt;H1></code> and <code>&lt;/H1></code>.
+ 
+The ending tag looks just like the starting tag except 
+a slash (/) precedes the text within the brackets.  
+In the example, <code>&lt;H1></code> tells the viewer to
+start formatting a top level heading; 
+<code>&lt;/H1></code> tells the viewer that the heading is complete. 
+<P>
+
+The primary exception to the pairing rule is the <code>&lt;P></code>
+end-of-paragraph tag.  There is no such thing as <code>&lt;/P></code>.<P>
+
+<strong>Note:</strong> HTML is <EM>not</EM> case senstive. 
+<code>&lt;title></code> is completely equivalent
+to <code>&lt;TITLE></code> or <code>&lt;TiTlE></code>.  <P>
+
+Not all tags are supported by all World Wide Web browsers.
+If a browser does not support a tag, it should just ignore it, though.  <P>
+
+<A NAME="Titles">
+<H3>Titles</H3>
+</A>
+Every HTML document should have a title. A title is generally
+displayed separately from
+the document and is used primarily for document identification in other
+contexts (e.g., a WAIS search). Choose about half a dozen
+words that describe the document's purpose.
+
+<blockquote>
+<i>
+In NCSA Mosaic, the Document Title field is at the top of the screen 
+just below the pulldown menus.
+</i>
+</blockquote>
+
+The directive for the title tag is <code>&lt;title&gt;</code>.
+The title generally goes on the first line of the document.  <P>
+
+<A NAME="Headings">
+<H3>Headings</H3>
+</A>
+HTML has six
+levels of headings (numbered 1 through 6), with 1 being the most prominent.
+Headings are displayed in larger and/or bolder fonts than the normal
+body text. The first heading in each document should be tagged 
+<code>&lt;H1></code>.
+
+The syntax of the heading tag is:
+<PRE>
+  &lt;H<var>y</var>><var>Text of heading</var>&lt;/H<var>y</var>>
+</PRE>
+where <var>y</var> is a number between 1 and 6 specifying the level
+of the heading.  <P>
+
+For example, the coding for the ``Headings'' section heading above is
+<PRE>
+  &lt;H3>Headings&lt;/H3>
+</PRE>
+
+<strong>Title versus first heading</strong>: 
+In many documents (including this one), the first heading is identical
+to the title. For multi-part documents, the text of the first heading
+should be suitable for a reader who is already browsing
+related information (e.g., a chapter title), while the title 
+tag should identify the node in a wider context (e.g., include
+both the book title and the chapter title).  <P>
+
+<A NAME="Paragraphs">
+<H3>Paragraphs</H3>
+</A>
+
+Unlike documents in most word processors, 
+carriage returns and white space in HTML files aren't significant.
+Word wrapping can occur at any point in your source file, and multiple
+spaces are collapsed into a single space. Notice that in the barebones example,
+the first paragraph is coded as <P>
+<PRE>
+  Welcome to HTML.
+  This is the first paragraph. &lt;P>
+</PRE>
+In the source file, there is a line break between the sentences. 
+A Web browser ignores this line break and starts
+a new paragraph only when it reaches a <code>&lt;P></code> tag.  <P>
+
+<strong>Important:</strong>
+You must end each paragraph with <code>&lt;P></code>. The viewer
+ignores any indentations or blank lines in the source text. Without
+the <code>&lt;P></code> tags, the document becomes one large paragraph. HTML
+relies almost entirely on the tags for formatting instructions. (The
+exception is text tagged as ``preformatted,'' explained
+<A NAME=12 HREF="#Preformatted">below</A>.) For instance, the following
+would produce identical output as the first barebones HTML example:   <P>
+________________________________________________________________________
+<PRE>
+  &lt;TITLE>The simplest HTML example&lt;/TITLE>&lt;H1>This is a level 
+  one heading&lt;/H1>Welcome to the world of HTML. This is one 
+  paragraph.&lt;P>And this is a second.&lt;P>
+</PRE>
+________________________________________________________________________
+<P>
+
+However, to preserve readability in HTML files, headings should be 
+on separate lines, and paragraphs should be separated by blank lines. <P>
+
+<A NAME="Links">
+<H2>Linking to other documents</H2>
+</A>
+
+The chief power of HTML comes from its ability to <dfn>link</dfn> regions
+of text (and also images) to another document (or an image). 
+These regions are typically
+highlighted by the browser to indicate that they are hypertext links.
+
+<blockquote>
+<i>
+In NCSA Mosaic, hypertext links are in color and underlined by default.
+It is possible to modify this in the Options menu as well as in your 
+.Xdefaults file.
+</i>
+</blockquote>
+
+HTML's single hypertext-related directive is <code>A</code>,
+which stands for anchor. To include anchors in your document: <P>
+
+<OL>
+<LI> Start by opening the anchor with the leading angle bracket
+        and the anchor directive followed by a space: <code>&lt;a</code>
+<LI> Specify the document that's being pointed to by giving the
+        parameter
+        <code> href="filename.html" </code> followed by a 
+        closing angle bracket: <code>&gt;</code>
+<LI> Enter the text that will serve as the hypertext
+        link in the current document
+        (i.e., the text that will be in a
+        different color and/or underlined)
+<LI> Enter the ending anchor tag: <code>&lt;/A&gt;</code>
+</OL>
+
+Below is an sample hypertext reference:  <P>
+
+<PRE>
+  &lt;a href="MaineStats.html"&gt;Maine&lt;/a&gt;
+</PRE>
+
+This entry makes ``Maine'' the hyperlink to the document
+<samp>MaineStats.html</samp>.  <P>
+
+<A NAME="URL">
+<H3>Uniform Resource Locator</h3>
+</A>
+
+A Uniform Resource Locator (URL) refers to the format used by WWW
+documents to locate other files. A URL gives the type of resource being
+accessed (e.g., gopher, WAIS) and the path of the file. The format used is:<p>
+
+<pre>
+<var>scheme</var>://<var>host.domain</var>[:<var>port</var>]/<var>path</var>/<var>filename</var>
+</pre>
+
+where <dfn>scheme</dfn> is one of: 
+<DL>
+<DT> <code>file</code>
+<DD> a file on your local system, or a file on an anonymous ftp server
+<DT> <code>http</code>
+<DD> a file on a World Wide Web server
+<DT> <code>gopher</code>
+<DD> a file on a Gopher server
+<DT> <code>WAIS</code>
+<DD> a file on a WAIS server
+</DL>
+The scheme can also be <code>news</code> or <code>telnet</code>, but these
+are used much less often than the above.
+
+The port number can generally be omitted from the URL.  <P>
+
+For example if you wanted to insert a link to this primer, you would insert
+<PRE>
+  &lt;A HREF="http://www.ncsa.uiuc.edu/General/Internet/WWW/HTMLPrimer.html">
+  NCSA's HTML Primer&lt;/A>
+</PRE>
+into your document. This would make the text ``NCSA's HTML Primer'' 
+a hyperlink leading to this document.  <P>
+ 
+Refer to the 
+<A HREF="http://info.cern.ch/hypertext/WWW/Addressing/Addressing.html">
+Addressing</a> document prepared by CERN for additional 
+information about URLs.
+<cite>A Beginner's
+<A HREF="http://www.ncsa.uiuc.edu/demoweb/url-primer.html">Guide</a>
+to URLs</cite> is located
+on the NCSA Mosaic Help menu.   <P>
+<A NAME="NamedAnchorOther">
+<h3> Anchors to Specific Sections in Other Documents</h3>
+</A>
+Anchors can also be used to move to a particular section in 
+a document. 
+
+Suppose you wish to set a link from document A and a specific
+section in document B. First you need to set up what is called
+a <dfn>named anchor</dfn> in document B. For example, to add an
+anchor named ``Jabberwocky" to document B, you would insert 
+
+<PRE>
+  Here's &lt;A NAME="Jabberwocky"&gt;some text&lt;/a&gt;.
+</PRE>
+
+Now when you create the link in document A, you include not
+only the filename, but also the named anchor, separated by a hash
+mark(``#''):
+
+<PRE>
+    This is my &lt;A HREF="documentB.html#Jabberwocky"&gt;link&lt;/a&gt;.
+</PRE>
+
+Now clicking on the word ``link'' in document A
+would send the reader directly to the words ``some text'' in document B.
+
+<A NAME="NamedAnchorSame">
+<h3> Anchors to Specific Sections within the Current Document</h3>
+</A>
+
+The technique is exactly the same except the file name is now
+omitted.  <P>
+
+<strong>Note:</strong> The NCSA Mosaic <b>Back</b> button does not work 
+for an anchor within
+a document because the <b>Back</b> button is designed to move
+to a previous document. Move back manually within the document using the 
+scroll bar. <p> 
+
+
+<H2>
+<A NAME="MoreTags">Additional markup tags</A>
+</H2>
+The above is sufficient to produce simple HTML documents. For more
+complex documents, HTML also has tags for several types of lists, 
+extended quotes, character formatting and other items, all described
+below.
+
+<H3>
+<A NAME="Lists">
+Lists
+</A>
+</H3>
+
+HTML supports unnumbered, numbered, and descriptive lists.
+For list items, no
+paragraph separator is required. The tags for the items in the list 
+terminate each list item.
+
+<A NAME="UnnumberedLists">
+<h4> Unnumbered Lists </h4>
+</A>
+
+<oL>
+<LI> Start with an opening list <code>&lt;ul&gt;</code> tag.
+<LI> Enter the <code>&lt;li&gt;</code> tag followed by the
+individual item. (Remember that no closing tag is needed.)
+<LI> End with a closing list <code>&lt;/ul&gt;</code> tag.
+</oL>
+
+Below an example two-item list:  <P>
+
+<PRE>
+  &lt;UL&gt;
+  &lt;LI&gt; apples
+  &lt;LI&gt; bananas
+  &lt;/UL&gt;
+</PRE>
+
+The output is:<p>
+<ul>
+<li>apples
+<li>bananas
+</ul>
+<p>
+
+Note that different viewers display an unordered list differently. A viewer
+might use bullets, filled circles, or dashes to show the items. <p>
+
+<A NAME="NumberedLists">
+<h4>Numbered Lists </h4>
+</A>
+
+A numbered list (also called an ordered list, from where the
+abbreviation comes) uses the <code>&lt;ol&gt;</code>
+directive to start a list 
+rather than the <code>&lt;ul&gt;</code> directive.  The items are
+tagged using the same <code>&lt;li&gt;</code> tag as for a bulleted list. 
+For example:  <P>
+
+<PRE>
+  &lt;OL&gt;
+  &lt;LI&gt; oranges
+  &lt;LI&gt; peaches
+  &lt;LI&gt; grapes
+  &lt;/OL&gt;
+</PRE>
+
+The list looks like this online:<p>
+<ol>
+<li>oranges
+<li>peaches
+<li>grapes
+</ol>
+<p>
+
+<A NAME="DescriptiveLists">
+<h4>Descriptive Lists </h4>
+</A>
+
+A description list usually consists of alternating a <dfn>description
+title</dfn> (abbreviated as dt) and a <dfn>description description</dfn> 
+(abbreviated
+as dd). The description generally starts on a new line, because the viewer
+allows the full line width for the contents of the dt field.<P>
+
+Below is an example description list as included in your source file:  <P>
+
+<PRE>
+  &lt;DL&gt;
+  &lt;DT&gt; National Center for Supercomputing Applications
+  &lt;DD&gt; NCSA is located on the campus of the University 
+  of Illinois at Urbana-Champaign. NCSA is a one of 
+  four member institutions in the National Metacenter for 
+  Computational Science and Engineering.
+  &lt;DT&gt; Cornell Theory Center
+  &lt;DD&gt; CTC is located on the campus of Cornell 
+  University in Ithaca, New York. CTC is another member 
+  of the National Metacenter for  Computational Science 
+  and Engineering.
+  &lt;/DL&gt;
+</PRE>
+
+The output looks like this: <P>
+
+<DL>
+<DT> National Center for Supercomputing Applications
+<DD> NCSA is located on the campus of the University of Illinois
+     at Urbana-Champaign. NCSA is a one of four member institutions in the
+     National Metacenter for Computational Science and Engineering.
+<DT> Cornell Theory Center
+<DD> CTC is located on the campus of Cornell University in Ithaca,
+New York. 
+     CTC is another member of the National Metacenter for Computational 
+     Science and Engineering.
+</DL>
+
+The <code>&lt;DT&gt;</code> and <code>&lt;DD&gt;</code> 
+entries can contain multiple
+paragraphs (separated by paragraph tags), lists, or other description
+information.  <P>
+
+<A NAME="NestedLists">
+<h4> Nested Lists </h4>
+</A>
+
+Lists can be arbitrarily nested. A list item can itself contain
+lists. You can also have a number of paragraphs, each themselves containing
+nested lists, in a single list item, and so on. <p>
+
+Remember that the display of an unordered list varies with the 
+viewer. A browser may not provide
+successive levels of indentation or modify the bullets used at each level. 
+
+<blockquote>
+<i>
+NCSA
+Mosaic indents the second level in the following list and changes
+the ``bullet'' from a bullet to a small box.
+</i>
+</blockquote>
+
+An example nested list:  <P>
+
+<PRE>
+  &lt;UL&gt;
+  &lt;LI&gt; A few New England states:
+    &lt;UL&gt;
+    &lt;LI&gt; Vermont
+    &lt;LI&gt; New Hampshire
+    &lt;/UL&gt;
+  &lt;li&gt; One Midwestern state:
+    &lt;UL&gt;
+    &lt;LI&gt; Michigan
+    &lt;/UL&gt;
+  &lt;/UL&gt;
+</PRE>
+
+The nested list is displayed as  <P>
+
+<UL>
+<LI> A few New England states:
+<UL>
+<LI> Vermont
+<LI> New Hampshire
+</UL>
+<LI>One Midwestern state:
+<UL>
+<LI> Michigan
+</UL>
+</UL>
+
+<A NAME="Preformatted">
+<H3>Preformatted Text</H3>
+</A>
+
+Use the <code>pre</code> tag (which stands for ``preformatted'')
+to include text in a fixed-width font and to cause
+spaces, new lines, and tabs to be significant. This is
+useful for program
+listings. For
+example, the following lines in your source file: <P>
+
+<pre>
+&lt;PRE&gt;
+  #!/bin/csh                           
+  cd $SCR                             
+  cfs get mysrc.f:mycfsdir/mysrc.f   
+  cfs get myinfile:mycfsdir/myinfile   
+  fc -02 -o mya.out mysrc.f           
+  mya.out                              
+  cfs save myoutfile:mycfsdir/myoutfile 
+  rm *                                
+&lt;/PRE&gt;
+</pre>
+
+display as:
+
+<PRE>
+  #!/bin/csh                           
+  cd $SCR                             
+  cfs get mysrc.f:mycfsdir/mysrc.f   
+  cfs get myinfile:mycfsdir/myinfile   
+  fc -02 -o mya.out mysrc.f           
+  mya.out                              
+  cfs save myoutfile:mycfsdir/myoutfile 
+  rm *                                
+</PRE>
+
+Hypertext references (and other HTML tags)
+can be used within &lt;pre&gt; sections.
+
+<A NAME="Blockquote">
+<H3>Extended quotes</H3>
+</A>
+
+Use the <code>&lt;blockquote&gt;</code> and <code>&lt;/blockquote&gt;</code> 
+tags to include
+quotations in a separate block on the screen.  <P>
+
+For example
+<PRE>
+  &lt;blockquote>
+  Let us not wallow in the valley of despair. I say to you, my
+  friends, we have the difficulties of today and tomorrow. &lt;P>
+
+  I still have a dream. It is a dream deeply rooted in the
+  American dream. &lt;P>
+
+  I have a dream that one day this nation will rise up and 
+  live out the true meaning of its creed. We hold these truths 
+  to be self-evident that all men are created equal. &lt;P>
+  &lt;/blockquote>
+</PRE>
+
+The result is
+<blockquote>
+Let us not wallow in the valley of despair. I say to you, my
+friends, we have the difficulties of today and tomorrow.<P>
+
+I still have a dream. It is a dream deeply rooted in the
+American dream.<P>
+
+I have a dream that one day this nation will rise up and 
+live out the true meaning of its creed. We hold these 
+truths to be self-evident that all men are created equal.<P>
+</blockquote>
+
+<A NAME="Addresses">
+<H3>Addresses</H3>
+</A>
+
+The <code>&lt;ADDRESS></code> tag is generally used 
+within HTML documents to specify
+the author of a document and provides a means of contacting the author (e.g.,
+an email address). This is usually the last item in a file and generally 
+starts on a new, left-justified line. <P>
+ 
+For example, the last part of the HTML file for this primer is
+<PRE>
+  &lt;ADDRESS&gt;
+  A Beginner's Guide to HTML / NCSA / pubs@ncsa.uiuc.edu
+  &lt;/ADDRESS&gt;
+</PRE>
+
+The result is:<p> 
+<address>A Beginner's Guide to HTML / NCSA / pubs@ncsa.uiuc.edu</address> <P>
+
+<A NAME="CharFormat">
+<H3>Character formatting</H3>
+</A>
+
+Individual words or sentences can be put in special styles. 
+<dfn>Logical</dfn> styles are
+those that are configured by your viewer.  For example, 
+<code>&lt;CITE&gt;</code>
+may be defined as italic by your viewer. Each time you enter 
+<code>&lt;CITE&gt;</code>
+tags, the viewer automatically displays the text in italics. <p>
+
+A <dfn>physical</dfn> style
+is one that you determine, and the viewer displays 
+what you have coded. For example
+<code>&lt;I&gt;</code> tells the viewer to 
+display your text in italics. <P>
+
+For HTML-coded documents, you should use 
+logical styles whenever possible. Future
+implementations of HTML may not implement physical styles at all. <p>
+ 
+<UL>
+<li>Italic
+  <ul>
+  <LI> <code>&lt;I&gt;text&lt;/i&gt;</code> puts text in italics
+        (<i>HTML Primer</i>)
+  <li> <code>&lt;em&gt;text&lt;/em&gt;</code> also italicizes text (only <em>one</em> viewer)
+  <li> <code>&lt;cite&gt;text&lt;/cite&gt;</code> is used for citations of names
+        of manuals, sections, or books (<cite>HTML Primer</cite>)
+  <li> <code>&lt;var&gt;text&lt;/var&gt;</code> indicates a 
+        variable (<var>filename</var>)
+</ul>
+<li>Bold  
+  <ul>
+  <LI> <code>&lt;b&gt;text&lt;/b&gt;</code> puts text in bold
+        (<b>Important</b>)
+  <li> <code>&lt;strong&gt;text&lt;/strong&gt;</code> also emphasizes
+   text (<strong>Note:</strong>)
+   </ul>
+<li>Fixed width font
+   <ul>
+   <LI> <code>&lt;tt&gt;text&lt;/tt&gt;</code> puts text in a fixed-width 
+        font (<tt>1 SU = 1 CPU hour</tt>)
+   <LI> <code>&lt;code&gt;text&lt;/code&gt;</code> also puts text in 
+        a fixed-width font (<code>1 SU = 1 CPU hour</code>)
+   <li> <code>&lt;samp&gt;text&lt;/samp&gt;</code> formats text for samples
+        (<samp>-la</samp>)
+   <li> <code>&lt;kbd&gt;text&lt;/kbd&gt;</code> displays the names of 
+         keys on the keyboard (<kbd>HELP</kbd>)
+       </ul>
+<li>Other (the following special tag currently does not display in NCSA Mosaic)
+    <ul>
+    <li> <code>&lt;dfn&gt;text&lt;/dfn&gt;</code> 
+         displays a definition in italics 
+    </ul>
+</UL>
+
+<A NAME="SpecialChar">
+<H3>Special Characters</H3>
+</A>
+
+Three <A NAME=characters>characters</A> out of the entire ASCII (or ISO 8859) character set
+are <i>special</i> and cannot be used ``as-is'' within an HTML document.
+These characters are left angle bracket (<code>&lt;</code>), right
+angle bracket (<code>&gt;</code>), and ampersand (<code>&amp;</code>).  <P>
+
+The angle brackets are used to specify HTML tags (as
+shown above), while the ampersand is used as the escape mechanism
+for these and other characters:
+
+<UL>
+<LI> <code>&amp;lt;</code> is the <i>escape sequence</i> for 
+        <code> &lt;</code>
+<LI> <code>&amp;gt;</code> is the escape sequence for 
+        <code> &gt;</code>
+<LI> <code>&amp;amp;</code> is the escape sequence for 
+        <code> &amp;</code>
+</UL>
+
+Note that ``escape sequence'' means that the given sequence of
+characters represents the single character in an HTML document and that 
+the semicolon is required. The
+conversion to the single character itself takes place when the
+document is formatted for display by a reader.  <P>
+
+There are additional escape sequences, such as 
+a whole set of sequences to support
+8-bit character sets (ISO 8859-1). For example:
+
+<UL>
+<LI> <code>&amp;ouml;</code> is the escape sequence for 
+        a lowercase <code>o</code> with an umlaut: &ouml;
+<LI> <code>&amp;ntilde;</code> is the escape sequence for 
+        a lowercase <code>n</code> with an tilde: &ntilde;
+<LI> <code>&amp;Egrave;</code> is the escape sequence for 
+        an uppercase <code>E</code> with a grave mark: &Egrave;
+</UL>
+
+Many such escapes exist and are available in a <A NAME=2
+HREF="http://info.cern.ch/hypertext/WWW/MarkUp/ISOlat1.html">listing</A>
+ from CERN.  <P>
+
+
+<A NAME="InlineImage">
+<H2>Inline Images</H2>
+</A>
+
+NCSA Mosaic is can display X Bitmap (XBM) or GIF format images inside 
+documents. <i>Each image
+takes time to process and slows down the initial display of the
+document</i>. Using a particular image multiple times in a document
+causes very little performance degradation compared to using the image only once. <P>
+
+<b>NOTE:</b> The <code>&lt;img&gt;</code> tag is an HTML extension 
+first implemented in NCSA Mosaic. Currently it is not
+understood by most other World
+Wide Web browsers.  <P>
+
+To include an inline image in your document, enter:  <P>
+
+<PRE>
+    &lt;IMG SRC="filename.GIF"&gt;
+</PRE>
+<p>
+
+<img src="filename.GIF"> By default the bottom of an image is aligned with
+the text as shown in this paragraph.
+<p>
+
+<img align=top src="filename.GIF"> Include the <code>align=top</code> 
+parameter if you want the viewer 
+to align adjacent text with the top of the
+image as shown in this paragraph. The full inline image
+tag with the top alignment is: 
+<pre>
+    &lt;IMG ALIGN=top SRC="filename.GIF"&gt;
+</pre>
+<p>
+If you have a larger image 
+(i.e., one that fills most of your screen),
+you should insert an end of paragraph tag (<code>&lt;p&gt;</code>) before 
+inserting the image parameter. End with another paragraph tag. 
+(Or you might want to have the 
+image open a new window, which is explained below.)
+</p>
+
+<A NAME="ExternalImage">
+<h3> External Images </h3>
+</A>
+
+You may want to have an image open as a separate document when a user
+activates a link on either a word or a smaller version of the image 
+that you have inlined
+into your document. This is considered an external image and is particularly
+useful because (assuming you use a word for your hypertext link) 
+you do not have 
+any processing time degradation in the main document. Even if you include a
+small image in your document as the hyperlink 
+to the larger image, the processing
+time for the ``postage stamp'' image is less than the full image.<p>
+
+To include a reference to a graphic in an external document, use 
+<pre>
+    &lt;A HREF = "filename.gif"&gt;link anchor&lt;/A&gt;
+</pre> <p> 
+Make certain the image
+is in GIF, TIFF, JPEG, RGB, or HDF format.
+
+<A NAME="Troubleshooting">
+<H2>Troubleshooting</H2>
+</A>
+<UL>
+<LI> While certain HTML constructs can be nested (for example, you
+        can have an anchor within a header), they cannot be overlapped.
+        For example, the following is <i>invalid</i> HTML:
+<PRE>
+    &lt;h1&gt;This is &lt;a name="foo"&gt;invalid HTML.&lt;/h1&gt;&lt;/a&gt;
+</PRE>
+     Because many current HTML parsers aren't very good at handling
+        invalid HTML, avoid overlapping constructs. <p>
+        
+<LI> In NCSA Mosaic, when an <code>&lt;img&gt;</code> tag points at 
+        an image that does not
+        exist or cannot be otherwise obtained from whatever server
+        is supposed to be serving it, the NCSA logo is substituted. 
+        For example, entering <code>&lt;img href="DoesNotExist.gif"&gt;
+        </code> (where
+        "DoesNotExist.gif" is a nonexistant file) causes the following to
+        be displayed: <IMG SRC="DoesNotExist.gif">  <P>
+
+        If this happens to you, first make sure that the referenced
+        image does in fact exist and that the hyperlink has the correct
+        information in the link entry. 
+        Next verify that the file permission is set appropriately 
+        (world-readable). 
+</UL>
+
+<A NAME="ExtendedExample">
+<H2>A Longer Example</H2>
+</A>
+
+Here is a longer example
+of a HTML document:  <P>
+________________________________________________________________________
+<PRE>
+  &lt;TITLE>A Longer Example&lt;/TITLE>
+  &lt;H1&gt;A Longer Example&lt;/H1&gt;
+
+  This is a simple HTML document. This is the first
+  paragraph. &lt;P&gt;
+
+  This is the second paragraph, which shows special effects.  This is a 
+  word in &lt;I&gt;italics&lt;/I&gt;.  This is a word in &lt;B&gt;bold&lt;/B&gt;.
+  Here is an inlined GIF image: &lt;IMG SRC="myimage.gif"&gt;. 
+  &lt;p&gt;
+
+  This is the third paragraph, which demonstrates links.  Here is 
+  a hypertext link from the word &lt;A HREF="subdir/myfile.html"&gt;foo&lt;/A&gt;
+  to a document called "subdir/myfile.html". &lt;P&gt;  (If you 
+  try to follow this link, you will get an error screen.)
+
+  &lt;H2&gt;A second-level header&lt;/H2&gt;
+
+  Here is a section of text that should display as a 
+  fixed-width font: &lt;P&gt;
+
+  &lt;PRE&gt;
+      On the stiff twig up there
+      Hunches a wet black rook
+      Arranging and rearranging its feathers in the rain ...
+  &lt;/PRE&gt;
+
+  This is a unordered list with two items: &lt;P&gt;
+
+  &lt;UL&gt;
+  &lt;LI&gt; cranberries
+  &lt;LI&gt; blueberries
+  &lt;/UL&gt;
+
+  This is the end of my example document. &lt;P&gt;
+
+  &lt;address&gt;Me (me@mycomputer.univ.edu)&lt;/address&gt;
+</PRE>
+________________________________________________________________________
+<p>
+<A NAME=37 HREF="/General/Internet/WWW/LongerExample.html">Click here</A> 
+to see the formatted version.
+<p>
+
+<A NAME="MoreInfo">
+<H2>For More Information</H2>
+</A>
+
+More <A NAME=information>information</A> on HTML is available through the
+following hyperlinks. <P>
+
+<ul>
+<li><A HREF="/General/Internet/WWW/Grobe.html">HTML Quick 
+    Reference Guide</a>, which gives a comprehensive listing of HTML codes
+
+<li>the official HTML <A NAME=3
+HREF="http://info.cern.ch/hypertext/WWW/MarkUp/MarkUp.html">specs
+</A> 
+
+<li>the in-development HTML <A NAME=6
+HREF="http://info.cern.ch/hypertext/WWW/MarkUp/HTML.html">RFC</A> (Request
+for Comments)
+
+<li>a description of <A NAME=4
+HREF="http://info.cern.ch/hypertext/WWW/MarkUp/SGML.html">SGML</a>, 
+the Standard Generalized Markup Language 
+
+<li>the <A NAME=5
+HREF="http://info.cern.ch/hypertext/WWW/Addressing/Addressing.html">URL 
+(Uniform Resource Locator) specification</A>
+
+<li>the <A NAME=8
+HREF="http://info.cern.ch/hypertext/WWW/Provider/Style/Overview.html">style 
+guide</A> for online hypertext document structures 
+
+</ul>
+<p>
+____________________________________________________________________
+<ADDRESS> A Beginner's Guide to HTML/ NCSA / pubs@ncsa.uiuc.edu </ADDRESS>

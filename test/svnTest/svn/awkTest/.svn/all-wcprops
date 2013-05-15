@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/svn/!svn/ver/2/awkTest
+END
+passwd
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/awkTest/passwd
+END
+pass
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/awkTest/pass
+END
+phonelist.awk
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/awkTest/phonelist.awk
+END
+awkfls
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/awkTest/awkfls
+END
+awkscr
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/awkTest/awkscr
+END
+awkFs
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/awkTest/awkFs
+END
+getFileAttr.awk
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/2/awkTest/getFileAttr.awk
+END
+scrf
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/awkTest/scrf
+END

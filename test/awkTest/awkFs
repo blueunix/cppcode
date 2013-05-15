@@ -1,0 +1,18 @@
+#!/usr/bin/awk -f
+BEGIN{
+  FS="[:\t, ]"
+  OFS=":"
+  print "Begin"  
+}
+
+
+{
+  print $1,$2,$3,$4,$5
+  print $1$2$3$4$5
+  print $1"," $2","$3","$4","$5
+}
+
+
+END{
+  print "End"
+}

@@ -1,0 +1,19 @@
+# HTML entities missing from htmlpty, computed on Fri Nov 28 15:15:17 MST 1997 from
+# -r--r--r-- 1 beebe 10838 Mar 23 1996 /usr/local/lib/html-check/lib/html-mcom.dtd
+#
+-rw-rw-r-- 1 BLOCKQUOTE	  FIXED	       IETF	    NAMES	 SAMP
+-rw-rw-r-- 1 BODY	  FONT	       IGNORE	    NEXTID	 SELECT
+Makefile     BR		  FORM	       IMAGE	    NOBR	 STRONG
+1	     CDATA	  GET	       IMG	    OL		 SUBMIT
+169	     CENTER	  H1	       IMPLIED	    OPTION	 TEXT
+174	     CHECKBOX	  H2	       INCLUDE	    P		 TEXTAREA
+34	     CITE	  H3	       INPUT	    PASSWORD	 TEXTSEARCH
+38	     CODE	  H4	       ISINDEX	    PCDATA	 TITLE
+60	     DD		  H5	       KBD	    PLAINTEXT	 TT
+62	     DIR	  H6	       LI	    POST	 UL
+A	     DL		  HEAD	       LINK	    PRE		 URN
+ADDRESS	     DT		  HIDDEN       LISTING	    RADIO	 VAR
+B	     DTD	  HR	       MENU	    REL		 VERSION
+BASE	     EM		  HTML	       META	    RESET	 WBR
+BASEFONT     EN		  I	       METHODS	    REV		 XMP
+BLINK	     ENTITIES	  ID	       NAME

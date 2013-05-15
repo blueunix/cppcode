@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 25
+/svn/!svn/ver/12/perltest
+END
+wordCount2.pl
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/12/perltest/wordCount2.pl
+END
+cat.pl
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/12/perltest/cat.pl
+END
+word
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/12/perltest/word
+END
+hello.pl
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/12/perltest/hello.pl
+END
+wordCount.pl
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/12/perltest/wordCount.pl
+END

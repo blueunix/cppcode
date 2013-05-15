@@ -1,0 +1,103 @@
+ 5-Jul-1997 16:27:37-GMT,1902;000000000001
+Received: from JIMI.CS.UNLV.EDU (jimi.CS.UNLV.EDU [131.216.22.2])
+	by csc-sun.math.utah.edu (8.8.5/8.8.5) with SMTP id KAA25433
+	for <beebe@math.utah.edu>; Sat, 5 Jul 1997 10:27:36 -0600 (MDT)
+Received: from jimi.CS.UNLV.EDU by JIMI.CS.UNLV.EDU id aa24493;
+          5 Jul 97 9:17 PDT
+Received: from dess.tallships.istar.ca by JIMI.CS.UNLV.EDU id aa24484;
+          5 Jul 97 9:15 PDT
+Received: from pt028.tallships.istar.ca (pt028.tallships.istar.ca [137.186.18.128])
+	by dess.tallships.istar.ca (8.8.5/8.8.5) with ESMTP id NAA14903;
+	Sat, 5 Jul 1997 13:14:45 -0300
+Date: Sat, 5 Jul 1997 13:14:45 -0300
+Message-Id: <199707051614.NAA14903@dess.tallships.istar.ca>
+subject: Re: Checking support for HTML named character entities
+return-view-to: hclsmith@tallships.istar.ca (Hume Smith)
+to: Gerhard Niklasch <nikl@mathematik.tu-muenchen.de>
+x-mailer: unicorn 0.46 (tk 4.2, tcl 7.6, windows Windows 95 4.0 intel)
+in-reply-to: <199707051511.RAA05647@pchelwig1.mathematik.tu-muenchen.de>
+return-receipt-to: hclsmith@tallships.istar.ca (Hume Smith)
+content-type: text/plain; charset=us-ascii
+references: <199707051511.RAA05647@pchelwig1.mathematik.tu-muenchen.de>
+priority: normal
+mime-version: 1.0
+from: Hume Smith <hclsmith@tallships.istar.ca>
+organization: North End TTA Fans and Reed Organ Repairers
+cc: Chimera Lovers <bug-chimera@cs.unlv.edu>
+precedence: normal
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by csc-sun.math.utah.edu id KAA25433
+
+> (Also, &quot; officially no longer exists  (ie this entity cannot
+> be referred to by name in strict HTML 3.2)...
+
+according to <URL:http://www.cs.duke.edu/%7Edsb/kgv-faq/errors.html#bad-entity> they haven't dropped it, it was just forgot.
+
+--
+Hume Smith <URL:mailto:hclsmith@tallships.istar.ca>
+<URL:http://dess.tallships.istar.ca/%7Ehclsmith/>
+
+To hell with the information age, I want a wisdom age. - Bill Maxim
+
+
+ 5-Jul-1997 16:44:45-GMT,1585;000000000001
+Received: from JIMI.CS.UNLV.EDU (jimi.CS.UNLV.EDU [131.216.22.2])
+	by csc-sun.math.utah.edu (8.8.5/8.8.5) with SMTP id KAA25761
+	for <beebe@math.utah.edu>; Sat, 5 Jul 1997 10:44:44 -0600 (MDT)
+Received: from jimi.CS.UNLV.EDU by JIMI.CS.UNLV.EDU id aa24612;
+          5 Jul 97 9:27 PDT
+Received: from pchelwig1.mathematik.tu-muenchen.de by JIMI.CS.UNLV.EDU
+          id aa24595; 5 Jul 97 9:24 PDT
+Received: (from nikl@localhost) by pchelwig1.mathematik.tu-muenchen.de (8.6.12/8.6.9) id SAA05828 for bug-chimera@cs.unlv.edu; Sat, 5 Jul 1997 18:24:13 +0200
+From: Gerhard Niklasch <nikl@pchelwig1.mathematik.tu-muenchen.de>
+Message-Id: <199707051624.SAA05828@pchelwig1.mathematik.tu-muenchen.de>
+Subject: Re: Checking support for HTML named character entities
+To: Chimera Lovers <bug-chimera@cs.unlv.edu>
+Date: Sat, 5 Jul 1997 18:24:12 +0200 (MET DST)
+Reply-To: Gerhard Niklasch <nikl@mathematik.tu-muenchen.de>
+X-Mailer: ELM [version 2.4 PL24]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+
+[GN]
+> > (Also, &quot; officially no longer exists  (ie this entity cannot
+> > be referred to by name in strict HTML 3.2)...
+
+[Hume Smith]
+> according to =
+> <URL:http://www.cs.duke.edu/%7Edsb/kgv-faq/errors.html#bad-entity> they
+> haven't dropped it, it was just forgot.
+
+Cf. <URL:http://www.w3.org/pub/WWW/MarkUp/Wilbur/>
+which, as I read it, suggests there was somewhat more intention
+behind it than merely forgetting it...
+
+Regards, Gerhard
+
+(pray don't Cc me when responding to this list, or vice versa;
+my mail feed from the list is reliable)
+
+------------------------------------------------------------------------
+And here is what http://www.w3.org/pub/WWW/MarkUp/Wilbur/ says:
+
+What happened to &quot;?
+
+Several people have commented on the absence of the &quot; entity in the
+HTML 3.2 Recommendation. This disappeared in a rationalization of the
+entities, and with hindsight should not have been removed. In general, you
+don't need it, and here are two work arounds:
+
+When you want to include a double quote mark in a CDATA attribute value, you
+can go ahead and do so provided you use single quote marks around the
+attribute value itself, e.g.
+
+     ALT='and then he said "Let it be done" and it was so'
+
+Another approach is to use the numeric entity &#34; as in:
+
+     ALT="and then he said &#34;Let it be done&#34; and it was so"
+
+This latter method is perhaps better suited to authoring tools as it doesn't
+depend on any contextual clues and can be used in normal text as well as in
+CDATA attribute values.

@@ -1,0 +1,4 @@
+:11:<PLAINTEXT> is abberant HTML and is strongly deprecated; use <PRE>...</PRE> instead
+:13:</PLAINTEXT> is treated as ordinary text: PLAINTEXT environment continues to end-of-file
+:16:non-zero <TAG> ... </TAG> nesting level at end-of-file
+:16:unclosed tags in tag nest: line:opentag = 10:BODY 3:HTML

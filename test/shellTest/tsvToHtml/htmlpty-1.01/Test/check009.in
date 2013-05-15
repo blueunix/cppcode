@@ -1,0 +1,657 @@
+<HTML>
+<BODY>
+<P>
+This file does nothing useful in HTML, and is definitely not even
+completely correct syntatically.  Its purpose is to exercise every
+keyword recognized by html-pretty.
+</P>
+
+<HR>
+
+<H2>
+Paired begin/end tags
+</H2>
+
+<DIR>
+<LI> Blah blah blah blah blah.
+</DIR>
+
+<MENU>
+<LI> Blah blah blah blah blah.
+</MENU>
+
+<DL>
+<DD> DD tag.
+<DT> DT tag. 
+Blah blah blah blah blah.
+</DL>
+
+<OL>
+<LI> Blah blah blah blah blah.
+</OL>
+
+<UL>
+<LI> Blah blah blah blah blah.
+</UL>
+
+<A>
+Blah blah blah blah blah.
+</A>
+
+<ABBREV>
+Blah blah blah blah blah.
+</ABBREV>
+
+<ABSTRACT>
+Blah blah blah blah blah.
+</ABSTRACT>
+
+<ACRONYM>
+Blah blah blah blah blah.
+</ACRONYM>
+
+<ADDED>
+Blah blah blah blah blah.
+</ADDED>
+
+<ADDRESS>
+Blah blah blah blah blah.
+</ADDRESS>
+
+<ARG>
+Blah blah blah blah blah.
+</ARG>
+
+<AROW>
+Blah blah blah blah blah.
+</AROW>
+
+<ARRAY>
+Blah blah blah blah blah.
+</ARRAY>
+
+<AU>
+Blah blah blah blah blah.
+</AU>
+
+<BLOCKQUOTE>
+Blah blah blah blah blah.
+</BLOCKQUOTE>
+
+<BODY>
+Blah blah blah blah blah.
+</BODY>
+
+<BQ>
+Blah blah blah blah blah.
+</BQ>
+
+<CAPTION>
+Blah blah blah blah blah.
+</CAPTION>
+
+<CITE>
+Blah blah blah blah blah.
+</CITE>
+
+<CMD>
+Blah blah blah blah blah.
+</CMD>
+
+<DIV1>
+Blah blah blah blah blah.
+</DIV1>
+
+<DIV2>
+Blah blah blah blah blah.
+</DIV2>
+
+<DIV3>
+Blah blah blah blah blah.
+</DIV3>
+
+<DIV4>
+Blah blah blah blah blah.
+</DIV4>
+
+<DIV5>
+Blah blah blah blah blah.
+</DIV5>
+
+<DIV6>
+Blah blah blah blah blah.
+</DIV6>
+
+<FIG>
+Blah blah blah blah blah.
+</FIG>
+
+<FN>
+Blah blah blah blah blah.
+</FN>
+
+<FOOTNOTE>
+Blah blah blah blah blah.
+</FOOTNOTE>
+
+<FORM>
+Blah blah blah blah blah.
+</FORM>
+
+<H1>
+Blah blah blah blah blah.
+</H1>
+
+<HR>
+
+<H2>
+Blah blah blah blah blah.
+</H2>
+
+<H3>
+Blah blah blah blah blah.
+</H3>
+
+<H4>
+Blah blah blah blah blah.
+</H4>
+
+<H5>
+Blah blah blah blah blah.
+</H5>
+
+<H6>
+Blah blah blah blah blah.
+</H6>
+
+<HEAD>
+Blah blah blah blah blah.
+</HEAD>
+
+<HIDE>
+Blah blah blah blah blah.
+</HIDE>
+
+<HTML>
+Blah blah blah blah blah.
+</HTML>
+
+<LANG>
+Blah blah blah blah blah.
+</LANG>
+
+<LH>
+Blah blah blah blah blah.
+</LH>
+
+<MARGIN>
+Blah blah blah blah blah.
+</MARGIN>
+
+<MATH>
+Blah blah blah blah blah.
+</MATH>
+
+<MESSAGE>
+Blah blah blah blah blah.
+</MESSAGE>
+
+<NOTE>
+Blah blah blah blah blah.
+</NOTE>
+
+<OPTION>
+Blah blah blah blah blah.
+</OPTION>
+
+<OVERLAY>
+Blah blah blah blah blah.
+</OVERLAY>
+
+<PERSON>
+Blah blah blah blah blah.
+</PERSON>
+
+<QUOTE>
+Blah blah blah blah blah.
+</QUOTE>
+
+<REMOVED>
+Blah blah blah blah blah.
+</REMOVED>
+
+<SELECT>
+Blah blah blah blah blah.
+</SELECT>
+
+<TABLE>
+Blah blah blah blah blah.
+</TABLE>
+
+<TEXTAREA>
+Blah blah blah blah blah.
+</TEXTAREA>
+
+<TITLE>
+Blah blah blah blah blah.
+</TITLE>
+
+<P>
+Blah blah blah blah blah.
+</P>
+
+<HR>
+
+<H2>
+Paragraph tags
+</H2>
+
+<P>
+Blah blah blah blah blah.
+</P>
+
+<HR>
+
+<H2>
+Font-like tags
+</H2>
+
+<B>
+Blah blah blah blah blah.
+</B>
+
+<BIG>
+Blah blah blah blah blah.
+</BIG>
+
+<CODE>
+Blah blah blah blah blah.
+</CODE>
+
+<DFN>
+Blah blah blah blah blah.
+</DFN>
+
+<EM>
+Blah blah blah blah blah.
+</EM>
+
+<I>
+Blah blah blah blah blah.
+</I>
+
+<KBD>
+Blah blah blah blah blah.
+</KBD>
+
+<Q>
+Blah blah blah blah blah.
+</Q>
+
+<REV>
+Blah blah blah blah blah.
+</REV>
+
+<S>
+Blah blah blah blah blah.
+</S>
+
+<SAMP>
+Blah blah blah blah blah.
+</SAMP>
+
+<SMALL>
+Blah blah blah blah blah.
+</SMALL>
+
+<STRONG>
+Blah blah blah blah blah.
+</STRONG>
+
+<TT>
+Blah blah blah blah blah.
+</TT>
+
+<U>
+Blah blah blah blah blah.
+</U>
+
+<VAR>
+Blah blah blah blah blah.
+</VAR>
+
+<HR>
+
+<H2>
+Math mode tags
+</H2>
+
+<ABOVE>
+Blah blah blah blah blah.
+</ABOVE>
+
+<BELOW>
+Blah blah blah blah blah.
+</BELOW>
+
+<BOX>
+Blah blah blah blah blah.
+</BOX>
+
+<ROOT>
+Blah blah blah blah blah.
+</ROOT>
+
+<SUB>
+Blah blah blah blah blah.
+</SUB>
+
+<SUP>
+Blah blah blah blah blah.
+</SUP>
+
+<HR>
+
+<H2>
+Line break tags
+</H2>
+
+Blah blah blah blah blah.<BR>
+Blah blah blah blah blah.<BR>
+Blah blah blah blah blah.<BR>
+
+<HR>
+
+<H2>
+Short tags
+</H2>
+
+<ITEM>
+Blah blah blah blah blah.
+
+<OVER>
+Blah blah blah blah blah.
+
+<TAB>
+Blah blah blah blah blah.
+
+<TABLE>
+<TR>
+<TH>
+Head 1 head 1 head 1 head 1 head 1.
+</TH>
+<TD>
+Data 1 data 1 data 1 data 1 data 1.
+</TD>
+</TR>
+<TR>
+<TH>
+Head 2 head 2 head 2 head 2 head 2.
+</TH>
+<TD>
+Data 2 data 2 data 2 data 2 data 2.
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H2>
+Standalone tags
+</H2>
+
+<BASE>
+Blah blah blah blah blah.
+
+<CHANGED>
+Blah blah blah blah blah.
+
+<HR>
+Blah blah blah blah blah.
+
+<IMG>
+Blah blah blah blah blah.
+
+<INPUT>
+Blah blah blah blah blah.
+
+<ISINDEX>
+Blah blah blah blah blah.
+
+<LINK>
+Blah blah blah blah blah.
+
+<META>
+Blah blah blah blah blah.
+
+<RENDER>
+Blah blah blah blah blah.
+
+<SCRIPT>
+Blah blah blah blah blah.
+</SCRIPT>
+
+<STYLE>
+Blah blah blah blah blah.
+</STYLE>
+
+<STYLES>
+Blah blah blah blah blah.
+
+<NEXTID>
+Blah blah blah blah blah.
+
+<HR>
+
+<H2>
+Verbatim text
+</H2>
+
+<LISTING>
+Blah blah blah blah blah.
+</LISTING>
+
+<PRE>
+Blah blah blah blah blah.
+</PRE>
+
+<XMP>
+Blah blah blah blah blah.
+</XMP>
+
+
+<BAR>
+Blah blah blah blah blah.
+</BAR>
+
+<BT>
+Blah blah blah blah blah.
+</BT>
+
+<CREDIT>
+Blah blah blah blah blah.
+</CREDIT>
+
+<DDOT>
+Blah blah blah blah blah.
+</DDOT>
+
+<DEL>
+Blah blah blah blah blah.
+</DEL>
+
+<DOT>
+Blah blah blah blah blah.
+</DOT>
+
+<HAT>
+Blah blah blah blah blah.
+</HAT>
+
+<INS>
+Blah blah blah blah blah.
+</INS>
+
+<ROW>
+Blah blah blah blah blah.
+</ROW>
+
+<SQRT>
+Blah blah blah blah blah.
+</SQRT>
+
+<T>
+Blah blah blah blah blah.
+</T>
+
+<TILDE>
+Blah blah blah blah blah.
+</TILDE>
+
+<VEC>
+Blah blah blah blah blah.
+</VEC>
+
+a <ATOP> b
+a <CHOOSE> b
+a <LEFT> b
+a <OF> b
+a <RIGHT> b
+
+<!-- Add the new tags introduced with HTML 3.2 and 4.0: -->
+
+<ABBR>
+Blah blah blah blah blah.
+</ABBR>
+
+<ANY>
+Blah blah blah blah blah.
+</ANY>
+
+<APPLET>
+Blah blah blah blah blah.
+</APPLET>
+
+<AREA VALUE="Blah blah blah blah blah">
+
+<BASEFONT VALUE="Blah blah blah blah blah">
+
+<BDO>
+Blah blah blah blah blah.
+</BDO>
+
+<BLINK>
+Blah blah blah blah blah.
+</BLINK>
+
+<BR VALUE="Blah blah blah blah blah">
+
+<BUTTON>
+Blah blah blah blah blah.
+</BUTTON>
+
+<CENTER>
+Blah blah blah blah blah.
+</CENTER>
+
+<COL VALUE="Blah blah blah blah blah">
+
+<COLGROUP>
+Blah blah blah blah blah.
+</COLGROUP>
+
+<DIV>
+Blah blah blah blah blah.
+</DIV>
+
+<EMPTY>
+Blah blah blah blah blah.
+</EMPTY>
+
+<FIELDSET>
+Blah blah blah blah blah.
+</FIELDSET>
+
+<FONT>
+Blah blah blah blah blah.
+</FONT>
+
+<FRAME VALUE="Blah blah blah blah blah">
+
+<FRAMESET>
+Blah blah blah blah blah.
+</FRAMESET>
+
+<IFRAME>
+Blah blah blah blah blah.
+</IFRAME>
+
+<LABEL>
+Blah blah blah blah blah.
+</LABEL>
+
+<LEGEND>
+Blah blah blah blah blah.
+</LEGEND>
+
+<MAP>
+Blah blah blah blah blah.
+</MAP>
+
+<NOBR>
+Blah blah blah blah blah.
+</NOBR>
+
+<NOFRAMES>
+Blah blah blah blah blah.
+</NOFRAMES>
+
+<NOSCRIPT>
+Blah blah blah blah blah.
+</NOSCRIPT>
+
+<OBJECT>
+Blah blah blah blah blah.
+</OBJECT>
+
+<OPTGROUP>
+Blah blah blah blah blah.
+</OPTGROUP>
+
+<PARAM VALUE="Blah blah blah blah blah">
+
+<SPAN>
+Blah blah blah blah blah.
+</SPAN>
+
+<STRIKE>
+Blah blah blah blah blah.
+</STRIKE>
+
+<TBODY>
+Blah blah blah blah blah.
+</TBODY>
+
+<TEXTFLOW>
+Blah blah blah blah blah.
+</TEXTFLOW>
+
+<TFOOT>
+Blah blah blah blah blah.
+</TFOOT>
+
+<THEAD>
+Blah blah blah blah blah.
+</THEAD>
+
+<WBR VALUE="Blah blah blah blah blah">
+
+<PLAINTEXT>
+
+Blah blah blah blah blah, in short
+lines (< 35 characters) right up
+the very last line in the file,
+with absolutely no intervening end
+tag, such as </PLAINTEXT>.  This
+text should just go on until the
+end.

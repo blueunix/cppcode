@@ -1,0 +1,295 @@
+%% html-pretty version 1.00 date [11-Nov-1997]
+%% This is the contained-in tag relationships file,
+%% prepared from Entities/HTML32.tab by cittable.awk.
+%% [25-Aug-2001]
+
+CannotContain[A]          : A
+
+CannotContain[DIR]        : BLOCKQUOTE CENTER DIR DIV DL FORM HR \
+                            ISINDEX LISTING MENU OL P PRE TABLE UL XMP
+
+CannotContain[FORM]       : FORM
+
+CannotContain[MENU]       : BLOCKQUOTE CENTER DIR DIV DL FORM HR \
+                            ISINDEX LISTING MENU OL P PRE TABLE UL XMP
+
+CannotContain[PRE]        : BIG FONT IMG SMALL SUB SUP
+
+CannotContain[TITLE]      : LINK META SCRIPT STYLE
+
+ContainedIn[#PCDATA]      : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI \
+                            OPTION P PRE SAMP SMALL STRIKE STRONG SUB \
+                            SUP TD TEXTAREA TH TITLE TT U VAR
+
+ContainedIn[A]            : ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[ADDRESS]      : BLOCKQUOTE BODY CENTER DIV FORM TD TH
+
+ContainedIn[APPLET]       : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[AREA]         : MAP
+
+ContainedIn[B]            : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[BASE]         : HEAD
+
+ContainedIn[BASEFONT]     : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[BIG]          : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[BLOCKQUOTE]   : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[BODY]         : HTML
+
+ContainedIn[BR]           : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[CAPTION]      : TABLE
+
+ContainedIn[CDATA]        : LISTING PLAINTEXT SCRIPT STYLE XMP
+
+ContainedIn[CENTER]       : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[CITE]         : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[CODE]         : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[DD]           : DL
+
+ContainedIn[DFN]          : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[DIR]          : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[DIV]          : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[DL]           : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[DT]           : DL
+
+ContainedIn[EM]           : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[EMPTY]        : AREA BASE BASEFONT BR HR IMG INPUT ISINDEX \
+                            LINK META PARAM
+
+ContainedIn[FONT]         : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[FORM]         : BLOCKQUOTE BODY CENTER DD DIV LI TD TH
+
+ContainedIn[H1]           : BLOCKQUOTE BODY CENTER DIV FORM TD TH
+
+ContainedIn[H2]           : BLOCKQUOTE BODY CENTER DIV FORM TD TH
+
+ContainedIn[H3]           : BLOCKQUOTE BODY CENTER DIV FORM TD TH
+
+ContainedIn[H4]           : BLOCKQUOTE BODY CENTER DIV FORM TD TH
+
+ContainedIn[H5]           : BLOCKQUOTE BODY CENTER DIV FORM TD TH
+
+ContainedIn[H6]           : BLOCKQUOTE BODY CENTER DIV FORM TD TH
+
+ContainedIn[HEAD]         : HTML
+
+ContainedIn[HR]           : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[I]            : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[IMG]          : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[INPUT]        : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[ISINDEX]      : BLOCKQUOTE BODY CENTER DD DIV FORM HEAD LI \
+                            TD TH
+
+ContainedIn[KBD]          : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[LI]           : DIR MENU OL UL
+
+ContainedIn[LINK]         : HEAD
+
+ContainedIn[LISTING]      : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[MAP]          : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[MENU]         : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[META]         : HEAD
+
+ContainedIn[OL]           : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[OPTION]       : SELECT
+
+ContainedIn[P]            : ADDRESS BLOCKQUOTE BODY CENTER DD DIV FORM \
+                            LI TD TH
+
+ContainedIn[PARAM]        : APPLET
+
+ContainedIn[PLAINTEXT]    : HTML
+
+ContainedIn[PRE]          : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[SAMP]         : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[SCRIPT]       : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 HEAD I KBD LI \
+                            P PRE SAMP SMALL STRIKE STRONG SUB SUP TD \
+                            TH TT U VAR
+
+ContainedIn[SELECT]       : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[SMALL]        : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[STRIKE]       : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[STRONG]       : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[STYLE]        : HEAD
+
+ContainedIn[SUB]          : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[SUP]          : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[TABLE]        : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[TD]           : TR
+
+ContainedIn[TEXTAREA]     : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[TH]           : TR
+
+ContainedIn[TITLE]        : HEAD
+
+ContainedIn[TR]           : TABLE
+
+ContainedIn[TT]           : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[U]            : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[UL]           : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+
+ContainedIn[VAR]          : A ADDRESS APPLET B BIG BLOCKQUOTE BODY \
+                            CAPTION CENTER CITE CODE DD DFN DIV DT EM \
+                            FONT FORM H1 H2 H3 H4 H5 H6 I KBD LI P PRE \
+                            SAMP SMALL STRIKE STRONG SUB SUP TD TH TT \
+                            U VAR
+
+ContainedIn[XMP]          : BLOCKQUOTE BODY CENTER DD DIV FORM LI TD \
+                            TH
+

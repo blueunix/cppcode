@@ -1,0 +1,937 @@
+2001-08-25 10:35:28-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Release version 1.01 [manual pages remain numbered 1.00, since
+	there are no end-user-visible changes.]
+
+	* htmlpty.l: Update VERSION and DATE, and include DATE in
+	--version option output.
+
+	* htmlpty.l: Add call to normalize_tag() in end_list_item(),
+	fixing a bug where lowercased list-item-ending tags (</li>, </dt>,
+	</dd>, ...) were not properly uppercased. The new test check027
+	validates the bug fix.
+
+	* htmlpty.l: Add new global counter break_suppress, function
+	out_nbsp(), lex pattern to call it, and code in out_word() to
+	handle break_suppress.  This provides special handling for the
+	case of "foo&nbsp;bar", which should not be broken across lines.
+	The new test check029 validates the new feature.
+
+	* htmlpty.l: Define YYLMAX if it is not already defined.
+
+	* htmlpty.l: Add typecast in one return from strchr() to remove
+	a warning from C++ compilers.
+
+	* htmlpty.l: Add static modifier to the two arrays passed to
+	setvbuf() in main().  This was a nasty bug that, despite extensive
+	testing on a dozen platforms, with scores of C and C++ compilers,
+	and use of html-pretty on millions of lines of HTML data, never
+	showed up, until a port was done to an Apple PowerMac G3 (267 MHz)
+	running GNU/Linux 2.2.18-4hpmac.  On that system, the output of
+	test check005 was corrupted by a few nonprintable characters; all
+	other tests passed.  A difficult five-hour-long debug session,
+	involving insertion of numerous assertions about buffer access
+	variables, and tests with different compiler options and buffer
+	sizes, finally led to the uncovering of the bug.
+
+	* htmlpty.l: Remove unused argument in first SPRINTF() call in
+	print_tag_nest().
+
+	* fileutil.c: Add code in systemdir() to treat empty string
+	returned from path_of() like NULL string, thereby eliminating an
+	error in finding a needed grammar file.
+
+	* configure.in: Comment out AC_PROG_CXX to allow builds on systems
+	lacking a C++ compiler, and update comments about GNU/Linux flex
+	deficiency.  Also, use new autoconf-2.52 to generate configure.
+
+	* Makefile.in: Add check027 check028 check029 to CHECKFILES.
+
+	* Makefile.in: Remove TMPTESTDIR on completion of checks.
+
+	* Makefile.in: Update comments to Lisp-style.
+
+	* Makefile.in: Remove one sed pattern in the .l.c rule because it
+	causes problems with recent flex systems, and was only needed for
+	the now-retired NeXT O/S.
+
+	* Makefile.in: Add -L$(prefix)/lib to LDFLAGS, since some systems
+	do not search /usr/local/lib by default.
+
+	* Test/check028.{in,opt}: New test to record an as-yet-unfixed
+	bug, resulting from the inability of simple regular-expression
+	pattern matching to count: angle brackets inside strings inside
+	<tag key="value"> confuse the parser, and produce incorrect
+	output.
+
+
+1999-12-08  Nelson H. F. Beebe  <beebe@math.utah.edu>
+	* Release version 1.00.1
+
+	This is a minor maintenance release, with changes in only
+	two files: configure.in and Makefile.in.  The first handles
+	some peculiarities of GNU/Linux, and the second adds a missing
+	rm before a ln (that bug is not seen until you try to install
+	the package twice, as I did today to repair a problem arising
+	from an apparent compiler error)
+
+1997-10-29 -- 1997-11-29  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Release version 1.00.
+
+	The most significant changes for this version are
+
+		(1) Remodel html-pretty after tex-pretty, making its
+		formatting actions entirely style-file driven, so that
+		support for most new tags can be added without having to
+		modify the program again, and so that users can change the
+		formatting of any HTML tag.  This significantly extends
+		the program's abilities, since now arbitrary SGML files
+		can be prettyprinted as well, provided a suitable style
+		file is available.
+
+		(2) Adapt code for use with GNU autoconf and autoheader
+		(but NOT automake).
+
+	* README: Move the bulk of the installation instructions to new
+	INSTALL file, but leave a very brief description that provides
+	sufficient information to complete an installation on most UNIX
+	systems.
+
+	* INSTALL: New file with documentation about configure and
+	sections (some from old README):
+
+		QUICK INSTALLATION
+		INSTALLATION DETAILS
+		EFFICIENCY ISSUES FOR HTMLPTY 0.11
+		EFFICIENCY ISSUES FOR HTMLPTY 1.00
+		IBM PC INSTALLATION
+		TESTING AND VALIDATION
+
+	There are extensive remarks about optimization issues in the
+	EFFICIENCY ISSUES ... and TESTING AND VALIDATION sections.  The
+	hot spots of the program are now completely understood and
+	documented, and steps have been taken to alleviate all bottlenecks
+	that have been identified, except for those bottlenecks in the
+	automatically-generated lexical analyzer code, which are not
+	further optimizable.
+
+	* AUTHORS, BUGS, ChangeLog, COPYING, NEWS, README.AWK, THANKS:
+	additional files included in the distribution following GNU
+	standards.
+
+	* acconfig.h, confix.h, config.hin, configure, configure.in,
+	configure.sed, confix.h, Makefile.in: new files for autoconf.
+
+	Running the configure script generates Makefile from Makefile.in,
+	and config.h from config.hin.  config.hin itself is generated
+	automatically by autoheader from data in the configure.in file.
+
+	* Backup/*: The Backup subdirectory preserves copies of Makefile,
+	config.h, configure, and htmlpty.c to aid in manual bootstrapping,
+	and error recovery.
+
+	* builtin.h: new file with builtin_style[] initialization.  Except
+	for the encapsulation of paragraphs into separate strings, the
+	format of this data is identical to that of data in a style file,
+	and therefore, the same routines are used to parse it.
+
+	* common.h: new file to share some common definitions needed by
+	htmlpty.l and table.c.
+
+	* default.h: new file with default_style[] initialization; this table
+	associates action functions with style class names.
+
+	* htmlpty.l: Replace lex patterns for specific HTML tags with
+	single generic pattern that now (indirectly) calls
+	call_action_by_name() to process the tag.  This reduced the size
+	of the generated C file from 8481 lines to 4243 lines (50%), and
+	the size of the executable file on Sun Solaris 2.5 from 434176 to
+	286720 bytes (66%) before stripping symbols, and 411580 to 263196
+	bytes (63%) after stripping symbols.
+
+	Of course, this simplification in the lexical analyzer requires
+	run-time hash-table lookup of tags to find the correct action
+	function, but the extra overhead is very small: here are run times
+	from a Sun SPARCstation LX Solaris 2.5 system with cc -g
+	compilation:
+
+		Old version: time make check: 8.59u 13.60s 0:27.54 80.5%
+		New version: time make check: 9.18u 13.77s 0:27.38 83.8%
+
+	The increase in run time is only 3%, and in wallclock time, 5%.
+	The greater flexibility of the new version is certainly worth this
+	small difference.
+
+	* htmlpty.l, *.c, *.h: update for autoconf support: bracket all
+	includes with processor conditionals testing HAVE_xxx_H symbols
+	set in config.h.
+
+	* htmlpty.l and table.c: new function table_wrapup() called before
+	exit to free all dynamically allocated memory.  The Sun Solaris
+	dbx leak checks and memory use checks documented in the ``Memory
+	utilization'' subsection of the README file demonstrate that the
+	program is free of access violations, and frees all memory that it
+	allocates.
+
+	* htmlpty.l: add new functions file_of(), makefilename(),
+	path_of(), program_name(), and systemdir() to clean up filename
+	parsing, and make it easy to add support for a system-wide
+	initialization file, stored in the same directory as the
+	executable program.  The initialization file name is now
+	determined by the executable file name, allowing differently-named
+	copies of the program to do different things.
+
+	* htmlpty.l: Change DATE, PROGRAM, and VERSION from preprocessor
+	symbols to global variables so that they can be used in function
+	generate_style_file() in table.c.
+
+	* htmlpty.l: Add -brief option to suppress DOCTYPE, HTML, HEAD,
+	and BODY wrappers.  Together with -no-comment-banner, this makes
+	it possible to use html-pretty as a filter for prettyprinting
+	fragments of HTML code, such as in a text editor.
+
+	* htmlpty.l: Add -extend-style flag to allow temporary
+	command-line setting of formatting rules.
+
+	* htmlpty.l: Add -logfile flag to allow redirection of stderr (for
+	deficient operating systems)
+
+	* htmlpty.l: Add -print-stylefile flag to print style file.
+
+	* htmlpty.l: Add -no-read-stylefiles flag to prevent reading style
+	files.
+
+	* htmlpty.l: Add -stylefile flag to specify a style file.
+
+	* htmlpty.l: Add -trace-opens flag to trace file openings: replace
+	all fopen() calls by tfopen() in this file, and in table.c.
+
+	* htmlpty.l: Add -unknown-tag-warning flag to warn about
+	unrecognized HTML tags.
+
+	* htmlpty.l: add new function prescan_options(), and global
+	variables read_stylefiles_flag and trace_flag, because the
+	-no-read-stylefiles and -trace-opens options need to be checked
+	for before anything else is done.
+
+	* htmlpty.l: Add new function tagname() to return uppercase SGML
+	tag for lookup use in call_action_by_name().
+
+	* htmlpty.l: do_arg(): set quit_flag when an unrecognized option
+	is found.  All options will be processed, but if any were not
+	recognized, processing terminates without reading any input files.
+
+	* htmlpty.l: do_arg(): change main switch() statement to use
+	integer OPT_xxx values returned by option_type(), instead of
+	switching on initial characters of option letters, so that
+	long option names are transparently supported.  Add many new
+	switch cases to handle all of the new options.
+
+	* table.c: new file with shared code from tex-pretty.
+
+	* fileutil.[ch]: new files with file utility functions and
+	declarations moved from htmlpty.l.
+
+	* sysutil.[ch]: new files with system utility functions and
+	declarations moved from htmlpty.l.
+
+	* htmlpty.l: check_anchor_level(): new function to check for
+	nested anchor environments, which are illegal in recent HTML
+	grammars.
+
+	* htmlpty.l: check_for_forbidden_end_tag(): new function to check
+	if a tag is a member of the classes with SGML content EMPTY;
+	these are not permitted to have end tags.
+
+	* htmlpty.l: check_tag_nesting(): new function to check for proper
+	tag nesting, according to the CannotContain[] and ContainedIn[]
+	rules from the built-in list (defined in builtin.h), or from a
+	style file.  It is only required if the (non-default)
+	-check-tag-nesting command-line option is specified.
+
+	* htmlpty.l: check_tag_restriction(): new function to search for a
+	tag in its CannotContain[] and ContainedIn[] restriction lists.
+
+	* htmlpty.l: complex_markup_declaration(): new function to copy an
+	SGML markup declaration <!XXX ... >, handling nested comments.
+
+	* htmlpty.l: concat(): new function to return a dynamic string
+	which is a concatenation of its arguments.
+
+	* htmlpty.l: delete_backwards(): new function to delete backwards
+	in the output buffer, big_buffer[].  It is used for blank
+	trimming, and for adjusting the position of punctuation following
+	tags.
+
+	* htmlpty.l: delete_horizontal_spaces(): new function to delete
+	horizontal spaces, but not newlines, in the output buffer,
+	big_buffer[].
+
+	* htmlpty.l: delete_trailing_spaces(): new function to delete
+	spaces, including newlines, in the output buffer, big_buffer[].
+
+	* htmlpty.l: do_catalog_file(): new function to open the catalog
+	file, read lines from it, and hand them off to do_catalog_line()
+	for processing.
+
+	* htmlpty.l: do_catalog_line(): new function to process a catalog
+	file line, and if the level matches the requested grammar level,
+	create the style file name, and call do_style_file() to process
+	it.
+
+	* htmlpty.l: do_initialization_files(): new function to call
+	do_style_file() for each of the standard initialization files.
+
+	* htmlpty.l: do_tag(): new function to process a generic HTML/SGML
+	tag matched by a lex pattern.  It tracks tag nesting, checks for
+	nesting errors, and then calls an action function to process the
+	tag.
+
+	* htmlpty.l: do_tag_2(): new function, similar to do_tag(), used
+	when TAG_CACHE is defined.  This was an experiment at
+	optimization, to avoid having to repeat the tagname -> action
+	function lookup; details are in the INSTALL file, but in summary,
+	it was not advantageous, and is therefore not currently used.
+
+	* htmlpty.l: flush_buffer(): new function to force big_buffer[] to
+	be written out.  Called from dputc() when the buffer is full, and
+	from wrapup() at end of processing.
+
+	* htmlpty.l: has_SGML_content_EMPTY(): new function to find out if
+	a tag has SGML content EMPTY, meaning that it cannot have an end
+	tag.  This is a time-critical function, and has undergone careful
+	hand optimization.
+
+	* htmlpty.l: hn(): add code to warn about anchor environments
+	containing header environments, instead of the reverse order.
+	Recent HTML grammar versions require that change.  Also, add code
+	to start a new paragraph after the header; it will be removed if
+	the next tag is a <P> paragraph start.
+
+	* htmlpty.l: main(): add code to call setvbuf() to increase input
+	buffer sizes.  On several UNIX systems tested, this only reduced
+	run times by at most 5%, but perhaps the optimization may be
+	useful on other systems.
+
+	* htmlpty.l: main(): when lex is used instead of flex, add code to
+	check that yytext[] array sizes are inconsistent.  lex
+	implementations vary in how they declare yytext[], and I spent
+	some time in a debugger tracking down a nasty memory-overwriting
+	error that was due to just such an inconsistency.
+
+	* htmlpty.l: main(): add support for -print-stylefile and
+	-keep-format options.
+
+	* htmlpty.l: markup_declaration(): new function to provide the
+	action for the "markup-declaration" style class.
+
+	* htmlpty.l: math_pair(): new function to provide the action for
+	the "math-pair" style class.
+
+	* htmlpty.l: multiline_end(): new function to handle blank lines
+	and the -blank-line-warning option.
+
+	* htmlpty.l: new_paragraph(): new function to start a new paragraph.
+
+	* htmlpty.l: option_error(): new function to handle a command-line
+	option error.
+
+	* htmlpty.l: option_match(): new function to match a command-line
+	option against entries in the internal option table, allowing
+	case-insensitive comparison, and abbreviation to a unique prefix
+	of the full option name.
+
+	* htmlpty.l: option_type(): new function to convert a command-line
+	option string to an integer OPT_xxx flag for cleaner and faster
+	decision making in argument parsing.  It also provides transparent
+	support for GNU and POSIX-style --<option>.
+
+	* htmlpty.l: out_verbatim_char(): new function to output a
+	character to big_buffer[] in verbatim mode.  This version of
+	html-pretty has abandoned the old double buffering scheme, and
+	instead uses fenceposts to track the position of the last newline,
+	and last verbatim character.  Actions such as blank trimming
+	cannot delete a verbatim character.  The double buffering scheme
+	required an extra copy of output data, was complex to manage, and
+	proved to be a source of logic errors and synchronization errors.
+	The new scheme is much cleaner, and conforms to a set of critical
+	invariants documented in dputc(), giving great confidence its
+	correctness.
+
+	* htmlpty.l: paragraph_contains(); augment tag list with entries
+	from recent grammars.  This hard-coded list could eventually be
+	removed, since it is available in the Contains[] relationships in
+	the Entities/*.tab files, but for the time being, the Contains[]
+	table is not used in the style files.
+
+	* htmlpty.l: paragraph_break(): new function to handle a paragraph
+	break, and the -convert-paragraph-breaks option.
+
+	* htmlpty.l: peek_tag_nest_line_number(): new function to return
+	the line number of the entry at the top of the tag nest.
+
+	* htmlpty.l: peek_tag_nest_tagname(): new function to return the
+	tag name of the entry at the top of the tag nest.
+
+	* htmlpty.l: plaintext(): new function to provide the action for
+	the "plaintext" style class.  It warns about the deprecated status
+	of this class, and recommends <PRE> ... </PRE> instead.
+
+	* htmlpty.l: copy_verbatim(): add code to check for use of
+	</PLAINTEXT>, and warn that it is treated as ordinary text, rather
+	than an end-of-environment command.
+
+	* htmlpty.l: pop_tag_nest(): new function to pop the tag nest down
+	to a matching tag.
+
+	* htmlpty.l: prescan_options(): new function to scan the
+	command-line arguments for options that must be handled before any
+	files are accessed; these options are -[no-]read-stylefiles and
+	[-no-]trace-opens.
+
+	* htmlpty.l: print_tag_nest(): new function to print the tag nest
+	at end of execution (called from wrapup()).  If the tag nest is
+	not empty, then there are unclosed tags in the input stream.
+
+	* htmlpty.l: punctuation(): rewrite to do a better job of removing
+	whitespace between a tag and following punctuation.
+
+	* htmlpty.l: push_tag_nest(): new function to push an entry onto
+	the tag nest.
+
+	* htmlpty.l: search(): new function to search for a string inside
+	another string.  It is essentially equivalent to the non-Standard
+	C function, strstr(), provided by some implementations.  We choose
+	a different name in order to avoid potential type clashes with
+	declarations of strstr() in library header files.  This is a key
+	function when -check-tag-nesting has been specified, so it is
+	carefully optimized for speed.
+
+	* htmlpty.l: tagname(): new function to return an uppercase SGML
+	tagname from tag ("<sgml>" -> "SGML").
+
+	* htmlpty.l: verbatim_with_translation(): new function to support
+	the -keep-format option: it copies its input verbatim, but
+	translates the 4 characters < > & " to SGML entities.  It also
+	warns about the need for a <META ...> tag if non-ASCII characters
+	are encountered.
+
+	* htmlpty.l: usage(): update to handle all new options.
+
+	* htmlpty.l: warning(): add support for -quiet and
+	-warnings-in-comments options.
+
+	* htmlpty.l: wrapup(): add code to handle case of <PLAINTEXT>,
+	call print_tag_nest(), trim final whitespace, and guarantee a
+	final newline before calling flush_buffer() for the last time.
+
+	* htmlpty.l: all options are now long names for readability, but
+	can be abbreviated to a unique prefix, and for some, down to a
+	single letter.  The new options are:
+
+		-blank-line-warning
+		-brief
+		-catalogfile filename
+		-check-tag-nesting
+		-comment-banner
+		-convert-paragraph-breaks
+		-email-address user@host
+		-extend-style "style : TAG TAG ..."
+		-extend-style "TAG : TAG TAG ..."
+		-file filename
+		-grammar-level level
+		-keep-format
+		-logfile filename
+		-no-blank-line-warning
+		-no-brief
+		-no-check-tag-nesting
+		-no-convert-paragraph-breaks
+		-no-keep-format
+		-no-print-stylefile
+		-no-quiet
+		-no-read-stylefiles
+		-no-trace-opens
+		-no-unknown-tag-warning
+		-no-warnings-in-comments
+		-outfile filename
+		-personal-name name
+		-print-stylefile
+		-quiet
+		-read-stylefiles
+		-trace-opens
+		-unknown-tag-warning
+		-warnings-in-comments
+
+	* htmlpty.man: complete rewrite of older version.  Document all
+	new options and add many new sections and subsections.  The
+	section headings are now
+
+		NAME
+		SYNOPSIS
+		DESCRIPTION
+		OPTIONS
+		FORMATTING CONVENTIONS
+			Recognized HTML Tags
+			HTML Tag Omission
+			Style Class: body
+			Style Class: comment
+			Style Class: doctype
+			Style Class: font
+			Style Class: head
+			Style Class: html
+			Style Class: inline
+			Style Class: line-break
+			Style Class: link
+			Style Class: list
+			Style Class: list-header
+			Style Class: list-item
+			Style Class: markup-declaration
+			Style Class: math
+			Style Class: math-pair
+			Style Class: pair
+			Style Class: paragraph
+			Style Class: plaintext
+			Style Class: section
+			Style Class: short
+			Style Class: standalone
+			Style Class: standalone-nocheck
+			Style Class: title
+			Style Class: verbatim
+			Style Class: verbatim-nocheck
+		STYLE FILES
+		CATALOG DIRECTORY
+		COMMENTS IN HTML AND SGML
+		HTML GRAMMAR CONSTRAINTS
+		PRETTYPRINTER LIMITATIONS
+		PRETTYPRINTER IMPLEMENTATION LIMITS
+		SEE ALSO
+		AUTHOR
+		AVAILABILITY
+
+	The HTML GRAMMAR CONSTRAINTS is particularly long (24 pages) and
+	noteworthy. I found that separate tables of constraints for each
+	supported grammar level produced far too much data, so software
+	(included with the html-pretty distribution) was written to merge
+	the separate tables into a master table, with each tag qualified
+	by a grammar level list, if it is not available in all grammar
+	levels.  The tables are generated completely automatically, and
+	then output in troff/nroff form for direct inclusion in the manual
+	page file.
+
+	Computer generation of these tables is essential, because the
+	complexity of the tag relationships is far beyond a human's
+	ability to generate them reliably by hand. Also, the automation
+	means that it will be relatively simple to incorporate future
+	versions of HTML grammars in these tables.
+
+	Because of the large size of htmlpty.man, man2html was extended
+	during this work to provide for splitting of the output HTML into
+	sectional files.  This makes viewing of documentation with a Web
+	browser much more responsive, since in most cases, the largest
+	portion of the manual pages, the long HTML GRAMMAR CONSTRAINTS
+	section, will not have to be loaded.
+
+	Without splitting, the .html file is about 317KB; with splitting,
+	the one long section is 225KB, the next largest section is
+	29KB. the smallest is 0.5KB, and the average (excluding the long
+	one) is only 8.7KB.  Thus, the typical user will need to download
+	only (8.7/317 ==) 3% of the complete documentation.  The one
+	drawback is that searching across all of the files is no longer
+	possible.
+
+	Navigational facilities are also enhanced with the split, because
+	top and bottom menus offer links to up to three preceding and
+	three following sections, plus a link to the root section.
+
+	* DTD/*: HTML grammars (*.dtd), HTML entities (*.ent), SGML
+	entities (*.sgml), and SGML declarations (*.sgml).  This directory
+	is identical to the contents of /usr/local/lib/html-check/lib
+	installed with html-check and html-ncheck, but is included in
+	the html-pretty distribution for completeness.
+
+	* Entities/*, Missing/*, Tokens/*: automatically-generated tables
+	of tag usage and cross-references.
+
+	* HTML40/*: HTML 4.0 (November 1997) documentation directory.
+	Although this is available on the World-Wide Web, it is included
+	with html-pretty because the program may be installed on machines
+	without Web access, such as personal computers, or on machines
+	inside corporate intranets with firewalls that prevent access to
+	the full Internet.
+
+	* PC/*: config.h, pccheck.bat, tcc30bld.bat, tccbld.bat: files for
+	building the IBM PC html-pretty executable, htmlpty.exe, with
+	Borland Turbo C 3.0 (see IBM PC INSTALLATION in the INSTALL file).
+
+	* Styles/*: catalog and *.sty files for each of the supported
+	grammar levels.
+
+	* Test/check*, Test/okay/check*: test input and output files for
+	an extensive validation suite run by "make check" to verify
+	correct operation of the program.  This has proved invaluable for:
+
+		* catching optimizer bugs
+
+		* catching compiler and/or coding errors exposed by new
+		architectures and operating systems
+
+		* verifying that each of the large number of changes
+		made for this release did not introduce new bugs.
+
+
+1997-10-28  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Release version 0.12.  The most significant change for this
+	version is to add support for HTML grammar levels 3.2 and 4.0.
+
+	* htmlpty.l: Revise comment() to output a short comment at the
+	current indentation level, and a long one flush left.
+	Command-line control of this feature should probably be added,
+	but so far, comments are relatively uncommon in HTML files.
+
+	* htmlpty.l: In out_verbatim_string(), add an initial
+	call to out_buffer(); without it, pending output data in
+	line_buffer[] would be output after the current verbatim
+	string, rather than before.  This bug was exposed by the
+	above change to handle short comments; it does not seem
+	to have affected earlier versions of htmlpty.
+
+	* htmlpty.l: Revise comment pattern to exclude embedded [<>],
+	and add new complex comment pattern, and corresponding new
+	function complex_comment() to handle parsing of nested comments.
+	This removes a deficiency of earlier versions of htmlpty, which
+	complained about a comment like this:
+
+	<!-- Edit by Nelson H. F. Beebe <beebe@plot79.math.utah.edu> -->
+
+	The reason was that the embedded [<>] prevented matching the old
+	comment pattern.  Since complex_comment() does not collect a
+	complete comment token. it does not adjust its indentation, and
+	simply outputs it in verbatim mode.  This is reasonable in the
+	event of long commented-out sections of the document.
+
+	The status of comment nesting in SGML is unclear.  html-check
+	and html-ncheck seem to allow one level of nesting, but no more.
+	Also, the status of the blank after "<!--" and before "-->" is
+	hazy.  C. Musciano and B. Kennedy, HTML: The Definition Guide,
+	O'Reilly & Associates, Sebastopol, CA, xx + 385 pp., 1996, ISBN
+	1-56592-175-5, on p. 47 claim the space is required.  Peter
+	Flynn, The WorldWideWeb Handbook, International Thomson Computer
+	Press, Boston, MA, xix + 351 pp., 1995, ISBN 1-85032-205-8, on
+	p. 171 implies the space is not needed.  The SGML parsers do not
+	seem to mind its omission.  The URL
+	HTML40/intro/sgmltut.html#h-3.1.4 says:
+
+	>> ...
+	>> White space is not permitted between the markup declaration
+	>> open delimiter("<!") and the comment open delimiter ("--"),
+	>> but is permitted between the comment close delimiter ("--")
+	>> and the markup declaration close delimiter (">"). A common
+	>> error is to include a string of hyphens ("---") within a
+	>> comment. Authors should avoid putting two or more adjacent
+	>> hyphens inside comments.
+	>> ...
+
+	This would seem to imply that HTML comments cannot be nested.
+
+	Code has been added to comment() and complex_comment() to handle
+	whitespace before the final ">" delimiter: such space is removed
+	from angle-bracket-free comments, but left intact in complex
+	comments, since complex_comment() currently does no buffering,
+	and buffering is needed to eliminate such space.
+
+	* htmlpty.l: Augment the list of tags in paragraph_contains() to
+	include additions from grammar levels 3.0 and later.  This list
+	probably requires further additions, but it seems infeasible to
+	generate the list by human examination of HTML grammars.
+
+	* htmlpty.l: In out_string(), add an additional Boolean in the
+	wrap test: (line_length() > (indentation_size() + indent)). This
+	prevents a line break that would make the continued text appear
+	no further to the right than if the line break were omitted.
+	This eliminates a long-standing annoyance of output like
+		<A
+		   HREF="very-long-URL">
+	instead of
+		<A HREF="very-long-URL">
+
+	* htmlpty.l: Augment the lex patterns with ones for new tags in
+	the HTML 3.2 and 4.0 grammars, and rearrange them so that the
+	patterns for newer grammars are in separate sections, which
+	facilitates checking their descriptions in the manual pages, and
+	reduces the differences between successive versions of this
+	file.  We might later add an option to set the expected grammar
+	level, so that tags from later levels could be warned about, and
+	output as normal text without special indentation; I'm still
+	unsure whether this would be useful.  html-check and html-ncheck
+	are much better ways to validate HTML files.
+
+	* htmlpty.l: Update address in file header and author() output
+	to reflect the new postal address format mandated by U.S. Post
+	Office for the University of Utah in Summer 1997, and add two
+	new email addresses.
+
+	* Makefile: Add several new targets for files in subdirectories
+	./Entities, ./Missing, and ./Tokens, and target entities.xrf:
+	these are tables of tags and tag cross-references for all of the
+	HTML grammars which I possess.
+
+	* Makefile: Add htmlpty.html target and include it in the
+	distribution; man2html was publicly released some time ago.
+
+	* Makefile: Update lists of distribution files.  Add support in
+	shar bundle for MIME and uuencoded formats of the IBM PC
+	htmlpty.exe file.  Make zip and zoo archives include a directory
+	name of the form htmlpty-x.yy.
+
+	* entxref.awk: new file for computing entities.xrf from
+	Entities/*.ent.
+
+	* test/check{010,011,012}.{in,ok,eok}: new torture test files to
+	check handling of nested comments (up to 100 deep).
+
+	* test/check013.{in,ok,eok}: new test file to check handling of
+	whitespace before closing comment delimiter.
+
+
+Thu Apr 25 18:27:12 1996  Nelson H. F. Beebe  <beebe@plot79.math.utah.edu>
+	* Release version 0.11
+
+	* htmlpty.l: Change comment handling to treat comments like
+	verbatim text, since they sometimes contain specially-formatted
+	material.
+
+	* htmlpty.man: Update man pages for version 0.11.
+
+
+Thu Oct 12 15:17:07 1995  Nelson H. F. Beebe  <beebe@plot79.math.utah.edu>
+
+	* htmlpty.l: add missing function prototype for empty_paragraph()
+
+	* htmlpty.l (pair): Add normalize_tag() call; without it, a
+ 	lowercase end tag passed to end_pair() and on to
+ 	paragraph_contains() will fail to match, producing a bogus warning
+ 	message.
+
+
+Fri May 12 13:45:59 1995  Nelson H. F. Beebe  <beebe@plot79.math.utah.edu>
+
+	* Release version 0.09.
+
+	* htmlpty.l: Minor source code change to work around problem with
+	gcc 2.6.3 on NeXT systems: use explicit library function
+	declarations instead of including <libc.h>.
+
+
+Wed May 10 11:54:22 1995  Nelson H. F. Beebe  <beebe@plot79.math.utah.edu>
+
+	* htmlpty.l: Add new function count_lines() to correctly track
+	line numbers embedded in yytext[].
+
+
+Mon May  8 13:47:37 1995  Nelson H. F. Beebe  <beebe@sunrise>
+
+	* Makefile: Add two new targets for HP gcc and g++ compilation.
+	Extend check target to compare error and warning messages with
+	expected ones.  Add -Dunix in SUNACC definition.
+
+	* Examine grammar (actually, the summary in the ``HTML 2.0
+	Constraints'' section of the man pages) to figure out what tokens
+	can appear in <HEAD> .. </HEAD>.  Add new functions out_escape(),
+	out_word(), pair_nocheck(), and standalone_nocheck(), and macro
+	maybe_begin_body().  Invoke maybe_begin_body() everywhere a token
+	is output that must be inside <BODY> .. </BODY>.  We use a macro,
+	instead of direct function call, for efficiency, since the macro
+	is executed for almost every input token.  With these changes,
+	input that consists of just paragraphs of text will automatically
+	get converted to a grammatically-correct prettyprinted HTML file.
+
+	* test/check*.in: Update to fix some HTML-grammar errors
+	(intentionally leaving several to demonstrate how html-pretty
+	can eliminate some of them).  Update test/check009.in to test new
+	tags from HTML 3.0 grammar (see the following paragraph).
+
+	* Extract <!ELEMENT ...> lines from html-3.dtd (HTML 3.0 grammar),
+	and compare with tags recognized by lex patterns.  Add these
+	paired tags: BAR BT CREDIT DDOT DEL DOT HAT INS ROW SQRT T TILDE
+	VEC, and these single tags: ATOP CHOOSE LEFT OF RIGHT.  The token
+	recognition of HTML 3.0 should now be complete.  Compared
+	<!ELEMENT ...> definitions from html.dtd (HTML 2.0 grammar) with
+	those from html-3.dtd, and verified that no tags were dropped from
+	2.0 to 3.0 (though several are deprecated).
+
+	* htmlpty.l: Add new function quote_check() to check for balanced
+	quotes in tags, and correct any imbalance found.
+
+	* htmlpty.l: Add pattern for minimized end tag </>. Add patterns
+	for ampersand, left angle bracket, right angle bracket, and quote.
+	Add ampersand and quote to the non-blank non-tag pattern.  These
+	changes allow automatic conversion of the four HTML special
+	characters to correct SGML escape sequences.
+
+
+Sun May  7 20:28:53 1995  Nelson H. F. Beebe  <beebe@sunrise>
+
+	* htmlpty.l: Set filename in reopen(); this was intended from the
+	very beginning, and documented in the man pages; its omission is
+	the only bug fixed for this version.
+
+	* htmlpty.l: Add support for elimination of empty <P> ... </P>
+	environments.  Because these can span multiple lines, and the
+	previous versions output each line as it was completed, this
+	change requires multi-line buffering of the output.  This is kept
+	quite clean by introduction of dputs() to replace the one call to
+	fputs(), dputc() to replace the one call to fputc(), plus one
+	extra function, empty_paragraph(), to check for, and delete, an
+	empty paragraph.  Only these two functions access the buffer
+	variables big_buffer[] and big_next_position.
+
+	* htmlpty.l: Add new macros Is_Begin_Tag(), Is_End_Tag(),
+	Is_NonEmpty_Line() to simplify and clarify coding.
+
+	* htmlpty.l: Supply </P> paragraph ends before all <TAG> and
+	</TAG> commands where the HTML 2.0 grammar requires it (see the
+	``HTML 2.0 Constraints'' section of the man pages).  New functions
+	end_paragraph() and paragraph_contains().
+
+	* htmlpty.l: Issue warning messages to stderr in several places:
+	new function warning().
+
+	* htmlpty.l: Consolidate some code in new functions other_tag(),
+	out_begin_tag(), out_end_tag(),  out_tag_on_own_line().
+
+	* htmlpty.l: Supply missing <LINK...> entry at end of <HEAD>
+	... </HEAD> section: new functions do_link() and link().
+
+	* htmlpty.l: Add support for supplying missing <HTML> <HEAD>
+	</HEAD> <BODY> </BODY> </HTML>: new functions body(), head(),
+	hn(), html(), do_begin_body(), do_begin_head(), do_begin_html(),
+	do_end_body(), do_end_head(), do_end_html(), expect_level(),
+	out_doctype(), title().
+
+	* htmlpty.l: Add support for default document type: new functions
+	do_doctype() and doctype().
+
+	* htmlpty.l: Check for symbol __unix__.
+
+	* htmlpty.man: Update for version 0.09.  Add references to
+	html-check, html-ncheck, html-spam, nsgmls, sgmlnorm, and spam.
+	Add new section ``HTML 2.0 Constraints''.
+
+
+Thu May  4 23:00:12 1995  Nelson H. F. Beebe  <beebe@sunrise>
+
+	* Makefile: add OPT= to sun-sparc-solaris2-lcc rule.
+
+	* htmlpty.c: Update to provide end tags for list items.  New
+	functions: begin_list_item(), end_list_item().  Make yywrap()
+	an extern "C" function under C++ compilation to match flex 2.5.2.
+
+
+Mon May  1 22:23:24 1995  Nelson H. F. Beebe  <beebe@sunrise>
+
+	* Release version 0.08.
+
+	* htmlpty.l: increment g_errors at error detection points in do_arg().
+
+	* htmlpty.l: check for leading digit in numeric arguments.
+
+	* htmlpty.l: remove incorrect final increment of g_argk in do_arg().
+
+
+Thu Apr 20 02:02:49 1995  Nelson H. F. Beebe  <beebe@sunrise>
+
+	* Release version 0.07.
+
+	* README: Update with report of use of flex flags for fast scanners.
+
+	* Fix an obscure bug arising from a flex incompatibility with lex.
+	This showed up as incorrect characters in just a SINGLE output
+	line from the validation checks on IBM PC DOS; it was never
+	detected in ANY of the UNIX tests.  The PC DOS test input files
+	have CR LF line terminators, while the UNIX ones have just LF
+	terminators, making the test files have different lengths on the
+	two operating systems. The bug showed up at an input position that
+	was only a couple of characters from a file offset which was a
+	multiple of 8192 bytes (the default flex input buffer size).  By
+	suitable padding of the corresponding UNIX input file, I was able
+	to reproduce the bug in the UNIX code, and track it down with the
+	help of a debugger.  The reason for the bug is that the code in
+	copy_verbatim() in version 0.06 and earlier assumed that yytext[]
+	could be written into with a longer string than it current holds,
+	and did so.  Careful reading of the flex documentation shows that
+	this is not legal, unless flex is running in lex compatibility
+	mode, which slows it down.  It also turns out that flex does not
+	permit yyleng to be modified, so two such assignments have been
+	removed from the code.  Repairing the unextendible yytext[]
+	problem meant adding arguments to end_verbatim() and
+	normalize_tag().
+
+	* Update line_number in copy_verbatim().  This bug was not
+	detected before, because the line number is not currently used,
+	but it might be in future versions.
+
+	* In the skip-over-repeated-spaces loop in out_string(), check for
+	non-NUL *s, in case isspace('\0') is true on some system, to
+	prevent scanning beyond end of string.
+
+	* Modify stdc.h to handle case of __STDC__ = 0 (e.g. Sun Solaris
+	2.x compilers do this by default), and move include of stdc.h
+	to after all system header files have been included, so as to
+	avoid conflicting function prototypes in the event const is
+	defined to be an empty string.
+
+	* Port to Turbo C 3.0 on IBM PC.  This required addition of a
+	definition of fileno() for this compiler.
+
+	* Make out_blank() do nothing at beginning of line; this fixes a
+	number of spurious single extra leading blanks in the output of
+	earlier versions.  out_leading_blanks() must now call out_char()
+	instead of out_blank().
+
+	* On IBM PC DOS, process input and output files in binary mode, so
+	that Ctl-Z is an ordinary character, instead of an end-of-file
+	mark.  Since the lex patterns map Ctl-M (\r) to a blank, this
+	means that each output newline, except in verbatim mode, must
+	be preceded by an explicit output Ctl-M.  The size of
+	line_buffer[], and tests for its being full, have been modified
+	accordingly.
+
+	* Add -n (no comment banner) option.
+
+	* Mention lynx in file header documentation string.
+
+
+Tue Apr 18 09:15:55 1995  Nelson H. F. Beebe  <beebe@sunrise>
+
+	* Release version 0.06.
+
+	* Add special handling of <LH> ... </LH> list headers, with
+	new functions begin_list_header(), end_list_header(), and
+	list_header(), so that list headers are indented only one level
+	from the surrounding <UL> ... </UL> (etc.) tags.
+
+	* Add support for recognition of / as well as - as the option
+	letter prefix in IBM PC DOS.
+
+	* Add a rule to match unrecognized tags.  Previously, a tag such
+	as </LI> was recognized in three parts: < /LI >, and the first
+	character was output by out_char() without indentation, and then
+	the second part was output by out_string() with indentation, with
+	the result that the output was "<    /LI>", which is incorrect.
+
+	* Correct double increment of g_argk in -i and -w argument
+	parsing.
+
+	* In indentation(), incorporate limit on indentation depth to
+	prevent it from getting too close to the maximum line width.
+	Previously, the code would enter an infinite loop if indentation
+	exceeded the line width.
+
+
+Fri Apr 7 1995 --  17 Apr 1995 Nelson H. F. Beebe  <beebe@sunrise>
+
+	* Develop first prototype in awk, then second fast implementation
+	  in lex and C.   Versions 0.00 -- 0.05.  Made version 0.05
+	  publicly available.

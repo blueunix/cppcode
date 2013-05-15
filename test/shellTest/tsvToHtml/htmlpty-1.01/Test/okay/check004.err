@@ -1,0 +1,154 @@
+:54:<H2> at level 3 should be at level 2
+:54:obsolete order: put anchor environment inside header environment, instead of the reverse
+:54:</H2> at level 3 should be at level 2
+:58:unclosed previous paragraph
+:58:unclosed previous paragraph
+:58:unclosed previous paragraph
+:58:<H3> at level 4 should be at level 2
+:58:obsolete order: put anchor environment inside header environment, instead of the reverse
+:58:unclosed previous paragraph
+:58:unclosed previous paragraph
+:58:</H3> at level 4 should be at level 2
+:81:<H3> at level 3 should be at level 2
+:81:obsolete order: put anchor environment inside header environment, instead of the reverse
+:81:</H3> at level 3 should be at level 2
+:95:<H3> at level 3 should be at level 2
+:95:obsolete order: put anchor environment inside header environment, instead of the reverse
+:95:</H3> at level 3 should be at level 2
+:126:<H2> at level 3 should be at level 2
+:126:obsolete order: put anchor environment inside header environment, instead of the reverse
+:126:</H2> at level 3 should be at level 2
+:183:unclosed previous paragraph
+:183:unclosed previous paragraph
+:183:unclosed previous paragraph
+:183:<H3> at level 4 should be at level 2
+:183:obsolete order: put anchor environment inside header environment, instead of the reverse
+:183:unclosed previous paragraph
+:183:unclosed previous paragraph
+:183:</H3> at level 4 should be at level 2
+:202:unclosed previous paragraph
+:202:unclosed previous paragraph
+:202:unclosed previous paragraph
+:202:<H3> at level 4 should be at level 2
+:202:obsolete order: put anchor environment inside header environment, instead of the reverse
+:202:unclosed previous paragraph
+:202:unclosed previous paragraph
+:202:</H3> at level 4 should be at level 2
+:231:unclosed previous paragraph
+:231:unclosed previous paragraph
+:231:unclosed previous paragraph
+:231:<H3> at level 4 should be at level 2
+:231:obsolete order: put anchor environment inside header environment, instead of the reverse
+:231:unclosed previous paragraph
+:231:unclosed previous paragraph
+:231:</H3> at level 4 should be at level 2
+:268:unclosed previous paragraph
+:268:unclosed previous paragraph
+:268:unclosed previous paragraph
+:268:<H2> at level 4 should be at level 2
+:268:obsolete order: put anchor environment inside header environment, instead of the reverse
+:268:unclosed previous paragraph
+:268:unclosed previous paragraph
+:268:</H2> at level 4 should be at level 2
+:311:unclosed previous paragraph
+:311:unclosed previous paragraph
+:311:unclosed previous paragraph
+:311:<H3> at level 4 should be at level 2
+:311:obsolete order: put anchor environment inside header environment, instead of the reverse
+:311:unclosed previous paragraph
+:311:unclosed previous paragraph
+:311:</H3> at level 4 should be at level 2
+:355:unclosed previous paragraph
+:355:unclosed previous paragraph
+:355:unclosed previous paragraph
+:355:<H3> at level 4 should be at level 2
+:355:obsolete order: put anchor environment inside header environment, instead of the reverse
+:355:unclosed previous paragraph
+:355:unclosed previous paragraph
+:355:</H3> at level 4 should be at level 2
+:381:<H3> at level 3 should be at level 2
+:381:obsolete order: put anchor environment inside header environment, instead of the reverse
+:381:</H3> at level 3 should be at level 2
+:414:unclosed previous paragraph
+:414:unclosed previous paragraph
+:414:unclosed previous paragraph
+:414:<H4> at level 4 should be at level 2
+:414:obsolete order: put anchor environment inside header environment, instead of the reverse
+:414:unclosed previous paragraph
+:414:unclosed previous paragraph
+:414:</H4> at level 4 should be at level 2
+:444:unclosed previous paragraph
+:444:unclosed previous paragraph
+:444:unclosed previous paragraph
+:444:<H4> at level 4 should be at level 2
+:444:obsolete order: put anchor environment inside header environment, instead of the reverse
+:444:unclosed previous paragraph
+:444:unclosed previous paragraph
+:444:</H4> at level 4 should be at level 2
+:471:unclosed previous paragraph
+:471:unclosed previous paragraph
+:471:unclosed previous paragraph
+:471:<H4> at level 4 should be at level 2
+:471:obsolete order: put anchor environment inside header environment, instead of the reverse
+:471:unclosed previous paragraph
+:471:unclosed previous paragraph
+:471:</H4> at level 4 should be at level 2
+:517:unclosed previous paragraph
+:517:unclosed previous paragraph
+:517:unclosed previous paragraph
+:517:<H4> at level 4 should be at level 2
+:517:obsolete order: put anchor environment inside header environment, instead of the reverse
+:517:unclosed previous paragraph
+:517:unclosed previous paragraph
+:517:</H4> at level 4 should be at level 2
+:567:<H3> at level 3 should be at level 2
+:567:obsolete order: put anchor environment inside header environment, instead of the reverse
+:567:</H3> at level 3 should be at level 2
+:607:<H3> at level 3 should be at level 2
+:607:obsolete order: put anchor environment inside header environment, instead of the reverse
+:607:</H3> at level 3 should be at level 2
+:643:<H3> at level 3 should be at level 2
+:643:obsolete order: put anchor environment inside header environment, instead of the reverse
+:643:</H3> at level 3 should be at level 2
+:663:unclosed previous paragraph
+:663:unclosed previous paragraph
+:663:unclosed previous paragraph
+:663:<H3> at level 4 should be at level 2
+:663:obsolete order: put anchor environment inside header environment, instead of the reverse
+:663:unclosed previous paragraph
+:663:unclosed previous paragraph
+:663:</H3> at level 4 should be at level 2
+:721:<H3> at level 3 should be at level 2
+:721:obsolete order: put anchor environment inside header environment, instead of the reverse
+:721:</H3> at level 3 should be at level 2
+:767:unclosed previous paragraph
+:767:unclosed previous paragraph
+:767:unclosed previous paragraph
+:767:<H2> at level 4 should be at level 2
+:767:obsolete order: put anchor environment inside header environment, instead of the reverse
+:767:unclosed previous paragraph
+:767:unclosed previous paragraph
+:767:</H2> at level 4 should be at level 2
+:810:<H3> at level 3 should be at level 2
+:810:obsolete order: put anchor environment inside header environment, instead of the reverse
+:810:</H3> at level 3 should be at level 2
+:832:unclosed previous paragraph
+:832:unclosed previous paragraph
+:832:unclosed previous paragraph
+:832:<H2> at level 4 should be at level 2
+:832:obsolete order: put anchor environment inside header environment, instead of the reverse
+:832:unclosed previous paragraph
+:832:unclosed previous paragraph
+:832:</H2> at level 4 should be at level 2
+:861:<H2> at level 3 should be at level 2
+:861:obsolete order: put anchor environment inside header environment, instead of the reverse
+:861:</H2> at level 3 should be at level 2
+:913:unclosed previous paragraph
+:913:unclosed previous paragraph
+:913:unclosed previous paragraph
+:913:<H2> at level 4 should be at level 2
+:913:obsolete order: put anchor environment inside header environment, instead of the reverse
+:913:unclosed previous paragraph
+:913:unclosed previous paragraph
+:913:</H2> at level 4 should be at level 2
+:947:unclosed tags in tag nest: line:opentag = 944:P 917:P 910:P 907:P 865:P 827:P 822:P 790:P 786:P 781:P 779:P 774:P 763:P 746:P 727:P 682:P 678:P 672:P 660:P 659:P 650:P 612:P 575:P 552:P 536:P 522:P 514:P 497:P 480:P 478:P 468:P 462:P 452:P 441:P 438:P 433:P 424:P 391:P 385:P 353:P 344:P 336:P 316:P 308:P 301:P 285:P 265:P 262:P 254:P 245:P 238:P 228:P 215:P 199:P 180:P 177:P 173:P 170:P 145:P 142:P 129:P 103:P 6:BODY

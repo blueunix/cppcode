@@ -1,0 +1,40 @@
+# 1 "##Test.cpp"
+# 1 "<built-in>"
+# 1 "<command line>"
+# 1 "##Test.cpp"
+using namespace std;
+# 13 "##Test.cpp"
+class Base
+{
+  public:
+    Base():year(2012),month(3),day(12),hour(12),minute(0)
+    {
+
+    }
+    ~Base(){}
+    void Setyear(const unsigned int& yeari) { year = yeari; }
+    void Setmonth(const unsigned int& monthi) { month = monthi; }
+    void Setday(const unsigned int& dayi) { day = dayi; }
+    void Sethour(const unsigned int& houri) { hour = houri; }
+    void Setminute(const unsigned int& minutei) { minute = minutei; }
+
+    void Getyear(unsigned int& yeari) { yeari = year; }
+    void Getmonth(unsigned int& monthi) { monthi = month; }
+    void Getday(unsigned int& dayi) { dayi = day; }
+    void Gethour(unsigned int& houri) { houri = hour; }
+    void Getminute(unsigned int& minutei) { minutei = minute; }
+  private:
+    unsigned int year;
+    unsigned int month;
+    unsigned int day;
+    unsigned int hour;
+    unsigned int minute;
+
+};
+
+
+int main(void)
+{
+
+return 0;
+}
